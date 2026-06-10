@@ -758,11 +758,11 @@ if ('serviceWorker' in navigator) {
 
 // === User System ===
 const ONBOARD_QUESTIONS = [
-  { q: '1. GPT、Claude、Gemini 之间是什么关系？', opts: ['同一个产品的不同版本', '不同公司做的竞品模型', '一个是模型一个是Agent'], answer: 2 },
-  { q: '2. "大模型"和"AI应用"的区别是？', opts: ['没区别，都是AI', '模型是大脑，应用是把大脑包装成产品', '应用比模型更高级'], answer: 2 },
-  { q: '3. AI 回答有时候不准确，这个现象叫什么？', opts: ['Bug', '幻觉 (Hallucination)', '延迟'], answer: 2 },
-  { q: '4. 你用过哪些 AI 工具？', opts: ['没用过', '用过1-2个（如ChatGPT）', '用过3个以上且日常在用'], answer: 0 },
-  { q: '5. 你觉得 AI 对产品运营最大的价值是？', opts: ['替代人工客服', '提升内容生产效率和数据分析能力', '不确定'], answer: 0 }
+  { q: '1. GPT、Claude、Gemini 之间是什么关系？', opts: ['同一个产品的不同版本', '不同公司做的竞品模型', '一个是模型一个是Agent'], answer: 1 },
+  { q: '2. "大模型"和"AI应用"的区别是？', opts: ['没区别，都是AI', '模型是大脑，应用是把大脑包装成产品', '应用比模型更高级'], answer: 1 },
+  { q: '3. AI 回答有时候不准确，这个现象叫什么？', opts: ['Bug', '幻觉 (Hallucination)', '延迟'], answer: 1 },
+  { q: '4. 你用过哪些 AI 工具？', opts: ['没用过', '用过1-2个（如ChatGPT）', '用过3个以上且日常在用'], answer: -1 },
+  { q: '5. 你觉得 AI 对产品运营最大的价值是？', opts: ['替代人工客服', '提升内容生产效率和数据分析能力', '不确定'], answer: -1 }
 ];
 let obIndex = 0, obScore = 0;
 
@@ -796,7 +796,8 @@ function renderObQuestion() {
 }
 
 function pickOb(picked, correct) {
-  if (picked === correct) obScore++;
+  if (correct === -1) { obScore++; }
+  else if (picked === correct) { obScore++; }
   obIndex++;
   renderObQuestion();
 }
