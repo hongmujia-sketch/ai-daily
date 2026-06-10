@@ -265,7 +265,10 @@
     font-size: 12px;
     color: #667eea;
   }
-  .user-bar a { color: #ff6b6b; cursor: pointer; text-decoration: none; }
+  .user-bar a { color: #8892b0; cursor: pointer; text-decoration: none; margin-left: 12px; font-size: 12px; }
+  .user-bar a:hover { color: #fff; }
+  .user-bar a.danger { color: #ff6b6b; }
+  .user-bar a.danger:hover { color: #ff4757; }
   .onboard-box .ob-q { color: #fff; font-size: 15px; margin-bottom: 12px; text-align: left; }
   .onboard-box .ob-options { list-style: none; padding: 0; margin-bottom: 20px; text-align: left; }
   .onboard-box .ob-options li {
@@ -294,6 +297,9 @@
     <h2>支付有礼产品运营<br>AI 学习日报</h2>
     <p>输入你的名字开始学习（进度会自动保存）</p>
     <input type="text" id="nameInput" placeholder="你的名字（如：小明）" autocomplete="off">
+    <label style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;margin-bottom:8px;color:#8892b0;font-size:13px;">
+      <input type="checkbox" id="rememberMe" checked style="width:16px;height:16px;"> 记住我，下次自动登录
+    </label>
     <button class="btn-primary" onclick="doLogin()">开始学习</button>
   </div>
 </div>
@@ -310,7 +316,7 @@
 
 <div class="user-bar" id="userBar" style="display:none">
   <span id="userDisplay"></span>
-  <a onclick="doLogout()">切换用户</a>
+  <span><a onclick="doSwitch()">切换用户</a><a class="danger" onclick="doReset()">重新摸底</a></span>
 </div>
 
 <div class="header">
@@ -763,7 +769,12 @@ let obIndex = 0, obScore = 0;
 function doLogin() {
   const name = document.getElementById('nameInput').value.trim();
   if (!name) return;
-  localStorage.setItem('ai_daily_user', name);
+  const remember = document.getElementById('rememberMe').checked;
+  if (remember) {
+    localStorage.setItem('ai_daily_user', name);
+  } else {
+    sessionStorage.setItem('ai_daily_user_session', name);
+  }
   document.getElementById('loginScreen').classList.add('hidden');
   const userData = JSON.parse(localStorage.getItem('ai_daily_' + name) || '{}');
   if (!userData.onboarded) {
@@ -791,11 +802,14 @@ function pickOb(picked, correct) {
 }
 
 function finishOnboard() {
-  const name = localStorage.getItem('ai_daily_user');
+  const name = localStorage.getItem('ai_daily_user') || sessionStorage.getItem('ai_daily_user_session');
   const level = obScore >= 4 ? 'advanced' : obScore >= 2 ? 'intermediate' : 'beginner';
   const userData = { onboarded: true, level: level, score: obScore, quizResults: {}, lastDay: 0 };
   localStorage.setItem('ai_daily_' + name, JSON.stringify(userData));
   document.getElementById('onboardScreen').classList.add('hidden');
+  document.querySelector('.header').style.display = '';
+  document.querySelector('.nav').style.display = '';
+  document.querySelector('.container').style.display = '';
   showMain(name);
 }
 
@@ -806,9 +820,25 @@ function showMain(name) {
   document.getElementById('userDisplay').textContent = name + ' | 级别：' + (levelText[userData.level] || '未知') + ' | 摸底得分：' + (userData.score || 0) + '/5';
 }
 
-function doLogout() {
+function doSwitch() {
   localStorage.removeItem('ai_daily_user');
+  sessionStorage.removeItem('ai_daily_user_session');
   location.reload();
+}
+
+function doReset() {
+  const user = localStorage.getItem('ai_daily_user') || sessionStorage.getItem('ai_daily_user_session');
+  if (user && confirm('确定要重新摸底吗？会清除「' + user + '」的摸底记录和级别。')) {
+    localStorage.removeItem('ai_daily_' + user);
+    obIndex = 0;
+    obScore = 0;
+    document.getElementById('onboardScreen').classList.remove('hidden');
+    document.getElementById('userBar').style.display = 'none';
+    document.querySelector('.header').style.display = 'none';
+    document.querySelector('.nav').style.display = 'none';
+    document.querySelector('.container').style.display = 'none';
+    renderObQuestion();
+  }
 }
 
 // Check login on load
@@ -820,7 +850,7 @@ function doLogout() {
       quizResults: { day1: true, day2: true }
     }));
   }
-  const user = localStorage.getItem('ai_daily_user');
+  const user = localStorage.getItem('ai_daily_user') || sessionStorage.getItem('ai_daily_user_session');
   if (user) {
     const userData = JSON.parse(localStorage.getItem('ai_daily_' + user) || '{}');
     if (userData.onboarded) {
