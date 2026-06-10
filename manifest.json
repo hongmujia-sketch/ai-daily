@@ -1,7 +1,7 @@
 {
-  "name": "支付有礼产品运营 AI 学习日报",
-  "short_name": "AI学习日报",
-  "description": "团队共学：AI理论 + 工具 + 行业 + 运营",
+  "name": "支付有礼产品运营 AI 学习工具",
+  "short_name": "AI学习工具",
+  "description": "每日更新：AI基础理论 + 工具实操 + 行业动态 + 产品运营",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0a0f",

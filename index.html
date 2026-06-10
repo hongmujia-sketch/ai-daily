@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>支付有礼产品运营 AI 学习日报</title>
+<title>支付有礼产品运营 AI 学习工具</title>
 <!-- PWA & iOS -->
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="AI日报">
+<meta name="apple-mobile-web-app-title" content="AI学习工具">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#1a1a2e">
 <style>
@@ -294,21 +294,29 @@
 <!-- Login Screen -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
-    <h2>支付有礼产品运营<br>AI 学习日报</h2>
-    <p>输入你的名字开始学习（进度会自动保存）</p>
-    <input type="text" id="nameInput" placeholder="你的名字（如：小明）" autocomplete="off">
+    <h2>支付有礼产品运营<br>AI 学习工具</h2>
+    <p>每日更新的 AI 系统化学习平台</p>
+    <div style="text-align:left;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px;margin-bottom:20px;font-size:13px;color:#b0b8c8;line-height:1.9">
+      <div style="color:#fff;font-size:14px;font-weight:600;margin-bottom:10px">包含四大学习模块：</div>
+      <div><span style="color:#667eea">基础理论</span> — AI核心概念与技术原理，通俗易懂</div>
+      <div><span style="color:#2ed573">工具实操</span> — AI工具使用技巧与工作场景实战</div>
+      <div><span style="color:#ffa502">行业动态</span> — 每日AI行业重要事件与深度分析</div>
+      <div><span style="color:#f063b8">产品运营</span> — AI产品运营方法论与指标体系</div>
+      <div style="margin-top:8px;color:#8892b0;font-size:12px">每期配有选择题 + 思考题，检验学习效果</div>
+    </div>
+    <input type="text" id="nameInput" placeholder="输入你的名字开始学习" autocomplete="off">
     <label style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;margin-bottom:8px;color:#8892b0;font-size:13px;">
       <input type="checkbox" id="rememberMe" checked style="width:16px;height:16px;"> 记住我，下次自动登录
     </label>
-    <button class="btn-primary" onclick="doLogin()">开始学习</button>
+    <button class="btn-primary" onclick="doLogin()">进入学习</button>
   </div>
 </div>
 
 <!-- Onboarding Quiz Screen -->
 <div class="onboard-screen hidden" id="onboardScreen">
   <div class="onboard-box">
-    <h2>摸底小测试</h2>
-    <p>5道题帮你定位学习起点，不影响内容，轻松答</p>
+    <h2>摸底测试</h2>
+    <p>为了给你匹配合适的学习节奏，先做 5 道题了解一下你的 AI 知识基础。<br>不用紧张，没有对错之分，如实选择即可。</p>
     <div class="ob-progress" id="obProgress">1 / 5</div>
     <div id="obContent"></div>
   </div>
@@ -320,8 +328,8 @@
 </div>
 
 <div class="header">
-  <h1>支付有礼产品运营<br>AI 学习日报</h1>
-  <p>团队共学 | 理论 + 工具 + 行业 + 运营</p>
+  <h1>支付有礼产品运营<br>AI 学习工具</h1>
+  <p>每日更新 | 基础理论 · 工具实操 · 行业动态 · 产品运营</p>
   <div class="stats">
     <span>已学 2 天</span>
     <span>持续更新中</span>
@@ -748,7 +756,7 @@
 </div>
 
 <div class="footer">
-  AI 学习日报 | 持续更新 | 长按主屏添加为 App
+  支付有礼产品运营 AI 学习工具 | 每日自动更新
 </div>
 
 <script>
