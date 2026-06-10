@@ -26,7 +26,7 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 50px 20px 30px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: none;
   }
   .header h1 {
     font-size: 28px;
@@ -106,6 +106,7 @@
 
   .card h3 { font-size: 17px; color: #1a202c; margin-bottom: 12px; }
   .card p, .card li { color: #4a5568; font-size: 14px; margin-bottom: 8px; }
+  .card strong { color: #1a202c; }
   .card ul, .card ol { padding-left: 18px; }
 
   .card table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
@@ -120,6 +121,7 @@
     padding: 9px 12px;
     border-bottom: 1px solid #f0f2f5;
     color: #4a5568;
+    font-size: 13px;
   }
 
   /* Mobile: tables scroll horizontally */
@@ -166,7 +168,8 @@
     overflow-x: auto;
   }
   .layer-diagram .layer {
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid #dde2ea;
+    background: #fff;
     border-radius: 8px;
     padding: 10px 16px;
     margin-bottom: 8px;
@@ -175,7 +178,7 @@
   .layer-diagram .layer-app { border-color: #2ed573; color: #2ed573; }
   .layer-diagram .layer-model { border-color: #667eea; color: #667eea; }
   .layer-diagram .layer-infra { border-color: #ffa502; color: #ffa502; }
-  .layer-diagram .arrow { text-align: center; color: #4a4a5a; font-size: 11px; }
+  .layer-diagram .arrow { text-align: center; color: #a0aec0; font-size: 11px; }
 
   /* Quiz styles */
   .quiz-item { margin-bottom: 20px; }
@@ -211,7 +214,7 @@
     background: #f0edff;
     border-radius: 8px;
     font-size: 13px;
-    color: #8892b0;
+    color: #5a5a7a;
   }
   .quiz-explain.show { display: block; }
 
@@ -232,7 +235,7 @@
   }
   .key-number .label {
     font-size: 13px;
-    color: #8892b0;
+    color: #718096;
   }
 
   /* Data cards (replaces dense tables on mobile) */
@@ -243,8 +246,8 @@
     margin: 16px 0;
   }
   .data-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: #f7f8fc;
+    border: 1px solid #e8ecf1;
     border-radius: 12px;
     padding: 16px;
     text-align: center;
@@ -332,7 +335,8 @@
 
   /* Visual diagram improvements */
   .layer-diagram .layer {
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid #dde2ea;
+    background: #fff;
     border-radius: 8px;
     padding: 14px 16px;
     margin-bottom: 8px;
@@ -549,8 +553,8 @@
 </div>
 
 <div class="nav" id="navTabs">
-  <button class="nav-btn" onclick="showDay('day1')">Day 1</button>
-  <button class="nav-btn active" onclick="showDay('day2')">Day 2</button>
+  <button class="nav-btn" onclick="showDay('day1', this)">Day 1</button>
+  <button class="nav-btn active" onclick="showDay('day2', this)">Day 2</button>
 </div>
 
 <div class="container">
@@ -803,11 +807,11 @@
         <strong>引擎</strong> = 图书管理员（接收你的问题，翻到正确的页面，把答案读给你）<br>
         <strong>应用</strong> = 图书馆的前台服务（整合了管理员+书，给你完整的体验）<br><br>
         所以当你看到"切换模型"时 = 换了一本书（能力不同）<br>
-        当你看到"推理引擎优化"时 = 管理员翻书速度变快了（但书没变）</div>
+        当你看到"推理引擎优化"时 = 管理员翻书速度变快了（但书没变）
+      </div>
       <div class="beginner-hint">
         <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：为什么引擎和模型要分开？</div>
         <div class="hint-content">想象你点外卖：模型=厨师的菜谱（怎么做菜的知识），引擎=厨房设备（执行做菜的过程）。同一个菜谱（模型）可以用不同厨房（引擎）做——米其林厨房快且贵，家常厨房慢但便宜。所以AI公司拼优化就是在升级厨房，让菜做得更快更省电。</div>
-      </div>
       </div>
 
       <p style="margin-top:14px"><strong>为什么要分开？产品视角的意义：</strong></p>
@@ -1250,11 +1254,11 @@ function doReset() {
 })();
 
 // === Day Navigation ===
-function showDay(dayId) {
+function showDay(dayId, el) {
   document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(dayId).classList.add('active');
-  event.target.classList.add('active');
+  if (el) { el.classList.add('active'); }
 }
 
 function goToLatest() {
