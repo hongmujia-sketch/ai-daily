@@ -123,6 +123,20 @@
     color: #b0b8c8;
   }
 
+  /* Mobile: tables scroll horizontally */
+  @media (max-width: 600px) {
+    .card table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+    .card th, .card td { padding: 8px 10px; font-size: 12px; min-width: 80px; }
+    .header h1 { font-size: 22px; }
+    .day-header h2 { font-size: 18px; }
+    .card { padding: 18px 14px; }
+    .card h3 { font-size: 16px; }
+    .card p, .card li { font-size: 13px; }
+    .layer-diagram { padding: 14px; font-size: 12px; }
+    .layer-diagram .layer { padding: 8px 10px; font-size: 12px; }
+    .highlight, .correction { padding: 10px 12px; font-size: 13px; }
+  }
+
   .highlight {
     background: rgba(102,126,234,0.1);
     border-left: 3px solid #667eea;
