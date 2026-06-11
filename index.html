@@ -547,14 +547,15 @@
   <h1>线下支付用户运营<br>AI 学习工具</h1>
   <p>每日更新 | 策略运营 · 产品运营 · 整合营销</p>
   <div class="stats">
-    <span>已学 2 天</span>
+    <span>已学 3 天</span>
     <span>持续更新中</span>
   </div>
 </div>
 
 <div class="nav" id="navTabs">
   <button class="nav-btn" onclick="showDay('day1', this)">Day 1</button>
-  <button class="nav-btn active" onclick="showDay('day2', this)">Day 2</button>
+  <button class="nav-btn" onclick="showDay('day2', this)">Day 2</button>
+  <button class="nav-btn active" onclick="showDay('day3', this)">Day 3</button>
 </div>
 
 <div class="container">
@@ -779,7 +780,7 @@
   <!-- ==================== END DAY 1 ==================== -->
 
   <!-- ==================== DAY 2 ==================== -->
-  <div class="day-section active" id="day2">
+  <div class="day-section" id="day2">
     <div class="day-header">
       <h2>Day 2 | 引擎vs模型 + 三种工作流 + Agent元年真相</h2>
       <span class="date">2026-06-10</span>
@@ -1082,6 +1083,238 @@
 
   </div>
   <!-- ==================== END DAY 2 ==================== -->
+
+
+  <!-- ==================== DAY 3 ==================== -->
+  <div class="day-section active" id="day3">
+    <div class="day-header">
+      <h2>Day 3 | AI 是如何"学习"的？——训练、微调、RAG</h2>
+      <span class="date">2026-06-11</span>
+    </div>
+
+    <!-- 理论 -->
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>让AI变聪明的三种方式</h3>
+      <p>AI产品讨论中频繁出现三个概念：训练、微调、RAG。它们是让AI"获得知识"的三种方式，但成本和效果天差地别。</p>
+
+      <table>
+        <tr><th>方式</th><th>类比</th><th>时间</th><th>成本</th><th>适合场景</th></tr>
+        <tr><td><strong>训练 (Training)</strong></td><td>从小学到博士毕业</td><td>数周~数月</td><td>千万~亿级美元</td><td>打造一个全新模型</td></tr>
+        <tr><td><strong>微调 (Fine-tuning)</strong></td><td>博士后做专业进修</td><td>数小时~数天</td><td>数千~数万美元</td><td>让通用模型变成领域专家</td></tr>
+        <tr><td><strong>RAG</strong></td><td>开卷考试（带参考资料）</td><td>实时</td><td>极低</td><td>让AI基于最新资料回答</td></tr>
+      </table>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：这三种方式到底有什么区别？</div>
+        <div class="hint-content">
+          假设AI是一个新员工：<br>
+          <strong>训练</strong> = 让他从幼儿园开始上学直到博士毕业，花了20年。这就是OpenAI做GPT-4时做的事——从零教会模型理解人类语言。<br>
+          <strong>微调</strong> = 这个博士毕业后，公司给他做了一个月的岗前培训，让他专门了解公司的业务。比如让通用的Claude变成一个只懂金融的Claude。<br>
+          <strong>RAG</strong> = 不改变他的大脑，但每次问他问题时，递给他一份参考资料让他看着答。这就是为什么AI能回答"公司内部文档里写了什么"——不是它学过，是你临时给了它资料。
+        </div>
+      </div>
+
+      <div class="highlight">
+        <strong>产品运营最需要理解的是RAG</strong><br>
+        因为：训练和微调是技术团队的事（你不需要操心），但RAG直接影响产品设计——"AI能不能回答我们的私域问题"取决于RAG做得好不好。
+      </div>
+    </div>
+
+    <!-- RAG深入 -->
+    <div class="card">
+      <span class="card-tag tag-theory">深入理解</span>
+      <h3>RAG：为什么这是运营最该懂的技术概念</h3>
+      <p>RAG（Retrieval Augmented Generation，检索增强生成）= 让AI在回答问题前，先去检索相关资料，再基于资料生成答案。</p>
+
+      <div class="layer-diagram">
+        <div class="layer layer-app" style="border-color:#22a868;color:#22a868">用户提问：今天有什么优惠券可以领？</div>
+        <div class="arrow">&#x2193;</div>
+        <div class="layer layer-model" style="border-color:#e68a00;color:#e68a00">检索系统：去券池/用户数据库里查相关信息</div>
+        <div class="arrow">&#x2193;</div>
+        <div class="layer layer-model">模型：基于检索结果 + 用户画像，生成个性化推荐回答</div>
+        <div class="arrow">&#x2193;</div>
+        <div class="layer layer-infra" style="border-color:#667eea;color:#667eea">返回：基于您的消费习惯，推荐这3张券...</div>
+      </div>
+
+      <div class="highlight">
+        <strong>RAG 在2026年的行业地位：</strong><br>
+        已经从"实验性技术"变为"企业AI必选架构"。据行业报告，企业采用RAG后：<br>
+        - 模型重训成本降低 45%<br>
+        - AI部署周期加快 2.8倍<br>
+        - 知识工作者每周节省 11+ 小时<br>
+        <a class="source-link" href="https://www.linkedin.com/pulse/strategic-evolution-retrieval-augmented-generation-s83cc" target="_blank">来源：LinkedIn - RAG Strategic Evolution 2026</a> | <a class="source-link" href="https://squirro.com/squirro-blog/state-of-rag-genai" target="_blank">来源：Squirro - State of RAG 2025</a>
+      </div>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：为什么RAG比重新训练模型好？</div>
+        <div class="hint-content">
+          想象你是一个老师，学生问了一个你不知道答案的问题。<br>
+          <strong>重新训练</strong> = 你回去读了10年的书来学这个答案。太贵太慢。<br>
+          <strong>RAG</strong> = 你翻开桌上的参考书，找到相关段落，然后用自己的话给学生解释。又快又准。<br>
+          所以企业做AI产品，几乎都用RAG——因为公司的业务知识在变，不可能每变一次就重新训练模型。
+        </div>
+      </div>
+    </div>
+
+    <!-- 工具 -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：你每天都在用RAG，只是不知道</h3>
+      <p>当跟AI对话时加了"参考资料"，就是在用RAG的原理：</p>
+      <ol>
+        <li><strong>给Claude一段数据再提问</strong> = 手动RAG（你自己做了检索这步）</li>
+        <li><strong>Claude Code读取本地文件再回答</strong> = 自动RAG（工具帮你检索）</li>
+        <li><strong>DeepInsight 自然语言查数</strong> = 产品化的RAG（系统自动从数据库检索）</li>
+      </ol>
+
+      <div class="highlight">
+        <strong>实操技巧：</strong>当AI回答不准时，不要只改问法——试试"给它更多参考资料"。<br>
+        比如不要问"帮我写活动方案"，而是"基于以下去年618的数据和今年的目标，帮我写活动方案：[贴数据]"<br>
+        你手动提供的参考资料 = 你在帮AI做RAG。
+      </div>
+    </div>
+
+    <!-- 行业 -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>RAG 在2026年的行业真实状态</h3>
+      <p style="font-size:12px;color:#667eea;margin-bottom:8px">来源：<a class="source-link" href="https://squirro.com/squirro-blog/state-of-rag-genai" target="_blank">Squirro RAG报告</a> | <a class="source-link" href="https://www.linkedin.com/pulse/strategic-evolution-retrieval-augmented-generation-s83cc" target="_blank">LinkedIn RAG 2026分析</a></p>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="dc-num">45%</div>
+          <div class="dc-label">模型重训成本降低</div>
+          <div class="dc-desc">RAG替代了昂贵的微调</div>
+        </div>
+        <div class="data-card">
+          <div class="dc-num">2.8x</div>
+          <div class="dc-label">部署周期加速</div>
+          <div class="dc-desc">从数月缩短到数周</div>
+        </div>
+        <div class="data-card">
+          <div class="dc-num">11h+</div>
+          <div class="dc-label">每人每周节省</div>
+          <div class="dc-desc">知识工作者搜索时间大幅降低</div>
+        </div>
+        <div class="data-card">
+          <div class="dc-num">99%</div>
+          <div class="dc-label">GraphRAG精确度</div>
+          <div class="dc-desc">知识图谱+RAG的最高精度</div>
+        </div>
+      </div>
+
+      <p><strong>关键趋势：</strong>2026年RAG已不是可选项，而是企业AI的标配架构。Agentic AI（智能体）的兴起对RAG提出了更高要求——Agent需要更精准、更实时的知识来源才能可靠地执行任务。</p>
+    </div>
+
+    <!-- 运营视角 -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>理解RAG对运营意味着什么</h3>
+      <table>
+        <tr><th>场景</th><th>没有RAG</th><th>有RAG</th></tr>
+        <tr><td>AI客服回答政策问题</td><td>可能答错（基于训练时的旧知识）</td><td>实时检索最新政策文档，准确率极高</td></tr>
+        <tr><td>AI推荐商品/券</td><td>只能通用推荐</td><td>检索用户历史+实时库存，精准推荐</td></tr>
+        <tr><td>AI辅助写运营方案</td><td>泛泛而谈的模板</td><td>基于你给的历史数据和竞品信息写出针对性方案</td></tr>
+        <tr><td>AI分析数据</td><td>编造数据（幻觉）</td><td>先查数据库，基于真实数据分析</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>运营本质洞察：</strong>AI产品的"准不准"，很大程度不取决于模型有多聪明，而取决于RAG检索的知识库有多完善。<br>
+        <em>所以运营如果要参与AI产品的质量提升，最大的杠杆是——帮技术团队梳理和维护"知识库"内容。</em>
+      </div>
+    </div>
+
+    <!-- 选择题 -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 3 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 训练、微调、RAG 的成本从高到低排列是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 训练 > 微调 > RAG</li>
+          <li onclick="checkQuiz(this)">B. 微调 > 训练 > RAG</li>
+          <li onclick="checkQuiz(this)">C. RAG > 微调 > 训练</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。训练一个模型需要千万到亿级美元，微调数千到数万美元，RAG几乎不需要额外训练成本，只需维护知识库。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 当AI答错了公司内部的政策问题，最可能的解决方案是？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 重新训练整个模型</li>
+          <li onclick="checkQuiz(this)">B. 用RAG——让AI回答前先检索最新的政策文档</li>
+          <li onclick="checkQuiz(this)">C. 换一个更贵的模型</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。重新训练成本太高也太慢，换模型不解决知识缺失问题。RAG能让AI实时检索最新资料再回答，性价比最高。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. "给Claude贴一段数据再提问"，本质上是在做什么？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 在训练模型</li>
+          <li onclick="checkQuiz(this)">B. 在微调模型</li>
+          <li onclick="checkQuiz(this)">C. 在手动做RAG（人工提供检索结果）</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。你把资料贴进去=你帮AI做了"检索"那步，AI基于你提供的资料生成回答=生成那步。这就是RAG的手动版本。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. 运营如果想提升AI产品的回答准确率，最大杠杆是？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 要求技术换更贵的模型</li>
+          <li onclick="checkQuiz(this)">B. 帮技术团队梳理和维护高质量知识库</li>
+          <li onclick="checkQuiz(this)">C. 写更好的Prompt</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。AI回答准不准，很大程度取决于RAG检索到的知识质量。运营最了解业务，帮技术维护知识库是最大杠杆。Prompt优化有用但天花板有限。</div>
+      </div>
+    </div>
+
+    <!-- 思考题 -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">&#x1F4CA; 策略/用户运营视角</p>
+        <ol>
+          <li>如果大盘支付策略要用AI辅助决策，它的"知识库"应该包含哪些数据？谁来维护？</li>
+          <li>碰一下支付的商户FAQ如果接入AI客服，RAG检索的知识源应该是什么？</li>
+          <li>RAG能实时更新知识，但策略调整需要审批。这个矛盾怎么解？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">&#x1F381; 产品运营视角</p>
+        <ol>
+          <li>支付有礼如果做"AI推荐券"，RAG需要检索哪些数据？（用户画像？券库存？历史核销？）</li>
+          <li>AI推荐准确率和知识库更新频率的关系是什么？如果券上下架很频繁，RAG怎么保证时效性？</li>
+          <li>作为产品运营，如何主动参与"知识库维护"来提升AI产品质量？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">&#x1F389; 整合营销运营视角</p>
+        <ol>
+          <li>大促活动规则每年都变——如果用AI回答用户"今年618有什么活动"，RAG怎么确保不说去年的规则？</li>
+          <li>营销内容生成时，AI应该检索哪些"知识"来保证品牌调性一致？</li>
+          <li>活动结束后，知识库需要怎么更新才能避免AI继续推荐已过期的活动？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">&#x1F30D; 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开策略运营视角</summary>
+          <ol><li>大盘支付策略的AI"知识库"应该包含什么？谁来维护？</li><li>碰一下支付商户FAQ的RAG知识源？</li><li>RAG实时更新 vs 策略审批的矛盾？</li></ol>
+        </details>
+        <details><summary style="cursor:pointer;color:#d63384;font-size:14px;margin-bottom:8px">点击展开产品运营视角</summary>
+          <ol><li>支付有礼AI推荐券的RAG需要检索哪些数据？</li><li>券频繁上下架时RAG怎么保证时效？</li><li>运营如何参与知识库维护？</li></ol>
+        </details>
+        <details><summary style="cursor:pointer;color:#e68a00;font-size:14px;margin-bottom:8px">点击展开营销运营视角</summary>
+          <ol><li>大促规则每年变，RAG怎么确保不说旧规则？</li><li>营销内容生成应检索什么知识保证品牌调性？</li><li>活动结束后知识库怎么更新？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 3 ==================== -->
 
 </div>
 
