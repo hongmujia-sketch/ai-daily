@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-daily-v1';
+const CACHE_NAME = 'ai-daily-v2';
 self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => { clients.claim(); });
 self.addEventListener('fetch', e => {

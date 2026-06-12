@@ -329,6 +329,13 @@
   .beginner-hint .hint-toggle::after { content: ' ▼'; }
   .beginner-hint.expanded .hint-toggle::after { content: ' ▲'; }
 
+  /* details/summary for thinking sections */
+  details { margin: 12px 0; }
+  details summary { cursor: pointer; color: #667eea; font-size: 14px; margin-bottom: 8px; }
+  details[open] summary { color: #5a67d8; }
+  details[open] ol { margin-top: 8px; padding-left: 24px; }
+  details[open] ol li { margin-bottom: 8px; color: #4a5568; line-height: 1.6; }
+
   /* New content toast */
   .new-toast {
     position: fixed;
@@ -550,7 +557,8 @@
 <div class="nav" id="navTabs">
   <button class="nav-btn" onclick="showDay('day1', this)">Day 1</button>
   <button class="nav-btn" onclick="showDay('day2', this)">Day 2</button>
-  <button class="nav-btn active" onclick="showDay('day3', this)">Day 3</button>
+  <button class="nav-btn" onclick="showDay('day3', this)">Day 3</button>
+  <button class="nav-btn active" onclick="showDay('day4', this)">Day 4</button>
 </div>
 
 <div class="container">
@@ -1081,7 +1089,7 @@
 
 
   <!-- ==================== DAY 3 ==================== -->
-  <div class="day-section active" id="day3">
+  <div class="day-section" id="day3">
     <div class="day-header">
       <h2>Day 3 | AI 是如何"学习"的？——训练、微调、RAG</h2>
       <span class="date">2026-06-11</span>
@@ -1311,6 +1319,298 @@
   </div>
   <!-- ==================== END DAY 3 ==================== -->
 
+  <!-- ==================== DAY 4 ==================== -->
+  <div class="day-section active" id="day4">
+    <div class="day-header">
+      <h2>Day 4 | 为什么 Agent 执行任务时很慢？——推理机制与速度真相</h2>
+      <span class="date">2026-06-12</span>
+    </div>
+
+    <!-- 理论：核心概念 -->
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>AI 的"慢"和 App 的"慢"是两回事</h3>
+      <p>当 Agent 执行一个任务需要 30 秒甚至几分钟时，很多人第一反应是"网络卡了"或"服务器慢了"。实际上，AI 的延迟有完全不同的生成逻辑——理解这个逻辑，是跟技术团队高效协作的前提。</p>
+
+      <p><strong>AI 生成回复的三个阶段：</strong></p>
+      <div class="layer-diagram">
+        <div class="layer" style="border-color:#667eea;color:#667eea">&#x23F1;&#xFE0F; 阶段一：TTFT（首Token延迟）<br><span style="color:#4a5568;font-size:12px">从你发送消息到AI开始打出第一个字的时间<br>这是"思考准备"阶段</span></div>
+        <div class="arrow">&#x2193;</div>
+        <div class="layer" style="border-color:#2ed573;color:#2ed573">&#x26A1; 阶段二：生成（逐Token输出）<br><span style="color:#4a5568;font-size:12px">AI在逐字生成回答。速度通常 30-80 tokens/秒<br>这是"边说边想"阶段</span></div>
+        <div class="arrow">&#x2193;</div>
+        <div class="layer" style="border-color:#ffa502;color:#ffa502">&#x1F504; 阶段三：工具调用（Agent专属）<br><span style="color:#4a5568;font-size:12px">Agent需要读文件、搜网页、执行代码<br>这是"动手干活"阶段</span></div>
+      </div>
+
+      <div class="highlight">
+        <strong>关键认知：</strong>AI 不是"想完了再说"，而是"边想边说"——模型每生成一个词，都需要做一次完整的推理计算。所以回答越长，等待时间越长，这是物理限制，不是"网速问题"。
+      </div>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：为什么 AI 不能先想完再说？</div>
+        <div class="hint-content">
+          想象你在做一道填空题："今天天气真____"。你只能看到一个空，填完这个字后，下一个空才会出现。<br>
+          AI 也一样——它每"写"一个词，都要基于它刚写的上一个词来决定下一个词。所以必须一个一个来，不能一次性把整篇文章算好再输出。这就像你不能先把一整个对话的每句话都预判好，只能一句一句往下接。<br>
+          <strong>所以回复越长 = 计算次数越多 = 越慢。</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- 深度理论 -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>为什么 Agent 比普通对话更慢？</h3>
+      <p>如果你用过 Claude Code 或 ChatGPT 的深度研究功能，会发现它执行一个任务有时要几分钟。根本原因在于 Agent 的工作流是"多次推理"的：</p>
+
+      <table>
+        <tr><th>环节</th><th>为什么耗时</th><th>用户感受</th><th>能不能跳过？</th></tr>
+        <tr>
+          <td><strong>理解任务</strong></td>
+          <td>需要推理用户意图，拆解为子任务</td>
+          <td>等待开始</td>
+          <td>不能</td>
+        </tr>
+        <tr>
+          <td><strong>规划步骤</strong></td>
+          <td>决定"先做什么、再做什么"</td>
+          <td>看它在思考</td>
+          <td>简单任务可跳过</td>
+        </tr>
+        <tr>
+          <td><strong>执行工具</strong></td>
+          <td>读文件/查资料/运行代码——这些都是真实操作</td>
+          <td>等待输出结果</td>
+          <td>不能，这是Agent的核心</td>
+        </tr>
+        <tr>
+          <td><strong>验证结果</strong></td>
+          <td>检查输出是否正确，出错要重试</td>
+          <td>感觉重复劳动</td>
+          <td>可以配置"不需要验证"</td>
+        </tr>
+        <tr>
+          <td><strong>输出回复</strong></td>
+          <td>逐Token生成最终回答</td>
+          <td>等待完整结果</td>
+          <td>不能</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>一句话：</strong>Agent 的慢 = 把人类"思考+查资料+检查"的时间压缩到了可见的几秒到几分钟。你之所以觉得慢，是因为习惯了对传统App的"点一下立刻出结果"的期待。
+      </div>
+
+      <p><strong>实际对比：</strong></p>
+      <ul>
+        <li>写一封促销文案：纯模型对话 5-10 秒 vs Agent 自行查数据后撰写 30-60 秒</li>
+        <li>做一份竞品分析报告：纯模型对话不可行（不知道行业数据）vs Agent 搜索后撰写 2-5 分钟</li>
+        <li>分析上周数据给出优化建议：纯模型做不到 vs Agent 查询数据库后输出 1-3 分钟</li>
+      </ul>
+    </div>
+
+    <!-- 行业动态 -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月第二周：推理加速进入军备竞赛</h3>
+      <p style="font-size:12px;color:#667eea;margin-bottom:8px">本周重大事件汇总</p>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th><th>产品运营启发</th></tr>
+        <tr>
+          <td><strong>NVIDIA 发布 Dynamo 1.0</strong><br><a class="source-link" href="https://nvidianews.nvidia.com" target="_blank">官方新闻稿</a></td>
+          <td>开源推理"操作系统"，Blackwell GPU 上推理性能提升 <strong>7 倍</strong>。KV缓存智能管理、GPU间数据高速传输等。</td>
+          <td>推理成本曲线在加速下坠——年初觉得"太贵"的AI方案，年底可能就划算。运营可以提前规划更多AI落地场景。</td>
+        </tr>
+        <tr>
+          <td><strong>Google AI Plus 降价至 $4.99/月</strong><br><a class="source-link" href="https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars/" target="_blank">TechCrunch报道</a></td>
+          <td>从 $7.99 降到 $4.99，存储翻倍至400GB。采用"按算力消耗"计费模型替代每日限制。</td>
+          <td>AI 基础设施正在快速商品化，运营成本将不再是瓶颈。真正的竞争转移到"谁能用AI做出更好的用户价值"。</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic 发布 Claude Fable 5</strong><br><a class="source-link" href="https://www.anthropic.com" target="_blank">Anthropic公告</a> | <a class="source-link" href="https://simonwillison.net/2026/Jun/9/claude-fable-5/" target="_blank">Simon Willison评测</a></td>
+          <td>新模型在编码类任务上达到 SOTA。Stripe 用它一天内完成了5000万行 Ruby 代码的迁移（原需数月）。</td>
+          <td>模型能力仍在指数级提升。运营关注的不是"模型多强"，而是"更快的推理速度 + 更强的能力"意味着更复杂的任务可以交给AI。</td>
+        </tr>
+        <tr>
+          <td><strong>NVIDIA TensorMesh：推理延迟降低 12 倍</strong><br>模型内存缓存技术，与 Dynamo 配合使用</td>
+          <td>同一模型推理延迟从秒级降至百毫秒级，对于实时推荐场景是关键突破。</td>
+          <td>"AI实时推荐"正在从"可能实现"变成"已可落地"。运营反馈的延迟问题未来几个月可能会大幅改善。</td>
+        </tr>
+        <tr>
+          <td><strong>Duplicate 搜索推出 AI 资讯代理</strong><br>用户可订阅长期后台任务</td>
+          <td>AI Agent 从"即时回答"进化到"持续服务"——一个任务可以跑数小时甚至数天。</td>
+          <td>如果 Agent 可以长时间运行，运营活动也可以从"一次性触达"变为"持续监测+动态调整"。</td>
+        </tr>
+        <tr>
+          <td><strong>ByteDance 开源 Seed 项目全局推出</strong><br><a class="source-link" href="https://seed.bytedance.com/en/" target="_blank">ByteDance Seed</a></td>
+          <td>视频生成 Seedance 2.0 全球扩展，同时 Seed1.8 通用 Agent 模型发布。字节年度AI投入230亿美元。</td>
+          <td>国内AI竞争进入"全面战争"阶段。大规模投入意味着推理成本和能力提升会非常快，产品和运营需要跟上节奏。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势总结：</strong><br>
+        推理加速技术（NVIDIA Dynamo + TensorMesh）和模型能力跃升（Claude Fable 5）同时发生。对运营来说信号很明确：<strong>AI 的"慢"问题正在被工程手段快速解决，现在是规划 AI 场景的最好时机——等到完全不慢了，竞争也已经白热化了。</strong>
+      </div>
+    </div>
+
+    <!-- 工具实操 -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：理解"响应时间"对运营意味着什么</h3>
+      <p>日常使用中，不同类型的任务会有不同的等待时间——了解这个能帮运营做好用户预期管理：</p>
+
+      <table>
+        <tr><th>任务类型</th><th>预期等待时间</th><th>用户能接受吗？</th><th>运营对策</th></tr>
+        <tr>
+          <td>简单问答（"今天有什么活动？"）</td>
+          <td>1-3 秒</td>
+          <td>可以</td>
+          <td>确保 Prompt 简洁；使用更快的模型</td>
+        </tr>
+        <tr>
+          <td>内容生成（"写一段促销文案"）</td>
+          <td>5-15 秒</td>
+          <td>略慢但可接受</td>
+          <td>加进度提示"正在为您生成…"</td>
+        </tr>
+        <tr>
+          <td>数据分析（"帮我分析上周数据"）</td>
+          <td>30秒-2分钟</td>
+          <td>需要心理预期</td>
+          <td>明确说"分析需要约1分钟"；给用户一个进度预览</td>
+        </tr>
+        <tr>
+          <td>复杂多步骤Agent（"做个竞争分析报告"）</td>
+          <td>2-10分钟</td>
+          <td>必须管理预期</td>
+          <td>异步模式——让AI做完后通知；或展示实时步骤</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>实操建议：</strong>如果要在你的产品中加入AI功能，先问自己一个问题——用户愿意等多久？<br>
+        <strong>5秒以内</strong>：可以做成实时对话（参考ChatGPT体验）<br>
+        <strong>30秒以内</strong>：需要加进度反馈，否则用户会认为"崩了"<br>
+        <strong>1分钟以上</strong>：建议做成异步通知，用户去做别的事，等AI完成后通知
+      </div>
+    </div>
+
+    <!-- 产品运营视角 -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>推理速度对产品体验的三层影响</h3>
+      <p>如果要在支付运营场景中使用 AI，速度问题直接影响用户留存——而且影响方式是隐性的：</p>
+
+      <p><strong>第一层：等待焦虑</strong></p>
+      <p>传统App的"即时响应"已经培养出用户的秒级期待。当AI推荐券需要3-5秒才能出来时，用户可能已经返回首页了。<br>
+      <em>类比：把手机App的页面加载从0.5秒变成3秒，DAU会掉 20%——AI的延迟同理。</em></p>
+
+      <p><strong>第二层：信任侵蚀</strong></p>
+      <p>研究发现，AI的响应时间与用户对其准确性的感知呈U型关系。太快（&lt;1秒）让用户觉得"没认真想"；太慢（&gt;10秒）让用户觉得"卡住了"。理想区间是 2-5 秒。<br>
+      <a class="source-link" href="https://dl.acm.org/doi/10.1145/3544548.3581031" target="_blank">来源：ACM CHI 2023 - AI Response Timing Study</a></p>
+
+      <p><strong>第三层：成本传导</strong></p>
+      <p>推理速度直接影响Token消耗。同一个任务用不同推理优化策略，成本可以差 10 倍。在运营场景中，每次AI请求都有实际费用——需要控制每个用户的AI调用成本。</p>
+
+      <div class="highlight">
+        <strong>运营要做的事：</strong><br>
+        ① 设定"满意速度"标准——不能让用户因为AI慢而流失<br>
+        ② 设计过渡体验——加载动画、逐步展示结果、预估时间提示<br>
+        ③ 配合技术做"性价比路由"——简单问题用快而便宜的模型，复杂问题才用强的模型
+      </div>
+    </div>
+
+    <!-- 选择题 -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 4 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. AI 最基本的"生成"方式是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 一个词一个词地预测和生成</li>
+          <li onclick="checkQuiz(this)">B. 整段话一次性算好再输出</li>
+          <li onclick="checkQuiz(this)">C. 从数据库里检索匹配的回答</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。AI 的本质是"逐Token生成"——每生成一个词都需要基于已经生成的内容再做一次完整推理。所以回答越长=计算次数越多=越慢，这是物理限制。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. Agent 比普通对话慢的核心原因是？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. Agent 用的模型更差</li>
+          <li onclick="checkQuiz(this)">B. Agent 需要"多次推理+工具调用+验证结果"，是多步骤流程</li>
+          <li onclick="checkQuiz(this)">C. Agent 没有经过优化</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Agent 不是简单的问答，而是要：理解任务→规划步骤→调用工具→验证结果→输出。每一步都是一次或多次独立的模型推理调用，所以总时间自然更长。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 如果要在产品里加一个AI功能，用户愿意等的最长合理时间是？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 什么功能都可以等2分钟</li>
+          <li onclick="checkQuiz(this)">B. 必须1秒以内</li>
+          <li onclick="checkQuiz(this)">C. 视任务类型而定——5秒内可实时，超过1分钟建议做异步通知</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。简单问答5秒以内可接受（需进度提示）；30秒以上需明确告知等待时间；超过1分钟建议改为异步模式，完成后通知用户。一刀切的标准不适用于AI产品。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. NVIDIA Dynamo 1.0 对行业最关键的意义是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 让显卡更便宜了</li>
+          <li onclick="checkQuiz(this)">B. 推理性能提升7倍，意味着AI成本正在快速下降</li>
+          <li onclick="checkQuiz(this)">C. 让AI不再需要GPU了</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Dynamo 1.0 通过智能管理GPU内存和调度，在不换硬件的情况下让推理性能提升7倍。这不仅意味着更快的响应，更意味着推理成本大幅降低——现在是规划AI场景的好时机。</div>
+      </div>
+    </div>
+
+    <!-- 思考题 -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">&#x1F4CA; 策略/用户运营视角</p>
+        <ol>
+          <li>如果AI策略推荐需要3秒才能出结果，你会把它做成"实时推荐"还是"预先计算好展示"？为什么？</li>
+          <li>大盘支付的费率策略如果让AI实时分析数据再输出建议——用户能等多久？商户呢？</li>
+          <li>推理成本正在快速下降（NVIDIA 7x提升），这对你规划明年的AI预算意味着什么？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">&#x1F381; 产品运营视角</p>
+        <ol>
+          <li>支付有礼的"AI推荐券"功能，让用户等多少秒是可以接受的？你会在用户等待时展示什么来降低焦虑？</li>
+          <li>如果AI推荐需要2秒，但用户习惯"点完就跳走"——你会怎么设计交互流程？</li>
+          <li>推理成本下降10倍后，原来"太贵"的AI功能可以上线了。你的支付有礼里最想加哪个AI能力？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">&#x1F389; 整合营销运营视角</p>
+        <ol>
+          <li>大促期间用户问"有什么活动"——如果AI助手需要5秒才能给出个性化推荐，你会怎么设计这5秒的体验？</li>
+          <li>推理成本下降后，AI批量生成活动文案+预测转化率的方案变得切实可行——你愿意为此投入多少？</li>
+          <li>如果AI Agent可以"持续监测竞品动态并自动提醒"，你觉得这个功能对大促运营有多大价值？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">&#x1F30D; 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开策略运营视角</summary>
+          <ol><li>如果AI策略推荐需要3秒才能出结果，你会把它做成"实时推荐"还是"预先计算好展示"？为什么？</li><li>大盘支付的费率策略如果让AI实时分析数据再输出建议——用户能等多久？商户呢？</li><li>推理成本正在快速下降（NVIDIA 7x提升），这对你规划明年的AI预算意味着什么？</li></ol>
+        </details>
+        <details><summary style="cursor:pointer;color:#d63384;font-size:14px;margin-bottom:8px">点击展开产品运营视角</summary>
+          <ol><li>支付有礼的"AI推荐券"功能，让用户等多少秒是可以接受的？你会在用户等待时展示什么来降低焦虑？</li><li>如果AI推荐需要2秒，但用户习惯"点完就跳走"——你会怎么设计交互流程？</li><li>推理成本下降10倍后，原来"太贵"的AI功能可以上线了。你的支付有礼里最想加哪个AI能力？</li></ol>
+        </details>
+        <details><summary style="cursor:pointer;color:#e68a00;font-size:14px;margin-bottom:8px">点击展开营销运营视角</summary>
+          <ol><li>大促期间用户问"有什么活动"——如果AI助手需要5秒才能给出个性化推荐，你会怎么设计这5秒的体验？</li><li>推理成本下降后，AI批量生成活动文案+预测转化率的方案变得切实可行——你愿意为此投入多少？</li><li>如果AI Agent可以"持续监测竞品动态并自动提醒"，你觉得这个功能对大促运营有多大价值？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 4 ==================== -->
+
 </div>
 
 <div class="footer">
@@ -1411,7 +1711,7 @@ function showMain(name) {
   const levelText = { beginner: '入门', intermediate: '进阶', advanced: '高阶' };
   const role = userData.role || 'all';
   const roleInfo = ROLES[role] || ROLES.all;
-  document.getElementById('userDisplay').innerHTML = name + ' <span class="role-tag ' + role + '">' + roleInfo.icon + ' ' + roleInfo.name + '</span> <span style="color:#718096;margin-left:8px">' + (levelText[userData.level] || '') + ' | ' + (userData.score || 0) + '/5' + '</span>';
+  document.getElementById('userDisplay').innerHTML = name + ' <span class="role-tag ' + role + '">' + roleInfo.icon + ' ' + roleInfo.name + '</span> <span style="color:#718096;margin-left:8px">' + (levelText[userData.level] || '') + ' | ' + (userData.score || 0) + '/8' + '</span>';
   applyRoleFilter(role);
 }
 
