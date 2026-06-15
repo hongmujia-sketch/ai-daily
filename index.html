@@ -552,7 +552,7 @@
   <h1>线下支付用户运营<br>AI 学习工具</h1>
   <p>每日更新 | 策略运营 · 产品运营 · 整合营销</p>
   <div class="stats">
-    <span>已学 3 天</span>
+    <span id="dayCount">已学 7 天</span>
     <span>持续更新中</span>
   </div>
 </div>
@@ -2525,6 +2525,12 @@ function goToLatest() {
     setTimeout(() => { document.getElementById('newToast').classList.remove('show'); }, 8000);
   }
   localStorage.setItem('ai_daily_lastSeen_' + user, totalDays + '');
+})();
+
+// Update day count dynamically
+(function() {
+  const count = document.querySelectorAll('.day-section').length;
+  document.getElementById('dayCount').textContent = '已学 ' + count + ' 天';
 })();
 
 // === Quiz ===
