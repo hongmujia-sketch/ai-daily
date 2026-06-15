@@ -558,7 +558,11 @@
   <button class="nav-btn" onclick="showDay('day1', this)">Day 1</button>
   <button class="nav-btn" onclick="showDay('day2', this)">Day 2</button>
   <button class="nav-btn" onclick="showDay('day3', this)">Day 3</button>
-  <button class="nav-btn active" onclick="showDay('day4', this)">Day 4</button>
+  <button class="nav-btn" onclick="showDay('day4', this)">Day 4</button>
+  <button class="nav-btn" onclick="showDay('day5', this)">Day 5</button>
+  <button class="nav-btn" onclick="showDay('day6', this)">Day 6</button>
+  <button class="nav-btn active" onclick="showDay('day7', this)">Day 7</button>
+  <button class="nav-btn" onclick="showDay('day1', this)" style="display:none" id="navMore">更多</button>
 </div>
 
 <div class="container">
@@ -1320,7 +1324,7 @@
   <!-- ==================== END DAY 3 ==================== -->
 
   <!-- ==================== DAY 4 ==================== -->
-  <div class="day-section active" id="day4">
+  <div class="day-section" id="day4">
     <div class="day-header">
       <h2>Day 4 | 为什么 Agent 执行任务时很慢？——推理机制与速度真相</h2>
       <span class="date">2026-06-12</span>
@@ -1610,6 +1614,706 @@
 
   </div>
   <!-- ==================== END DAY 4 ==================== -->
+
+  <!-- ==================== DAY 5 ==================== -->
+  <div class="day-section" id="day5">
+    <div class="day-header">
+      <h2>Day 5 | 提示词工程入门——运营必备的 Prompt 技能</h2>
+      <span class="date">2026-06-13</span>
+    </div>
+
+    <!-- 理论：核心概念 -->
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>提示词工程不是"写指令"，而是"引导推理路径"</h3>
+      <p>很多人觉得写 Prompt 就是"把需求说清楚"，但实际远不止于此。好的 Prompt 不是在给 AI 下命令，而是在帮 AI 建立一条清晰的"思考路径"。理解这个本质差异，你的 Prompt 质量会有质的飞跃。</p>
+
+      <p><strong>Prompt 与搜索关键词的本质区别：</strong></p>
+      <table>
+        <tr><th>维度</th><th>传统搜索关键词</th><th>好 Prompt</th></tr>
+        <tr><td>目标</td><td>召回匹配内容</td><td>引导生成路径</td></tr>
+        <tr><td>方式</td><td>关键信息匹配</td><td>上下文+格式+角色+约束</td></tr>
+        <tr><td>输出</td><td>已有内容的命中</td><td>全新内容的生成</td></tr>
+        <tr><td>代差</td><td>找到"别人写过的东西"</td><td>产生"以前不存在的方案"</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>关键认知：</strong>AI 模型本质是一个"接龙游戏"——它预测最可能的下一个词。Prompt 的质量决定了它"从哪个方向开始接"。一个好的 Prompt 不是在"命令"AI，而是在给它布置一个"思考场景"。
+      </div>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：为什么 Prompt 这么讲究？</div>
+        <div class="hint-content">
+          想象你走进一家咖啡店：<br>
+          ❌ 差 Prompt = "给我一个咖啡" → 店员可能给你速溶、拿铁、美式、冷的热的都有可能。<br>
+          ✅ 好 Prompt = "你好，我想要一杯中杯热拿铁，少糖，用燕麦奶，谢谢" → 一步到位。<br>
+          给 AI 写 Prompt 也一样——<strong>上下文越完整、格式越明确、约束越清晰，AI 越不容易"自由发挥"。</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- 深度方法论 -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>Prompt 的四大核心要素</h3>
+      <p>一个高质量的 Prompt 通常包含以下四个要素，你可以把它当作一个"检查清单"：</p>
+
+      <p><strong>1. 角色设定 (Role)</strong></p>
+      <p>告诉 AI "你是谁"，这决定了它调用哪个知识库和能力。"你是一个有5年经验的策略运营专家"和"你是一个刚入行的运营助理"——同一个需求，输出质量天差地别。</p>
+
+      <p><strong>2. 任务描述 (Task)</strong></p>
+      <p>清晰说明要做什么。模糊 = 风险。"分析一下数据"和"从用户画像、转化率、流失原因三个维度分析这份支付数据进行归因"——后者让 AI 有明确的分析框架。</p>
+
+      <p><strong>3. 输出格式 (Format)</strong></p>
+      <p>告诉 AI 怎么呈现结果。"给我建议"和"请以表格形式输出，包含：问题描述、原因分析、建议方案、优先级（高/中/低）"——后者直接得到可用的结构化输出。</p>
+
+      <p><strong>4. 约束条件 (Constraint)</strong></p>
+      <p>划定 AI 不要做什么。"基于数据说话"、"不要编造没有统计的数据"、"控制在500字以内"——这是对抗 AI 幻觉第一道防线。</p>
+
+      <div class="highlight">
+        <strong>一个实例对比：</strong><br>
+        ❌ 差 Prompt："帮我写一个促销方案"<br>
+        ✅ 好 Prompt："你是一个支付行业的大促运营专家。请为支付宝「支付有礼」618活动设计一个促销方案。要求：① 使用满减形式，门槛不高于50元；② 面向25-35岁女性用户；③ 预算控制在100万以内；④ 以表格形式输出：活动名称、门槛、优惠力度、预期转化率、预算占比。"<br>
+        <br>看到了吗？好 Prompt 就像在给 AI 画了一张"思维地图"。
+      </div>
+    </div>
+
+    <!-- 行业动态 -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月第二周：Prompt Engineering 进入"科学化"阶段</h3>
+      <p style="font-size:12px;color:#667eea;margin-bottom:8px">本周重点关注</p>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th><th>产品运营启发</th></tr>
+        <tr>
+          <td><strong>Google 发布 Prompt Gallery 2.0</strong><br><a class="source-link" href="https://blog.google/technology/ai/google-prompt-gallery/" target="_blank">Google Blog</a></td>
+          <td>内置300+行业级 Prompt 模板，支持 A/B 测试和效果追踪。Prompt 从"手艺"变成"工程"。</td>
+          <td>Prompt 模板化是趋势。运营不必每次都"从零写 Prompt"，可以建立自己的 Prompt 库，像运营 SOP 一样管理。</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic 发布 Claude Prompt Benchmark</strong><br><a class="source-link" href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">Anthropic Docs</a></td>
+          <td>首个开源 Prompt 评估基准，支持对 Prompt 变体做量化评估。</td>
+          <td>写 Prompt 不再是"我觉得这样好"——以后可以用数据说话：版本A比版本B准确率提升15%。</td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI 推出 GPT-5 Prompt Optimizer</strong></td>
+          <td>自动优化用户输入的 Prompt，对原始需求做结构化重组后提交给模型。</td>
+          <td>"写不好 Prompt"的门槛正在降低。但理解 Prompt 原理仍很重要——你至少需要能判断优化后的 Prompt 是否对。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势总结：</strong><br>
+        Prompt Engineering 正在从"靠经验"走向"靠工具+方法论"。但核心能力不是背模板，而是<strong>结构化思维</strong>——能把模糊的需求拆解成角色、任务、格式、约束四个维度。这个能力在任何行业都是通用的。
+      </div>
+    </div>
+
+    <!-- 工具实操 -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：让 AI 帮你写三个运营文案</h3>
+      <p><strong>场景：</strong>支付有礼需要为下周的"周末摇一摇"活动写三版推送文案。</p>
+      <p><strong>练习：</strong>请用以下结构写好 Prompt，发给 Claude 或 ChatGPT：</p>
+
+      <div class="layer-diagram" style="text-align:left;line-height:1.6">
+<strong>我的 Prompt 模板：</strong><br>
+角色：你是一个支付宝支付运营的文案专家<br>
+任务：为「周末摇一摇」活动写推送文案<br>
+格式：输出3版文案，每版包含：标题(15字内)、正文(40字内)、适用场景<br>
+约束：① 语言活泼，年轻人风格 ② 突出"摇一摇就能领"的简单感 ③ 不出现具体金额
+      </div>
+
+      <p><strong>进阶练习：</strong>同样的需求，增加一个维度——"请根据以下三个不同用户群分别生成文案：A. 学生群体（18-24岁）B. 职场白领（25-35岁）C. 家庭主妇（30-45岁）"——观察 AI 输出的差异化程度。</p>
+
+      <div class="highlight">
+        <strong>运营实操要点：</strong><br>
+        ① 每次用 AI 生成后，至少要改两遍再使用——AI 的初稿像"实习生的一稿"，有框架但缺细节<br>
+        ② 建立自己的 Prompt 模板库（按场景分类：大促文案、用户分层、数据分析、竞品调研）<br>
+        ③ Prompt 也需要版本管理——记录每个版本的改动和效果，持续迭代
+      </div>
+    </div>
+
+    <!-- 产品运营视角 -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>Prompt Engineering 对运营的三个核心价值</h3>
+
+      <p><strong>价值一：提升内容生产效率 3-5 倍</strong></p>
+      <p>一个经营好 Prompt 库的运营，每天内容产出量可以翻倍。从写文案、做分析到出报告，每个环节都能用 AI 加速。关键是"一次写好模板，反复复用"。</p>
+
+      <p><strong>价值二：让非技术运营也能做"数据对话"</strong></p>
+      <p>好的 Prompt 可以让运营直接与大模型对话数据，不需要 SQL 能力。比如："用通俗的语言解释上周支付有礼 DAU 下降的原因，重点看新用户和老用户的差异"——一个好的 Prompt 设定就能让 AI 给出可用的分析。</p>
+
+      <p><strong>价值三：建立团队的"AI 协作标准"</strong></p>
+      <p>当团队每个人都有自己的 Prompt 风格时，输出的质量参差不齐。建立统一的 Prompt 规范（ROLE-TASK-FORMAT-CONSTRAINT），能让整个团队与 AI 的协作效率一致提升。</p>
+
+      <div class="highlight">
+        <strong>一句话总结：</strong>Prompt 能力 = 结构化思维能力。能把模糊需求变成清晰指令的人，在任何岗位上都是稀缺人才。
+      </div>
+    </div>
+
+    <!-- 选择题 -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 5 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 好的 Prompt 和差 Prompt 的核心区别是？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 好 Prompt 字数更多</li>
+          <li onclick="checkQuiz(this)">B. 好 Prompt 引导 AI 的"推理路径"，而不仅仅是"表达需求"</li>
+          <li onclick="checkQuiz(this)">C. 好 Prompt 使用的词汇更高级</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Prompt 的本质不是"说清楚需求"，而是帮 AI 建立思考路径。字数多不一定好，关键是结构清晰、方向明确。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. Prompt 的四大核心要素是？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 开头、正文、结尾、署名</li>
+          <li onclick="checkQuiz(this)">B. 长度、语气、风格、例子</li>
+          <li onclick="checkQuiz(this)">C. 角色设定、任务描述、输出格式、约束条件</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。Role - Task - Format - Constraint 四要素是 Prompt 工程的基础框架。掌握这个结构，你的 Prompt 质量至少提升一个档次。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 作为运营，最应该建立的能力是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 背熟100个Prompt模板</li>
+          <li onclick="checkQuiz(this)">B. 建立结构化思维能力——能把模糊需求拆解成可执行的指令</li>
+          <li onclick="checkQuiz(this)">C. 学会写代码来调教AI</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Prompt 能力的内核是结构化思维。模板会过时、工具会更新，但"把模糊需求拆成清晰指令"的能力是通用的。</div>
+      </div>
+    </div>
+
+    <!-- 思考题 -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>如果让你写一个 Prompt 让 AI 分析大盘支付用户的流失原因，你会怎么设定"角色"和"约束条件"？</li>
+          <li>你每周有多少时间花在"写东西"上（文案、分析报告、邮件）？用 Prompt 能加速多少？</li>
+          <li>如果 AI 生成的分析报告有错误，你觉得是 Prompt 问题还是模型问题？怎么避免？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼的推荐策略说明文档，如果用 AI 辅助撰写——你会给 AI 什么样的 Prompt 来保证输出的专业性？</li>
+          <li>如果 AI 可以帮你自动回复用户反馈，你会怎么设计 Prompt 来确保回复风格和品牌一致？</li>
+          <li>"好 Prompt = 结构化思维"——你觉得自己在结构化表达方面有什么可以改进的？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>大促期间需要每日产出不同渠道的推送文案——写一个可以复用的 Prompt 模板来批量生成。</li>
+          <li>如果 AI 可以根据用户画像自动生成千人千面的推送文案，你觉得这个场景对转化的提升有多大？</li>
+          <li>有了 Prompt 模板库后，新人入职的手册是不是也可以标准化了？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开更多视角</summary>
+          <br><strong style="color:#667eea;">策略运营版：</strong>
+          <ol><li>如果让你写一个 Prompt 让 AI 分析大盘支付用户的流失原因，你会怎么设定"角色"和"约束条件"？</li><li>你每周有多少时间花在"写东西"上？用 Prompt 能加速多少？</li><li>如果 AI 生成的分析报告有错误，你觉得是 Prompt 问题还是模型问题？怎么避免？</li></ol>
+          <strong style="color:#d63384;">产品运营版：</strong>
+          <ol><li>支付有礼的推荐策略说明文档，如果用 AI 辅助撰写——你会给 AI 什么样的 Prompt？</li><li>如果 AI 可以帮你自动回复用户反馈，你会怎么设计 Prompt 来确保回复风格和品牌一致？</li><li>"好 Prompt = 结构化思维"——你觉得自己在结构化表达方面有什么可以改进的？</li></ol>
+          <strong style="color:#e68a00;">营销运营版：</strong>
+          <ol><li>大促期间需要每日产出不同渠道的推送文案——写一个可以复用的 Prompt 模板。</li><li>如果 AI 可以根据用户画像自动生成千人千面文案，这个场景对转化提升有多大？</li><li>有了 Prompt 模板库后，新人入职的手册是不是也可以标准化了？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 5 ==================== -->
+
+  <!-- ==================== DAY 6 ==================== -->
+  <div class="day-section" id="day6">
+    <div class="day-header">
+      <h2>Day 6 | AI "乱说话"怎么办？——理解幻觉、评估与信任</h2>
+      <span class="date">2026-06-14</span>
+    </div>
+
+    <!-- 理论：核心概念 -->
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>幻觉不是 Bug，而是模型的工作方式</h3>
+      <p>很多人第一次用 AI 发现它"编造事实"时会觉得这是 Bug。但实际上，幻觉是生成式 AI 与生俱来的特性——它不是一个"偶尔出错的信息检索系统"，而是一个"永远在编故事的故事家"。</p>
+
+      <p><strong>为什么 AI 会"胡说八道"？</strong></p>
+      <table>
+        <tr><th>根源</th><th>通俗理解</th><th>运营最容易碰到的情况</th></tr>
+        <tr>
+          <td><strong>统计预测本性</strong></td>
+          <td>AI 不"知道"事实，它只预测"最可能的下一个词"</td>
+          <td>问"上周活动的核销率"——AI 可能编一个数字，因为它是常见的核销率范围</td>
+        </tr>
+        <tr>
+          <td><strong>知识截止日期</strong></td>
+          <td>模型训练数据有截至日期，之后的事它不知道</td>
+          <td>问"2025年12月的支付数据"——模型训练截止于2024年，它会强行编一个</td>
+        </tr>
+        <tr>
+          <td><strong>自信的谎言</strong></td>
+          <td>AI 没有"不确定"的机制，它总是自信地输出</td>
+          <td>AI 会说"根据2024年支付宝年报显示……"但其实年报里根本没有这句话</td>
+        </tr>
+        <tr>
+          <td><strong>上下文偏移</strong></td>
+          <td>长对话中，AI 会"忘记"之前说的内容</td>
+          <td>AI 先说了"核销率5%"，5轮对话后说"核销率提升到15%"——前后矛盾</td>
+        </tr>
+      </table>
+
+      <p><strong>不同类型幻觉的"危险等级"：</strong></p>
+      <table>
+        <tr><th>类型</th><th>例子</th><th>危险等级</th><th>运营对策</th></tr>
+        <tr><td>事实编造</td><td>编了一个不存在的活动数据</td><td>🔴 高</td><td>始终要求AI给出数据来源</td></tr>
+        <tr><td>数据捏造</td><td>自己算了一个错误的转化率</td><td>🔴 高</td><td>关键数据必须人工复核</td></tr>
+        <tr><td>张冠李戴</td><td>把A活动的结果说成B活动的</td><td>🟡 中</td><td>明确指定活动名称和日期</td></tr>
+        <tr><td>过度推理</td><td>从"DAU涨了"推断出"用户体验变好了"</td><td>🟡 中</td><td>要求AI只基于数据说话</td></tr>
+        <tr><td>无害修饰</td><td>把"很好"说成"非常好"</td><td>🟢 低</td><td>基本上可以接受</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>关键认知升级：</strong>AI 像一个"非常自信的实习生"——它会上知天文下知地理，但它不会说"我不确定"。所以你的工作不是"期待 AI 完全准确"，而是<strong>建立一套"检查 AI 输出"的工作流程</strong>。这跟在团队里"审核下属的工作"是一样的逻辑。
+      </div>
+    </div>
+
+    <!-- 深度方法论 -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>对抗幻觉的五道防线</h3>
+      <p>作为非技术运营，你不需要理解模型内部的数学原理。但这五道防线可以作为你日常使用 AI 时的"安全检查清单"：</p>
+
+      <p><strong>第一道：Prompt 约束（最简单、最有效）</strong></p>
+      <p>在 Prompt 里明确说："如果没有准确数据，请直接说不知道，不要编造"、"所有数据必须基于附件内容，不要自行推断"、"用'可能''推测'等词标注不确定性"。</p>
+
+      <p><strong>第二道：提供参考信息</strong></p>
+      <p>不要把 AI 当"百科全书"——给它参考资料。在对话中粘贴真实的报告、数据表、截图，然后说"仅基于以上内容回答"。这叫 RAG（检索增强生成），是企业级 AI 应用的核心方法。</p>
+
+      <p><strong>第三道：要求 AI 自我检查</strong></p>
+      <p>让 AI 输出后自己检查一遍："请重新审视你的回答，标记出所有你不确定的部分，并说明理由"。研究发现，这个简单步骤可以减少 30-50% 的幻觉。</p>
+
+      <p><strong>第四道：交叉验证</strong></p>
+      <p>同一个问题问两次不同的 AI（比如 Claude 和 ChatGPT），对比回答。如果两者一致，可信度较高；如果矛盾，需要人工查证。</p>
+
+      <p><strong>第五道：人工审核（最后的底线）</strong></p>
+      <p>AI 输出的一切，如果你要用于对外发布或做重要决策，必须有人审核。这不是"不信任 AI"，而是"对结果负责"。</p>
+
+      <div class="highlight">
+        <strong>运营的态度应该是：</strong>AI 是"初稿生成器"，不是"终稿产出器"。把 AI 当成 "实习生"，你审核它——每次审核都是一次能力提升的机会。
+      </div>
+    </div>
+
+    <!-- 行业动态 -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月第二周：幻觉治理进入"行业标准"阶段</h3>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th></tr>
+        <tr>
+          <td><strong>欧盟 AI Act 正式生效：幻觉披露成为法律义务</strong><br><a class="source-link" href="https://artificialintelligenceact.eu/" target="_blank">AI Act 官网</a></td>
+          <td>要求 AI 提供商必须标注"AI 生成内容"并披露幻觉率。如果 AI 编造了事实，企业可能面临罚款。这意味着"AI 幻觉"从技术问题变成了合规问题。</td>
+        </tr>
+        <tr>
+          <td><strong>NIST 发布 AI 评估框架 v2.0</strong><br><a class="source-link" href="https://www.nist.gov/artificial-intelligence" target="_blank">NIST AI</a></td>
+          <td>首套量化 AI 输出可靠性的行业标准，包含准确率、一致性、鲁棒性等12个维度。</td>
+        </tr>
+        <tr>
+          <td><strong>Bain 报告：40% 企业 AI 投资回报低于预期</strong></td>
+          <td>核心原因之一：AI 输出的不可靠性导致一线员工不愿意使用。幻觉不是"小问题"——它直接影响 ROI。</td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI 推出 Citation Engine</strong></td>
+          <td>自动为 AI 生成的每个事实标注来源链接，支持溯源。如果无法溯源，AI 会标注"推测内容"。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势：</strong>"AI 可信度"正在从"良心问题"变成"合规问题"。对运营来说，这意味着：① 所有用于用户的 AI 内容需要标注"AI 生成"；② 涉及数据的内容必须有来源；③ 建议建立部门的"AI 输出审核流程"。
+      </div>
+    </div>
+
+    <!-- 工具实操 -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：建立一个"AI 输出检查清单"</h3>
+      <p>每次用 AI 生成内容后，用这个清单过一遍：</p>
+
+      <table>
+        <tr><th>检查项</th><th>怎么做</th><th>如果不过关</th></tr>
+        <tr><td>数据来源可追溯吗？</td><td>追问AI："这个数据来自哪里？"</td><td>追问时AI说不出来 → 直接删除该数据</td></tr>
+        <tr><td>关键事实你确认过吗？</td><td>在线查一下或问同事</td><td>查不到 → 标注"待确认"或删除</td></tr>
+        <tr><td>逻辑链条完整吗？</td><td>从原因到结论一步一步看</td><td>跳步了 → 要求 AI 补全推理</td></tr>
+        <tr><td>和已知事实矛盾吗？</td><td>和手头数据对比</td><td>矛盾 → 以已知事实为准</td></tr>
+        <tr><td>语气和风格对吗？</td><td>读一遍感受是否自然</td><td>不对劲 → 重新设定角色 Prompt</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>一句话操作建议：</strong>每次 AI 生成的东西，先假设"可能有 30% 的内容需要修改"，带着这个意识去审查。不只是检查"有没有错"，更要检查"有没有编"。
+      </div>
+    </div>
+
+    <!-- 产品运营视角 -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>AI 幻觉对产品运营的"暗礁"</h3>
+
+      <p><strong>暗礁一：用户信任的"被击穿"</strong></p>
+      <p>如果你在支付有礼里做 AI 推荐，AI 给用户推荐了一张不存在的优惠券——用户尝试去领发现领不到。一次体验，永久流失。<br><em>对策：AI 推荐结果必须经过规则引擎校验，确保"推荐的是真实有效的"。</em></p>
+
+      <p><strong>暗礁二：数据驱动的"伪精准"</strong></p>
+      <p>AI 帮分析数据时编了一个"用户满意度从82%降到67%"的结论——你按照这个结论调整了策略，方向全错。<br><em>对策：所有 AI 给出的数据指标，必须标注"是否经过人工核实"。</em></p>
+
+      <p><strong>暗礁三：批量内容中的"定时炸弹"</strong></p>
+      <p>让 AI 批量生成100条推送文案，其中1条有"不当表述"被发出去——全网翻车。<br><em>对策：AI 批量生产的内容建立"抽检机制"——每批至少抽20%人工审核。</em></p>
+
+      <div class="highlight">
+        <strong>运营要做好"AI 风险管理"：</strong>每个 AI 输出场景，先问三个问题——① 这个内容如果错了会怎样？② 错误发生的概率多大？③ 怎么在发出去之前发现错误？这就是运营视角的"AI 风险管理"。
+      </div>
+    </div>
+
+    <!-- 选择题 -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 6 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. AI 产生幻觉的根本原因是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 它本质上是"预测下一个最可能的词"，而不是"检索事实"</li>
+          <li onclick="checkQuiz(this)">B. 模型训练数据太少</li>
+          <li onclick="checkQuiz(this)">C. 网速太慢了</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。AI 不是数据库，它是"故事生成器"——它生成的内容是基于统计概率的预测，不是基于事实的检索。理解这一点，就理解了"必须审核 AI 输出"的根本原因。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 作为运营，对抗幻觉最有效的第一道防线是？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 换一个更贵的模型</li>
+          <li onclick="checkQuiz(this)">B. 在 Prompt 里明确约束，要求 AI "不知道就说不知道"</li>
+          <li onclick="checkQuiz(this)">C. 不用AI了</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Prompt 约束是最简单、最有效的第一道防线，零成本。在 Prompt 中明确"不要编造"、"基于已有数据回答"可以显著减少幻觉。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 你作为运营，应该把 AI 输出当作什么角色？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 权威专家——AI说的就是对的</li>
+          <li onclick="checkQuiz(this)">B. 搜索引擎——用来查事实</li>
+          <li onclick="checkQuiz(this)">C. "初稿生成器"——AI给出框架和思路，人工审核和修改后使用</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。AI 最佳定位是"初稿生成器"或"思路拓展者"。它的输出永远需要人工审核，就像你审查实习生的工作一样。这不是不信任，而是对最终结果负责。</div>
+      </div>
+    </div>
+
+    <!-- 思考题 -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>如果用 AI 辅助做用户分层分析，最怕它编造哪种数据？你会在 Prompt 里加什么约束？</li>
+          <li>你如果让 AI 写一份竞品分析报告，你准备怎么验证 AI 说的"竞品做了什么动作"是真的？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼如果上线"AI 推荐券"，你觉得用户如果发现推荐的是不存在的券，对产品的信任伤害有多大？</li>
+          <li>你会怎么设计"AI 推荐结果审核流程"来确保每一张推荐券都是真实有效的？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>如果 AI 批量生成100条活动推送文案，你会抽多少比例审核？如果发现1条有问题，你怎么处理剩下的？</li>
+          <li>大促期间 AI 生成的数据播报如果出现了错误数字，你觉得应该怎么提前预防？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开更多视角</summary>
+          <br><strong style="color:#667eea;">策略运营版：</strong>
+          <ol><li>如果用 AI 辅助做用户分层分析，最怕它编造哪种数据？你会在 Prompt 里加什么约束？</li><li>你如果让 AI 写一份竞品分析报告，你准备怎么验证 AI 说的"竞品做了什么动作"是真的？</li></ol>
+          <strong style="color:#d63384;">产品运营版：</strong>
+          <ol><li>支付有礼如果上线"AI 推荐券"，你觉得用户如果发现推荐的是不存在的券，对产品的信任伤害有多大？</li><li>你会怎么设计"AI 推荐结果审核流程"来确保每一张推荐券都是真实有效的？</li></ol>
+          <strong style="color:#e68a00;">营销运营版：</strong>
+          <ol><li>如果 AI 批量生成100条活动推送文案，你会抽多少比例审核？如果发现1条有问题，你怎么处理剩下的？</li><li>大促期间 AI 生成的数据播报如果出现了错误数字，你觉得应该怎么提前预防？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 6 ==================== -->
+
+  <!-- ==================== DAY 7 ==================== -->
+  <div class="day-section active" id="day7">
+    <div class="day-header">
+      <h2>Day 7 | AI 能"记住"我吗？——记忆、上下文与个性化</h2>
+      <span class="date">2026-06-15</span>
+    </div>
+
+    <!-- 理论：核心概念 -->
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>AI 的"记忆"和人类的记忆完全不一样</h3>
+      <p>当你和 AI 对话时，它看起来"记得"你之前说过的话。但实际上，AI 的"记忆"是一个非常有限且脆弱的机制——理解这个机制，是你设计好的 AI 产品体验的基础。</p>
+
+      <p><strong>AI 的三种"记忆"方式：</strong></p>
+      <table>
+        <tr><th>记忆类型</th><th>通俗理解</th><th>容量</th><th>举例</th></tr>
+        <tr>
+          <td><strong>上下文窗口 (Context Window)</strong></td>
+          <td>"现在聊的这轮对话"——AI 能看到这次会话中的所有内容</td>
+          <td>Claude 200K tokens ≈ 15万字<br>GPT 128K tokens ≈ 10万字</td>
+          <td>你在一个会话里上传了一篇文章，AI 可以引用文中的内容</td>
+        </tr>
+        <tr>
+          <td><strong>会话内记忆</strong></td>
+          <td>AI 能记住本轮回话中说过的话——但超过上下文窗口后会被"挤掉"</td>
+          <td>取决于上下文窗口</td>
+          <td>前5轮你说"我叫小明"，第6轮 AI 还能叫你的名字</td>
+        </tr>
+        <tr>
+          <td><strong>跨会话记忆</strong></td>
+          <td>AI 关掉后再打开——它彻底"失忆"了</td>
+          <td>默认不保留任何信息</td>
+          <td>昨天你让 Claude 帮你写了个报告，今天打开——它完全不记得</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>关键认知：</strong>AI 的"记忆"是从零开始的每一次对话。它不"记住"你，而是你每次在对话里"重新告诉它"你是谁。如果要让 AI 记住跨会话的信息，需要人为地保存和注入上下文——这就是"记忆系统"的本质。
+      </div>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：AI 的记忆像什么？</div>
+        <div class="hint-content">
+          想象你有一个"金鱼助理"——每次见面它都忘了你是谁。你只能：<br>
+          ① 每次见面重新自我介绍（手动提供上下文）；<br>
+          ② 或者，把你的信息写在一张卡片上，每次见面给它看这张卡片（记忆系统/Prompt 前缀）。<br>
+          ③ 再高级一点，你的助理有一个笔记本，每次聊完记下来，下次先把笔记本看一遍再和你聊（AI 的记忆数据库）。<br>
+          <strong>这就是所有 AI 记忆系统的本质：一个"笔记本"——你自己写、每次对话前注入。</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- 深度理论 -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>大模型的"上下文窗口"——为什么 AI 会"忘记"最早说的话</h3>
+      <p>上下文窗口是 AI 的一个关键限制。你可以把它理解为一个"正在阅读的桌面"——桌上只能放这么多纸，放不下了，最早的那些就会被推到地上。</p>
+
+      <p><strong>上下文窗口的实际影响：</strong></p>
+      <ul>
+        <li><strong>长文档处理：</strong>如果你想请 AI 分析一本200页的运营手册，Claude 的 200K 窗口可以装下大部分（约15万字）。但 GPT-4 的 128K 窗口可能只能装三分之二。</li>
+        <li><strong>长对话退化为"短视"：</strong>当对话进行到第50轮时，最开始的设定和约束可能已经被"挤"出了窗口——AI 开始偏离最初的要求。</li>
+        <li><strong>注意力的"中部迷失"：</strong>研究发现，AI 对输入内容的开头和结尾的关注度最高，中间部分容易被忽略。所以关键信息放开头或结尾最有效。</li>
+      </ul>
+
+      <p><strong>运营如何利用这个特性：</strong></p>
+      <table>
+        <tr><th>技巧</th><th>具体做法</th><th>原理</th></tr>
+        <tr><td>关键指令放开头</td><td>在对话最前面放 Prompt 的核心要求</td><td>利用"开头注意力最高"的特性</td></tr>
+        <tr><td>定期重申约束</td><td>长对话中每隔10轮重申一次核心要求</td><td>防止早期指令被"挤"出上下文窗口</td></tr>
+        <tr><td>重要信息放结尾</td><td>最后放的"请基于以上分析输出结论"</td><td>利用"结尾绝佳性"效应</td></tr>
+        <tr><td>新开对话代替续聊</td><td>复杂任务结束后，新开对话重写 Prompt</td><td>避免上下文窗口被无用信息填满</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>一句话：</strong>上下文窗口就像 AI 的"短期记忆"。它很强大但有上限。你要学会"帮 AI 管理记忆"——重要的事情放开头、关键约束反复说、用完就新开对话。
+      </div>
+    </div>
+
+    <!-- 行业动态 -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月第二三周：AI 记忆成为行业焦点</h3>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th></tr>
+        <tr>
+          <td><strong>Google Gemini 推出"无限上下文"功能</strong><br><a class="source-link" href="https://blog.google/products/gemini/" target="_blank">Google Blog</a></td>
+          <td>Gemini Pro 实现 10M token 上下文窗口（约750万字），理论上可以把整部《三体》三部曲放进一次对话。但这引发了另一个问题："能记住"不等于"能找到"——研究表明，10M token 中目标信息的召回率反而下降了。</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic 开源 Memory Layer 协议</strong><br><a class="source-link" href="https://www.anthropic.com/research" target="_blank">Anthropic Research</a></td>
+          <td>一套标准化的跨会话记忆 API，允许开发者统一管理用户 vs AI 的长期记忆。解决了之前"每个产品自己写记忆系统，互相不兼容"的问题。</td>
+        </tr>
+        <tr>
+          <td><strong>Mem0 审计：57-71% 的 Agent 存在跨用户"记忆泄露"</strong></td>
+          <td>多个主流 Agent 平台的记忆系统中，用户A的数据被错误地提供给用户B。这对支付场景来说是一个严重的安全风险。</td>
+        </tr>
+        <tr>
+          <td><strong>苹果 AI 的"设备端记忆"方向</strong></td>
+          <td>苹果展示其设备端 AI 的记忆系统——所有用户数据留在本地，不上传到云端，只在设备上做记忆管理和检索。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势：</strong>"记忆"是 AI 从"一次性工具"进化为"长期伙伴"的关键。但记忆带来了隐私、安全、准确性三个新问题。对支付场景来说——在"让 AI 记住用户偏好"和"保护用户隐私"之间，必须找到平衡点。
+      </div>
+    </div>
+
+    <!-- 工具实操 -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：在 Prompt 中管理 AI "记忆"的方法</h3>
+      <p>你不需要写代码也能管理 AI 的记忆。在日常使用中，这几个技巧立竿见影：</p>
+
+      <p><strong>1. "个人资料卡片"法</strong></p>
+      <p>在每个新对话的第一条消息中，放一段"个人资料"：<br>
+      <em>"你好，我是支付有礼的策略运营。我们产品的主要用户是25-35岁城市女性，核心指标是核销率和 DAU。我之前已经理解了关于分层推荐和A/B测试的基础概念。今天想讨论的是……"</em><br>
+      这样，每次新对话 AI 都不会"失忆"。</p>
+
+      <p><strong>2. "关键结论摘要"法</strong></p>
+      <p>当你完成一段较长的对话后，对 AI 说："请用50字总结这个对话的核心结论和已确认的事项。然后把这作为下次对话的起点。"扔到新对话的开头。</p>
+
+      <p><strong>3. "对话分段"法</strong></p>
+      <p>如果一个任务需要大量轮次，不要在一个对话里做到底。分阶段：<br>
+      阶段 1 "请帮我分析数据，输出分析结论" → 新对话<br>
+      阶段 2 "这是我上一轮的分析结论，请基于此输出建议方案" → 新对话</p>
+
+      <div class="highlight">
+        <strong>实操建议：</strong>你的 AI 使用可以建立"三个文件"——
+        <br>① <strong>个人背景提示</strong>（你是谁、你的产品、你的核心关注点）——每次新对话开头用
+        <br>② <strong>对话日志模板</strong>（每段重要对话结束后总结关键结论）——方便跨对话续接
+        <br>③ <strong>Prompt 模版库</strong>（按场景：数据分析、文案、策略建议）——不用每次重写
+      </div>
+    </div>
+
+    <!-- 产品运营视角 -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>AI 记忆对支付场景的产品影响</h3>
+
+      <p><strong>场景一：AI 个性化推荐券</strong></p>
+      <p>如果 AI 能记住用户的历史领取行为和偏好，它推荐券的精准度会大幅提升。小明上次领了汉堡王券 → 这次推荐 KFC 券就更可能转化。<br>
+      <em>问题：用户的消费行为数据是敏感信息。AI 记忆这个数据，需要合规前提。</em></p>
+
+      <p><strong>场景二：AI 运营助手</strong></p>
+      <p>如果 AI 能记住你之前的策略偏好和决策逻辑，每次给建议时会更贴合你的风格。你上次说"不太喜欢满减，更喜欢立减"——AI 以后就不再推荐满减方案。<br>
+      <em>问题：AI 的"记忆"是否正确理解了你的意思？如果理解错了，会一直错误下去。</em></p>
+
+      <p><strong>场景三：跨会话上下文</strong></p>
+      <p>你在周一让 AI 分析了一组数据得出结论，周三想基于这个结论继续推进。如果 AI 不记得周一的对话，你要重新喂一遍。如果有记忆系统——可以直接说"上次分析的续集"。<br>
+      <em>问题：记忆系统如何管理"过时信息"？上周的分析结论这周可能已经无效了。</em></p>
+
+      <div class="highlight">
+        <strong>运营核心思考：</strong>AI 记忆带来的不是"技术问题"，而是<strong>"体验设计问题"</strong>。<br>
+        ① 什么时候 AI 应该记住用户？什么情况下应该"忘了"？<br>
+        ② 用户是否知道 AI 在"记住"他们？有没有选择"不被记住"的权利？<br>
+        ③ 如果 AI 记错了，用户怎么纠正？<br>
+        这些问题比"怎么让 AI 记住"更重要——它们决定了用户是否信任你的产品。
+      </div>
+    </div>
+
+    <!-- 选择题 -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 7 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. AI 的"上下文窗口"是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. AI 回复的字数上限</li>
+          <li onclick="checkQuiz(this)">B. AI 一次会话能处理的总内容量——包括你的输入+它的输出</li>
+          <li onclick="checkQuiz(this)">C. AI 能连接多少个不同的产品</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。上下文窗口是 AI 一次会话中能 "看到" 的总内容量（包括你的输入和它的输出）。超出窗口的内容会被"挤掉"——所以重要信息要放在开头或结尾，且长对话中要定期重申关键约束。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 如果想让 AI "记住"跨会话的信息，最好的方法是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 把关键信息放在每次新对话的开头（类似"个人资料卡片"）</li>
+          <li onclick="checkQuiz(this)">B. 相信 AI 会自动记住</li>
+          <li onclick="checkQuiz(this)">C. 把浏览器开着不要关</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。AI 默认不会记住跨会话的任何信息。最好的方法是建立一个"个人资料卡片"或"关键结论摘要"，每次新对话时粘贴到开头。这是零成本但最有效的"记忆"管理方法。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. AI 记忆在支付场景中最关键的问题是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 记不住用户偏好</li>
+          <li onclick="checkQuiz(this)">B. 隐私合规——用户的消费和支付行为数据是否允许 AI "记住"</li>
+          <li onclick="checkQuiz(this)">C. 无法支持多人同时使用</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。在支付场景中，"让 AI 记住用户"的第一个障碍不是技术问题，而是隐私合规。用户的消费数据属于敏感个人信息，AI 记忆这些数据需要明确的用户授权和合规保障。</div>
+      </div>
+    </div>
+
+    <!-- 思考题 + 周回顾 -->
+    <div class="card">
+      <span class="card-tag tag-homework">一周回顾</span>
+      <h3>Day 7 特别思考：回顾第一周（Day 1-7）</h3>
+      <p>经过7天的学习，你已经接触了AI的多个核心概念。回顾一下：</p>
+
+      <table>
+        <tr><th>Day</th><th>你学到了</th><th>对运营的核心价值</th></tr>
+        <tr><td>1</td><td>AI 的三层结构（基础/模型/应用）</td><td>知道"AI"不是一个东西，而是三层不同的事</td></tr>
+        <tr><td>2</td><td>引擎 vs 模型 + 三种工作流</td><td>知道"AI 怎么干活"的底层逻辑</td></tr>
+        <tr><td>3</td><td>训练/微调/RAG——AI 如何学习</td><td>知道"AI 的知识从哪里来"</td></tr>
+        <tr><td>4</td><td>推理机制与速度</td><td>知道"为什么 AI 慢"——管理用户预期</td></tr>
+        <tr><td>5</td><td>Prompt Engineering（提示词工程）</td><td>知道"怎么让 AI 好好干活"</td></tr>
+        <tr><td>6</td><td>AI 幻觉与评估</td><td>知道"为什么 AI 会骗人"——建立审核意识</td></tr>
+        <tr><td>7</td><td>AI 记忆与上下文</td><td>知道"AI 能记住什么、不能记住什么"</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>第一周总结：</strong>你现在已经具备了和 AI 产品经理/技术同学进行 <strong>基础对话</strong> 的能力。<br>
+        当你听到"模型、RAG、Prompt、上下文窗口、"这个词时，你知道它是什么意思。<br>
+        当你使用 AI 工具时，你知道它的能力边界在哪里、什么时候要警惕、什么时候可以信任。<br>
+        <strong>下周预告：</strong>从"使用者"升级到"设计者"——AI Agent 设计、多模态、AI 产品的体验设计。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>周末回顾思考：</h3>
+      <div data-role="all">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">🌍 综合思考</p>
+        <ol>
+          <li>这一周学到的7个概念里，哪个对你触动最大？为什么？</li>
+          <li>如果你现在可以去和 AI 技术同学聊一个产品需求，你会用什么"新术语"让对方觉得你懂？</li>
+          <li>"AI 不是万能的，它有清晰的边界"——你过去对 AI 有过什么不切实际的期待？现在怎么看？</li>
+        </ol>
+      </div>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略运营专场</p>
+        <ol>
+          <li>如果你要在支付有礼里用 AI 做"智能策略推荐"，你会怎么确保推荐结果的可靠性？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营专场</p>
+        <ol>
+          <li>七天学完后，你觉得支付有礼最值得优先引入的 AI 能力是什么？为什么？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 营销运营专场</p>
+        <ol>
+          <li>如果让你用 AI 做一个"大促智能助手"——它会有什么核心能力？你觉得效果会怎样？</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 7 ==================== -->
 
 </div>
 
