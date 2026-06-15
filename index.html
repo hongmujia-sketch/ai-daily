@@ -126,12 +126,13 @@
     font-size: 14px;
   }
   .card table p, .card table li { font-size: inherit; color: inherit; }
-  .card td .source-link, .card th .source-link { font-size: inherit; }
+  .card table strong { font-size: inherit; }
+  .card table a { font-size: inherit; }
 
   /* Mobile: tables scroll horizontally */
   @media (max-width: 600px) {
-    .card table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; font-size: 13px; }
-    .card th, .card td { padding: 8px 10px; font-size: 13px; min-width: 80px; }
+    .card table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 13px; }
+    .card th, .card td { padding: 8px 10px; font-size: 13px; white-space: normal; min-width: 100px; }
     .header h1 { font-size: 22px; }
     .day-header h2 { font-size: 18px; }
     .card { padding: 18px 14px; }
