@@ -117,18 +117,22 @@
     padding: 9px 12px;
     text-align: left;
     font-weight: 600;
+    font-size: 14px;
     border-bottom: 2px solid #e8ecf1;
   }
   .card td {
     padding: 9px 12px;
     border-bottom: 1px solid #f0f2f5;
     color: #4a5568;
+    font-size: 14px;
   }
   .card table p, .card table li { font-size: inherit; color: inherit; }
+  .card table strong { font-weight: 600; }
+  .card td .source-link, .card th .source-link { font-size: inherit; }
 
   /* Mobile: tables scroll horizontally */
   @media (max-width: 600px) {
-    .card table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+    .card table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; font-size: 13px; }
     .card th, .card td { padding: 8px 10px; min-width: 80px; }
     .header h1 { font-size: 22px; }
     .day-header h2 { font-size: 18px; }
