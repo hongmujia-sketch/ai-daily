@@ -565,8 +565,8 @@
   <button class="nav-btn" onclick="showDay('day4', this)">Day 4</button>
   <button class="nav-btn" onclick="showDay('day5', this)">Day 5</button>
   <button class="nav-btn" onclick="showDay('day6', this)">Day 6</button>
-  <button class="nav-btn active" onclick="showDay('day7', this)">Day 7</button>
-  <button class="nav-btn" onclick="showDay('day1', this)" style="display:none" id="navMore">更多</button>
+  <button class="nav-btn" onclick="showDay('day7', this)">Day 7</button>
+  <button class="nav-btn active" onclick="showDay('day8', this)">Day 8</button>
 </div>
 
 <div class="container">
@@ -2063,7 +2063,7 @@
   <!-- ==================== END DAY 6 ==================== -->
 
   <!-- ==================== DAY 7 ==================== -->
-  <div class="day-section active" id="day7">
+  <div class="day-section" id="day7">
     <div class="day-header">
       <h2>Day 7 | AI 能"记住"我吗？——记忆、上下文与个性化</h2>
       <span class="date">2026-06-15</span>
@@ -2318,6 +2318,210 @@
 
   </div>
   <!-- ==================== END DAY 7 ==================== -->
+
+  <!-- ==================== DAY 8 ==================== -->
+  <div class="day-section active" id="day8">
+    <div class="day-header">
+      <h2>Day 8 | 多模态 AI——当 AI 不只能"读"，还能"看"和"听"</h2>
+      <span class="date">2026-06-16</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>什么是"多模态"？为什么这是 AI 的下一个分水岭</h3>
+      <p>过去你和 AI 的交互方式只有一种——打字。但从 2024 年开始，AI 已经能"看"图片、"听"语音、"读"文档、甚至"操作"电脑屏幕。这就是多模态（Multimodal）。</p>
+
+      <p><strong>AI 能处理的"模态"类型：</strong></p>
+      <table>
+        <tr><th>模态</th><th>AI 能做什么</th><th>运营场景举例</th></tr>
+        <tr><td>文本</td><td>理解、生成、翻译、摘要</td><td>写文案、做分析报告、回复用户</td></tr>
+        <tr><td>图片</td><td>识别内容、提取信息、生成图片</td><td>识别竞品海报设计、自动生成活动素材</td></tr>
+        <tr><td>语音</td><td>语音转文字、文字转语音、实时对话</td><td>会议纪要自动生成、语音客服</td></tr>
+        <tr><td>视频</td><td>理解视频内容、生成短视频</td><td>自动剪辑用户UGC素材、生成产品演示视频</td></tr>
+        <tr><td>文档/PDF</td><td>解析表格、提取数据、理解版式</td><td>自动读取竞品报告、解析用户调研PDF</td></tr>
+        <tr><td>屏幕/GUI</td><td>看到屏幕画面并操作（Computer Use）</td><td>自动化测试、RPA流程替代</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>关键认知：</strong>"多模态"不是一个新功能，而是 AI 从"文字助手"进化到"全感官助手"的本质升级。之前你只能"告诉"AI 一件事，现在你可以"给它看"一件事——这大大降低了沟通成本。
+      </div>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：多模态像什么？</div>
+        <div class="hint-content">
+          想象之前你有一个"只会打字聊天的远程助理"——你必须把所有东西描述成文字才能让它帮忙。<br>
+          现在升级了——你可以直接拍一张照片发给它："这个页面哪里有问题？"、"这张报表数据对不对？"、"帮我看看竞品这个活动怎么做的。"<br>
+          <strong>这就是多模态：AI 的"沟通方式"从纯文字变成了图片+语音+文档+视频的组合。</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>Computer Use：AI 直接操作你的电脑</h3>
+      <p>2025-2026年最前沿的多模态能力是 <strong>Computer Use</strong>——AI 能"看"到你的电脑屏幕，然后像人一样点击、输入、操作。这是 Anthropic（Claude）和 OpenAI（CUA）同时在做的方向。</p>
+
+      <p><strong>两种架构对比：</strong></p>
+      <table>
+        <tr><th>维度</th><th>Claude Computer Use</th><th>OpenAI CUA</th></tr>
+        <tr><td>运行方式</td><td>直接控制你的电脑桌面</td><td>在虚拟浏览器环境中运行</td></tr>
+        <tr><td>能操作什么</td><td>所有本地应用+网页</td><td>仅限浏览器内的网页操作</td></tr>
+        <tr><td>安全性</td><td>风险较高——它能做你能做的一切</td><td>较安全——隔离的虚拟环境</td></tr>
+        <tr><td>适用场景</td><td>复杂跨应用工作流</td><td>网页操作自动化</td></tr>
+        <tr><td>当前状态</td><td>API可用，需谨慎授权</td><td>API可用，企业场景为主</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>对运营的意义：</strong>Computer Use 意味着 AI 不再需要你"把数据整理好喂给它"——它可以自己打开后台系统、自己查数据、自己截图分析。这将彻底改变"运营和数据打交道"的方式。<br>
+        <br><strong>但现阶段的限制：</strong>准确率约 70-85%，复杂操作容易出错。适合"低风险、可重试"的任务（比如定期导出报表），不适合"一次性关键操作"（比如修改线上配置）。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月第三周：多模态进入"日常可用"阶段</h3>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th></tr>
+        <tr>
+          <td>IDC 预测：2028年80%生产级AI将具备多模态能力<br><a class="source-link" href="https://onereach.ai/blog/multimodal-ai-agents-enterprise-guide/" target="_blank">OneReach.AI报告</a></td>
+          <td>多模态不再是"锦上添花"——它正在成为 AI 产品的基础能力要求。不支持图片/语音/文档的 AI 产品将逐渐被淘汰。</td>
+        </tr>
+        <tr>
+          <td>Anthropic Computer Use vs OpenAI CUA 正式进入企业市场<br><a class="source-link" href="https://workos.com/blog/anthropics-computer-use-versus-openais-computer-using-agent-cua" target="_blank">WorkOS对比分析</a></td>
+          <td>AI 操作电脑不再是实验性功能——企业已经在用它做 RPA 替代、自动化测试、报表生成等任务。</td>
+        </tr>
+        <tr>
+          <td>Google Gemini 2.5 Pro 实现原生多模态推理</td>
+          <td>不再是"先看图再说话"的两步模式，而是"边看边想边说"的一体化推理。处理含图表的报告时准确率提升40%。</td>
+        </tr>
+        <tr>
+          <td>字节 Seedance 2.0 视频生成全球扩展<br><a class="source-link" href="https://seed.bytedance.com/en/" target="_blank">ByteDance Seed</a></td>
+          <td>AI 视频生成从"一次生成一个片段"进化到"理解剧本→分镜→多片段连贯生成"。营销视频的生产效率将有质变。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势：</strong>多模态从"看图说话"进化到"看屏幕干活"。对运营团队来说，最直接的变化是——以后不需要"把截图里的数据手动整理成表格再喂给 AI"了，直接截一张图扔给 AI 就行。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：用多模态能力提升运营效率的三个场景</h3>
+
+      <p><strong>场景一：竞品分析——截图直接问 AI</strong></p>
+      <p>打开竞品的活动页面 → 截图 → 发给 Claude/GPT："分析这个活动页面的设计逻辑，包括优惠力度、目标人群、行动按钮设计、转化路径，给出可以借鉴的3个要点。"</p>
+
+      <p><strong>场景二：数据报表——拍照或截图直接解读</strong></p>
+      <p>后台报表截图 → 发给 AI："这是我们上周的支付有礼核销数据，帮我分析：① 哪个品类核销率最高？② 和上上周比有什么变化？③ 给出3条优化建议。"</p>
+
+      <p><strong>场景三：用户反馈——截图批量分析</strong></p>
+      <p>用户在社群/评论区的截图 → 批量发给 AI："从这10张用户反馈截图中，提取所有提到的问题点，按频率排序，输出一张表格。"</p>
+
+      <div class="highlight">
+        <strong>实操要点：</strong><br>
+        ① 截图要清晰完整——模糊或截断的图 AI 识别率会大幅下降<br>
+        ② 配合文字说明——告诉 AI "这是什么"+"你想要什么"，不要只丢图不说话<br>
+        ③ 敏感数据注意脱敏——截图中的用户手机号、订单号等在发给第三方 AI 前要打码
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>多模态对支付运营的四个机会</h3>
+
+      <p><strong>机会一：AI 自动读取商户物料并审核</strong></p>
+      <p>商户上传的活动海报、商品图片 → AI 自动识别是否合规（有无违禁词、是否涉及虚假宣传、设计是否符合品牌规范）。把人工审核从"逐张看"变成"AI 初筛 + 人工抽检"。</p>
+
+      <p><strong>机会二：用户行为的"视觉理解"</strong></p>
+      <p>通过 AI 分析用户在活动页面的操作录屏，自动标注"哪里犹豫了"、"哪里放弃了"、"哪个按钮点击率最低"——比热力图更智能的体验分析。</p>
+
+      <p><strong>机会三：运营报告的"一键生成"</strong></p>
+      <p>截几张后台数据图 → 扔给 AI → 自动生成包含图表解读、同比分析、问题诊断、建议方案的完整周报。从"花2小时写周报"到"花5分钟审核周报"。</p>
+
+      <p><strong>机会四：多语言/多渠道素材的批量生产</strong></p>
+      <p>AI 看一张中文活动海报 → 理解设计意图 → 自动生成英文版、繁体版、东南亚版。不只是翻译文字，而是理解视觉布局后做适配。</p>
+
+      <div class="highlight">
+        <strong>核心判断：</strong>多模态的最大价值不是"让 AI 做更多事"，而是<strong>大幅降低了"把信息喂给 AI"的成本</strong>。以前你需要把图片里的数据手动整理成文字才能问 AI，现在直接扔图就行。这个效率差距是 10 倍级的。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 8 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. "多模态"指的是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. AI 可以同时处理多个任务</li>
+          <li onclick="checkQuiz(this)">B. AI 可以处理多种类型的输入——文本、图片、语音、视频等</li>
+          <li onclick="checkQuiz(this)">C. AI 有多个模型同时运行</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。"模态"指信息的类型。多模态 AI 能够同时理解和处理文本、图片、语音、视频、文档等多种输入形式，不再局限于纯文字交互。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. Computer Use 对运营最直接的价值是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. AI 可以自己打开后台系统查数据、导报表，减少运营的重复操作</li>
+          <li onclick="checkQuiz(this)">B. AI 可以帮你打游戏</li>
+          <li onclick="checkQuiz(this)">C. AI 可以替代所有人工</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。Computer Use 让 AI 能"看到"屏幕并操作——这意味着定期导出报表、查看后台数据等重复操作可以交给 AI。但目前准确率70-85%，适合低风险可重试任务，不适合关键操作。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 运营在使用多模态 AI 时最需要注意什么？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 图片越大越好</li>
+          <li onclick="checkQuiz(this)">B. 只发图不用说话</li>
+          <li onclick="checkQuiz(this)">C. 敏感数据截图要脱敏，发给第三方 AI 前打码用户信息</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。截图中可能包含用户手机号、订单号、支付信息等敏感数据。发给第三方 AI（如 ChatGPT、Claude）之前必须打码脱敏——这是数据安全的基本要求。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>如果 AI 能直接"看"你的后台报表截图并给出分析，你觉得哪些日常分析工作可以省掉？</li>
+          <li>Computer Use 准确率目前是 70-85%——你愿意让它自动操作后台的哪些功能？哪些绝对不行？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼如果支持用户"拍照识别优惠券"——用户体验会怎样？技术上需要什么多模态能力？</li>
+          <li>商户上传的活动素材如果让 AI 自动审核合规性，你觉得可以替代多少比例的人工审核？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>如果 AI 可以看一张竞品海报就自动生成三版不同风格的我方海报——你觉得这对大促素材生产效率提升有多大？</li>
+          <li>AI 视频生成（如 Seedance）可以从文字剧本直接产出短视频——你会用它做什么营销内容？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开更多视角</summary>
+          <br><strong style="color:#667eea;">策略运营版：</strong>
+          <ol><li>如果 AI 能直接"看"你的后台报表截图并给出分析，哪些日常分析工作可以省掉？</li><li>Computer Use 准确率70-85%——你愿意让它自动操作后台哪些功能？哪些绝对不行？</li></ol>
+          <strong style="color:#d63384;">产品运营版：</strong>
+          <ol><li>支付有礼如果支持用户"拍照识别优惠券"——体验会怎样？需要什么多模态能力？</li><li>商户上传的活动素材让 AI 自动审核合规性，可以替代多少比例的人工审核？</li></ol>
+          <strong style="color:#e68a00;">营销运营版：</strong>
+          <ol><li>AI 看一张竞品海报就自动生成三版不同风格的我方海报——对大促素材生产效率提升有多大？</li><li>AI 视频生成可以从文字剧本直接产出短视频——你会用它做什么营销内容？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 8 ==================== -->
 
 </div>
 
