@@ -566,7 +566,8 @@
   <button class="nav-btn" onclick="showDay('day5', this)">Day 5</button>
   <button class="nav-btn" onclick="showDay('day6', this)">Day 6</button>
   <button class="nav-btn" onclick="showDay('day7', this)">Day 7</button>
-  <button class="nav-btn active" onclick="showDay('day8', this)">Day 8</button>
+  <button class="nav-btn" onclick="showDay('day8', this)">Day 8</button>
+  <button class="nav-btn active" onclick="showDay('day9', this)">Day 9</button>
 </div>
 
 <div class="container">
@@ -2320,7 +2321,7 @@
   <!-- ==================== END DAY 7 ==================== -->
 
   <!-- ==================== DAY 8 ==================== -->
-  <div class="day-section active" id="day8">
+  <div class="day-section" id="day8">
     <div class="day-header">
       <h2>Day 8 | 多模态 AI——当 AI 不只能"读"，还能"看"和"听"</h2>
       <span class="date">2026-06-16</span>
@@ -2522,6 +2523,217 @@
 
   </div>
   <!-- ==================== END DAY 8 ==================== -->
+
+  <!-- ==================== DAY 9 ==================== -->
+  <div class="day-section active" id="day9">
+    <div class="day-header">
+      <h2>Day 9 | AI Agent 设计——从"对话"到"自动执行"</h2>
+      <span class="date">2026-06-17</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>Chatbot 和 Agent 的本质区别：一个 while 循环</h3>
+      <p>很多人混用"AI 对话"和"AI Agent"，但它们在架构上有本质区别。Oracle 的技术博客给了一个绝妙的总结：<strong>"chatbot 和 agent 的区别是一个 while 循环"。</strong></p>
+
+      <table>
+        <tr><th>维度</th><th>Chatbot（对话机器人）</th><th>Agent（智能体）</th></tr>
+        <tr><td>交互模式</td><td>一问一答，单轮完成</td><td>多步骤循环，直到任务完成才停</td></tr>
+        <tr><td>能力边界</td><td>只能"说"——生成文本回复</td><td>能"做"——调用工具、操作系统、执行代码</td></tr>
+        <tr><td>状态</td><td>无状态：每次对话独立</td><td>有状态：记住中间结果，决定下一步</td></tr>
+        <tr><td>Token 消耗</td><td>1x（单次推理）</td><td>4-15x（多次推理+工具调用）</td></tr>
+        <tr><td>产品举例</td><td>ChatGPT 基础对话</td><td>Claude Code、Devin、ChatGPT Deep Research</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>关键认知：</strong>Agent 的核心不是"更智能的对话"，而是"能自主行动的循环"。它像一个实习生：接到任务 → 思考怎么做 → 动手做一步 → 检查结果 → 决定下一步 → 直到完成。这个循环就是 Agent Loop。
+      </div>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：Agent 像什么？</div>
+        <div class="hint-content">
+          Chatbot = 前台问询员：你问什么它答什么，答完就结束。<br>
+          Agent = 项目助理：你说"帮我订下周去杭州的差旅"，它会自动查机票→比价→查你的里程余额→选最优方案→下单→把确认单发给你。中间不需要你一步步指挥。<br>
+          <strong>本质区别：Agent 能拆解任务、使用工具、自我纠错——而不只是回答问题。</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>Agent Loop 的五个阶段</h3>
+      <p>所有主流 AI 公司（OpenAI、Anthropic、Google、Microsoft）都收敛到了同一个架构模式：</p>
+
+      <div class="layer-diagram">
+        <div class="layer" style="border-color:#667eea;color:#667eea">1. 感知 (Perceive)<br><span style="color:#4a5568;font-size:inherit">收集信息：用户输入、工具返回结果、环境状态</span></div>
+        <div class="arrow">↓</div>
+        <div class="layer" style="border-color:#764ba2;color:#764ba2">2. 推理 (Reason)<br><span style="color:#4a5568;font-size:inherit">分析当前情况，理解目标和约束</span></div>
+        <div class="arrow">↓</div>
+        <div class="layer" style="border-color:#2ed573;color:#2ed573">3. 规划 (Plan)<br><span style="color:#4a5568;font-size:inherit">决定下一步做什么、用哪个工具</span></div>
+        <div class="arrow">↓</div>
+        <div class="layer" style="border-color:#ffa502;color:#ffa502">4. 执行 (Act)<br><span style="color:#4a5568;font-size:inherit">调用工具、生成内容、操作系统</span></div>
+        <div class="arrow">↓</div>
+        <div class="layer" style="border-color:#e53e3e;color:#e53e3e">5. 观察 (Observe)<br><span style="color:#4a5568;font-size:inherit">检查执行结果→决定"任务完成"还是"继续循环"</span></div>
+        <div class="arrow">↺ 循环直到任务完成</div>
+      </div>
+
+      <p><strong>为什么这个架构对运营很重要？</strong></p>
+      <p>因为当你"设计一个 AI 功能"时，你实际上在做的是：定义这个循环的<strong>边界</strong>——Agent 能用哪些工具？什么情况下该停下来问人？出错了怎么办？这些都是产品运营需要决定的事。</p>
+
+      <div class="highlight">
+        <strong>Agent 的成本公式：</strong>一个 Agent 完成一个任务，消耗的 Token 约为普通对话的 4-15 倍。如果 Agent 执行了 10 个步骤，每步都是一次完整的模型推理调用。所以——Agent 更强，但也更贵。设计时必须考虑成本控制。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月第三周：Agent 从"Demo"走向"生产"</h3>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th></tr>
+        <tr>
+          <td>OpenAI Codex 扩展到6个白领职能<br><a class="source-link" href="https://openai.com/index/codex/" target="_blank">OpenAI Blog</a></td>
+          <td>Codex 不再只是写代码——62个应用+110个技能覆盖数据分析、创意生产、销售、产品设计、投资等。Agent 的落地从"技术工具"变成"业务工具"。</td>
+        </tr>
+        <tr>
+          <td>GitHub Agent 代码量增长 1400%<br><a class="source-link" href="https://github.blog" target="_blank">GitHub Blog</a></td>
+          <td>2026 年 Agent 提交的代码量暴增 14 倍。GitHub COO 承认现有的 fork-and-PR 流程不是为 Agent 设计的，正在重构平台架构。</td>
+        </tr>
+        <tr>
+          <td>Anthropic Claude Agent SDK 开源</td>
+          <td>开发者可以用标准化的方式构建 Agent——定义工具、设定边界、管理状态。Agent 开发门槛大幅降低。</td>
+        </tr>
+        <tr>
+          <td>Bain：40% 企业 AI Agent 项目 ROI 不达预期</td>
+          <td>主要原因：① Agent 范围定义不清（什么都想做）② 缺乏人工兜底机制 ③ 没有量化成本指标。对运营的启示——不是"做了 Agent 就好"，而是"做对了才好"。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势：</strong>Agent 正在从"技术演示"变成"业务工具"，但 40% 的项目失败率说明<strong>"Agent 设计"比"Agent 开发"更重要</strong>。作为运营，你的角色不是写代码，而是定义"Agent 应该做什么、不应该做什么、做错了怎么办"。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：设计一个 Agent 的"任务边界清单"</h3>
+      <p>如果你要在支付有礼里做一个"智能运营助手 Agent"，在写任何代码之前，先回答这些问题：</p>
+
+      <table>
+        <tr><th>设计维度</th><th>需要回答的问题</th><th>示例答案</th></tr>
+        <tr><td>目标</td><td>Agent 要完成什么任务？</td><td>每天自动生成核销数据日报并推送给团队</td></tr>
+        <tr><td>工具</td><td>Agent 能调用哪些工具？</td><td>数据查询API、文案生成、消息推送</td></tr>
+        <tr><td>边界</td><td>Agent 不能做什么？</td><td>不能修改线上配置、不能发外部消息、不能操作资金</td></tr>
+        <tr><td>兜底</td><td>出错了怎么办？</td><td>连续失败2次→暂停并通知人工</td></tr>
+        <tr><td>成本</td><td>每次执行的预算上限？</td><td>每次不超过5000 tokens（约0.5元）</td></tr>
+        <tr><td>频率</td><td>多久执行一次？</td><td>每天早上9点自动执行</td></tr>
+        <tr><td>验证</td><td>怎么判断 Agent 做对了？</td><td>输出的数据和后台核对，误差&lt;5%</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>实操建议：</strong>在你的团队里推一个"Agent 需求模板"——每次有人说"我们做个 AI Agent 吧"，先让他填这7个问题。填不清楚的，不要动手开发。<br>
+        <br>这个模板的价值：把"模糊的 AI 愿望"变成"可执行的产品需求"。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>支付运营场景的三类 Agent 机会</h3>
+
+      <p><strong>第一类：数据监控 Agent（低风险、高价值）</strong></p>
+      <p>每天自动查看核销率、DAU、转化率等核心指标，发现异常自动预警+初步归因。<br>
+      <em>边界：只读数据、不修改配置。出错最多是"漏报"或"误报"，不会造成业务损失。</em></p>
+
+      <p><strong>第二类：内容生产 Agent（中风险、高效率）</strong></p>
+      <p>根据活动计划自动生成推送文案、活动页面文案、渠道适配版本。<br>
+      <em>边界：生成内容但不直接发布——需要人工审核后才能上线。风险在于"低质量内容被放出去"。</em></p>
+
+      <p><strong>第三类：策略建议 Agent（高价值、需谨慎）</strong></p>
+      <p>分析用户行为数据，自动生成"本周建议调整的券面额/门槛/目标人群"。<br>
+      <em>边界：只给建议，不直接执行策略变更。风险在于"建议看起来合理但基于错误前提"——Day 6 的幻觉问题。</em></p>
+
+      <div class="highlight">
+        <strong>Agent 设计的黄金原则：</strong><br>
+        ① 先从"只读"的 Agent 开始（只看不动）→ 验证可靠后再升级到"可写"<br>
+        ② 永远保留"人工确认"环节——Agent 给建议，人做决定<br>
+        ③ 设定明确的"熔断机制"——连续出错就暂停，不要让 Agent 自己"修复自己的错误"
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 9 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. Chatbot 和 Agent 的本质区别是什么？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. Agent 用的模型更大</li>
+          <li onclick="checkQuiz(this)">B. Agent 回复更快</li>
+          <li onclick="checkQuiz(this)">C. Agent 有迭代循环——能自主拆解任务、使用工具、检查结果并决定下一步</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。Agent 的核心是 Agent Loop（感知→推理→规划→执行→观察→循环）。它不是"更聪明的对话"，而是"能自主行动的系统"。Chatbot 只回答问题，Agent 能完成任务。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 为什么 Agent 比普通对话贵 4-15 倍？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 用的模型更贵</li>
+          <li onclick="checkQuiz(this)">B. Agent 需要多次推理调用（每个步骤都是一次完整推理），加上工具调用的额外消耗</li>
+          <li onclick="checkQuiz(this)">C. 服务器在国外，网络费贵</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Agent 完成一个任务可能需要执行 5-20 个步骤，每个步骤都是一次独立的模型推理调用。加上工具调用（读文件、查API、执行代码）的额外消耗，总成本远高于单轮对话。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 设计一个支付运营 Agent，第一步应该做什么？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 明确定义任务边界——Agent能做什么、不能做什么、出错怎么办</li>
+          <li onclick="checkQuiz(this)">B. 选一个最贵的模型</li>
+          <li onclick="checkQuiz(this)">C. 直接开始写代码</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。40% 的 Agent 项目失败原因是"范围定义不清"。在写任何代码之前，先回答7个问题：目标、工具、边界、兜底、成本、频率、验证。这是运营最应该主导的环节。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>如果给你一个"数据监控 Agent"，你最想让它每天自动看哪三个指标？异常阈值怎么设？</li>
+          <li>"Agent 给建议，人做决定"——你觉得这种模式下，运营的核心价值是什么？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼的"智能运营助手"Agent——你会给它设定哪些"绝对不能做"的红线？</li>
+          <li>从"只读 Agent"到"可写 Agent"的升级路径是什么？你觉得需要多长时间验证可靠性？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>如果有一个"内容生产 Agent"每天自动生成3条推送文案，你的审核流程是什么？</li>
+          <li>大促期间 Agent 自动生成的内容如果出了问题（比如文案里写错了活动日期），后果是什么？怎么预防？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开更多视角</summary>
+          <br><strong style="color:#667eea;">策略运营版：</strong>
+          <ol><li>如果给你一个"数据监控 Agent"，你最想让它每天自动看哪三个指标？异常阈值怎么设？</li><li>"Agent 给建议，人做决定"——运营的核心价值是什么？</li></ol>
+          <strong style="color:#d63384;">产品运营版：</strong>
+          <ol><li>支付有礼的"智能运营助手"Agent——你会设定哪些"绝对不能做"的红线？</li><li>从"只读 Agent"到"可写 Agent"的升级路径是什么？</li></ol>
+          <strong style="color:#e68a00;">营销运营版：</strong>
+          <ol><li>"内容生产 Agent"每天自动生成3条推送文案——你的审核流程是什么？</li><li>大促期间 Agent 自动生成的内容出了问题，后果是什么？怎么预防？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 9 ==================== -->
 
 </div>
 
