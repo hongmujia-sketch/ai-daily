@@ -567,7 +567,8 @@
   <button class="nav-btn" onclick="showDay('day6', this)">Day 6</button>
   <button class="nav-btn" onclick="showDay('day7', this)">Day 7</button>
   <button class="nav-btn" onclick="showDay('day8', this)">Day 8</button>
-  <button class="nav-btn active" onclick="showDay('day9', this)">Day 9</button>
+  <button class="nav-btn" onclick="showDay('day9', this)">Day 9</button>
+  <button class="nav-btn active" onclick="showDay('day10', this)">Day 10</button>
 </div>
 
 <div class="container">
@@ -2525,7 +2526,7 @@
   <!-- ==================== END DAY 8 ==================== -->
 
   <!-- ==================== DAY 9 ==================== -->
-  <div class="day-section active" id="day9">
+  <div class="day-section" id="day9">
     <div class="day-header">
       <h2>Day 9 | AI Agent 设计——从"对话"到"自动执行"</h2>
       <span class="date">2026-06-17</span>
@@ -2734,6 +2735,200 @@
 
   </div>
   <!-- ==================== END DAY 9 ==================== -->
+
+  <!-- ==================== DAY 10 ==================== -->
+  <div class="day-section active" id="day10">
+    <div class="day-header">
+      <h2>Day 10 | AI 产品体验设计——让用户"感觉对了"比"功能对了"更重要</h2>
+      <span class="date">2026-06-18</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>为什么"感觉对了"比"功能对了"更重要？</h3>
+      <p>2026 年是"AI 疲劳"之年——用户对千篇一律的 AI 功能开始感到厌倦。LinkedIn 悄悄移除了 AI 推荐提示、Meta 强行嵌入 AI 遭到用户强烈抵制。事实证明，<strong>用户不反感 AI，但反感"为 AI 而 AI"的产品体验</strong>。</p>
+
+      <p><strong>AI 产品的三个体验范式：</strong></p>
+      <table>
+        <tr><th>范式</th><th>典型产品</th><th>适合场景</th><th>用户感受</th></tr>
+        <tr><td><strong>对话式</strong><br>用户打字/说话，AI 用文字回复</td><td>ChatGPT、Claude.ai</td><td>开放式探索、复杂问题追问</td><td>自然但慢，不适合高频操作</td></tr>
+        <tr><td><strong>嵌入式</strong><br>AI 嵌入现有界面，不改变交互习惯</td><td>Microsoft Copilot 行内建议<br>Notion AI 上下文菜单</td><td>文档写作、数据分析、代码补全</td><td>"魔法感"强，学习成本低</td></tr>
+        <tr><td><strong>自动化式</strong><br>AI 在后台运行，只在必要时通知用户</td><td>智能调度、异常预警</td><td>周期性任务、监控、告警</td><td>无感，但需要建立信任</td></tr>
+      </table>
+
+      <p><strong>为什么嵌入式更有优势？</strong>Microsoft 365 Copilot 被 70% 的财富 500 强使用，关键原因是它没有要求用户改变工作方式——AI 直接在用户已有的操作界面中给出建议。这种"不打断、不跳转"的体验，比"请先跟我对话"的交互方式更符合人类本能。</p>
+
+      <div class="highlight">
+        <strong>核心认知：</strong>最好的 AI 产品是"用户感觉不到 AI 存在"的产品。设计 AI 体验时，第一原则不是"AI 多强"，而是<strong>"用户的流程被打断了多少"</strong>。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>AI 产品的"信任阶梯"——每一步都在回答用户的一个问题</h3>
+      <p>用户使用 AI 产品的心理过程，本质上是一个"建立信任"的过程。每一次交互，用户都在问以下问题：</p>
+
+      <div class="layer-diagram">
+        <strong style="color:#667eea">用户信任阶梯（从上往下，信任逐步建立）</strong><br><br>
+        🟢 <strong>第一层：它能帮我吗？</strong><br>
+        <span style="color:#4a5568;font-size:inherit">→ 让 AI 的能力"可被发现"：入口要明显、功能要清晰<br>→ 反例：Meta AI 强塞进搜索栏，用户感到被冒犯</span><br><br>
+        🟢 <strong>第二层：它做得对吗？</strong><br>
+        <span style="color:#4a5568;font-size:inherit">→ 让 AI 的输出"可验证"：给出来源、标注置信度<br>→ 反例：AI 直接给数据，没有"这个数据从哪来的"</span><br><br>
+        🟢 <strong>第三层：我信得过它吗？</strong><br>
+        <span style="color:#4a5568;font-size:inherit">→ 让 AI 的行为"可解释"：显示推理过程、标注不确定性<br>→ 反例：AI 直接改配置，用户不知道"它为什么这么改"</span><br><br>
+        🟢 <strong>第四层：它知道我要什么吗？</strong><br>
+        <span style="color:#4a5568;font-size:inherit">→ 让 AI 的推荐"个性化"：学习用户偏好、记住历史行为<br>→ 反例：AI 每次推荐都是"热门的"，从不考虑用户习惯</span>
+      </div>
+
+      <div class="highlight">
+        <strong>AI 体验的"1-3-30 秒法则"：</strong><br>
+        • 1秒以内：反馈必须出现（至少是"正在思考"的动画）<br>
+        • 3秒以内：AI 应该给出初步输出或分段展示<br>
+        • 30秒以上：必须转异步——"分析完成后通知你"<br>
+        <br>注意：这个法则在支付场景中更为严格——用户在支付相关页面的耐心比普通页面短 50%。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月第三周：AI 产品设计进入"精细化"时代</h3>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th></tr>
+        <tr>
+          <td>Designlab 调查：78% 设计师认为 AI 提升效率，但 51% 担心设计质量下降<br><a class="source-link" href="https://designlab.com/blog/ai-in-ux-product-design-trends-2026" target="_blank">Designlab 2026报告</a></td>
+          <td>AI 的"平均化"效应正在显现——当所有人都能用 AI 生成设计时，差异化反而更难了。运营设计的 AI 内容同理——"AI 味"太浓会让人感觉廉价。</td>
+        </tr>
+        <tr>
+          <td>Google 发布 Conversation Design Checklist 2.0</td>
+          <td>6个关键问题：是否可访问（50%人群阅读能力有限）？是否可发现？是否可预测？是否可靠？是否必要？是否可持续？——每个 AI 功能上线前先过一遍。</td>
+        </tr>
+        <tr>
+          <td>ChatGPT App 目录上线：62 个应用通过对话式界面提供服务</td>
+          <td>但报告指出：大部分用户最后还是需要跳转到原生 App 才能完成操作。"对话式"作为入口，但不能替代完整体验。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势：</strong>"Chatbot 优先"的设计思路正在被反思。纯对话式界面在以下场景表现不佳：① 用户不确定自己要什么 ② 操作需要精确确认 ③ 信息量大需要对比。在支付运营产品中——<strong>"聊天框"永远不应该成为唯一的交互方式。</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：给你的 AI 功能做一次"体验体检"</h3>
+      <p>假设支付有礼要上线一个"AI 推荐券"功能，用以下清单逐项检查：</p>
+
+      <table>
+        <tr><th>检查项</th><th>自检问题</th><th>通过标准</th></tr>
+        <tr><td>可发现性</td><td>用户知道这里有 AI 功能吗？入口醒目吗？</td><td>用户首次打开页面 3 秒内能找到</td></tr>
+        <tr><td>预期管理</td><td>AI 推荐大概需要多久？用户知道吗？</td><td>明确标注"推荐需 3-5 秒"</td></tr>
+        <tr><td>反馈机制</td><td>用户等待时能看到什么？</td><td>有进度动画 + 中间提示"正在为你挑选最优券"</td></tr>
+        <tr><td>容错设计</td><td>AI 推荐错了怎么办？</td><td>用户可"换一批"或"手动选择"</td></tr>
+        <tr><td>信任感知</td><td>用户为什么相信这个推荐？</td><td>显示推荐理由（如"因为你上次领了餐饮券"）</td></tr>
+        <tr><td>退出路径</td><td>用户不想用 AI 推荐了怎么办？</td><td>随时可关闭，回到传统展示模式</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>实操建议：</strong>做 AI 功能时，先画一张"用户情绪曲线"——从用户接触到 AI 到完成交互，每一步用户的情绪是开心、困惑、焦虑还是烦躁？把"用户最可能烦躁"的那一步找出来，优先优化。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>支付运营场景中 AI 体验设计的三个"不能"</h3>
+
+      <p><strong>不能一：不能让用户觉得"AI 在替我花钱"</strong></p>
+      <p>AI 推荐券时，用户的心理预期是"帮我省钱"，不是"替我决定怎么花钱"。所以展示方式应该是"推荐 + 理由"，而不是"自动使用"。<br>
+      <em>体验设计：AI 推荐框必须包含"推荐理由"和"不感兴趣"按钮。</em></p>
+
+      <p><strong>不能二：不能让用户陷入"等待焦虑"</strong></p>
+      <p>用户在支付/活动页面的操作节奏很快（通常 5-10 秒内完成）。如果 AI 需要 3 秒以上才能给出推荐，用户已经去了别的地方。<br>
+      <em>体验设计：AI 推荐结果<strong>预先计算好展示</strong>，而不是实时生成。实时生成只适合"用户主动问"的场景。</em></p>
+
+      <p><strong>不能三：不能把"AI 的失败"转嫁给用户</strong></p>
+      <p>如果 AI 推荐了一张不存在的券（Day 6 的幻觉问题），用户去领发现领不到——这是对产品信任最严重的打击。<br>
+      <em>体验设计：所有 AI 推荐的券必须经过"有效性校验"才能展示，不能让 AI "承诺"之后发现兑现不了。</em></p>
+
+      <div class="highlight">
+        <strong>一句话总结：</strong>AI 功能设计的核心不是"让 AI 更智能"，而是<strong>"让用户在和 AI 协作时感到安全、可控、被尊重"</strong>。这三个感受，任何一条被打破，用户就会离开。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 10 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. AI 产品的三种体验范式是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 好的、中等的、差的</li>
+          <li onclick="checkQuiz(this)">B. 对话式、嵌入式、自动化式</li>
+          <li onclick="checkQuiz(this)">C. 文字、图片、语音</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。嵌入式（如 Copilot 行内建议）通常用户感受最好，因为它不打断用户已有的操作流程。对话式适合开放式探索，自动化式适合后台任务。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. "1-3-30 秒法则"中，超过多少秒应该转为异步模式？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 1秒</li>
+          <li onclick="checkQuiz(this)">B. 5秒</li>
+          <li onclick="checkQuiz(this)">C. 30秒</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。1秒内至少给出反馈，3秒内给出初步结果，超过30秒应该改为异步处理——"分析完成后通知你"。支付场景中耐心更短，要更严格。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 在支付运营场景中，AI 体验最不能犯的错误是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 推荐了一张不存在的券——用户去领发现领不到</li>
+          <li onclick="checkQuiz(this)">B. AI 推荐得太慢了</li>
+          <li onclick="checkQuiz(this)">C. AI 推荐的券面额太小</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。"推荐不存在的券"本质上是在消耗用户对产品的信任。信任一旦被打破，很难重建。所有 AI 推荐结果上线前必须经过有效性校验。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>支付有礼的首页如果有一个"AI 推荐券"模块，你觉得应该放在页面什么位置？用户看到它的第一反应会是什么？</li>
+          <li>"AI 推荐的券如果用户不去领，AI 就没有价值"——这个观点对吗？如果对，怎么提高领取率？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼的 AI 功能入口，你倾向"对话式"（用户主动问）还是"嵌入式"（页面中自动展示）？为什么？</li>
+          <li>用户等待 AI 推荐的 3-5 秒里，你会设计什么过渡体验来降低焦虑感？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>如果 AI 生成的促活文案"AI 味"太重，用户一眼就能看出来，你会怎么调整 Prompt？</li>
+          <li>大促页面如果嵌入了一个 AI 助手，用户会主动用它吗？还是需要运营引导？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开更多视角</summary>
+          <br><strong style="color:#667eea;">策略运营版：</strong>
+          <ol><li>支付有礼首页"AI 推荐券"模块的位置和用户反应？</li><li>"AI 推荐的券不领就没有价值"——怎么提高领取率？</li></ol>
+          <strong style="color:#d63384;">产品运营版：</strong>
+          <ol><li>AI 功能入口：对话式 vs 嵌入式？</li><li>用户等待的3-5秒，设计什么过渡体验？</li></ol>
+          <strong style="color:#e68a00;">营销运营版：</strong>
+          <ol><li>促活文案"AI 味"太重怎么办？</li><li>大促页面的 AI 助手需要运营引导吗？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 10 ==================== -->
 
 </div>
 
