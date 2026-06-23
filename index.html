@@ -568,7 +568,8 @@
   <button class="nav-btn" onclick="showDay('day7', this)">Day 7</button>
   <button class="nav-btn" onclick="showDay('day8', this)">Day 8</button>
   <button class="nav-btn" onclick="showDay('day9', this)">Day 9</button>
-  <button class="nav-btn active" onclick="showDay('day10', this)">Day 10</button>
+  <button class="nav-btn" onclick="showDay('day10', this)">Day 10</button>
+  <button class="nav-btn active" onclick="showDay('day11', this)">Day 11</button>
 </div>
 
 <div class="container">
@@ -2737,7 +2738,7 @@
   <!-- ==================== END DAY 9 ==================== -->
 
   <!-- ==================== DAY 10 ==================== -->
-  <div class="day-section active" id="day10">
+  <div class="day-section" id="day10">
     <div class="day-header">
       <h2>Day 10 | AI 产品体验设计——让用户"感觉对了"比"功能对了"更重要</h2>
       <span class="date">2026-06-18</span>
@@ -2929,6 +2930,208 @@
 
   </div>
   <!-- ==================== END DAY 10 ==================== -->
+
+  <!-- ==================== DAY 11 ==================== -->
+  <div class="day-section active" id="day11">
+    <div class="day-header">
+      <h2>Day 11 | AI 安全与合规——支付场景的红线在哪里</h2>
+      <span class="date">2026-06-19</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>AI 安全不是"技术问题"，是"常识问题"</h3>
+      <p>说到 AI 安全，很多人第一反应是"防火墙"、"加密"、"黑客攻击"——但这些更多是技术团队的事。作为运营，你要关注的 AI 安全跟这些完全不同：<strong>是你能不能确保用户数据和公司业务不被 AI 的"无意识行为"伤害。</strong></p>
+
+      <p><strong>运营视角的 AI 安全金字塔：</strong></p>
+      <table>
+        <tr><th>层级</th><th>风险类型</th><th>运营直接相关？</th></tr>
+        <tr><td>数据安全</td><td>用户隐私信息（手机/订单/身份证）被泄露或滥用</td><td>✅ 运营必须关注——你很容易把包含用户信息的截图/数据喂给 AI</td></tr>
+        <tr><td>内容安全</td><td>AI 生成了不当内容（歧视/违规/虚假信息）</td><td>✅ 运营必须关注——你让 AI 帮你生成文案，你要对内容负责</td></tr>
+        <tr><td>决策安全</td><td>AI 的建议导致错误业务决策</td><td>✅ 运营必须关注——你信了 AI 的分析结果去调整策略</td></tr>
+        <tr><td>模型安全</td><td>模型被攻击、提示词注入、数据投毒</td><td>⚠️ 了解即可——主要是技术团队的事</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>关键认知：</strong>AI 安全的第一责任人不是技术团队——而是<strong>那个把用户数据丢进 AI 对话框的人</strong>。在运营工作中，你每天都在和用户数据打交道，也每天都在把数据"喂"给 AI。数据安全的第一道防线，是你的"安全意识"。
+      </div>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：AI 安全为什么跟运营有关？</div>
+        <div class="hint-content">
+          想象你是一个运营，想用 AI 分析用户反馈。你把一份包含用户手机号和订单记录的 Excel 直接上传到了 ChatGPT——<br>
+          ❌ 这意味着什么？你把用户的隐私数据发给了第三方公司，这违反了几乎所有国家的数据保护法律。<br>
+          ✅ 正确的做法：先把手机号、姓名等敏感信息删掉或打码，只保留"用户反馈内容"这一列，再用 AI 分析。<br>
+          <strong>AI 安全不是"别用 AI"，而是"用的时候知道什么能发、什么不能发"。</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">深度理论</span>
+      <h3>运营必须知道的三条 AI 安全红线</h3>
+
+      <p><strong>红线一：绝对不能把用户 PII（个人身份信息）输入公共 AI</strong></p>
+      <p>姓名、手机号、身份证号、银行卡号、家庭地址、精确地理位置——这些就是 PII。任何包含这些信息的数据，在输入 ChatGPT/Claude 等公开 AI 产品之前，必须先脱敏。</p>
+      <p><em>为什么？因为公开 AI 产品可能会用你的输入做模型训练。即使有些产品提供了"不用于训练"的选项，最安全的做法仍然是在输入之前就脱敏。</em></p>
+
+      <p><strong>红线二：AI 生成的内容不代表公司立场</strong></p>
+      <p>AI 帮你生成的推送文案、用户回复、公告内容——在正式发布之前，必须经过人工审核。AI 说"没问题"不等于真的没问题。2025-2026 年多个品牌因为 AI 生成的不当内容翻车。</p>
+      <p><em>合规底线：所有面向用户的 AI 生成内容必须标注"AI 生成"或经过人工审核后去掉标注。</em></p>
+
+      <p><strong>红线三：基于 AI 分析结果做决策前，要有"人工确认环节"</strong></p>
+      <p>AI 说"上周核销率下降是因为 A 品类出了问题"——你可能马上就去找 A 品类调整策略。但 AI 的归因可能是错的。任何影响业务决策的 AI 输出，至少要做到"交叉验证"后再执行。</p>
+
+      <div class="highlight">
+        <strong>简单记忆法：</strong><br>
+        PII 数据 → ❌ 不能直接丢给 AI<br>
+        AI 生成内容 → ✅ 可以用，但必须人工审核再发布<br>
+        AI 分析建议 → ✅ 可以看，但关键决策必须交叉验证
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月：AI 合规进入"法律强制"阶段</h3>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th></tr>
+        <tr>
+          <td>欧盟 AI Act 正式生效：AI 生成内容必须标注</td>
+          <td>法律要求所有 AI 生成的内容必须标注来源。如果企业用 AI 生成面向用户的文案但没有标注，可能面临罚款。这对运营来说意味着——"AI 生成内容标注"不再是可选项。</td>
+        </tr>
+        <tr>
+          <td>中国《生成式 AI 管理办法》实施</td>
+          <td>要求 AI 服务提供商对生成内容承担责任，用户必须实名认证使用 AI。运营使用第三方 AI 工具时，需要确认对方的合规资质。</td>
+        </tr>
+        <tr>
+          <td>Mem0 审计揭露 AI Agent 跨用户记忆泄露</td>
+          <td>主流 Agent 系统存在 57-71% 的跨用户数据泄露率——用户A的数据被 Agent 错误地提供给用户B。对支付场景来说，这意味着"AI 推荐"功能如果不做隔离，可能泄露用户的消费行为。</td>
+        </tr>
+        <tr>
+          <td>AI 投毒攻击案例：提示词注入导致 AI 泄露内部配置</td>
+          <td>用户通过巧妙的 Prompt 让 AI 助手输出了内部 API 密钥和系统配置。运营如果负责 AI 功能的交互设计，必须考虑"防注入"的边界。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本月趋势：</strong>AI 合规正从"建议性指南"变成"强制性法规"。欧盟 AI Act 和中国《生成式 AI 管理办法》同时生效——这意味着 AI 产品的安全设计不是一个加分项，而是一个<strong>准入门槛</strong>。不合规=不能上线。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：运营 AI 安全自查清单</h3>
+      <p>每次用 AI 做以下事情时，先过一遍这个清单：</p>
+
+      <table>
+        <tr><th>场景</th><th>关键检查</th></tr>
+        <tr><td>用 AI 分析用户数据</td><td>数据里有没有手机号/姓名/身份证/地址/订单号？→ 先脱敏再上传</td></tr>
+        <tr><td>用 AI 生成推送文案</td><td>内容有没有可能引发歧义/冒犯/违规？→ 人工逐条审核</td></tr>
+        <tr><td>用 AI 生成数据分析报告</td><td>报告中的关键数据能不能从原始数据源验证？→ 抽检 3 个关键数据点</td></tr>
+        <tr><td>用 AI 客服回复用户</td><td>回复中是否包含了不应披露的信息？→ 设置回复模板，AI 只填充变量</td></tr>
+        <tr><td>用 AI 做竞品分析</td><td>描述竞品时有没有编造不存在的功能？→ 每个竞品信息标注"是否确认"</td></tr>
+        <tr><td>用 AI Agent 操作后台</td><td>Agent 的权限范围设定了吗？→ 遵循"最小权限原则"</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>实操建立制度：</strong>在你的团队里推一个"AI 使用规范"——不需要很复杂，一两页纸就可以：<br>
+        ① 什么数据可以喂给 AI？什么不行？<br>
+        ② AI 生成内容的上线流程是什么？<br>
+        ③ 出了安全事故找谁？紧急联系人？<br>
+        <br>这一页纸的价值：让整个团队在用 AI 做事的时候有一条清晰的"安全底线"。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>支付场景的 AI 安全，比普通产品更严格</h3>
+
+      <p><strong>支付数据的特殊性：</strong>支付数据不仅包含 PII（姓名、手机号），还包含金融信息（卡号、余额、交易记录）。这些数据的泄露不仅违反隐私法规，还涉及金融监管——后果远比普通场景严重。</p>
+
+      <p><strong>AI 推荐的安全设计：</strong>如果支付有礼用 AI 推荐券，最关键的设计不是"推荐的券转化率多高"，而是"AI 推荐系统不能访问用户的支付密码、余额、绑卡信息"——哪怕这些信息可以帮助 AI 做更好的推荐。安全大于效率。</p>
+
+      <p><strong>AI 内容审核的生命线：</strong>支付相关的内容（尤其是涉及金额、活动规则的描述）如果 AI 写错了，可能导致用户投诉甚至法律纠纷。一个错写的"满 100 减 50"如果被用户截图留存，公司可能需要按承诺兑现。</p>
+
+      <div class="highlight">
+        <strong>结论：</strong>在支付场景中，AI 功能的设计原则不是"多快多好"，而是<strong>"错了以后最坏的结果是什么"</strong>。如果最坏结果是你无法承担的，那这个 AI 功能就需要更高的安全设计标准。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 11 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 运营在日常工作中最需要注意的 AI 安全问题是什么？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 不要直接把含用户 PII 的数据喂给公开 AI 产品</li>
+          <li onclick="checkQuiz(this)">B. AI 的代码有 Bug</li>
+          <li onclick="checkQuiz(this)">C. AI 太聪明了会失控</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。运营日常接触大量用户数据，最容易犯的错误就是把包含手机号、姓名、订单号的表格或截图直接上传到公共 AI 产品。脱敏是输入前必须做的基本操作。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. AI 生成的内容在发布前应该怎么做？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. AI 说"没问题"就直接发</li>
+          <li onclick="checkQuiz(this)">B. 必须经过人工审核，涉及金额的描述要格外严格</li>
+          <li onclick="checkQuiz(this)">C. 只发技术团队审核过的</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。AI 生成的文案、活动规则、用户回复在发布前必须经过人工审核。尤其涉及金额、活动条件的内容，AI 写错一句可能导致严重的用户投诉甚至法律纠纷。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 如果 AI Agent 推荐券时访问了用户的支付密码来"优化推荐"——这违反了什么原则？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 违反了"不要用 AI"原则</li>
+          <li onclick="checkQuiz(this)">B. 违反了"AI 要更聪明"原则</li>
+          <li onclick="checkQuiz(this)">C. 违反了"最小权限原则"——AI 只能访问完成任务所需的最少数据</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。最小权限原则是 AI 安全的核心——AI 只应该访问完成当前任务所需的最少数据。推荐券不需要知道支付密码，所以根本不应该能访问到。安全大于效率。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>你手上有哪些数据表是绝对不能直接喂给 AI 的？如果非要分析其中的数据，你准备怎么脱敏？</li>
+          <li>如果 AI 给了一个"核销率提升 20%"的策略建议——在执行之前你会做哪些复核？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼如果有一个"AI 推荐券"功能，你觉得它应该能"看到"用户的哪些信息？绝对不能看到哪些？</li>
+          <li>如果 AI 推荐中出现了"不存在的券"，用户截图发到社交媒体——你觉得这个事件的后果是什么？怎么在事前预防？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>AI 批量生成 50 条大促推送文案——最坏的情况下，如果其中 1 条出现了不合规表述，后果是什么？</li>
+          <li>大促期间如果 AI 客服自动回复用户，回复中如果包含了不该说的信息（比如"活动马上结束了但其实还可以领"）——责任算谁的？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开更多视角</summary>
+          <br><strong style="color:#667eea;">策略运营版：</strong>
+          <ol><li>哪些数据表不能直接喂给 AI？脱敏方案是什么？</li><li>AI 给的建议在落地前需要做哪些复核？</li></ol>
+          <strong style="color:#d63384;">产品运营版：</strong>
+          <ol><li>AI 推荐券应该能看到用户哪些信息？绝对不能看到哪些？</li><li>"不存在的券"被截图发到社交媒体的后果和预防方案？</li></ol>
+          <strong style="color:#e68a00;">营销运营版：</strong>
+          <ol><li>50 条大促推送中 1 条不合规，可能后果是什么？</li><li>AI 客服回复出了错，责任算谁的？</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 11 ==================== -->
 
 </div>
 
