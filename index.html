@@ -553,7 +553,7 @@
   <h1>线下支付用户运营<br>AI 学习工具</h1>
   <p>每日更新 | 策略运营 · 产品运营 · 整合营销</p>
   <div class="stats">
-    <span id="dayCount">已学 12 天</span>
+    <span id="dayCount">已学 13 天</span>
     <span>持续更新中</span>
   </div>
 </div>
@@ -570,7 +570,8 @@
   <button class="nav-btn" onclick="showDay('day9', this)">Day 9</button>
   <button class="nav-btn" onclick="showDay('day10', this)">Day 10</button>
   <button class="nav-btn" onclick="showDay('day11', this)">Day 11</button>
-  <button class="nav-btn active" onclick="showDay('day12', this)">Day 12</button>
+  <button class="nav-btn" onclick="showDay('day12', this)">Day 12</button>
+  <button class="nav-btn active" onclick="showDay('day13', this)">Day 13</button>
 </div>
 
 <div class="container">
@@ -3432,6 +3433,200 @@
 
   </div>
   <!-- ==================== END DAY 12 ==================== -->
+
+  <div class="day-section" id="day13">
+    <div class="day-header">
+      <h2>Day 13 | AI Agent 支付时代——从"人付钱"到"机器付钱"</h2>
+      <span class="date">2026-06-24</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>为什么AI Agent需要"自己花钱"？</h3>
+      <p>过去十年，我们解决的问题是<strong>"让人在网上付钱更简单"</strong>——Stripe出现后，任何人一下午就能接入支付收款。但现在，一个新问题出现了：<strong>AI Agent能不能自己花钱？</strong></p>
+      <p>这个问题看起来简单，但回答它之前需要先理解AI Agent的工作方式：</p>
+
+      <table>
+        <tr><th>AI Agent工作流</th><th>涉及支付吗？</th></tr>
+        <tr><td>Agent帮你订机票 → 需要支付机票费用</td><td>✅ 直接相关</td></tr>
+        <tr><td>Agent帮你订外卖 → 需要支付餐费+配送费</td><td>✅ 直接相关</td></tr>
+        <tr><td>Agent自动分析数据 → 调用付费API（如GPT/Claude）</td><td>✅ Token费用</td></tr>
+        <tr><td>Agent帮你采购办公用品 → 需要支付供应商</td><td>✅ 涉及的供应链</td></tr>
+        <tr><td>Agent帮你预约会议 → 调用付费会议软件</td><td>✅ SaaS订阅费用</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本质变化：</strong>过去是"人操作软件，人付钱"。未来可能是"软件操作软件，软件付钱"。这个变化对支付有礼的业务场景有直接意义——当优惠券分发、核销、对账都可以由AI Agent自动完成时，支付流程需要怎么变？
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年6月最关键的支付基础设施变革</h3>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th><th>对支付的含义</th></tr>
+        <tr>
+          <td>Stripe发布Machine Payments Protocol (MPP)</td>
+          <td>第一个AI Agent能直接支付的协议。AI可以自己在平台上购买服务，不需要人介入</td>
+          <td>从"人授权支付"变成"机器授权支付"。责任主体从消费者变成开发者/企业</td>
+        </tr>
+        <tr>
+          <td>iWallet发布Autonomous Settlement Protocol (ASP)</td>
+          <td>多-party自动结算协议——服务完成后自动把钱分给制造商、承包商、补贴方</td>
+          <td>支付从"一次性扣款"变成"自动化分账"。这对优惠券分佣、代理分成有直接参考</td>
+        </tr>
+        <tr>
+          <td>Anthropic Claude Fable 5被美国政府全球禁用</td>
+          <td>政府以"国家安全"为由，禁止所有外国用户（包括Anthropic海外员工）使用Fable 5和Mythos 5</td>
+          <td>AI模型首次被当成"战略军事资产"对待。这会影响AI产品的全球化合规策略</td>
+        </tr>
+        <tr>
+          <td>OpenAI计划2028年推出AI手机</td>
+          <td>郭明錤爆料：OpenAI携手高通/联发科，Luxshare代工，年出货目标3-4亿台。目标是"AI Agent替代App"</td>
+          <td>如果成功，这是继iPhone之后最大的硬件交互变革。手机从"装App的工具"变成"Agent的入口"</td>
+        </tr>
+        <tr>
+          <td>EU AI Act 8月2日生效倒计时</td>
+          <td>高风险AI系统罚款最高达全球年收入7%或3500万欧元（取其高者）</td>
+          <td>合规成本正式成为AI产品的必算项</td>
+        </tr>
+        <tr>
+          <td>科罗拉多州AI法6月30日生效</td>
+          <td>美国第一个全面AI州法生效，禁止算法歧视</td>
+          <td>如果服务美国科罗拉多州用户，需要合规检查</td>
+        </tr>
+      </table>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：MPP为什么重要？</div>
+        <div class="hint-content">
+          举个例子：过去你让AI帮你订外卖，你需要自己打开App、自己选餐厅、自己输入支付密码。<br><br>
+          有了MPP协议后，AI Agent可以自己在后台完成整个支付流程——不需要你掏出手机确认。它会代表你（在你的授权下）完成付款。<br><br>
+          这意味着"授权"的概念变了：从"每次消费时人确认一次"变成"一次性授权Agent可以花多少钱"。<br><br>
+          <strong>对运营的启示：</strong>你需要提前设计好Agent的消费权限——它能花多少？什么场景能花？超过多少钱需要人确认？这些权限设计就是AI运营的"风控"工作。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>AI Agent支付对支付有礼的三个直接影响</h3>
+
+      <p><strong>1. 优惠券分发变成"自动化"</strong></p>
+      <p>现在优惠券运营是：运营配置活动→用户手动领取→用户使用。如果AI Agent介入：Agent可以自动分析用户行为→判断应该发什么券→自动帮用户领取并使用。中间涉及的分成结算、分佣计算可以通过ASP协议自动完成。</p>
+
+      <p><strong>2. 对账流程变成"实时"</strong></p>
+      <p>现在的对账通常是T+1或者按天。如果支付链路完全由Agent控制，每一笔交易都是可追溯的——Agent在哪一秒、用什么权限、花了多少钱买了什么。这个数据粒度将对现在的"T+1对账"模式形成挑战。</p>
+
+      <p><strong>3. 资金安全变成"权限设计"</strong></p>
+      <p>传统支付安全核心是"保护用户账号密码"。AI Agent支付的安全核心是"Agent的权限边界是什么"。就像企业的财务权限管理——报销超过5000元需要总监审批，Agent消费超过一定金额也需要"审批流"。</p>
+
+      <div class="highlight">
+        <strong>结论：</strong>AI Agent支付不会完全取代人，但它会自动化大部分"确定性支付"。运营需要学的新技能是——设计Agent的消费权限、监控异常交易、处理"机器付错钱"的纠纷。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：作为产品运营，你现在已经可以做什么？</h3>
+      <p>AI Agent支付的基础设施还在建设中，但作为运营，你<strong>现在</strong>就可以开始准备：</p>
+
+      <table>
+        <tr><th>现在可以做</th><th>为什么</th></tr>
+        <tr>
+          <td>整理你的"高频确定性支付"场景</td>
+          <td>哪些支付是固定的、重复的、可预测的？这些最容易被AI Agent自动化。列出来</td>
+        </tr>
+        <tr>
+          <td>设计Agent消费权限矩阵</td>
+          <td>如果AI帮你花预算：日上限？类目限制？超过多少必须人确认？</td>
+        </tr>
+        <tr>
+          <td>建立"AI支付异常"监控面板</td>
+          <td>监控Agent的消费行为——哪些是正常授权？哪些可能是被"诱导消费"？</td>
+        </tr>
+        <tr>
+          <td>学习支付合规的最新要求</td>
+          <td>EU AI Act、科罗拉多AI法——你的AI功能设计是否已经考虑合规？</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 13 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. Stripe发布Machine Payments Protocol (MPP)的核心目的是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 让人在网上付款更快</li>
+          <li onclick="checkQuiz(this)">B. 让AI Agent可以代替人完成支付授权，不需要每次都人确认</li>
+          <li onclick="checkQuiz(this)">C. 让信用卡支付不再需要密码</li>
+        </ul>
+        <div class="quiz-explain">正确答案是B。MPP解决的核心问题是"机器授权"——AI Agent可以程序化地完成支付，不需要人在支付时介入。这不是让现有的支付更快，而是让原来不可能自动化支付场景变得可能。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. iWallet的Autonomous Settlement Protocol (ASP)解决什么问题？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 单次购买的支付授权</li>
+          <li onclick="checkQuiz(this)">B. 交易完成后钱自动分给多个参与方（多-party结算）</li>
+          <li onclick="checkQuiz(this)">C. 让人验证身份更方便</li>
+        </ul>
+        <div class="quiz-explain">正确答案是B。ASP解决的是"钱怎么分"的问题——当一个服务完成后，涉及制造商、承包商、补贴方等多个参与方，系统自动把钱分给各方，不需要人工对账和结算。这和支付有礼的"优惠券分成"、"代理佣金结算"直接相关。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. AI Agent支付时代，运营最重要的新技能是什么？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 记住所有支付API</li>
+          <li onclick="checkQuiz(this)">B. 设计更漂亮的支付界面</li>
+          <li onclick="checkQuiz(this)">C. 设计Agent的消费权限——它能花多少？什么场景能花？超过多少需要人确认？</li>
+        </ul>
+        <div class="quiz-explain">正确答案是C。在AI Agent支付模式下，"权限设计"成为运营的核心工作——和传统财务的"报销权限管理"类似，但颗粒度更细（可能到每一次调用、每一个任务）。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>你手上有没有"高频确定性的付费场景"？比如每到某个时间点就要做的批量采购、周期性投放、自动化发放的奖励？如果这些让AI来做，支付流程需要怎么配合？</li>
+          <li>如果AI Agent可以自动帮你"花预算买流量"——你觉得它会买对还是买错？它花的值不值，谁能判断？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>优惠券的核销和分成——目前是对账T+1，如果未来用ASP协议自动即时结算，这个变化对你的工作意味着什么？</li>
+          <li>支付有礼如果引入AI Agent帮用户"自动省钱"（自动领券、自动比价、自动凑单）——资金安全的权限边界怎么设计？Agent最多能帮用户"花"多少？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>大促投放目前需要人审批预算和素材。如果AI Agent可以自己判断"这个素材值得投，花这个预算"——你需要设计什么"消费权限"给它？</li>
+          <li>营销活动中的"供应商结款"目前是怎么做的？用ASP协议思路，有没有可能变成"活动结束自动分账"？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开更多视角</summary>
+          <br><strong style="color:#667eea;">策略运营版：</strong>
+          <ol><li>高频确定性付费场景的自动化可能性</li><li>AI Agent"花预算"的判断标准和监督机制</li></ol>
+          <strong style="color:#d63384;">产品运营版：</strong>
+          <ol><li>优惠券分成从T+1变成即时结算的影响</li><li>AI Agent帮用户自动省钱时的权限边界</li></ol>
+          <strong style="color:#e68a00;">营销运营版：</strong>
+          <ol><li>投放预算的AI消费权限设计</li><li>供应商结款从人工变成自动分账的可行性</li></ol>
+        </details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 13 ==================== -->
 
 </div>
 
