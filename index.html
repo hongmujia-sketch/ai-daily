@@ -553,7 +553,7 @@
   <h1>线下支付用户运营<br>AI 学习工具</h1>
   <p>每日更新 | 策略运营 · 产品运营 · 整合营销</p>
   <div class="stats">
-    <span id="dayCount">已学 17 天</span>
+    <span id="dayCount">已学 18 天</span>
     <span>持续更新中</span>
   </div>
 </div>
@@ -575,7 +575,8 @@
   <button class="nav-btn" onclick="showDay('day14', this)">Day 14</button>
   <button class="nav-btn" onclick="showDay('day15', this)">Day 15</button>
   <button class="nav-btn" onclick="showDay('day16', this)">Day 16</button>
-  <button class="nav-btn active" onclick="showDay('day17', this)">Day 17</button>
+  <button class="nav-btn" onclick="showDay('day17', this)">Day 17</button>
+  <button class="nav-btn active" onclick="showDay('day18', this)">Day 18</button>
 </div>
 
 <div class="container">
@@ -4591,6 +4592,268 @@
 
   </div>
   <!-- ==================== END DAY 17 ==================== -->
+
+  <div class="day-section" id="day18">
+    <div class="day-header">
+      <h2>Day 18 | 为什么 Token 烧得这么快？——Token 经济与企业成本控制</h2>
+      <span class="date">2026-06-29</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>Token：AI 经济的"原子单位"</h3>
+      <p>2026 年上半年，一个词频繁出现在科技公司 CEO 的邮件里：<strong>Token 账单</strong>。</p>
+      <p>Uber 的 34 亿美元年度 AI 预算，4 个月就烧光了。微软紧急叫停了内部 Claude Code 的集体许可。Priceline 的 IT 财务总监把 AI 计费模式比作"成瘾疫情"——"先让你试，让你上瘾，然后你就被绑住了。"</p>
+      <p>这一切的根源，是一个大多数人从未真正理解的概念：<strong>Token</strong>。</p>
+
+      <p><strong>什么是 Token？</strong></p>
+      <p>Token 是大语言模型处理文本的最小单位。模型不是逐字阅读，而是先把文本切成"片段"——每个片段就是一个 Token。以英语为例，100 个 Token 约等于 75 个英文单词；中文通常 1 个汉字 ≈ 1-2 个 Token。</p>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：Token 到底是什么？</div>
+        <div class="hint-content">
+          想象一家自助餐厅。以前你付固定月费，随便吃。现在餐厅改成了"按口计费"——每一口食物都有一个价格。<br><br>
+          Token 就是 AI 的"每一口"。你发给 AI 的每一句话、AI 回你的每一句话，都会被拆成很多 Token，每个 Token 都要付费。<br><br>
+          关键陷阱：<strong>对话越长，Token 越多</strong>。因为 AI 没有记忆——每次对话，它都要把之前的全部内容重新"读"一遍。就像一个朋友每次回复都把你俩的聊天记录全部复制粘贴发回来——越聊越贵。
+        </div>
+      </div>
+
+      <p><strong>Token 计费的两面：输入与输出</strong></p>
+      <table>
+        <tr><th>计费类型</th><th>含义</th><th>价格差异</th></tr>
+        <tr><td>输入 Token</td><td>你发给模型的内容（提示词、文档、历史对话）</td><td>较便宜</td></tr>
+        <tr><td>输出 Token</td><td>模型生成的内容（回答、代码、分析）</td><td>通常是输入的 3-6 倍</td></tr>
+        <tr><td>缓存 Token</td><td>重复使用的系统提示词/知识库（部分模型支持）</td><td>最便宜，约等于输入的 1/10</td></tr>
+      </table>
+
+      <p><strong>2026 年主流模型定价参考（每百万 Token）：</strong></p>
+      <table>
+        <tr><th>模型</th><th>输入价格</th><th>输出价格</th><th>定位</th></tr>
+        <tr><td>GPT-5.6 Sol</td><td>$5</td><td>$30</td><td>旗舰推理</td></tr>
+        <tr><td>Claude Fable 5</td><td>$10</td><td>$50</td><td>旗舰推理</td></tr>
+        <tr><td>GPT-5.6 Terra</td><td>$2.50</td><td>$15</td><td>日常全能</td></tr>
+        <tr><td>Claude Sonnet 4.6</td><td>$3</td><td>$15</td><td>日常全能</td></tr>
+        <tr><td>DeepSeek V4-Pro</td><td>$0.44</td><td>$0.87</td><td>经济高效</td></tr>
+        <tr><td>Qwen3-Max</td><td>≈¥0.004/千Token</td><td>≈¥0.012/千Token</td><td>国产旗舰</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>核心公式：</strong>AI 调用总成本 = 输入 Token × 输入单价 + 输出 Token × 输出单价<br>
+        一次看似简单的对话，背后可能是数千到数百万 Token 的消耗——尤其在 Agent 自动执行模式下。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>为什么 Token 烧得这么快？——五大烧钱引擎</h3>
+
+      <p><strong>引擎一：二次方增长——对话越长，成本越贵</strong></p>
+      <p>AI 没有真正的"记忆"。每次生成新回答，模型都要重新处理整个对话历史。对话从 1 轮变成 10 轮，Token 消耗不是 10 倍——而是接近 100 倍。这叫<strong>二次方增长（Quadratic Scaling）</strong>。</p>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：为什么越聊越贵？</div>
+        <div class="hint-content">
+          假设每轮对话产生 1000 个 Token：<br>
+          第 1 轮：AI 读 1000 + 写 1000 = 2000 Token<br>
+          第 2 轮：AI 读 2000（第1轮+第2轮）+ 写 1000 = 3000 Token<br>
+          第 10 轮：AI 读 10000（前9轮全部历史）+ 写 1000 = 11000 Token<br><br>
+          10 轮对话的总消耗不是 20000，而是约 <strong>65000</strong>。这就是二次方增长——越聊越贵，而且贵的速度越来越快。
+        </div>
+      </div>
+
+      <p><strong>引擎二：Agent 循环调用——一个请求 = N 次模型调用</strong></p>
+      <p>AI Agent 执行任务时，一次用户请求可能触发 5-50 次模型调用——规划、检索、工具调用、验证、纠错……每一步都产生 Token。工程管理平台 Jellyfish 的研究显示，受 Agent 功能驱动，每位开发者的 Token 消耗在 9 个月内增长了 <strong>18.6 倍</strong>。</p>
+
+      <p><strong>引擎三：上下文窗口膨胀——百万 Token 的新常态</strong></p>
+      <p>2026 年，100 万 Token 上下文已成为旗舰模型标配。这意味着一次对话可以塞入整本书、整个代码仓库——但也意味着一次对话的输入 Token 可能直接是百万级别。用 GPT-5.6 Sol 处理一次 100 万 Token 的输入，光输入成本就是 $5。</p>
+
+      <p><strong>引擎四："Tokenmaxxing"文化——为用而用</strong></p>
+      <p>2025 年，很多企业建立了"Token 用量排行榜"，鼓励员工多用 AI。亚马逊在 2026 年 5 月关闭了内部排行榜——因为员工为了刷排名，人为制造不必要的 AI 调用。Priceline 的 Chris Reed 形容："就像快克可卡因成瘾疫情。"</p>
+
+      <p><strong>引擎五：杰文斯悖论——降价反而花更多</strong></p>
+      <p>单位 Token 价格确实在降（2023 年至今下降超过 90%），但总支出反而上升——因为用量增长远快于降价的幅度。SAP 副总裁 Frederik Pohl 坦言："我们的单位成本在下降，但某些月份的总支出却翻了一倍。"高盛预测全球 Token 用量将在 3.5 年内从 6 千万亿增长至 120 千万亿。</p>
+
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <p>碰一下支付的用户运营场景中，如果用 AI 自动生成千人千面的推送文案——每条推送的 Token 成本可能只有几分钱，但日活 1 亿用户的场景下，一天就是几十万元。需要建立<strong>按用户分层的模型路由策略</strong>：高价值用户用旗舰模型，长尾用户用轻量模型。</p>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <p>支付有礼的权益推荐如果接入 AI，每次推荐查询都消耗 Token。需评估：用户主动查询（高价值，可用好模型）vs 后台批量推荐（低单次价值，应用轻量模型+缓存）。产品设计阶段就要考虑<strong>成本结构</strong>，而不是上线后再砍功能。</p>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <p>大促活动的 AI 生成内容（文案、海报描述、活动规则）在活动预热期可能每天产生数百万次 AI 调用。如果统一用旗舰模型，活动还没开始成本就先爆了。关键是<strong>分级生产</strong>：核心入口内容用旗舰模型，辅助物料用轻量模型。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-practice">工具实操</span>
+      <h3>Token 成本控制的六大实战方法</h3>
+
+      <p><strong>方法一：模型路由——简单任务用便宜模型</strong></p>
+      <p>不是每个任务都需要 GPT-5.6 Sol。日常文案润色、简单问答、数据提取——用 Terra 或国产轻量模型完全够用。Factory 等公司已推出<strong>自动模型路由</strong>工具，根据任务复杂度自动选择最经济的模型。据 TrueFoundry 的企业实践数据，模型路由可降低 <strong>30-50%</strong> 的推理成本。</p>
+
+      <p><strong>方法二：语义缓存——避免重复调用</strong></p>
+      <p>用户频繁问相似问题时（如活动规则、权益说明），不必每次都调用模型。语义缓存通过"语义相似度"匹配，发现相似问题直接返回历史回答。企业实测缓存命中率可达 <strong>15-40%</strong>，节省对应比例的 API 费用。阿里云百炼平台已支持<strong>缓存 Token</strong>，长期固定的系统提示词开启缓存后可大幅降低消耗。</p>
+
+      <p><strong>方法三：上下文压缩——减少输入 Token</strong></p>
+      <p>对话历史过长时，自动将早期对话压缩为摘要，只保留最近 3 轮完整对话 + 历史摘要。实测可减少 <strong>20-35%</strong> 的输入 Token。</p>
+
+      <p><strong>方法四：Prompt 精炼——少即是多</strong></p>
+      <p>冗长的提示词不仅浪费 Token，还可能降低输出质量。核心原则：<strong>说清楚要什么，去掉不必要的背景</strong>。比如把"请帮我写一个关于618大促的朋友圈文案"精简为"写一条618大促朋友圈文案，3句话，有紧迫感"——输入 Token 减少一半，输出质量反而更好。</p>
+
+      <p><strong>方法五：预算熔断——设置硬性上限</strong></p>
+      <p>企业必须建立 Token 预算的<strong>硬性熔断机制</strong>：团队/项目级别的日预算和月预算，超出则自动暂停调用，而非事后补缴。Coinbase 已建立精密的每周费用上限系统，依据员工职级设定从 $500 到 $5000 不等的上限。</p>
+
+      <p><strong>方法六：Tokenomics 治理框架</strong></p>
+      <p>2026 年 6 月，Linux 基金会正式成立 <strong>Tokenomics Foundation</strong>，借鉴云 FinOps 的经验，为 AI Token 经济建立标准化框架。核心指标包括：<strong>Cost-per-Intelligence</strong>（每单位智能成本）和 <strong>Tokens-per-Watt</strong>（每瓦特算力的 Token 产出）。企业应按"可见→可分配→可优化→可预测→自治"五级成熟度逐步建设 Token 治理能力。</p>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：模型路由是什么？</div>
+        <div class="hint-content">
+          想象一个医院分诊台：<br>
+          感冒发烧 → 社区诊所（便宜、快速）<br>
+          骨折手术 → 三甲医院（贵、专业）<br><br>
+          模型路由就是 AI 的"分诊台"——简单问题自动派给便宜模型，复杂问题才升级到旗舰模型。这样大部分日常需求用便宜模型解决，总成本大幅下降，但关键任务的输出质量不受影响。
+        </div>
+      </div>
+
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <p>大盘支付运营中，AI 辅助的数据分析建议采用"分层路由"：日常日报/周报用轻量模型自动生成，季度战略分析和异常归因才用旗舰模型深度推理。同时，为不同运营团队设置 Token 月预算，每月复盘 Token 消耗与业务产出的关系。</p>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <p>权益产品的 AI 推荐功能建议接入缓存层：用户常见权益查询（如"我有几张券"）走缓存，复杂权益组合推荐才调用模型。产品设计时就要把 Token 成本纳入功能 ROI 评估——一个 AI 功能如果 Token 成本高于它带来的转化收益，就不该上线。</p>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <p>大促期间 AI 批量生成内容时，建立<strong>"3+1"生产流水线</strong>：3 个轻量模型并行出初稿 + 1 个旗舰模型做最终审稿和优化。成本降为全用旗舰模型的 1/5，但质量差距不到 10%。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-news">行业动态</span>
+      <h3>2026 年 6 月 Token 经济重磅事件</h3>
+
+      <p><strong>1. Linux 基金会成立 Tokenomics Foundation</strong></p>
+      <p>2026 年 6 月，Linux 基金会正式宣布成立 Tokenomics Foundation，为 AI Token 经济建立开放标准和度量框架。FinOps 基金会执行董事 J.R. Storment 透露，4-5 月间大量企业报告"全年 Token 预算 3 个月就花完了"的危机。新组织计划 7 月正式发布首个框架，核心指标包括 Cost-per-Intelligence 和 Tokens-per-Watt。</p>
+      <p><a href="https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/" target="_blank">来源：TechCrunch - The token bill comes due</a></p>
+
+      <p><strong>2. Uber 34 亿美元 AI 预算 4 个月烧光</strong></p>
+      <p>Uber CTO Praveen Neppalli Naga 坦承，2026 年拨备的 34 亿美元 AI 年度预算在 4 月份就已耗尽。向 5000 名工程师推出 Claude Code 后，月度活跃使用率飙升至 85%-95%，每名工程师月均 API 成本达 $500-$2000。标志着"AI 吃到饱"时代的终结。</p>
+      <p><a href="https://www.epochtimes.com/gb/26/6/11/n14786728.htm" target="_blank">来源：大纪元 - Token 账单失控</a></p>
+
+      <p><strong>3. 微软紧急叫停 Claude Code 内部许可</strong></p>
+      <p>微软于 5 月下旬宣布 6 月 30 日终止"体验与设备"部门对 Claude Code 的集体许可。该试点 2025 年 12 月高调推出，但因 Token 消耗远超预期而迅速崩盘，工程师被强制切换至成本更可控的 GitHub Copilot CLI。同时，GitHub Copilot 也转向按量计费模式，终结了无限 Token 时代。</p>
+      <p><a href="https://www.economist.com/business/2026/06/14/companies-are-scrambling-to-curtail-soaring-ai-costs" target="_blank">来源：The Economist - Token reckoning</a></p>
+
+      <p><strong>4. 企业 Token 计费时代全面到来</strong></p>
+      <p>2026 年 FinOps X 大会上，Token 计费成为核心议题。OpenAI 企业负责人 Alexander Embiricos 表示，与客户的对话已从"模型够不够好"转变为"Token 预算怎么控"。亚马逊、沃尔玛、Coinbase、Salesforce 等企业全面推行 Token 预算管理制度。高盛预测全球 Token 用量到 2030 年将增长 24 倍。</p>
+      <p><a href="https://news.qq.com/rain/a/20260623A02X4N00" target="_blank">来源：腾讯新闻 - AI Token计费时代来临</a></p>
+
+      <p><strong>5. 苹果产品全线涨价——AI 算力成本向消费电子传导</strong></p>
+      <p>6 月 25 日，苹果中国上调 Mac、iPad 等产品价格，平均涨幅约 20%。苹果声明称："AI 数据中心的迅猛扩张导致存储需求激增，我们从未见过零部件价格以如此幅度和速度上涨。"这是 AI 基础设施成本向终端消费者传导的标志性事件——即使不用 AI，也逃不掉"AI 税"。</p>
+      <p><a href="https://finance.sina.com.cn/wm/2026-06-26/doc-inietsps5171805.shtml" target="_blank">来源：新浪财经 - 苹果微软产品大涨价</a></p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-insight">产品运营视角</span>
+      <h3>Token 成本如何影响 AI 产品的设计与运营</h3>
+
+      <p><strong>影响一：功能设计阶段就要算 Token 账</strong></p>
+      <p>传统互联网产品的边际成本趋近于零（多一个用户的存储成本可忽略不计），但 AI 产品不同——<strong>每次调用都有真实成本</strong>。一个 AI 功能如果每次调用的 Token 成本是 ¥0.5，日活 100 万用户每天调用 3 次，一天就是 ¥150 万。产品设计阶段必须做 Token 成本测算，否则上线就是烧钱。</p>
+
+      <p><strong>影响二：SaaS 定价模式正在被重塑</strong></p>
+      <p>GitHub Copilot 已从"无限 Token"月费转向按量计费。微软的企业客户从"为功能付费"变成"为消耗付费"。这意味着：<strong>AI 产品的定价不再是产品经理说了算，而是 Token 经济学说了算</strong>。运营团队需要理解 Token 定价逻辑，才能制定合理的套餐和阶梯定价策略。</p>
+
+      <p><strong>影响三：缓存和路由成为产品竞争力</strong></p>
+      <p>能做好语义缓存和模型路由的 AI 产品，不仅成本更低，还能提供更快的响应速度（缓存命中时延迟接近零）。这两个能力正在从"技术优化"变成"产品卖点"——<strong>便宜且快</strong>，永远是最好的用户体验。</p>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p>Token 经济的核心启示：<strong>AI 的"便宜"是相对的，"贵"是绝对的</strong>。2026 年的单位 Token 价格确实比 2023 年便宜了 90% 以上，但用量增长了数十倍。未来的竞争不仅是"谁的模型更强"，更是"谁能让每一分 Token 花得更值"。运营团队如果不懂 Token 经济学，就等于在黑暗中花钱——花完了才知道花了多少。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 18 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 为什么 AI 对话越长越贵？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 因为模型会累，需要更多算力</li>
+          <li onclick="checkQuiz(this)">B. 因为长对话需要更大内存</li>
+          <li onclick="checkQuiz(this)">C. 因为 AI 没有记忆，每次都要重新处理整个对话历史——这导致 Token 消耗呈二次方增长</li>
+        </ul>
+        <div class="quiz-explain">正确答案是C。AI 模型本身没有"记忆"，每次生成新回答时都要把之前的完整对话历史作为输入重新处理。这意味着对话轮次越多，每轮的输入 Token 就越多，总消耗呈二次方增长——不是线性增长。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 什么是"杰文斯悖论"在 AI 领域的表现？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. AI 越智能，用户越不信任</li>
+          <li onclick="checkQuiz(this)">B. 单位 Token 价格下降，但因为用量增长更快，总支出反而上升</li>
+          <li onclick="checkQuiz(this)">C. 模型越便宜，企业越不愿意买</li>
+        </ul>
+        <div class="quiz-explain">正确答案是B。杰文斯悖论原指技术进步降低了资源使用成本，但效率提升反而刺激了更多消费，导致总消耗量上升。在 AI 领域：虽然每百万 Token 的价格持续下降，但 Agent 爆发、上下文窗口扩大等因素使 Token 消耗量暴增，总支出不降反升。SAP 等企业已验证这一现象。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 以下哪个不是有效的 Token 成本控制方法？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 始终使用最贵的旗舰模型以确保质量</li>
+          <li onclick="checkQuiz(this)">B. 对简单任务使用轻量模型，复杂任务才升级到旗舰模型</li>
+          <li onclick="checkQuiz(this)">C. 对相似问题启用语义缓存，避免重复调用模型</li>
+        </ul>
+        <div class="quiz-explain">正确答案是A。始终使用最贵的旗舰模型是最大的成本浪费。实测表明，70%以上的日常任务用轻量模型就能胜任——模型路由可降低 30-50% 的推理成本而不影响输出质量。选项B是模型路由策略，选项C是语义缓存，都是有效的降本手段。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. 2026 年 6 月成立的 Tokenomics Foundation 的核心目标是什么？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 降低 AI 模型的训练成本</li>
+          <li onclick="checkQuiz(this)">B. 为 AI Token 经济建立开放标准、度量框架和成本治理方法论</li>
+          <li onclick="checkQuiz(this)">C. 限制 AI 企业的利润率</li>
+        </ul>
+        <div class="quiz-explain">正确答案是B。Tokenomics Foundation 由 Linux 基金会发起，目标是把云 FinOps 的经验延伸到 AI Token 领域——建立统一的 Token 计量标准、成本归因规范和新指标体系（如 Cost-per-Intelligence、Tokens-per-Watt），让企业能用统一语言管理和优化 AI 支出。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>你团队目前使用 AI 工具是否有人监控 Token 消耗？如果下个月 AI 预算砍掉一半，哪些场景可以降级到轻量模型？</li>
+          <li>碰一下支付的用户触达如果接入 AI 个性化，如何设计"分层路由"策略来平衡成本和效果？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼的 AI 功能中，哪些属于"高价值场景"（值得用旗舰模型），哪些属于"批量场景"（应该用轻量模型+缓存）？</li>
+          <li>如果 Token 成本上涨 50%，你负责的产品功能中有哪些需要重新评估 ROI？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>大促期间 AI 批量生产内容（文案、物料描述），如果从"全用旗舰模型"切换到"3+1 生产线"（3轻量+1旗舰审核），预计能节省多少成本？质量会受多大影响？</li>
+          <li>苹果产品因 AI 算力成本涨价 20%——这是否会影响你大促活动的终端设备和权益选择策略？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 18 ==================== -->
 
 </div>
 
