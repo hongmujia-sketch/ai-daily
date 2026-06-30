@@ -553,7 +553,7 @@
   <h1>线下支付用户运营<br>AI 学习工具</h1>
   <p>每日更新 | 策略运营 · 产品运营 · 整合营销</p>
   <div class="stats">
-    <span id="dayCount">已学 18 天</span>
+    <span id="dayCount">已学 19 天</span>
     <span>持续更新中</span>
   </div>
 </div>
@@ -576,7 +576,8 @@
   <button class="nav-btn" onclick="showDay('day15', this)">Day 15</button>
   <button class="nav-btn" onclick="showDay('day16', this)">Day 16</button>
   <button class="nav-btn" onclick="showDay('day17', this)">Day 17</button>
-  <button class="nav-btn active" onclick="showDay('day18', this)">Day 18</button>
+  <button class="nav-btn" onclick="showDay('day18', this)">Day 18</button>
+  <button class="nav-btn active" onclick="showDay('day19', this)">Day 19</button>
 </div>
 
 <div class="container">
@@ -4854,6 +4855,289 @@
 
   </div>
   <!-- ==================== END DAY 18 ==================== -->
+
+  <!-- ==================== DAY 19 ==================== -->
+  <div class="day-section" id="day19">
+    <div class="day-header">
+      <h2>Day 19 | AI 实验与迭代——产品运营如何用 AI 加速测试</h2>
+      <span class="date">2026-06-30</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>为什么"实验"是产品运营的核心竞争力？</h3>
+      <p>2026 年 6 月，Exponential View 的最新研究显示：生成式 AI 行业年收入已达 1100 亿美元，增速是互联网时代的 3 倍。但一个尴尬的事实是——<strong>大多数公司仍然无法衡量 AI 带来的实际业务效果</strong>。S&P 500 财报电话会中提到 AI 的频率是 2023 年的 3-4 倍，但"能拿出量化结果的公司屈指可数"。</p>
+      <p>问题出在哪？<strong>不会做实验</strong>。</p>
+      <p>产品运营的核心工作，本质上是一个循环：<strong>假设 → 实验 → 数据 → 迭代</strong>。你猜用户喜欢什么（假设），做一个小范围测试（实验），看数据怎么说（分析），然后改进（迭代）。AI 不能替你做决策，但它能把每个环节的速度提升 5-10 倍。</p>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：什么是"实验"？和我平时改个按钮有什么区别？</div>
+        <div class="hint-content">
+          你平时改个按钮颜色、换个文案——那叫"改"，不叫"实验"。<br><br>
+          <strong>实验</strong>有严格的规则：<br>
+          1. 改之前，先说清楚你猜会发生什么（假设）<br>
+          2. 只改一个东西，其他不变（控制变量）<br>
+          3. 同时跑旧版和新版，让用户随机看到其中一个（A/B 测试）<br>
+          4. 看数据是不是真的如你猜测的那样（统计分析）<br><br>
+          不做实验的后果：你觉得新版本更好，上线了，结果数据跌了——但你不知道是改的那一点导致的，还是那天刚好是周末、系统卡了、或者竞品在做活动。<br><br>
+          <strong>AI 的价值</strong>：以前从"有个想法"到"实验上线"可能要两周（找开发、写代码、等排期），现在用 AI 可能只要半天。
+        </div>
+      </div>
+
+      <p><strong>实验思维 vs"感觉思维"——一张表看清区别：</strong></p>
+      <table>
+        <tr><th>维度</th><th>感觉思维</th><th>实验思维</th></tr>
+        <tr><td>决策依据</td><td>"我觉得用户会喜欢"</td><td>"我们假设用户更喜欢 A，测试看看"</td></tr>
+        <tr><td>上线方式</td><td>全量上线，出了问题再回滚</td><td>小范围灰度，同时保留对照组</td></tr>
+        <tr><td>失败处理</td><td>"白做了，浪费时间"</td><td>"排除了一条错误路径，离正确答案更近"</td></tr>
+        <tr><td>迭代速度</td><td>每月 1-2 次</td><td>每周 2-3 次（AI 辅助下）</td></tr>
+        <tr><td>知识沉淀</td><td>凭记忆和经验</td><td>结构化实验库，AI 自动归档</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">核心理论</span>
+      <h3>AI 如何重塑实验的四个环节</h3>
+
+      <p><strong>环节一：假设生成——AI 帮你想得更多、更准</strong></p>
+      <p>好实验的前提是好假设。但人的经验有盲区——你只会想到自己熟悉的维度。AI 可以基于历史实验数据、用户行为日志、行业 benchmark，帮你生成你可能想不到的假设。</p>
+      <p>例如：GrowthBook 的 AI 功能可以基于你过往的实验记录，自动发现"哪些类型的改动曾产生正向效果"，并推荐新的测试方向。它甚至能判断新假设是否和已有实验重复，避免浪费流量。</p>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：AI 怎么帮我想假设？</div>
+        <div class="hint-content">
+          想象你是一个厨师，每天都在研究新菜。你自己能想出 5 道新菜——但 AI 就像一本记录了全世界 10 万家餐厅菜单的百科全书。<br><br>
+          你问它："之前我们试过把优惠券从首页挪到支付结果页，点击率涨了 15%。还有类似的方向吗？"<br>
+          AI 可能会回答："根据你的用户画像和行为数据，以下 3 个方向值得尝试：①把优惠券嵌入账单详情页；②在支付成功页加'好友也领了'社交提示；③根据用户消费频次动态调整券面额。"<br><br>
+          这些你可能自己也能想到——但 AI 的速度是秒级，而且不会遗漏你忙的时候忘掉的那些点。
+        </div>
+      </div>
+
+      <p><strong>环节二：实验设计——AI 帮你算样本量、定指标</strong></p>
+      <p>一个常见的错误：测试跑了一周就下结论，但样本量根本不够——统计显著性不足，结果可能是噪声。AI 可以帮你：</p>
+      <ul>
+        <li><strong>自动计算最小样本量</strong>：输入你的预期提升幅度、当前基准线，AI 直接告诉你需要多少用户、跑多少天</li>
+        <li><strong>推荐核心指标</strong>：避免"看了一堆指标，哪个动了算哪个"的多重比较陷阱</li>
+        <li><strong>生成实验方案</strong>：部分平台（如 Mixpanel、GrowthBook）已支持用自然语言描述实验目标，AI 自动生成 Feature Flag 配置和追踪事件</li>
+      </ul>
+
+      <p><strong>环节三：数据分析——AI 帮你读结果、挖洞察</strong></p>
+      <p>实验跑完了，数据出来了——然后呢？很多人只看一眼"提升/下降"，就下结论。但真正有价值的洞察藏在细分里。</p>
+      <p>AI 现在能做的事：</p>
+      <ul>
+        <li><strong>自动生成实验报告</strong>：输入实验 ID，AI 生成包含结论、置信区间、分群分析的一页纸摘要</li>
+        <li><strong>自动分群挖掘</strong>："整体提升不显著，但新用户子群提升 23%（p<0.01）"——这种洞察人工排查需要数小时，AI 只需几秒</li>
+        <li><strong>异常检测</strong>：自动发现 SRM（样本比例失调）、数据延迟、分桶偏斜等实验质量问题</li>
+      </ul>
+
+      <div class="highlight">
+        <strong>2026 年的关键趋势</strong>：AI 驱动的测试工具正从"辅助分析"升级为"自主执行"。BrowserStack 的报告显示，92% 的团队已从 AI 测试中获得正 ROI，其中 18% 的团队 ROI 超过 100%。但真正的全自动实验（AI 自己设计、上线、决策）仍有距离——人类判断仍是安全网。
+      </div>
+
+      <p><strong>环节四：迭代决策——AI 帮你沉淀知识、加速循环</strong></p>
+      <p>实验做完不是终点——你得把结论变成团队知识。但现实中，90% 的实验结果散落在 Slack 消息、Confluence 文档、PPT 附件里，下次有人想做类似实验时根本找不到。</p>
+      <p>AI 可以自动：</p>
+      <ul>
+        <li>将每次实验的假设、结果、结论结构化写入实验知识库</li>
+        <li>在新实验立项时，自动检索相关历史实验，避免重复</li>
+        <li>追踪"哪些假设方向长期胜率最高"，帮你建立团队的实验策略模型</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>AI 实验工具链：从想法到上线只需半天</h3>
+
+      <p><strong>2026 年 AI 实验工具分层地图：</strong></p>
+      <table>
+        <tr><th>层级</th><th>工具示例</th><th>AI 能力</th><th>适合谁</th></tr>
+        <tr><td>假设 &amp; 设计</td><td>GrowthBook AI、Mixpanel Copilot</td><td>自然语言生成假设、自动算样本量、推荐指标</td><td>产品经理、运营</td></tr>
+        <tr><td>配置 &amp; 上线</td><td>LaunchDarkly、Statsig、Optimizely</td><td>AI 辅助 Feature Flag 配置、自动追踪埋点</td><td>产品、开发</td></tr>
+        <tr><td>分析 &amp; 洞察</td><td>Amplitude AI、PostHog、Eppo</td><td>自动报告、分群发现、异常检测</td><td>数据分析师、运营</td></tr>
+        <tr><td>全流程 Agent</td><td>GrowthBook Weblens、Claude Code + API</td><td>端到端：从描述目标到自动出实验方案</td><td>技术型运营、增长团队</td></tr>
+      </table>
+
+      <p><strong>实操案例：用 AI 加速一个"支付有礼"按钮文案实验</strong></p>
+      <p>场景：你想测试支付成功页的领券按钮文案，从"领取优惠"改为"再省 ¥5"。</p>
+      <ol>
+        <li><strong>假设生成（5 分钟）</strong>：在 GrowthBook 中输入"支付成功页领券按钮文案优化"，AI 分析历史实验后推荐："金额锚定文案（如'再省¥5'）在支付场景的假设胜率约 67%，建议优先测试"</li>
+        <li><strong>实验设计（10 分钟）</strong>：AI 自动计算——当前 CTR 8%，预期提升 15%，显著性 0.05，统计功效 80%→需要约 12000 用户/组，按当前日活约 5 天可完成</li>
+        <li><strong>配置上线（30 分钟）</strong>：在 Statsig 中创建 Feature Flag，AI 辅助生成追踪事件代码片段，开发粘贴上线</li>
+        <li><strong>分析解读（2 分钟）</strong>：实验结束后，Amplitude AI 自动生成报告："整体 CTR +12%（p=0.03），新用户子群 +28%（p<0.01），老用户无显著差异。建议对新用户全量推全，老用户保留原版。"</li>
+      </ol>
+      <p>全流程：<strong>不到 1 小时</strong>（不含实验运行期）。传统流程通常需要 3-5 个工作日。</p>
+
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">通俗解释：Feature Flag 是什么？</div>
+        <div class="hint-content">
+          Feature Flag 就像一个"开关"。你把新文案和新功能都写好，但用一个开关控制谁看到新版本、谁看到旧版本。<br><br>
+          好处：<br>
+          - 不用发版就能切换：发现新版本有问题？关掉开关就行，不用紧急回滚代码<br>
+          - 可以精确控制比例：先给 5% 的用户看，没问题再扩大到 50%、100%<br>
+          - 可以按条件分配：只给新用户看、只给某个城市的用户看<br><br>
+          没有 Feature Flag 的年代，A/B 测试需要开发写两套代码、做两套页面——极其痛苦。现在一个开关搞定。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-news">行业动态</span>
+      <h3>2026 年 6 月 AI 实验与测试领域最新动态</h3>
+
+      <div class="news-item">
+        <p><strong>1. AI 经济规模达 1100 亿美元，增速为互联网 3 倍</strong></p>
+        <p>Exponential View 最新研究显示，生成式 AI 行业 12 个月收入达 1100 亿美元，年化运行率超 1750 亿美元。每 10% 的 Token 降价就能驱动 12-18% 的用量增长，全球月 Token 消费量突破 30 千万亿。AI 重启了美国 16 年停滞的电力增长。<a href="https://radicaldatascience.wordpress.com/2026/06/11/ai-news-briefs-bulletin-board-for-june-2026/" target="_blank">[来源]</a></p>
+      </div>
+
+      <div class="news-item">
+        <p><strong>2. BrowserStack 报告：92% 的团队从 AI 测试中获得正 ROI</strong></p>
+        <p>BrowserStack《2026 AI 软件测试现状》报告揭示：92% 采用 AI 测试的团队已获得正 ROI，其中 18% 的团队 ROI 超过 100%。但集成复杂度（37%）、数据隐私（36%）和可靠性担忧（34%）仍是主要障碍。<a href="https://www.linkedin.com/pulse/state-ai-software-testing-2026-browserstack-fxczf" target="_blank">[来源]</a></p>
+      </div>
+
+      <div class="news-item">
+        <p><strong>3. AI 驱动 A/B 测试进入 Tier 3 时代——Agent 原生实验平台崛起</strong></p>
+        <p>Humblytics 2026 年度指南指出，AI 在 A/B 测试中的应用已从"聊天层"（Tier 1）和"假设助手"（Tier 2），进化到"Agent 原生"（Tier 3）——AI 可以通过 API 自主读流量、生假设、写变体、发实验、监控显著性、决定推全。配合 Claude Code / Cursor 等 Agent，实验流程不再需要手动操作仪表盘。<a href="https://humblytics.com/blog/ai-powered-ab-testing-tools-complete-guide" target="_blank">[来源]</a></p>
+      </div>
+
+      <div class="news-item">
+        <p><strong>4. OpenAI 发布 Jalapeño 自研芯片，推理成本将进一步下降</strong></p>
+        <p>OpenAI 与 Broadcom 联合打造的自研推理芯片 Jalapeño 曝光，9 个月完成设计（业内最快），能效比优于当前主流芯片，已支持 GPT-5.3-Codex-Spark 实验室运行。推理成本下降意味着更频繁的 A/B 测试和更细粒度的实验分组成为可能。<a href="https://radicaldatascience.wordpress.com/2026/06/11/ai-news-briefs-bulletin-board-for-june-2026/" target="_blank">[来源]</a></p>
+      </div>
+
+      <div class="news-item">
+        <p><strong>5. 华为 openPangu 2.0 六月三十日起陆续开源七大核心组件</strong></p>
+        <p>华为 6 月 13 日发布全栈开源模型 openPangu 2.0，含 Pro 版（505B 总参/18B 激活）和 Flash 版（92B/6B），全面适配昇腾和麒麟芯片，6 月 30 日起逐步开源模型权重、预训练代码和后训练代码。国产开源模型的持续壮大，为企业级 AI 实验提供了更可控的底层选择。<a href="https://zhuanlan.zhihu.com/p/2049035441660339035" target="_blank">[来源]</a></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>AI 时代实验思维的三个升级</h3>
+
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <p><strong>升级一：从"单次实验"到"实验飞轮"</strong></p>
+        <p>传统模式：做完一个实验，写个报告，结束。下一个实验从零开始。</p>
+        <p>AI 模式：每个实验的结果自动沉淀为知识，AI 在下次假设生成时调用历史数据——实验越多，假设越精准，胜率越高。这就是<strong>实验飞轮</strong>：量变引起质变。</p>
+        <p><strong>升级二：从"粗粒度"到"细粒度"分群实验</strong></p>
+        <p>以前因为流量有限，只能做"整体 A/B"。AI 降低了实验成本后，你可以做更多细粒度分群实验——新用户 vs 老用户、高频 vs 低频、不同城市。Day 17 讲的 GPT-5.6 Sol 的推理能力，让实时分群分析不再是梦想。</p>
+        <p><strong>升级三：从"人工决策"到"人机协同决策"</strong></p>
+        <p>AI 给出分析结论和建议，但最终推全决策仍然需要人。为什么？因为数据只能告诉你"是什么"，不能告诉你"该不该"。一个实验对新用户 CTR 提升 28%，但如果你全量推全，老用户会不会觉得被区别对待？这种<strong>品牌和体验层面的判断</strong>，AI 做不了。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <p><strong>支付有礼场景的 AI 实验路线图：</strong></p>
+        <ol>
+          <li><strong>快速验证期（1-2 周）</strong>：用 AI 生成 5-10 个文案/布局变体，通过 Feature Flag 分流测试，AI 自动分析每个变体的表现</li>
+          <li><strong>深度优化期（2-4 周）</strong>：对胜出变体做分群深挖——AI 自动切分"新/老用户、高/低金额、不同支付时段"，找到最优组合</li>
+          <li><strong>自动化运营期（持续）</strong>：建立"AI 实验雷达"——AI 持续监控核心指标，发现异常波动时自动建议启动实验排查</li>
+        </ol>
+        <p>关键原则：<strong>不是所有实验都需要 AI</strong>。简单的"文案 A vs B"用传统工具就够了。AI 的价值在于"高维、多变量、需要快速迭代"的复杂实验场景。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <p><strong>大促场景的 AI 实验策略：</strong></p>
+        <p>大促前 2 周，你可能有 20 个想法但只来得及测 3 个。AI 可以帮你：</p>
+        <ul>
+          <li><strong>优先级排序</strong>：AI 基于历史胜率 + 用户分群匹配度，给 20 个想法打分排名</li>
+          <li><strong>多变量同步测试</strong>：传统 A/B 一次只测一个变量，AI 辅助的多变量测试（MVT）可以同时测文案 × 配色 × 布局的组合</li>
+          <li><strong>大促中实时迭代</strong>：AI 监控实时数据，发现某个变体显著胜出时立即建议扩大流量比例——这在传统流程中需要人工盯盘</li>
+        </ul>
+        <p>注意：<strong>大促期间的实验要保守</strong>。流量大不等于适合做实验——大促用户行为和日常不同，大促实验的结论不能直接外推到日常运营。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>
+        <p><strong>AI 实验的"三不原则"：</strong></p>
+        <ol>
+          <li><strong>不盲信</strong>：AI 推荐的假设可能是基于过时数据或偏差样本，人要做"常识校验"</li>
+          <li><strong>不替代</strong>：AI 可以加速实验，但不能替代实验——没有捷径可以绕过"真实用户验证"这一步</li>
+          <li><strong>不止步</strong>：一次实验的结论是有保质期的。用户偏好会变、市场会变、竞争会变——持续实验才是正确姿势</li>
+        </ol>
+        </details>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 19 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. "我觉得用户会喜欢红色按钮，直接全量上线"——这属于什么思维？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 实验思维</li>
+          <li onclick="checkQuiz(this)">B. 数据思维</li>
+          <li onclick="checkQuiz(this)">C. 感觉思维——没有假设、没有对照、没有数据验证</li>
+        </ul>
+        <div class="quiz-explain">正确答案是C。这是典型的"感觉思维"：凭直觉决策，全量上线，没有对照组，出了问题也无法归因。实验思维要求：先明确假设（"红色按钮点击率提升 10%"），设对照（保留原版），小范围测试，看数据验证。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. AI 在 A/B 测试中的"Tier 3"（Agent 原生）是什么意思？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. AI 只是一个聊天机器人，回答关于实验结果的问题</li>
+          <li onclick="checkQuiz(this)">B. AI 帮你推荐测试想法，但你需要手动上线</li>
+          <li onclick="checkQuiz(this)">C. AI 可以通过 API 自主完成从假设生成到实验上线到结果决策的全流程</li>
+        </ul>
+        <div class="quiz-explain">正确答案是C。Tier 1 是"AI 聊天层"——只能回答问题；Tier 2 是"AI 假设助手"——推荐想法但人手动执行；Tier 3 是"Agent 原生"——AI 通过 API 自主读流量、生成变体、上线实验、监控显著性、决定推全，无需操作仪表盘。这是 2026 年 AI 实验工具的前沿方向。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 为什么 AI 不能完全替代人做实验决策？</p>
+        <ul class="quiz-options" data-answer="3">
+          <li onclick="checkQuiz(this)">A. 因为 AI 算力不够，分析速度太慢</li>
+          <li onclick="checkQuiz(this)">B. 因为 AI 无法理解统计数据</li>
+          <li onclick="checkQuiz(this)">C. 因为数据只能告诉你"是什么"，品牌体验、伦理风险等层面的判断需要人来做</li>
+        </ul>
+        <div class="quiz-explain">正确答案是C。AI 可以快速分析数据、发现统计显著性，但"要不要推全"的决策涉及品牌调性、用户体验公平性、伦理风险等维度——这些是数据无法回答的。例如，一个实验对新用户 CTR 提升 28%，但如果全量推全可能让老用户感到被区别对待——这种品牌层面的权衡，需要人的判断。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. 什么是"实验飞轮"？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 用 AI 同时跑很多实验</li>
+          <li onclick="checkQuiz(this)">B. 每个实验的结果自动沉淀为知识，AI 在下次假设生成时调用历史数据，实验越多假设越精准</li>
+          <li onclick="checkQuiz(this)">C. 实验失败了就换个方向再试</li>
+        </ul>
+        <div class="quiz-explain">正确答案是B。"实验飞轮"的核心是知识复用：每次实验的假设、结果、结论被 AI 自动结构化归档，下次生成假设时 AI 会参考这些历史——实验越多，AI 的推荐越精准，胜率越高。这不是简单的"多跑实验"（选项A），也不是"失败了就换"（选项C），而是一个越转越快的正向循环。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>结合你的工作想一想：</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>你团队目前做实验的频率是多少？从"想法"到"实验上线"平均需要几天？如果 AI 能把这个周期缩短到 1 天，你每个月能多做几个实验？</li>
+          <li>你团队有没有"实验知识库"？过去半年的实验结论，你现在能脱口而出几条？如果 AI 帮你自动归档，你觉得最该记录哪些字段？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>支付有礼功能中，你最想用 AI 实验验证的 3 个假设是什么？用"如果……那么……"的格式写出来。</li>
+          <li>如果 AI 告诉你"新用户子群 CTR +28%，老用户无显著差异"，你会怎么做？全量推全、分群推全、还是继续实验？为什么？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>大促期间你有 20 个优化想法但只来得及测 3 个——你会用什么标准筛选？如果 AI 帮你打分排序，你最看重哪些维度？</li>
+          <li>大促用户的行为和日常用户不同——这是否意味着大促期间不应该做实验？你怎么平衡"快速迭代"和"结论可靠性"？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 19 ==================== -->
 
 </div>
 
