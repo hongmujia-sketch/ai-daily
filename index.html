@@ -602,7 +602,8 @@ if (window.caches) {
   <button class="nav-btn" onclick="showDay('day19', this)">Day 19</button>
   <button class="nav-btn" onclick="showDay('day20', this)">Day 20</button>
   <button class="nav-btn" onclick="showDay('day21', this)">Day 21</button>
-  <button class="nav-btn active" onclick="showDay('day22', this)">Day 22</button>
+  <button class="nav-btn" onclick="showDay('day22', this)">Day 22</button>
+  <button class="nav-btn active" onclick="showDay('day23', this)">Day 23</button>
 </div>
 
 <div class="container">
@@ -5734,6 +5735,156 @@ if (window.caches) {
 
   </div>
   <!-- ==================== END DAY 22 ==================== -->
+
+  <!-- ==================== DAY 23 ==================== -->
+  <div class="day-section" id="day23">
+    <div class="day-header">
+      <h2>Day 23 | 从"单轮对话"到"工作流"——把 AI 串成流水线</h2>
+      <span class="date">2026-07-04</span>
+    </div>
+
+    <!-- ========== 理论卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>为什么一个 prompt 搞不定复杂任务？</h3>
+      <p>Day 22 教你把 prompt 写好了，但你可能很快会发现：<strong>即使是完美的 prompt，也搞不定多步骤、多决策的复杂任务</strong>。就像世界上最好的厨师，一个人也做不了一桌满汉全席——你需要一条流水线。</p>
+      <p>这个思路叫 <strong>AI Workflow（AI 工作流）</strong>：把一个大任务拆成多个小步骤，每个步骤由 AI 单独完成，上一个步骤的输出自动成为下一个步骤的输入。每一步都可以：① 用不同的 prompt；② 调用不同的工具；③ 插入人工审核节点。</p>
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">💡 新手补课：工作流 vs 单次对话的区别</div>
+        <div class="hint-content">
+          <p><strong>单次对话</strong>：你写一个 prompt → AI 给一个回答。适合简单任务（写文案、翻译、总结）。</p>
+          <p><strong>工作流</strong>：任务自动拆成 N 步，每步独立执行。适合复杂任务（从数据抓取→清洗→分析→出报告，全程无人值守）。</p>
+          <p>用一个比喻：单次对话是"叫外卖"（点一道菜），工作流是"开餐厅"（采购→备菜→烹饪→出餐→结账，环环相扣）。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 工具/实操卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">实操</span>
+      <h3>三款主流工作流工具上手</h3>
+
+      <p><strong>Coze（扣子）— 字节跳动出品</strong></p>
+      <p>拖拽式 Agent 搭建平台，适合非技术用户。内置"插件""知识库""工作流"三个核心模块：插件让 AI 能搜索网页、读文档、发飞书消息；知识库给 AI 喂业务数据；工作流把多个能力串起来。适合：快速原型验证、内部效率工具。</p>
+      <div class="highlight">
+        <p><strong>一个真实案例</strong>：用 Coze 搭"竞品监控机器人"——每天早上 9 点自动抓取指定竞品公众号文章 → AI 总结要点 → 发到钉钉群。全程不用写代码，拖拽 15 分钟完成。</p>
+      </div>
+
+      <p><strong>Dify — 开源社区</strong></p>
+      <p>比 Coze 更灵活的开源方案。支持自定义 API、接入私有数据、精细控制每一步的 prompt。如果你有数据安全要求（不能上传到第三方平台），Dify 可私有化部署。适合：有轻度开发支持的团队、对数据主权要求高的场景。</p>
+
+      <p><strong>n8n — 技术向工作流引擎</strong></p>
+      <p>老牌工作流自动化工具，2024 年加入 AI 节点。和 Coze/Dify 不同，n8n 强在"系统集成"——把 AI 和 200+ 外部系统（飞书、钉钉、Slack、MySQL、邮件）打通。适合：需要 AI + 现有系统深度集成的场景。</p>
+    </div>
+
+    <!-- ========== 深度案例卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">深度案例</span>
+      <h3>Klarna：用 AI 工作流替代 700 人客服团队</h3>
+      <p><strong>Klarna</strong> 是瑞典金融科技公司（先买后付），2025 年月活用户 8500 万。2024 年他们做了一个大胆的决定：用 AI 客服替代 700 人外包客服团队。</p>
+      <p><strong>关键不是模型，是工作流</strong>：Klarna 的 AI 客服不是简单接个 GPT API 就上线。他们拆解了客服工作的每一步：① 意图识别（用户要退款/查账单/投诉？）→ ② 知识检索（在 5000+ 条知识库里找答案）→ ③ 个性化（调用户订单数据）→ ④ 生成回答 → ⑤ 情感检测（如果用户情绪激动，转人工）。<strong>每一步走不通就自动降级</strong>，而不是让 AI 硬编答案。</p>
+      <p><strong>结果</strong>：AI 处理了 85% 的客服请求，平均响应时间从 11 分钟降到 1 分钟以内，客户满意度反而提升了 5%。Klarna 的案例证明：<strong>AI 工作流不是替代人，而是把人的精力集中在 15% 最需要"人"的复杂问题上</strong>。</p>
+    </div>
+
+    <!-- ========== 产品运营视角卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>运营如何设计自己的"AI 流水线"</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营</p>
+        <p>你的日常工作流里，最重复的是不是"周报/月报"？试着设计一条工作流：<strong>数据拉取（SQL/后台导出）→ AI 自动计算环比/同比 → AI 分析趋势原因 → 生成文字报告</strong>。Coze 的"定时触发"功能可以做到"到点自动跑，跑完发你钉钉"。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#3498db;font-size:13px;margin-bottom:8px">🎁 产品运营</p>
+        <p>活动运营场景最适合工作流：<strong>活动需求录入 → AI 检查合规风险 → AI 生成活动页面文案 → AI 生成推送文案 → 人工审核 → 自动排期发布</strong>。用 Dify 可以给每个步骤配不同的 prompt，而且可以设置"人工审核"节点，确保关键决策权在人手里。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e67e22;font-size:13px;margin-bottom:8px">🎉 整合营销运营</p>
+        <p>内容生产流水线：<strong>选题输入 → AI 搜集相关资料 → AI 生成初稿 → AI 检查品牌合规 → 人工润色 → 多平台适配发布</strong>。n8n 的"邮件触发"功能可以做到：你发一封邮件到指定地址，整条流水线自动启动，最终成品发回你邮箱。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p><strong>设计原则</strong>：① 先用手工跑通一次，确认流程是对的，再搭工作流；② 每个步骤设置"人工兜底"——AI 搞不定就走人工，别让 AI 硬编；③ 从最小闭环开始——不要一上来就想搭完美的流水线，先搭一个"数据拉取→AI 总结→发消息"的三步流程跑起来再说。</p>
+      </div>
+    </div>
+
+    <!-- ========== 测验卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">测验</span>
+      <h3>学完今天，来测一测</h3>
+
+      <div class="quiz-item">
+        <p><strong>Q1：AI 工作流和单次对话的核心区别是什么？</strong></p>
+        <div class="quiz-options" data-answer="C">
+          <button onclick="checkQuiz(this)">A. 工作流用的模型更好</button>
+          <button onclick="checkQuiz(this)">B. 单次对话更准确</button>
+          <button onclick="checkQuiz(this)">C. 工作流把复杂任务拆成多步独立执行，每步可配不同 prompt 和工具</button>
+          <button onclick="checkQuiz(this)">D. 工作流不需要人工参与</button>
+        </div>
+        <div class="quiz-explain">
+          ✅ C。单次对话适合简单任务，工作流把复杂任务拆解成多步骤流水线，每步可以配不同的 prompt、调用不同的工具、插入人工审核节点。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q2：Klarna AI 客服成功的关键是什么？</strong></p>
+        <div class="quiz-options" data-answer="B">
+          <button onclick="checkQuiz(this)">A. 用了最好的大模型</button>
+          <button onclick="checkQuiz(this)">B. 拆解了客服工作流：意图识别→知识检索→个性化→生成回答→情感检测，每步走不通就降级</button>
+          <button onclick="checkQuiz(this)">C. 替换掉了所有人工客服</button>
+          <button onclick="checkQuiz(this)">D. 减少了客户投诉</button>
+        </div>
+        <div class="quiz-explain">
+          ✅ B。Klarna 的关键不是模型好，而是把客服工作拆成 5 步工作流，每步有兜底机制。AI 处理 85% 请求，剩下 15% 转人工，客户满意度反而提升。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q3：以下哪个不是设计 AI 工作流的正确原则？</strong></p>
+        <div class="quiz-options" data-answer="D">
+          <button onclick="checkQuiz(this)">A. 先手工跑通流程，再搭工作流</button>
+          <button onclick="checkQuiz(this)">B. 每个步骤设置人工兜底</button>
+          <button onclick="checkQuiz(this)">C. 从最小闭环开始，逐步迭代</button>
+          <button onclick="checkQuiz(this)">D. 一次设计出完美的流水线，一步到位</button>
+        </div>
+        <div class="quiz-explain">
+          ✅ D。正确做法是从最小闭环开始跑起来再迭代。试图一次设计完美流水线容易陷入"过度设计"，最后连 MVP 都出不来。
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>留给你的实践课题</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营</p>
+        <p>🤔 你每周要花多少时间在"从后台拉数据→做报表→写分析"上？如果搭一条工作流，第一步（最小的闭环）会是什么？去 Coze 试一下，15 分钟就能跑通第一步。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#3498db;font-size:13px;margin-bottom:8px">🎁 产品运营</p>
+        <p>🤔 你的业务里，有没有哪个环节是"AI 判断 → 人工确认 → AI 执行"的三段式？试着画出这个工作流的流程图。你会发现：<strong>人和 AI 的分工边界一旦画清楚，效率提升是立竿见影的</strong>。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e67e22;font-size:13px;margin-bottom:8px">🎉 整合营销运营</p>
+        <p>🤔 如果让你用工作流自动化你 50% 的日常工作，你会选哪 3 个任务？试着给它们排个优先级，选最简单的那个这周用 Coze/Dify 搭出来。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p>🤔 Klarna 的案例说"AI 处理 85%，人的精力集中在 15% 最需要人的问题上"。你现在的团队里，<strong>那 15% 最有价值的事情是什么？剩下的 85% 有多少可以被工作流化？</strong></p>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 23 ==================== -->
 
 </div>
 
