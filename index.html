@@ -561,7 +561,7 @@
   <h1>线下支付用户运营<br>AI 学习工具</h1>
   <p>每日更新 | 策略运营 · 产品运营 · 整合营销</p>
   <div class="stats">
-    <span id="dayCount">已学 21 天</span>
+    <span id="dayCount">已学 22 天</span>
     <span>持续更新中</span>
   </div>
 </div>
@@ -587,7 +587,8 @@
   <button class="nav-btn" onclick="showDay('day18', this)">Day 18</button>
   <button class="nav-btn" onclick="showDay('day19', this)">Day 19</button>
   <button class="nav-btn" onclick="showDay('day20', this)">Day 20</button>
-  <button class="nav-btn active" onclick="showDay('day21', this)">Day 21</button>
+  <button class="nav-btn" onclick="showDay('day21', this)">Day 21</button>
+  <button class="nav-btn active" onclick="showDay('day22', this)">Day 22</button>
 </div>
 
 <div class="container">
@@ -5560,6 +5561,165 @@
 
   </div>
   <!-- ==================== END DAY 21 ==================== -->
+
+  <div class="day-section" id="day22">
+    <div class="day-header">
+      <h2>Day 22 | 为什么你的 AI "很笨"？——Prompt 工程实战</h2>
+      <span class="date">2026-07-03</span>
+    </div>
+
+    <!-- ========== 理论卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>不是 AI 笨，是你没给它"上下文"</h3>
+      <p>同事常说："CodeFuse 用起来很笨，每次都要从头说，分析不够深不够准。"问题通常不在 AI，而在<strong>你给它的上下文不够</strong>。</p>
+      <p>2025 年 Andrej Karpathy 说过一个精准比喻：<strong>大模型是 CPU，上下文窗口是内存，你的工作是当操作系统</strong>——负责把"正确的信息"在"正确的时间"加载到内存里。AI 输出质量差，80% 的原因是上下文组装错了：要么信息太少，要么信息太多，要么关键信息埋在中间被忽略了。</p>
+      <div class="beginner-hint">
+        <div class="hint-toggle" onclick="toggleHint(this)">💡 新手补课：什么是上下文窗口？</div>
+        <div class="hint-content">
+          <p>上下文窗口就是 AI 一次能"看到"的全部文字量，类似人的短期记忆。GPT-5 的窗口约 128K tokens（约 10 万字中文），Claude 约 200K。</p>
+          <p>但<strong>窗口大 ≠ 效果好</strong>。研究表明，超过 3000 tokens（约 2000 字）后，AI 的推理能力开始下降。信息塞太多，AI 反而"抓不住重点"。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 实操卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">实操</span>
+      <h3>Prompt 三层结构——从"能用"到"好用"</h3>
+      <p><strong>第一层：角色设定（你是谁）</strong></p>
+      <p>别再用"你是一个有用的助手"。要具体：<em>"你是一个支付产品运营专家，擅长用户增长和活动策划，熟悉支付宝生态。"</em></p>
+      <p><strong>第二层：任务指令（做什么）</strong></p>
+      <p>用<strong>正向表述</strong>——说"只用真实数据"比"不要用假数据"效果好。因为 AI 处理"不要"时会先想到"假数据"这个概念（粉红大象效应）。</p>
+      <p><strong>第三层：示例引导（做成什么样）</strong></p>
+      <p>给 2-3 个输入输出示例（few-shot），比写 500 字说明管用。研究表明，示例的格式和分布比内容正确性更重要——哪怕示例标签是随机的，也比没有示例强。</p>
+      <div class="highlight">
+        <p><strong>实战对比</strong>：让 AI 分析"上周活动转化率下降原因"</p>
+        <p>❌ <strong>差版</strong>："帮我分析一下转化率为什么下降了"（AI 不知道你是什么业务、什么数据、什么维度）</p>
+        <p>✅ <strong>好版</strong>："你是支付有礼运营专家。以下是上周活动数据（粘贴数据）。请按【用户维度】【渠道维度】【时间维度】分别分析转化率下降原因，每个维度给出一个假设和验证建议。输出格式：表格。"</p>
+      </div>
+    </div>
+
+    <!-- ========== 深度案例卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">深度案例</span>
+      <h3>Perplexity：靠 Prompt 工程颠覆搜索体验</h3>
+      <p><strong>Perplexity</strong> 是 AI 搜索引擎，月处理 7.8 亿次查询，估值 210 亿美元。它的核心壁垒不是模型（用的是 GPT-5.5 和 Claude），而是<strong>prompt 工程</strong>——把"搜索→阅读→总结→引用"四步拆解成精确的系统级 prompt。</p>
+      <p><strong>对运营的启示</strong>：Perplexity 证明了，在模型相同的情况下，谁更会"指挥" AI，谁的产品体验就更好。运营人用 AI 也一样——同样用 CodeFuse，会写 prompt 的人产出质量高 3 倍。<a href="https://perplexity.ai" target="_blank" style="color:#667eea;font-size:12px">体验 Perplexity →</a></p>
+    </div>
+
+    <!-- ========== 产品运营视角卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>不同角色的 Prompt 实操要点</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营</p>
+        <p>做数据分析时，<strong>把数据格式和维度名称写清楚</strong>。AI 不懂你的"UV""PV""核销率"是什么，要解释。用"以下是 7 天的 UV 数据，第一列是日期，第二列是 UV 值"开头，比直接丢一串数字效果好 10 倍。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#3498db;font-size:13px;margin-bottom:8px">🎁 产品运营</p>
+        <p>写活动方案时，<strong>先给一个历史案例做参考</strong>。"参考以下活动格式写一个新方案：[贴一个历史活动方案]"——AI 模仿格式的能力远强于从零创造的能力。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e67e22;font-size:13px;margin-bottom:8px">🎉 整合营销运营</p>
+        <p>写文案时，<strong>用"风格示例"代替"风格描述"</strong>。与其说"活泼有网感"，不如直接贴 2 条你满意的过往文案，说"参考这个风格写"。AI 从示例学习风格，远比从形容词学习准确。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p><strong>通用法则</strong>：先写最短版本的 prompt，测试，发现什么不对就只补那一点。不要一开始就写 500 字的长 prompt——信息越多，AI 越容易"迷失在中间"（lost in the middle）。关键信息放开头和结尾，别放中间。</p>
+      </div>
+    </div>
+
+    <!-- ========== 测验卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">测验</span>
+      <h3>学完今天，来测一测</h3>
+
+      <div class="quiz-item">
+        <p><strong>Q1：AI 输出质量差，最常见的原因是什么？</strong></p>
+        <div class="quiz-options" data-answer="B">
+          <button onclick="checkQuiz(this)">A. 模型不够聪明</button>
+          <button onclick="checkQuiz(this)">B. 上下文组装不对——信息太少、太多或位置不对</button>
+          <button onclick="checkQuiz(this)">C. 网络速度太慢</button>
+          <button onclick="checkQuiz(this)">D. AI 不喜欢这个问题</button>
+        </div>
+        <div class="quiz-explain">
+          ✅ B。Karpathy 的比喻：AI 是 CPU，上下文是内存。80% 的输出质量问题来自上下文组装错误——没给够背景、塞了太多无关信息、或关键信息埋在中间被忽略。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q2：以下哪个 prompt 写法更好？</strong></p>
+        <div class="quiz-options" data-answer="C">
+          <button onclick="checkQuiz(this)">A. "不要用假数据"</button>
+          <button onclick="checkQuiz(this)">B. "千万不要编造数据！！！"</button>
+          <button onclick="checkQuiz(this)">C. "只用真实数据"</button>
+          <button onclick="checkQuiz(this)">D. "你不许用假数据"</button>
+        </div>
+        <div class="quiz-explain">
+          ✅ C。这是"粉红大象效应"——说"不要想粉色大象"你会先想到粉色大象。正向表述"只用真实数据"比任何否定句都有效。另外，大写和感叹号在新模型上反而降低效果。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q3：few-shot 示例中，最重要的是什么？</strong></p>
+        <div class="quiz-options" data-answer="D">
+          <button onclick="checkQuiz(this)">A. 示例内容必须完美正确</button>
+          <button onclick="checkQuiz(this)">B. 示例越多越好</button>
+          <button onclick="checkQuiz(this)">C. 示例必须按难度排序</button>
+          <button onclick="checkQuiz(this)">D. 示例的格式和分布覆盖面比内容正确性更重要</button>
+        </div>
+        <div class="quiz-explain">
+          ✅ D。Min et al. (2022) 的研究发现：示例的标签空间和输入分布比个别标签是否正确更重要。甚至随机标签的示例都比零示例效果好。重点是让 AI 理解"你要什么格式"，而非"什么是对的"。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q4：关键信息在 prompt 中应该放在哪里？</strong></p>
+        <div class="quiz-options" data-answer="A">
+          <button onclick="checkQuiz(this)">A. 开头和结尾</button>
+          <button onclick="checkQuiz(this)">B. 中间</button>
+          <button onclick="checkQuiz(this)">C. 随便放，AI 都能找到</button>
+          <button onclick="checkQuiz(this)">D. 放在最前面一句话里全部说完</button>
+        </div>
+        <div class="quiz-explain">
+          ✅ A。"Lost in the middle"问题已被多篇论文证实：AI 对开头和结尾的信息注意力最高，中间信息准确率下降 30%+。把角色设定放开头，具体任务放结尾，背景信息夹中间。
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>留给你的实践课题</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营</p>
+        <p>🤔 找一个你最近用 AI 做的数据分析任务，用今天学的"三层结构"重写一遍 prompt，对比两次输出质量差异。记录：<strong>哪个改动带来了最大提升？</strong></p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#3498db;font-size:13px;margin-bottom:8px">🎁 产品运营</p>
+        <p>🤔 你日常用 CodeFuse/通义/豆包时，哪次 AI 给你的结果最差？回头看，<strong>缺的是角色设定、任务指令还是示例？</strong>下次怎么补？</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e67e22;font-size:13px;margin-bottom:8px">🎉 整合营销运营</p>
+        <p>🤔 选一个你擅长的文案类型（如 push 文案、活动公告），整理 3 条最佳样例做成"few-shot 模板"。以后每次让 AI 写文案时都带上这个模板，测试效果。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p>🤔 Karpathy 说"prompt 工程已死，上下文工程才是未来"。你觉得作为运营人，你的"上下文工程"能力该怎么积累？<strong>你的业务知识、数据口径、用户洞察——这些是不是就是你独有的"上下文"？</strong></p>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 22 ==================== -->
 
 </div>
 
