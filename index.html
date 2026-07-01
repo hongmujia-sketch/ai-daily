@@ -2,6 +2,17 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<script>
+// Nuclear option: unregister ALL service workers and clear ALL caches before page loads
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(regs) {
+    regs.forEach(function(reg) { reg.unregister(); });
+  });
+}
+if (window.caches) {
+  caches.keys().then(function(names) { names.forEach(function(n) { caches.delete(n); }); });
+}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>AI Daily</title>
 <!-- PWA & iOS -->
@@ -5731,16 +5742,16 @@
 </div>
 
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(regs) {
-    regs.forEach(function(reg) { reg.unregister(); });
-    navigator.serviceWorker.register('sw.js');
-  });
-  // Force clear all caches
-  if (window.caches) {
-    caches.keys().then(function(names) { names.forEach(function(n) { caches.delete(n); }); });
-  }
-}
+// Service Worker disabled to fix caching issues
+// if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker.getRegistrations().then(function(regs) {
+//     regs.forEach(function(reg) { reg.unregister(); });
+//     navigator.serviceWorker.register('sw.js');
+//   });
+//   if (window.caches) {
+//     caches.keys().then(function(names) { names.forEach(function(n) { caches.delete(n); }); });
+//   }
+// }
 
 // === User System ===
 const ROLES = {
