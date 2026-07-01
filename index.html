@@ -203,30 +203,33 @@
   /* Quiz styles */
   .quiz-item { margin-bottom: 20px; }
   .quiz-item p.q { color: #1a202c; font-weight: 500; margin-bottom: 10px; }
-  .quiz-options { list-style: none; padding: 0; }
-  .quiz-options li {
+  .quiz-options { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .quiz-options li, .quiz-options button {
     background: #f7f8fc;
     border: 1px solid #e8ecf1;
     border-radius: 10px;
     padding: 10px 14px;
-    margin-bottom: 8px;
+    margin-bottom: 0;
     cursor: pointer;
     transition: all 0.3s;
     font-size: 14px;
     color: #4a5568;
+    text-align: left;
+    display: block;
+    width: 100%;
   }
-  .quiz-options li:active { transform: scale(0.98); }
-  .quiz-options li.correct {
+  .quiz-options li:active, .quiz-options button:active { transform: scale(0.98); }
+  .quiz-options li.correct, .quiz-options button.correct {
     border-color: #22a868;
     background: #e6fbf0;
     color: #22a868;
   }
-  .quiz-options li.wrong {
+  .quiz-options li.wrong, .quiz-options button.wrong {
     border-color: #e53e3e;
     background: #fff0f0;
     color: #e53e3e;
   }
-  .quiz-options li.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-options li.disabled, .quiz-options button.disabled { pointer-events: none; opacity: 0.6; }
   .quiz-explain {
     display: none;
     margin-top: 10px;
@@ -320,6 +323,11 @@
     cursor: pointer;
     font-weight: 500;
     user-select: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
   }
   .beginner-hint .hint-toggle:hover { background: rgba(230,138,0,0.05); }
   .beginner-hint .hint-content {
@@ -5397,7 +5405,7 @@
       <p>过去一年我们用的大模型，本质是<strong>"对话式工具"</strong>——你问它答，一步一指令。而 <strong>AI Agent</strong> 是在对话模型基础上，增加了<strong>自主规划、工具调用、试错反馈、长期记忆</strong>四种能力的"能干活的 AI"。</p>
       <div class="beginner-hint">
         <button class="hint-toggle" onclick="toggleHint(this)">💡 新手补课：Agent 和 ChatGPT 有什么区别？</button>
-        <div class="hint-content" style="display:none">
+        <div class="hint-content">
           <p>想象你请了两个人帮忙办年会：</p>
           <p>• <strong>Chat 模式</strong>：你告诉它"帮我写一封邀请邮件"，它写了。你再告诉它"帮我设计一个签到表"，它设计了。每一步都要你亲自指挥。</p>
           <p>• <strong>Agent 模式</strong>：你只说"帮我办一场 50 人的年会，预算 2 万"，它自己规划任务清单：写邀请邮件→设计签到表→预订场地→安排节目→采购物资，中间哪步出错自己调整，完成后给你一份总结报告。</p>
@@ -5417,7 +5425,7 @@
       <p><strong>n8n</strong> — 开源自动化工作流，500+ 系统集成。<em style="color:#718096">适合：跨系统数据同步与运营流程自动化</em></p>
       <div class="beginner-hint">
         <button class="hint-toggle" onclick="toggleHint(this)">💡 选哪个入门？</button>
-        <div class="hint-content" style="display:none">
+        <div class="hint-content">
           <p>• <strong>零代码起步</strong>：先用 <strong>Coze</strong> 或 <strong>Dify</strong>，拖拽式搭建，1 小时上手</p>
           <p>• <strong>有编程基础</strong>：试 <strong>OpenClaw</strong>，自由度最高，社区活跃</p>
           <p>• <strong>已有运营工具链</strong>：用 <strong>n8n</strong> 串联现有系统，投入产出比最高</p>
@@ -5778,19 +5786,31 @@ function goToLatest() {
 // === Quiz ===
 function checkQuiz(el) {
   const options = el.parentElement;
-  const answer = parseInt(options.dataset.answer);
-  const items = options.querySelectorAll('li');
-  const clicked = Array.from(items).indexOf(el) + 1;
-  items.forEach(li => li.classList.add('disabled'));
-  if (clicked === answer) {
+  const answerRaw = options.dataset.answer;
+  const items = options.querySelectorAll('li, button');
+  const clicked = Array.from(items).indexOf(el);
+  // Disable all options
+  items.forEach(item => { item.classList.add('disabled'); item.style.pointerEvents = 'none'; });
+
+  // Support both numeric (1,2,3) and letter (A,B,C,D) answers
+  let answerIndex;
+  if (/^[A-D]$/i.test(answerRaw)) {
+    answerIndex = answerRaw.toUpperCase().charCodeAt(0) - 65; // A=0, B=1, C=2, D=3
+  } else {
+    answerIndex = parseInt(answerRaw) - 1; // 1-based to 0-based
+  }
+
+  if (clicked === answerIndex) {
     el.classList.add('correct');
-    el.textContent += ' ✓';
+    el.textContent += ' \u2713';
   } else {
     el.classList.add('wrong');
-    el.textContent += ' ✗';
-    items[answer - 1].classList.add('correct');
+    el.textContent += ' \u2717';
+    if (items[answerIndex]) items[answerIndex].classList.add('correct');
   }
-  options.nextElementSibling.classList.add('show');
+  // Show explanation
+  var explain = options.nextElementSibling;
+  if (explain) explain.classList.add('show');
 }
 </script>
 
