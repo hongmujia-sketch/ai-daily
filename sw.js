@@ -1,22 +1,2 @@
-const CACHE_NAME = 'ai-daily-v10';
-self.addEventListener('install', e => {
-  self.skipWaiting();
-  caches.keys().then(function(names) { names.forEach(function(n) { caches.delete(n); }); });
-});
-self.addEventListener('activate', e => {
-  e.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys.map(k => caches.delete(k))
-    ))
-  );
-  self.clients.claim();
-});
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    fetch(e.request, { cache: 'no-store' }).then(function(resp) {
-      return resp;
-    }).catch(function() {
-      return caches.match(e.request);
-    })
-  );
-});
+// Intentionally empty - Service Worker disabled
+// See index.html head for cache clearing logic
