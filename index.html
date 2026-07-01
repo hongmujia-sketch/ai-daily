@@ -553,7 +553,7 @@
   <h1>线下支付用户运营<br>AI 学习工具</h1>
   <p>每日更新 | 策略运营 · 产品运营 · 整合营销</p>
   <div class="stats">
-    <span id="dayCount">已学 20 天</span>
+    <span id="dayCount">已学 21 天</span>
     <span>持续更新中</span>
   </div>
 </div>
@@ -578,7 +578,8 @@
   <button class="nav-btn" onclick="showDay('day17', this)">Day 17</button>
   <button class="nav-btn" onclick="showDay('day18', this)">Day 18</button>
   <button class="nav-btn" onclick="showDay('day19', this)">Day 19</button>
-  <button class="nav-btn active" onclick="showDay('day20', this)">Day 20</button>
+  <button class="nav-btn" onclick="showDay('day20', this)">Day 20</button>
+  <button class="nav-btn active" onclick="showDay('day21', this)">Day 21</button>
 </div>
 
 <div class="container">
@@ -5382,6 +5383,230 @@
 
   </div>
   <!-- ==================== END DAY 20 ==================== -->
+
+  <div class="day-section" id="day21">
+    <div class="day-header">
+      <h2>Day 21 | AI 智能体上岗——从"聊天"到"干活"的新范式</h2>
+      <span class="date">2026-07-02</span>
+    </div>
+
+    <!-- ========== 理论卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>什么是 AI 智能体（Agent）？</h3>
+      <p>过去一年我们用的大模型，本质是<strong>"对话式工具"</strong>——你问它答，一步一指令。而 <strong>AI Agent</strong> 是在对话模型基础上，增加了<strong>自主规划、工具调用、试错反馈、长期记忆</strong>四种能力的"能干活的 AI"。</p>
+      <div class="beginner-hint">
+        <button class="hint-toggle" onclick="toggleHint(this)">💡 新手补课：Agent 和 ChatGPT 有什么区别？</button>
+        <div class="hint-content" style="display:none">
+          <p>想象你请了两个人帮忙办年会：</p>
+          <p>• <strong>Chat 模式</strong>：你告诉它"帮我写一封邀请邮件"，它写了。你再告诉它"帮我设计一个签到表"，它设计了。每一步都要你亲自指挥。</p>
+          <p>• <strong>Agent 模式</strong>：你只说"帮我办一场 50 人的年会，预算 2 万"，它自己规划任务清单：写邀请邮件→设计签到表→预订场地→安排节目→采购物资，中间哪步出错自己调整，完成后给你一份总结报告。</p>
+          <p>核心差异：<strong>Chat 是"你指挥它干"，Agent 是"你提需求它自己干"</strong>。</p>
+        </div>
+      </div>
+      <p>2026 年春天，开源 Agent 框架 <strong>OpenClaw</strong>（绰号"龙虾"）在 GitHub 爆火，中国用户从"排队装龙虾"到"排队卸载"仅用 40 天——但这 40 天标志着 Agent 从技术圈正式走向大众视野。</p>
+      <p>Agent 时代对运营人的核心意义：许多重复性运营操作（上架商品、整理报表、监控数据、回复留言）可以交给 Agent 自动完成，运营人的角色从<strong>"执行者"转向"编排者"</strong>。</p>
+    </div>
+
+    <!-- ========== 工具卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具</span>
+      <h3>运营人必备的 5 款 Agent 工具</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="background:#f0f0ff">
+            <th style="padding:8px;border:1px solid #ddd;text-align:left">工具</th>
+            <th style="padding:8px;border:1px solid #ddd;text-align:left">核心能力</th>
+            <th style="padding:8px;border:1px solid #ddd;text-align:left">运营场景</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd"><strong>OpenClaw</strong></td>
+            <td style="padding:8px;border:1px solid #ddd">开源通用 Agent，可操控浏览器、文件系统</td>
+            <td style="padding:8px;border:1px solid #ddd">批量上架商品、跨平台信息采集</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd"><strong>Manus</strong></td>
+            <td style="padding:8px;border:1px solid #ddd">多步骤任务自动执行，支持代码+浏览器</td>
+            <td style="padding:8px;border:1px solid #ddd">竞品分析报告自动生成</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd"><strong>Dify</strong></td>
+            <td style="padding:8px;border:1px solid #ddd">可视化 Agent 编排平台，无需写代码</td>
+            <td style="padding:8px;border:1px solid #ddd">搭建运营专属 AI 工作流</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd"><strong>Coze（扣子）</strong></td>
+            <td style="padding:8px;border:1px solid #ddd">字节跳动出品，插件生态丰富</td>
+            <td style="padding:8px;border:1px solid #ddd">自动监控数据异动并推送告警</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd"><strong>n8n</strong></td>
+            <td style="padding:8px;border:1px solid #ddd">开源自动化工作流，500+ 集成</td>
+            <td style="padding:8px;border:1px solid #ddd">跨系统数据同步与运营流程自动化</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="beginner-hint">
+        <button class="hint-toggle" onclick="toggleHint(this)">💡 选哪个入门？</button>
+        <div class="hint-content" style="display:none">
+          <p>• <strong>零代码起步</strong>：先用 <strong>Coze</strong> 或 <strong>Dify</strong>，拖拽式搭建，1 小时上手</p>
+          <p>• <strong>有编程基础</strong>：试 <strong>OpenClaw</strong>，自由度最高，社区活跃</p>
+          <p>• <strong>已有运营工具链</strong>：用 <strong>n8n</strong> 串联现有系统，投入产出比最高</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 行业资讯卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业资讯</span>
+      <h3>近期 AI 热点速览</h3>
+      <div class="news-item">
+        <strong>🇺🇸 美国签署 AI 安全行政令</strong>
+        <p>6 月 2 日，特朗普签署行政令 EO 14409《促进先进人工智能创新与安全》，要求 30 天内建立 AI 网络安全信息交换中心，60 天内制定"前沿模型"自愿披露框架。强调<strong>自愿合作而非强制审批</strong>，与企业共建而非设限。</p>
+        <a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank" style="color:#667eea;font-size:13px">阅读原文 →</a>
+      </div>
+      <div class="news-item">
+        <strong>🦞 OpenClaw"龙虾"40 天潮起潮落</strong>
+        <p>开源 Agent 框架 OpenClaw 今年春天爆火：千人排队安装→国家互联网应急中心发布安全风险提示→舆论急转→代卸载服务出现。BBC 报道称，尽管公众热潮退去，Agent 对工作流的深刻影响才刚刚开始。</p>
+        <a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/trad" target="_blank" style="color:#667eea;font-size:13px">阅读原文 →</a>
+      </div>
+      <div class="news-item">
+        <strong>🇯🇵 日本金融厅警惕 AI 网络攻击</strong>
+        <p>5 月 14 日，日本金融厅召开首次官民合作会议，讨论 Anthropic 新模型 Claude Mythos 在发现安全漏洞方面的强大能力，以及被恶意用于攻击金融机构的风险。</p>
+        <a href="https://china.kyodonews.net/articles/-/10377" target="_blank" style="color:#667eea;font-size:13px">阅读原文 →</a>
+      </div>
+      <div class="news-item">
+        <strong>💰 Anthropic 估值达 9650 亿美元</strong>
+        <p>6 月 1 日，Anthropic 完成 650 亿美元融资，估值 9650 亿美元，首次超过 OpenAI 的 8520 亿美元估值，成为全球最值钱的私有 AI 公司。Apollo 和 Blackstone 同时安排了 360 亿美元 TPU 芯片融资，AI 基础设施金融正式成为华尔街产品。</p>
+        <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-1-2026" target="_blank" style="color:#667eea;font-size:13px">阅读原文 →</a>
+      </div>
+      <div class="news-item">
+        <strong>🇨🇳 中国 AI 从"聊天"走向"做事"</strong>
+        <p>新华社 1 月报道指出：以对话为核心的"Chat"范式已告终结，AI 竞争转向"能办事"的智能体时代。国产开源大模型全球下载量突破 100 亿次，中国日均 Token 消耗量从 2024 年初的 1000 亿增至 2025 年中的 30 万亿。</p>
+        <a href="https://www.news.cn/20260128/3b2f11906fd74ca397fef9996c805a60/c.html" target="_blank" style="color:#667eea;font-size:13px">阅读原文 →</a>
+      </div>
+    </div>
+
+    <!-- ========== 产品运营视角卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>Agent 时代，运营人需要升级的 3 个认知</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营</p>
+        <p><strong>1. 从"数据分析者"到"分析编排者"</strong></p>
+        <p>过去你亲自拉数据、做透视表、写分析报告。Agent 时代：你定义分析框架和关键指标，Agent 跑数据、做可视化、甚至给出初版洞察。你的核心价值从"做表"变成<strong>"判断哪个维度值得深挖"和"把数据洞察转化为决策建议"</strong>。</p>
+        <p><strong>行动建议</strong>：用 Dify 或 Coze 搭一个"日报自动分析 Agent"，让它每天晨会前自动推送关键指标异动。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#3498db;font-size:13px;margin-bottom:8px">🎁 产品运营</p>
+        <p><strong>2. 从"重复执行者"到"流程设计者"</strong></p>
+        <p>商品上架、权益配置、活动页面搭建——这些标准化操作 Agent 完全可以代劳。一个做跨境电商的运营用 OpenClaw 后，商品上架从"1 天 10 个"变成"2 分钟 200 个"。你的核心价值是<strong>"设计运营流程的质量检查点"</strong>，确保 Agent 不犯批量错误。</p>
+        <p><strong>行动建议</strong>：列出你每周最耗时的 3 个重复性任务，挑 1 个用 n8n 或 Coze 自动化。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e67e22;font-size:13px;margin-bottom:8px">🎉 整合营销运营</p>
+        <p><strong>3. 从"内容生产者"到"创意把关者"</strong></p>
+        <p>Agent 可以批量生成文案、适配多渠道格式、甚至自动投放。但它<strong>不懂品牌调性的微妙差异</strong>，也不理解"这个梗在这个时间点用会不会翻车"。你的核心价值是<strong>品味、判断和时机感</strong>——这些是 Agent 最难替代的。</p>
+        <p><strong>行动建议</strong>：用 Agent 批量产出内容初稿，你只做最终审核与品牌调性校准，把内容产出效率提升 3-5 倍。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p><strong>安全提醒</strong>：Agent 能操作你的浏览器和文件系统，意味着它也能<strong>误删数据、泄露信息</strong>。OpenClaw 的潮起潮落已经证明：安全配置不是可选项，而是必选项。给 Agent 的权限要<strong>最小化</strong>，敏感操作要<strong>人工确认</strong>。</p>
+      </div>
+    </div>
+
+    <!-- ========== 测验卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">测验</span>
+      <h3>学完今天，来测一测</h3>
+
+      <div class="quiz-item">
+        <p><strong>Q1：AI Agent 和传统 Chat 模型最核心的区别是什么？</strong></p>
+        <div class="quiz-options" data-answer="B">
+          <button onclick="checkQuiz(this, 'B')">A. Agent 回答更准确</button>
+          <button onclick="checkQuiz(this, 'B')">B. Agent 能自主规划和执行多步骤任务</button>
+          <button onclick="checkQuiz(this, 'B')">C. Agent 只能写代码</button>
+          <button onclick="checkQuiz(this, 'B')">D. Agent 不需要人类输入</button>
+        </div>
+        <div class="quiz-explain" style="display:none">
+          ✅ B。Agent 的核心特征是具备<strong>自主规划、工具调用、试错反馈、长期记忆</strong>四种能力，能按目标自动拆解和执行任务，而非仅仅一问一答。A 是程度差异，C 太片面，D 不正确——Agent 仍需人类设定目标。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q2：OpenClaw"龙虾"从爆火到舆论反转，最直接的原因是什么？</strong></p>
+        <div class="quiz-options" data-answer="C">
+          <button onclick="checkQuiz(this, 'C')">A. 功能不够强大</button>
+          <button onclick="checkQuiz(this, 'C')">B. 价格太贵</button>
+          <button onclick="checkQuiz(this, 'C')">C. 国家互联网应急中心发布安全风险提示</button>
+          <button onclick="checkQuiz(this, 'C')">D. 被其他产品取代</button>
+        </div>
+        <div class="quiz-explain" style="display:none">
+          ✅ C。3 月 10 日，中国国家互联网应急中心发布 OpenClaw 安全应用风险提示，指出其默认配置可能带来信息泄露、文件误删等安全问题，舆论风向随即急转。安全问题而非功能问题，是 Agent 走向大众时最需重视的坎。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q3：作为运营人，面对 Agent 时代最关键的认知升级是什么？</strong></p>
+        <div class="quiz-options" data-answer="D">
+          <button onclick="checkQuiz(this, 'D')">A. 学会写代码</button>
+          <button onclick="checkQuiz(this, 'D')">B. 用 AI 替代所有同事</button>
+          <button onclick="checkQuiz(this, 'D')">C. 只关注工具功能不关注安全</button>
+          <button onclick="checkQuiz(this, 'D')">D. 从"执行者"转向"编排者"，设计流程并把控质量</button>
+        </div>
+        <div class="quiz-explain" style="display:none">
+          ✅ D。Agent 能替代重复执行，但不能替代<strong>判断、品味和时机感</strong>。运营人的价值升级方向是：定义目标 → 设计流程 → 把控质量 → 做出决策，而非和 Agent 比速度。A 有帮助但非必须，B 和 C 都是错误认知。
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p><strong>Q4：美国 2026 年 6 月签署的 AI 行政令 EO 14409，对 AI 开发者的态度是？</strong></p>
+        <div class="quiz-options" data-answer="A">
+          <button onclick="checkQuiz(this, 'A')">A. 自愿合作，不设强制审批</button>
+          <button onclick="checkQuiz(this, 'A')">B. 强制所有模型发布前必须政府审批</button>
+          <button onclick="checkQuiz(this, 'A')">C. 禁止前沿模型开发</button>
+          <button onclick="checkQuiz(this, 'A')">D. 只约束开源模型</button>
+        </div>
+        <div class="quiz-explain" style="display:none">
+          ✅ A。行政令明确表示"不授权创建强制性的政府许可、审批或许可要求"，而是设计自愿框架让开发者与政府合作。这是一种<strong>鼓励创新+安全协作</strong>的平衡策略，而非监管收紧。
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题卡 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>留给你的实践课题</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营</p>
+        <p>🤔 如果有一个 Agent 能帮你自动分析用户行为数据并输出洞察报告，你认为自己目前工作中<strong>哪些判断是 Agent 做不到的</strong>？这些不可替代的判断力，你如何持续强化？</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#3498db;font-size:13px;margin-bottom:8px">🎁 产品运营</p>
+        <p>🤔 列出你本周最耗时的 3 个重复性操作，选择 1 个尝试用 Coze 或 n8n 自动化。记录：<strong>搭建耗时多少？节省多少时间？出了什么错？</strong>把这份"Agent 实验笔记"作为你的数字化能力资产。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e67e22;font-size:13px;margin-bottom:8px">🎉 整合营销运营</p>
+        <p>🤔 Agent 能批量生产内容，但<strong>品牌调性校准</strong>仍需人来把关。试着设计一个"Agent + 人工"协作流程：Agent 负责什么？人在哪个节点介入？最终内容质量相比纯人工有何差异？</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p>🤔 OpenClaw 的 40 天热潮告诉我们：<strong>技术成熟 ≠ 社会准备好</strong>。作为运营人，当你引入 Agent 工具时，你会如何向团队解释它的能力边界和安全注意事项，避免"一哄而上→一哄而散"？</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 21 ==================== -->
 
 </div>
 
