@@ -1,13 +1,24 @@
-const CACHE_NAME = 'ai-daily-v7';
-self.addEventListener('install', e => { self.skipWaiting(); });
+const CACHE_NAME = 'ai-daily-v8';
+self.addEventListener('install', e => {
+  self.skipWaiting();
+  if (window.caches) {
+    caches.keys().then(function(names) { names.forEach(function(n) { caches.delete(n); }); });
+  }
+});
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
+      keys.map(k => caches.delete(k))
     ))
   );
   clients.claim();
 });
 self.addEventListener('fetch', e => {
-  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  e.respondWith(
+    fetch(e.request, { cache: 'no-store' }).then(function(resp) {
+      return resp;
+    }).catch(function() {
+      return caches.match(e.request);
+    })
+  );
 });
