@@ -6155,9 +6155,26 @@ function getUserData() {
       if (parsed && Array.isArray(parsed.completedDays)) return parsed;
     }
   } catch(e) { /* fallback */ }
-  // Default: mark all done days as completed
-  const doneDays = COURSE_DATA.filter(d => d.status === 'done').map(d => d.day);
-  return { name, completedDays: doneDays, quizDone: {}, currentDay: 1 };
+
+  // Migration: check if old user exists (ai_daily_name with lastDay)
+  try {
+    const oldRaw = localStorage.getItem('ai_daily_' + name);
+    if (oldRaw) {
+      const old = JSON.parse(oldRaw);
+      if (old && old.onboarded) {
+        // Old user: mark all days up to their lastDay as completed
+        const last = old.lastDay || 1;
+        const migrated = [];
+        for (let i = 1; i <= last; i++) migrated.push(i);
+        const migratedData = { name, completedDays: migrated, quizDone: old.quizResults || {}, currentDay: last };
+        localStorage.setItem('ai_daily_v2_' + name, JSON.stringify(migratedData));
+        return migratedData;
+      }
+    }
+  } catch(e) { /* fallback to new user */ }
+
+  // New user: only Day 1 is unlocked by default
+  return { name, completedDays: [1], quizDone: {}, currentDay: 1 };
 }
 
 function saveUserData(data) {
@@ -6467,6 +6484,9 @@ function doLogin() {
   }
   document.getElementById('loginScreen').classList.add('hidden');
   const userData2 = JSON.parse(localStorage.getItem('ai_daily_' + name) || '{}');
+  // Refresh global userData so unlock system picks up migrated data
+  userData = getUserData();
+  currentDay = userData.currentDay || 1;
   if (!userData2.onboarded) {
     document.getElementById('onboardScreen').classList.remove('hidden');
     renderObQuestion();
@@ -6507,6 +6527,9 @@ function finishOnboard() {
   const role = selectedRole || 'all';
   const u = { onboarded: true, level: level, score: obScore, role: role, quizResults: {}, lastDay: 0 };
   localStorage.setItem('ai_daily_' + name, JSON.stringify(u));
+  // Refresh userData so unlock system uses new user state
+  userData = getUserData();
+  currentDay = 1;
   document.getElementById('onboardScreen').classList.add('hidden');
   document.querySelector('.header').style.display = '';
   document.querySelector('.container').style.display = '';
