@@ -1,9 +1,7 @@
-const CACHE_NAME = 'ai-daily-v9';
+const CACHE_NAME = 'ai-daily-v10';
 self.addEventListener('install', e => {
   self.skipWaiting();
-  if (window.caches) {
-    caches.keys().then(function(names) { names.forEach(function(n) { caches.delete(n); }); });
-  }
+  caches.keys().then(function(names) { names.forEach(function(n) { caches.delete(n); }); });
 });
 self.addEventListener('activate', e => {
   e.waitUntil(
@@ -11,7 +9,7 @@ self.addEventListener('activate', e => {
       keys.map(k => caches.delete(k))
     ))
   );
-  clients.claim();
+  self.clients.claim();
 });
 self.addEventListener('fetch', e => {
   e.respondWith(
