@@ -6156,17 +6156,17 @@ function getUserData() {
     }
   } catch(e) { /* fallback */ }
 
-  // Migration: check if old user exists (ai_daily_name with lastDay)
+  // Migration: check if old user exists (ai_daily_name with onboarded)
   try {
     const oldRaw = localStorage.getItem('ai_daily_' + name);
     if (oldRaw) {
       const old = JSON.parse(oldRaw);
       if (old && old.onboarded) {
-        // Old user: mark all days up to their lastDay as completed
-        const last = old.lastDay || 1;
-        const migrated = [];
-        for (let i = 1; i <= last; i++) migrated.push(i);
-        const migratedData = { name, completedDays: migrated, quizDone: old.quizResults || {}, currentDay: last };
+        // Old system had no unlock — all published days were accessible.
+        // Mark all existing done-status days as completed.
+        const doneDays = COURSE_DATA.filter(d => d.status === 'done').map(d => d.day);
+        const last = doneDays.length > 0 ? doneDays[doneDays.length - 1] : 1;
+        const migratedData = { name, completedDays: doneDays, quizDone: old.quizResults || {}, currentDay: last };
         localStorage.setItem('ai_daily_v2_' + name, JSON.stringify(migratedData));
         return migratedData;
       }
