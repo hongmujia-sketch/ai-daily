@@ -6142,6 +6142,352 @@ DAY_CONTENT[23] = `<div class="day-section" id="day23">
   </div>
   <!-- ==================== END DAY 23 ==================== -->`;
 
+DAY_CONTENT[24] = `<div class="day-section" id="day24">
+    <div class="day-header">
+      <h2>Day 24 | AI 数据分析实战——人提假设，AI 验证</h2>
+      <span class="date">2026-07-05</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>传统数据分析 vs AI 辅助分析的范式转变</h3>
+      <p>过去做数据分析的流程是：<strong>提出假设 → 写 SQL/拉数据 → 做图表 → 验证假设</strong>。这个流程的瓶颈在于"写 SQL/拉数据"这一步——运营同学要么不会写 SQL，要么排队等数据工程师支持，一个分析周期动辄 3-5 天。</p>
+      <p>AI 辅助分析改变了这个范式：<strong>用自然语言描述你的假设 → AI 自动生成查询 → AI 解读结果 → 你判断是不是真的</strong>。运营的角色从"数据搬运工"变成"假设提出者和结果判断者"。</p>
+      <p>这不是说 AI 能代替数据分析师——<strong>AI 目前最强的能力是"加速已知路径"</strong>：你知道想看什么，AI 帮你更快看到。真正难的"该看什么"（即业务洞察），仍然需要人来判断。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具</span>
+      <h3>运营人最顺手的三款 AI 分析工具</h3>
+      <p><strong>1. ChatGPT Code Interpreter（数据分析版）</strong><br>
+      上传 CSV → 用自然语言问问题 → AI 写 Python 代码分析 → 出图出结论。适用场景：活动效果分析、用户分层、A/B 测试结果解读。限制：单次上传文件上限小，不适合大数据量。</p>
+      <p><strong>2. DeepInsight 自助分析</strong><br>
+      蚂蚁内部平台，直接对接 ODPS 数据源。输入自然语言查询，AI 转成 SQL 执行。适合：日常业务看板之外的灵活取数和分析。优势是数据不出域、权限可控。</p>
+      <p><strong>3. Julius AI</strong><br>
+      专门的 AI 数据分析工具，支持上传 CSV/Excel/Google Sheets，自动做探索性数据分析（EDA），给出数据概览、相关性分析和可视化。适合：快速了解一个陌生数据集的全貌。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">深度案例</span>
+      <h3>Netflix：AI 分析用户行为，驱动内容策略</h3>
+      <p>Netflix 每天产生约 1 亿小时的观看数据。他们的分析团队用 AI 工具做三件事：</p>
+      <p><strong>第一，自动发现观看模式</strong>——AI 自动识别"用户在什么时间段弃剧""哪些类型的用户喜欢一起追完""暂停最多的场景有什么共同特征"，而不需要分析师手动写查询去看每个指标。</p>
+      <p><strong>第二，A/B 测试加速</strong>——Netflix 同时运行数千个 A/B 测试（从推荐算法到封面图颜色）。AI 自动分析测试结果，标记显著差异，把分析师的时间从"看数据"解放到"决定下一步测什么"。</p>
+      <p><strong>第三，内容投资决策支持</strong>——当 Netflix 考虑是否续订一部剧时，AI 综合分析观看完成率、重看率、社交媒体讨论度等 50+ 指标，产出一份"续订评分卡"。但最终决定还是人在做——因为 AI 不理解"文化影响力"和"口碑溢出效应"。</p>
+      <p>Netflix 的案例给运营的启示：<strong>AI 分析最适合的场景是"已知问题的高频复现"和"大量指标的快速扫描"</strong>。真正复杂的业务判断，人的角色不仅没有削弱，反而更加关键。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>运营应该建立"假设驱动"的分析习惯</h3>
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营</p>
+        <p>试着把每周的数据分析工作分成两类：① "我知道要看什么"的常规分析 → 交给 AI 工具提速；② "我不知道问题在哪"的探索性分析 → 自己深入。你会发现：<strong>70% 的分析工作属于第一类，完全可以提效 3 倍以上</strong>。</p>
+      </div>
+      <div data-role="product">
+        <p style="color:#3498db;font-size:13px;margin-bottom:8px">🎁 产品运营</p>
+        <p>活动复盘时，先写下你的 3 个假设（比如"满减券核销率高于立减券""周末活动效果比工作日好"），然后让 AI 去验证。你会发现：<strong>AI 验证的结果，往往比你直觉的结论更准确</strong>——因为它不带偏见，只看数据。</p>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e67e22;font-size:13px;margin-bottom:8px">🎉 整合营销运营</p>
+        <p>大促结束后，试着用 AI 工具做一次"全渠道效果对比"：把各渠道的投放数据导入 ChatGPT Code Interpreter，问 AI "哪个渠道的 ROI 最高？不同渠道的用户画像有什么区别？"——你会得到一个你平时没时间做的交叉分析。</p>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <p><strong>核心原则</strong>：人提假设，AI 验证。永远不要让 AI 替你提假设——它不了解你的业务、你的用户、你的老板在想什么。它只是你手里的计算器，不是你的大脑。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">测验</span>
+      <h3>学完今天，来测一测</h3>
+      <div class="quiz-item">
+        <p><strong>Q1：AI 辅助分析和传统分析的核心区别是什么？</strong></p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. AI 分析更准确</li>
+          <li onclick="checkQuiz(this)">B. AI 帮你提假设，你来验证</li>
+          <li onclick="checkQuiz(this)">C. 人提假设，AI 加速验证和执行</li>
+          <li onclick="checkQuiz(this)">D. AI 完全替代数据分析师</li>
+        </ul>
+        <div class="quiz-explain">✅ C。AI 最擅长"加速已知路径"——你知道想看什么，AI 帮你更快看到。真正"该看什么"的判断仍然靠人。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>留给你的实践课题</h3>
+      <div data-role="all">
+        <p>🤔 找一份你最近处理过的数据表格（CSV 或 Excel），上传到 ChatGPT Code Interpreter 或类似工具，问它三个问题：① 这份数据有什么异常值？② 哪些变量之间有相关性？③ 最让你意外的发现是什么？对比 AI 的发现和你自己的分析，看看有哪些是你看漏了的。</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 24 ==================== -->`;
+
+DAY_CONTENT[25] = `<div class="day-section" id="day25">
+    <div class="day-header">
+      <h2>Day 25 | 一个 Agent 怎么诞生的——从创意到上线全流程</h2>
+      <span class="date">2026-07-06</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>Agent 开发的"五步法"</h3>
+      <p>一个 AI Agent 从想法到上线，通常经历五个阶段：</p>
+      <p><strong>第一步：目标定义</strong>——Agent 要解决什么问题？成功标准是什么？这一步最关键也最容易被跳过。不好的目标："做个客服 Agent"。好目标："让用户支付问题的首次解决率达到 80%，且平均对话轮次不超过 3 轮"。</p>
+      <p><strong>第二步：能力规划</strong>——Agent 需要哪些能力？① 知识（RAG 知识库）；② 工具调用（查订单、发券、退款等 API）；③ 记忆（是否需要记住过去的对话）。并不是所有 Agent 都需要这三种能力——<strong>能力越多，复杂度越高，失败概率也越高</strong>。</p>
+      <p><strong>第三步：工作流设计</strong>——把任务拆成步骤。好的工作流设计遵循"洋葱原则"：最外层是简单的意图分类，中间层是具体执行，最内层是兜底机制（搞不定转人工）。</p>
+      <p><strong>第四步：评估与迭代</strong>——准备至少 50 个测试用例，覆盖正常、异常、边缘三种场景。用这些用例反复测试，修复问题后再上线。<strong>永远不要拿真实用户做 Beta 测试</strong>。</p>
+      <p><strong>第五步：灰度上线与监控</strong>——先放 1% 流量，监控准确率、用户满意度、转人工率。达标后再逐步放量到 5% → 20% → 100%。每步停留至少 24 小时。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">深度案例</span>
+      <h3>Cursor：一个"AI 编程 Agent"的诞生故事</h3>
+      <p>Cursor 是 2024 年最火的 AI 编程工具之一，它的发展历程很好地展示了一个 Agent 产品是如何迭代的：</p>
+      <p><strong>V0（2023 年底）</strong>——只是一个"AI 补全"插件，类似 GitHub Copilot。用户写代码，AI 自动补全下一行。用户反馈：挺好用，但不够惊喜。</p>
+      <p><strong>V1（2024 Q1）</strong>——加入 "Chat" 功能，用户可以在编辑器里和 AI 对话。不再只是补全，还能改代码、解释代码。用户量开始增长。</p>
+      <p><strong>V2（2024 Q2）</strong>——推出 "Composer"（真正的 Agent 功能）。用户可以用自然语言描述"帮我写一个登录页面"，AI 自动创建多个文件、安装依赖、调试运行。这不再是工具，而是 Agent。</p>
+      <p><strong>V3（2024 Q3）</strong>——加入"自动修复错误"能力。代码运行出错时，AI 自动分析错误日志，定位到问题代码，提出修复方案，用户一键确认执行。</p>
+      <p>Cursor 的启示：<strong>好的 Agent 不是一步到位的，而是从"辅助工具"逐步进化到"自主执行"的</strong>。每一步都解决一个真实的用户痛点，而不是为了"更 AI"而加功能。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>运营在 Agent 开发中的角色</h3>
+      <p>很多人以为 Agent 是技术团队的事。实际上，<strong>Agent 产品经理和运营的角色可能比工程师更关键</strong>：</p>
+      <p><strong>1. 需求定义</strong>——你最了解用户痛点，你应该决定 Agent 做什么，而不是技术团队决定。</p>
+      <p><strong>2. 知识库建设</strong>——Agent 的智商取决于它读到的知识。你需要整理、清洗、维护知识库。这是运营的核心工作。</p>
+      <p><strong>3. 评估标准制定</strong>——什么样的回答算"好"？什么样的行为算"出了问题"？你需要和团队一起定标准。</p>
+      <p><strong>4. 灰度策略</strong>——先放给哪些用户？怎么回收反馈？怎么决定是否全量？这是运营的看家本领。</p>
+      <p><strong>5. 持续运营</strong>——Agent 上线不是结束。用户会问出你没想到的问题，知识库需要持续更新，模型需要调优。</p>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 25 ==================== -->`;
+
+DAY_CONTENT[26] = `<div class="day-section" id="day26">
+    <div class="day-header">
+      <h2>Day 26 | 运营能自己做 Agent 吗——生产级搭建指南</h2>
+      <span class="date">2026-07-07</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>零代码 Agent 搭建平台的三个层次</h3>
+      <p>2026 年，运营同学不需要写代码也能搭建 AI Agent。市面上的工具分为三个层次：</p>
+      <p><strong>第一层：对话式搭建（最简单）</strong><br>
+      代表：ChatGPT GPTs、字节扣子 Coze Agent。你只需要用自然语言告诉 AI "你要做一个什么样的 Agent"，它自动配置好。适合：个人效率工具、简单问答机器人。无需任何技术基础，15 分钟完成。</p>
+      <p><strong>第二层：拖拽式编排（中等）</strong><br>
+      代表：Coze 工作流、Dify Studio。通过可视化拖拽搭建多步骤工作流，每个步骤可以配置不同的 prompt、调用不同的工具/API。适合：需要多步骤处理的业务场景，如客服流程、审批流程。需要理解业务流程拆解能力。</p>
+      <p><strong>第三层：配置式开发（需少量代码）</strong><br>
+      代表：Dify API、n8n、LangChain。通过配置文件或低代码脚本定义 Agent 行为，支持深度定制。适合：需要对接内部系统、有特殊合规要求的场景。需要基本的 JSON/YAML 读写能力。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具</span>
+      <h3>三步搭建你的第一个运营 Agent</h3>
+      <p>以 Coze 为例，运营可以这样搭建一个"活动效果自动分析 Agent"：</p>
+      <p><strong>第一步：创建 Agent 并配置 Prompt</strong><br>
+      在 Coze 点击"创建 Bot"，在 Prompt 里写："你是一个支付运营活动分析助手。输入活动数据后，你需要：① 计算核心指标（核销率、DAU 增量、客单价）；② 和上一期活动做对比；③ 指出数据异常点；④ 输出一段 200 字以内的总结。"</p>
+      <p><strong>第二步：添加知识库</strong><br>
+      上传"活动规则文档""历史活动数据""行业基准值"等文档。Agent 会根据这些文档来理解你的业务语境，而不是泛泛而答。</p>
+      <p><strong>第三步：配置工作流</strong><br>
+      拖拽三个节点：① 数据输入（支持 CSV 上传或表格粘贴）；② 分析计算（AI 自动解读数字）；③ 报告输出（格式化成钉钉/飞书消息）。设置完成后，每次活动结束你把数据贴进去，30 秒出分析报告。</p>
+      <div class="highlight">
+        <p><strong>真实案例：</strong>某支付运营团队用 Coze 搭建了"每日异动告警 Agent"，每天早上 9 点自动检查核心指标是否有异常波动，有异常就发飞书群消息@负责人。从搭建到上线用了 2 小时，后续每周节省 5 小时人工巡检时间。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>你的第一个 Agent 做什么？</h3>
+      <p>🤔 想想你每周花时间最多、最重复的事情是什么？如果让你用一个零代码平台搭一个 Agent 来自动化它，第一步（最小可行版本）会是什么？试着去 Coze 或类似平台搭出来——你可能会发现，<strong>从想到搭，15 分钟就够了</strong>。</p>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 26 ==================== -->`;
+
+DAY_CONTENT[27] = `<div class="day-section" id="day27">
+    <div class="day-header">
+      <h2>Day 27 | AI 产品的运营新分工——豆包/通义/阿福的运营在做什么</h2>
+      <span class="date">2026-07-08</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业观察</span>
+      <h3>当 AI 产品本身成为运营对象</h3>
+      <p>2025-2026 年，中国互联网迎来了"AI 产品运营"这个全新岗位。字节跳动的豆包、阿里的通义、蚂蚁的阿福——每家都在组建 AI 产品运营团队。他们在做什么？</p>
+      <p><strong>核心发现：AI 产品运营和传统产品运营有三个本质不同。</strong></p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>AI 产品运营的三个新维度</h3>
+      <p><strong>1. 模型行为运营</strong><br>
+      传统产品运营管的是"内容"和"用户行为"。AI 产品运营还要管"模型行为"——模型有没有幻觉？回答风格是否一致？有没有倾向性？这需要建立"模型行为巡检机制"：每天抽检一定比例的 AI 回答，标注问题，反馈给算法团队调优。</p>
+      <p><strong>2. 知识库运营</strong><br>
+      豆包和通义的运营团队都有一个"知识库运营"的职能。他们负责：① 判断哪些知识需要入库；② 清洗和格式化知识文档；③ 监控知识库的命中率和满意度；④ 处理知识库更新的优先级。知识库的质量直接决定了 AI 产品的体验。</p>
+      <p><strong>3. 用户预期管理</strong><br>
+      AI 产品和传统产品最大的区别：<strong>用户不知道 AI 能做什么、不能做什么</strong>。传统 App 的按钮是确定的，AI 的回答却因人而异。运营需要做的事：通过 onboarding 引导、示例问题、能力边界提示，让用户建立正确的预期。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>对我们的启示：团队需要补充哪些能力</h3>
+      <div data-role="all">
+        <p>虽然我们不是在做豆包/通义这样的通用 AI 产品，但支付有礼正在引入 AI 能力（AI 推荐、智能体等）。这意味着运营团队需要尽早建立三种能力：</p>
+        <p><strong>① AI 体验设计思维</strong>——AI 功能的交互不是"点击 → 反馈"而是"输入 → 生成 → 确认"。体验设计逻辑完全不同。</p>
+        <p><strong>② 数据标注与反馈能力</strong>——AI 的推荐效果好不好，需要运营持续标注和反馈。这不是技术活，是运营活。</p>
+        <p><strong>③ 人机协作流程设计</strong>——哪些事 AI 做，哪些事人做，边界怎么画？需要运营来定义。</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 27 ==================== -->`;
+
+DAY_CONTENT[28] = `<div class="day-section" id="day28">
+    <div class="day-header">
+      <h2>Day 28 | 运营人 AI 转型路线图——3/6/12 个月</h2>
+      <span class="date">2026-07-09</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>AI 时代运营能力模型的三个层次</h3>
+      <p>经过 27 天的学习，你应该已经感受到：AI 不是某个"技能"，而是像"互联网"一样的基础设施。它不是在取代运营，而是在重新定义运营的能力要求。以下是建议的转型路线图：</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>第一阶段（1-3 个月）：会用</h3>
+      <p><strong>目标：</strong>把 AI 变成日常工作的必备工具。</p>
+      <p>✅ 每天至少用一次 AI 工具（ChatGPT/Claude/豆包等）辅助工作<br>
+      ✅ 掌握 Prompt 工程的基础技巧（结构化 Prompt、角色设定、分步骤提问）<br>
+      ✅ 能用 AI 工具做数据分析（上传 CSV 让 AI 分析）<br>
+      ✅ 建立"AI First"的工作习惯——遇到问题先想"能不能让 AI 帮我做"</p>
+      <p><strong>练习建议：</strong>每天挑一件重复性工作，试着用 AI 工具来完成。比如用 AI 写周报初稿、用 AI 分析活动数据、用 AI 生成活动文案的各种版本。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>第二阶段（3-6 个月）：会用好</h3>
+      <p><strong>目标：</strong>能用 AI 搭工作流，提效 2 倍以上。</p>
+      <p>✅ 掌握一个工作流工具（推荐 Coze 或 Dify）<br>
+      ✅ 能独立搭建 2 条以上的 AI 自动化工作流<br>
+      ✅ 理解 RAG 的原理，能自己搭建和管理知识库<br>
+      ✅ 能评估 AI 输出的质量，建立评估标准</p>
+      <p><strong>练习建议：</strong>选一个你团队里的高频重复流程，用 AI 工作流工具搭一个自动化方案。从最简版本开始，逐步迭代。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>第三阶段（6-12 个月）：会教人用</h3>
+      <p><strong>目标：</strong>成为团队里的 AI 赋能者。</p>
+      <p>✅ 能赋能团队其他同学使用 AI 工具<br>
+      ✅ 能参与或主导 AI 产品的运营策略<br>
+      ✅ 能建立团队级别的 AI 使用规范（安全、合规、质量标准）<br>
+      ✅ 能从业务角度判断"AI 是否适合这个场景"</p>
+      <p><strong>练习建议：</strong>给团队做一次 AI 工具分享，教大家用你搭建的工作流。教是最好的学，你会发现自己在教的过程中对 AI 的理解又深了一层。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>给自己画一张学习地图</h3>
+      <div data-role="all">
+        <p>现在花 5 分钟，写下你的三个答案：</p>
+        <p>① 你目前处于哪个阶段？<br>
+        ② 3 个月后你想达到哪个阶段？<br>
+        ③ 第一件要做的事是什么？</p>
+        <p>AI 学习的最大误区是"想一口气学完再开始用"。正确的姿势是：<strong>先开始用，遇到不会的再学，学完马上用</strong>。这 28 天的学习已经给了你足够的知识储备——现在最重要的是，从"知道"到"做到"。</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 28 ==================== -->`;
+
+DAY_CONTENT[29] = `<div class="day-section" id="day29">
+    <div class="day-header">
+      <h2>Day 29 | AI 安全红线与合规实践</h2>
+      <span class="date">2026-07-10</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业观察</span>
+      <h3>2026 年 AI 监管动态速览</h3>
+      <p>2026 年上半年，全球 AI 监管进入"加速落地"阶段。欧盟 AI Act 正式生效，中国发布《生成式人工智能服务管理办法》实施细则，美国白宫发布 AI 行政令的行业指引。核心要点：</p>
+      <p><strong>1. 透明度要求</strong>——AI 生成的内容必须标注（水印或文字说明），用户有知情权知道自己是在和 AI 对话。</p>
+      <p><strong>2. 安全评估义务</strong>——上线前必须做安全评估，包括偏见检测、幻觉率测试、对抗攻击测试。</p>
+      <p><strong>3. 数据合规</strong>——用户和 AI 的对话数据如何处理？能否用来训练模型？需要明确的用户授权和隐私说明。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论</span>
+      <h3>运营必须知道的三条 AI 安全红线</h3>
+      <p><strong>红线一：不要用真实用户数据做 AI 测试</strong><br>
+      很多运营拿到 AI 工具后，第一反应是把真实用户的手机号、订单信息贴进去测试。这是巨大的合规风险。测试数据必须脱敏，或者用模拟数据。</p>
+      <p><strong>红线二：AI 输出不能直接对用户</strong><br>
+      AI 的直接输出（未经人工审核或规则过滤）不能直接展示给用户。必须有"内容安全层"——可以是关键词过滤、敏感内容识别模型，至少得有"人工抽检"机制。</p>
+      <p><strong>红线三：明确"AI 做的"和"人做的"的边界</strong><br>
+      哪些决策 AI 可以直接执行？哪些必须人工确认？这个边界必须写在系统设计里，而不是靠"自觉"。比如"AI 生成的优惠券方案需要审批后才能生效"应该是一个系统规则，而不是一个工作习惯。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>留给你的实践课题</h3>
+      <p>🤔 回顾你在支付有礼业务中接触到的 AI 能力（AI 推荐、自动发券等），你现在能不能画出"人机决策边界图"？哪些是 AI 自动做的？哪些需要人工确认？边界是否清晰？如果不清晰，你能做些什么让它清晰起来？</p>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 29 ==================== -->`;
+
+DAY_CONTENT[30] = `<div class="day-section" id="day30">
+    <div class="day-header">
+      <h2>Day 30 | 30 天回顾 + AI 行动清单</h2>
+      <span class="date">2026-07-11</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">回顾</span>
+      <h3>30 天学习之旅全回顾</h3>
+      <p>从 Day 1 的"AI 世界三层结构"到今天，你完成了 30 天的 AI 学习之旅。回顾一下你走过的路：</p>
+      <p><strong>第一阶段：打基础（Day 1-20）</strong><br>
+      你搞清楚了 AI 的基本概念（模型 vs Agent、训练 vs 推理、RAG vs Fine-tuning），学会了 Prompt 工程，了解了 AI 行业格局和商业模式。你现在已经能分辨"哪个 AI 新闻是噱头，哪个是真正重要的变化"。</p>
+      <p><strong>第二阶段：效能工具（Day 21-24）</strong><br>
+      你学会了用 AI 工作流工具搭建自动化流程，用 AI 辅助数据分析。你知道"人提假设，AI 验证"的核心方法。</p>
+      <p><strong>第三阶段：转型与落地（Day 25-28）</strong><br>
+      你了解了 Agent 从创意到上线的完整流程，知道运营在 AI 产品中的核心角色，也有了 3/6/12 个月的转型路线图。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">行动</span>
+      <h3>你的 AI 行动清单</h3>
+      <p>学习不是目的，改变才是。以下是今天上完最后一课后，建议你立刻做到的 5 件事：</p>
+      <p><strong>☐ 1. 选一个工具坚持用 7 天</strong><br>
+      不管 ChatGPT、Claude、豆包还是 Coze——选一个，每天至少用一次。7 天后你会发现自己已经离不开它。</p>
+      <p><strong>☐ 2. 搭一条工作流</strong><br>
+      选一个你日常最重复的任务，用 Coze 或 Dify 搭一条自动工作流。失败没关系，迭代 3 次再说。</p>
+      <p><strong>☐ 3. 做一次分享</strong><br>
+      把你学到的 AI 知识分享给团队 1-2 个同事。教是最好的学。</p>
+      <p><strong>☐ 4. 建立你的 AI 信息源</strong><br>
+      关注 2-3 个可靠的 AI 信息来源（推荐：BuildFastWithAI、赛博禅心、各公司官方博客），每周花 30 分钟了解行业动态。以免自己的认知停留在 2026 年 7 月。</p>
+      <p><strong>☐ 5. 回到 Day 1，重新看一遍</strong><br>
+      30 天后重新看 Day 1-5 的内容，你会发现同样的文字，理解完全不一样了。这就是成长。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-perspective">产品运营视角</span>
+      <h3>最后一课：AI 不是终点</h3>
+      <p>30 天前，你可能对 AI 还停留在"听说过但没用过"的阶段。今天，你已经建立了一个完整的 AI 知识框架。</p>
+      <p>但请记住：<strong>AI 不是终点，业务才是。</strong>技术的价值不在于它多"先进"，而在于它帮业务解决了什么问题、创造了什么价值。</p>
+      <p>支付有礼的核心不是"用了 AI"，而是"用 AI 让用户更愿意用碰一下支付"。不要在 AI 技术本身上迷失方向，牢记你的北极星指标。</p>
+      <p>最后一句送给未来的你：<strong>AI 不会淘汰运营，会用 AI 的运营才会淘汰不会用 AI 的运营。</strong></p>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 30 ==================== -->`;
+
+
 
 // =====================================================
 //  STATE MANAGEMENT
