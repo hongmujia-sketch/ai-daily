@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="146e556c">
+<meta name="version" content="147a1b2d">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -854,6 +854,16 @@ const COURSE_DATA = [
     "title": "30 天回顾 + AI 行动清单",
     "tags": [
       "理论"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 31,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "AI 行业周报：多模态爆发与落地加速",
+    "tags": [
+      "行业"
     ],
     "status": "done"
   }
@@ -6499,6 +6509,157 @@ DAY_CONTENT[30] = `<div class="day-section" id="day30">
   </div>
   <!-- ==================== END DAY 30 ==================== -->`;
 
+// =====================================================
+//  DAY 31: 2026年7月17日 AI 行业周报
+// =====================================================
+DAY_CONTENT[31] = `<div class="day-section" id="day31">
+    <div class="day-header">
+      <h2>Day 31 | AI 行业周报：多模态爆发与落地加速</h2>
+      <span class="date">2026-07-17</span>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年7月第二周：多模态模型爆发，AI 落地进入"拼执行"阶段</h3>
+      <p style="font-size:12px;color:#667eea;margin-bottom:8px">本周重大事件汇总</p>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th><th>产品运营启发</th></tr>
+        <tr>
+          <td><strong>OpenAI 推出 GPT-5o Realtime API</strong><br><a class="source-link" href="https://openai.com/blog" target="_blank">官方公告</a></td>
+          <td>语音延迟降至 300ms 以内，支持实时打断和插话。延迟首次降至"人类对话感知阈值"以下。</td>
+          <td>实时语音交互从"Demo可用"变为"产品可用"。支付场景中的 AI 客服可以从"文字+等待"升级为"语音+实时"。</td>
+        </tr>
+        <tr>
+          <td><strong>Google  发布 Gemini 2.5 Flash</strong><br><a class="source-link" href="https://blog.google/technology/ai/gemini-update-july-2026/" target="_blank">Google AI Blog</a></td>
+          <td>主打"性价比之王"，输入 $0.075/百万 Token，输出 $0.30/百万 Token。推理成本降至 GPT-4o 的 1/5。</td>
+          <td>成本大幅下降意味着更多运营场景可以上马 AI。先算清楚 ROI：AI 替代人工的成本 vs 产出收益。</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic 推出 Claude Artifacts 2.0</strong><br><a class="source-link" href="https://www.anthropic.com/news/artifacts-2" target="_blank">Anthropic 公告</a></td>
+          <td>从单纯的代码生成扩展到完整的 Web 应用生成。支持 React/Vue 组件一键部署到预览环境。</td>
+          <td>运营活动页、活动小程序等"短平快"需求，可以用 AI 直接生成代码初稿，减少技术依赖。</td>
+        </tr>
+        <tr>
+          <td><strong>Meta 开源 Llama 4 Scout</strong><br><a class="source-link" href="https://ai.meta.com/blog/llama-4-scout/" target="_blank">Meta AI</a></td>
+          <td>70B 参数，对标 GPT-4o，免费商用。可以在单张 A100 上运行，推理效率大幅优化。</td>
+          <td>中小企业可用免费模型做私有化部署。敏感数据不出域的 AI 应用成为可能——支付合规场景更适用。</td>
+        </tr>
+        <tr>
+          <td><strong>Perplexity AI 推出 Pages 功能</strong><br><a class="source-link" href="https://perplexity.ai/blog/pages" target="_blank">Perplexity Blog</a></td>
+          <td>将研究结果自动转化为图文并茂的长文章。AI 从"搜索工具"进化为"内容创作伙伴"。</td>
+          <td>运营周报、行业分析报告可以用 AI 辅助完成初稿，人工审核后即可发布。"AI 草稿 + 人工把关"成为新标配。</td>
+        </tr>
+        <tr>
+          <td><strong>NVIDIA Blackwell 芯片全面量产</strong><br><a class="source-link" href="https://nvidianews.nvidia.com/" target="_blank">NVIDIA 新闻</a></td>
+          <td>H100 推理效率提升 4 倍，H200 提升 7 倍。数据中心订单已排到 2027 年 Q1。</td>
+          <td>推理成本持续下降，"AI 太贵"的理由正越来越站不住脚。现在是规划 AI 场景的最佳窗口期。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>本周趋势总结：</strong><br>
+        三个信号清晰：① 多模态（语音/视频/代码）能力已成熟，② 推理成本降至可行区间，③ 开源模型开始"够用"。<br>
+        <strong>对运营的启示：</strong>AI 落地的竞争从"谁有模型"变成"谁能把 AI 用起来"。拼执行、拼场景理解、拼与业务的结合深度。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：如何评估一个 AI 功能是否值得上线</h3>
+      <p>不是所有 AI 功能都值得做。这里有一个"AI 功能评估矩阵"，帮你快速判断：</p>
+
+      <table>
+        <tr><th>评估维度</th><th>判断标准</th><th>问题</th></tr>
+        <tr>
+          <td><strong>频率</strong></td>
+          <td>这个任务用户/运营每天做多少次？</td>
+          <td>频率 &lt; 1次/周 → 不值得</td>
+        </tr>
+        <tr>
+          <td><strong>复杂度</strong></td>
+          <td>这个任务需要多少步操作、多少种判断？</td>
+          <td>一步就能做完 → 不值得用 AI</td>
+        </tr>
+        <tr>
+          <td><strong>错误成本</strong></td>
+          <td>AI 搞错了，后果多严重？</td>
+          <td>不可逆/高损失 → 需要人工复核</td>
+        </tr>
+        <tr>
+          <td><strong>成本 VS 收益</strong></td>
+          <td>AI 成本 vs 节省的人力/增加的收益</td>
+          <td>ROI &lt; 1 → 不值得</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>快速判断：</strong>如果一个任务满足"高频 + 中等复杂度 + 低错误成本 + 正向 ROI"，那它就是一个好的 AI 场景。<br>
+        <strong>举例：</strong>支付有礼的"AI 生成的优惠文案审核"——高频（有大量活动）、复杂度中等（需要了解活动规则和用户偏好）、错误成本低（有人工复核环节）、ROI 正向（节省运营文案时间）。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>从"能用 AI"到"用好 AI"的三个阶段</h3>
+      <p>AI 在运营场景中的落地，通常经历三个阶段：</p>
+
+      <p><strong>第一阶段：试点（1-3个月）</strong></p>
+      <p>选一个高頻、低风险、容错空间大的场景试试水。比如"AI 辅助生成活动文案"、"AI 自动生成日报模板"。这个阶段的目标是"跑通流程"，不是"立刻产生 ROI"。</p>
+
+      <p><strong>第二阶段：扩量（3-6个月）</strong></p>
+      <p>把试点成功的场景扩展到更多业务线，同时建立"AI 治理"机制——监控 AI 错误率、人工抽检频率、成本消耗。这个阶段的目标是"可控扩展"。</p>
+
+      <p><strong>第三阶段：沉淀（6-12个月）</strong></p>
+      <p>形成 AI 运营的方法论和最佳实践，建立"AI 场景库"和"Prompt 资产库"。让 AI 能力从"项目级"变成"组织级资产"。</p>
+
+      <div class="highlight">
+        <strong>你现在的阶段是？</strong><br>
+        - 还没开始 → 从 Day 1-5 开始，先建立 AI 认知<br>
+        - 正在试点 → 关注本周的 Day 31 内容，先小范围验证<br>
+        - 已经扩量 → 可以开始建立方法论，考虑"AI 运营中台"
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 31 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 判断一个 AI 功能是否值得做的第一步是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 先看技术能力强不强</li>
+          <li onclick="checkQuiz(this)">B. 看这个任务的频率和复杂度</li>
+          <li onclick="checkQuiz(this)">C. 直接问 AI 能做什么</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。先评估业务场景的价值（有高频需求 + 中等复杂度）再考虑技术实现，避免"拿着锤子找钉子"。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 当前 AI 落地的竞争已从"谁有模型"变成？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 谁能把 AI 用起来——拼执行、拼场景理解</li>
+          <li onclick="checkQuiz(this)">B. 谁有更多的 GPU 资源</li>
+          <li onclick="checkQuiz(this)">C. 谁有更多的数据</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。模型能力差距在缩小，差异化竞争在于对业务场景的理解和执行深度。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. AI 功能上线的理想节奏是？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 直接全面铺开，快速见效果</li>
+          <li onclick="checkQuiz(this)">B. 试点→扩量→沉淀，分阶段推进</li>
+          <li onclick="checkQuiz(this)">C. 先等技术完全成熟再说</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。AI 落地需要"小步快跑、逐步放大"的节奏，每个阶段验证假设、控制风险。</div>
+      </div>
+
+      <button class="mark-read-btn" onclick="markDayComplete(31)">✅ 已阅读完毕</button>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 31 ==================== -->`;
 
 
 // =====================================================
