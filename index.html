@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="148c2d3e">
+<meta name="version" content="day35-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -896,6 +896,17 @@ const COURSE_DATA = [
       "理论",
       "行业",
       "工具"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 35,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "AI 安全格局重塑 + 开源的力量 + 硬件基础设施竞赛",
+    "tags": [
+      "行业",
+      "理论"
     ],
     "status": "done"
   }
@@ -7281,7 +7292,236 @@ DAY_CONTENT[34] = `<div class="day-section" id="day34">
     </div>
 
   </div>
-  <!-- ==================== END DAY 34 ==================== -->`;
+  <!-- ==================== END DAY 34 ==================== -->
+
+  <!-- ==================== START DAY 35 ==================== -->
+  <div class="day-section" id="day35">
+
+    <div class="day-header">
+      <h2>Day 35 | AI 安全格局重塑 + 开源的力量 + 硬件基础设施竞赛</h2>
+      <span class="date">2026-07-29</span>
+    </div>
+
+    <!-- Beginner Hint -->
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.parentElement.classList.toggle('expanded')">💡 初阶提示：为什么"开源"在 AI 时代变得如此重要？</button>
+      <div class="hint-content">
+        <p>开源（Open Source）曾经只是程序员社区的"理想主义情怀"。但在 AI 时代，它变成了战略选择：当你使用开源模型（比如 DeepSeek、Qwen），你不会被单一供应商"锁死"——可以自由切换、可以自己部署、可以修改模型权重。这就像你可以选择买一辆整车（闭源），也可以买零件自己组装（开源）——后者更灵活，但也需要更多技术能力。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年7月29日：AI 安全管控走向全球化 + 开源模型全面崛起 + 算力基础设施战争</h3>
+      <p style="font-size:12px;color:#667eea;margin-bottom:8px">今日深度解读</p>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th><th>产品运营启发</th></tr>
+        <tr>
+          <td><strong>AI 安全管控升级：欧盟《AI 安全法案》全面生效 + 美国出口管制新规</strong><br><a class="source-link" href="https://www.ithome.com/" target="_blank">IT之家/路透社</a></td>
+          <td>欧盟 AI 安全法案要求所有在欧运营的 AI 公司进行"风险评估认证"，违规最高罚款全球营收6%。美国同时收紧 GPU 出口管制，A100/H100 系列需特殊许可。这标志着 AI 进入"合规驱动"时代。</td>
+          <td>如果你的产品面向海外市场，必须关注 GDPR、AI Act 等合规要求。运营团队需要建立"合规检查清单"——不只是数据隐私，还有模型部署、API 调用等环节。</td>
+        </tr>
+        <tr>
+          <td><strong>开源模型里程碑：DeepSeek-V4-Pro 登顶开源模型排行榜，Qwen 3.6 获得 MIT 许可</strong><br><a class="source-link" href="https://www.layer3labs.io/comparisons/best-chinese-ai-models" target="_blank">Layer3 Labs</a></td>
+          <td>DeepSeek-V4-Pro 在开源模型综合评测中首次超越 Llama 4 和 Claude 3.5 Sonnet。阿里 Qwen 3.6 获得 MIT 许可证，意味着可商用、可修改、可闭源衍生。中国开源模型正式进入"全球第一梯队"。</td>
+          <td>开源模型不仅免费，而且能力已经逼近闭源旗舰。运营在选型时可以：原型用开源（省钱）、生产用闭源（稳定）、核心场景用混合（平衡）。</td>
+        </tr>
+        <tr>
+          <td><strong>NVIDIA vs AMD vs Intel：AI 芯片三国杀</strong><br><a class="source-link" href="https://nvidianews.nvidia.com" target="_blank">NVIDIA 官方</a></td>
+          <td>NVIDIA 财报显示 Data Center 收入同比增长 140%，但同时 AMD MI400X 和 Intel Gaudi 3 也获得大单。微软、Meta 開始"去 NVIDIA 依赖"——不是不用，而是分散采购。这意味着算力不再是"一家通吃"的市场。</td>
+          <td>对于需要大量推理算力的运营场景，这是一个好消息：随着芯片多元化，GPU 租赁价格预计下降 20-30%。可以开始规划"多供应商算力策略"来降低成本。</td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI 推出"Agent Store"：AI Agent 的 App Store 时刻</strong><br><a class="source-link" href="https://openai.com/blog" target="_blank">OpenAI 官方</a></td>
+          <td>OpenAI 推出 Agent Store，开发者可以发布和 monetize 自己的 Agent。现在已有超过 10,000 个第三方 Agent 上架，覆盖数据分析、内容生成、代码辅助等场景。OpenAI 将从交易中抽取 15% 分成。</td>
+          <td>运营团队可以关注 Agent Store 中的优秀案例——它们代表"最佳 Prompt 实践"。同时，如果你的团队有独特运营经验，可以考虑封装为 Agent 发布。</td>
+        </tr>
+        <tr>
+          <td><strong>Google Gemini 2.0 Ultra 发布：多模态能力再升级</strong><br><a class="source-link" href="https://blog.google/intl/zh-cn/products/ai/gemini-2-update/" target="_blank">Google Blog</a></td>
+          <td>Gemini 2.0 Ultra 能在单次对话中处理文本、图像、视频、音频的任意组合输入。更重要的是，它的推理成本比 1.0 下降了 60%，意味着"多模态"从"烧钱功能"变成"可负担的日常"。</td>
+          <td>多模态成本的下降，意味着运营可以更大胆地在客服、内容审核、数据分析等场景中使用图像/语音理解能力。需要重新评估以前因成本太高而放弃的多模态方案。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>今日核心判断：</strong><br>
+        AI 行业正在经历三个结构性变化：<br>
+        ① <strong>合规化</strong>——从"先发展后监管"变为"边发展边合规"<br>
+        ② <strong>开源化</strong>——从"闭源独大"变为"开源崛起，闭源保值"<br>
+        ③ <strong>多元化</strong>——从"一家通吃"变为"多供应商生态"
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论卡片</span>
+      <h3>AI 运营人的"合规检查清单"：从数据到模型的全链路</h3>
+      <p>随着全球 AI 监管趋严，运营人员需要在日常工作中加入合规意识。以下是"AI 运营合规检查清单"的核心条目：</p>
+
+      <table>
+        <tr><th>环节</th><th>检查项</th><th>常见风险</th><th>应对措施</th></tr>
+        <tr>
+          <td><strong>数据采集</strong></td>
+          <td>是否获得了用户授权？是否超范围采集？</td>
+          <td>合规投诉、下架风险</td>
+          <td>最小化原则、明确授权弹窗</td>
+        </tr>
+        <tr>
+          <td><strong>数据存储</strong></td>
+          <td>数据是否存在境外？存储期限是多久？</td>
+          <td>跨境传输违规、GDPR 罚款</td>
+          <td>本地化存储、自动过期清理</td>
+        </tr>
+        <tr>
+          <td><strong>模型调用</strong></td>
+          <td>调用的 API 是否符合 GDPR/AI Act？</td>
+          <td>数据被泄露给第三方模型</td>
+          <td>使用通过认证的模型或自部署</td>
+        </tr>
+        <tr>
+          <td><strong>输出发布</strong></td>
+          <td>AI 生成的内容是否经过审核？</td>
+          <td>虚假信息、版权侵权、敏感内容</td>
+          <td>建立 AI 内容审核 SOP</td>
+        </tr>
+        <tr>
+          <td><strong>用户告知</strong></td>
+          <td>是否告知用户"这是 AI 生成的"？</td>
+          <td>信任危机、舆论风险</td>
+          <td>透明披露机制</td>
+        </tr>
+      </table>
+
+      <div class="beginner-hint">
+        <button class="hint-toggle" onclick="this.parentElement.classList.toggle('expanded')">💡 什么是"被遗忘权"？</button>
+        <div class="hint-content">
+          <p>"被遗忘权"（Right to be Forgotten）是 GDPR 的核心条款之一——用户有权要求删除关于自己的个人数据。对于 AI 运营，这意味着：如果用户要求"删除所有 AI 对话记录"，你需要有能力从所有存储系统中清除这些数据，包括模型可能的"记忆"。</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <strong>运营启示：</strong>合规不是法务部门的事——它是产品运营的基础设施。在设计任何一个 AI 功能时，都要问自己：如果监管部门来查，我能提供完整的合规文档吗？
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：建立运营团队的"AI 成本监控仪表盘"</h3>
+      <p>AI 成本管理是运营的核心能力之一。以下是建立"AI 成本监控仪表盘"的快速实操方法：</p>
+
+      <p><strong>Step 1：确定成本构成</strong></p>
+      <ul>
+        <li>🔵 <strong>Token 成本</strong>——输入 tokens + 输出 tokens × 单价</li>
+        <li>🔵 <strong>API 调用成本</strong>——每次外部 API 调用的费用</li>
+        <li>🔵 <strong>算力成本</strong>——如果使用自部署模型，需要计入 GPU 成本</li>
+        <li>🔵 <strong>人力成本</strong>——AI 调试、运维的人力投入</li>
+      </ul>
+
+      <p><strong>Step 2：关键监控指标</strong></p>
+      <ol>
+        <li><strong>单位成本</strong>：每个用户/每笔交易/每个任务的 AI 成本</li>
+        <li><strong>成本趋势</strong>：周环比/月环比是多少？</li>
+        <li><strong>异常峰值</strong>：有没有突然的成本飙升？原因是什么？</li>
+        <li><strong>ROI 指标</strong>：AI 带来的收益 vs AI 成本</li>
+      </ol>
+
+      <p><strong>Step 3：成本优化三步法</strong></p>
+      <div class="layer-diagram" style="font-size:12px">
+        <div class="layer">【第1步】prompt 精简——去掉冗余指令，平均可省 15-20% Token<br>
+【第2步】模型分级——简单场景用小模型（如 Qwen 3.6），复杂场景用大模型<br>
+【第3步】缓存复用——相同的问题/答案用缓存，避免重复计算</div>
+      </div>
+
+      <div class="highlight">
+        <strong>一句话总结：</strong>AI 成本不是"越低越好"——而是"物有所值"。建立一个透明的监控仪表盘，让每一分 AI 投入都能看到产出。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>AI 时代运营人的三个"新基本功"</h3>
+
+      <p><strong>新基本功一：合规意识</strong></p>
+      <p>从今天开始，把"合规检查"加入你的工作流：</p>
+      <ul>
+        <li>✅ 每一个新的 AI 功能上线前，完成"合规自检清单"</li>
+        <li>✅ 关注目标市场的监管动态（欧盟 AI Act、美国出口管制、中国生成式 AI 管理规定等）</li>
+        <li>✅ 建立"合规文档库"——每个 AI 功能的设计文档、风险评估、用户告知文案</li>
+      </ul>
+
+      <p><strong>新基本功二：成本敏感</strong></p>
+      <p>AI 的成本结构与传统软件不同——它是"用多少付多少"的弹性成本。这意味着：</p>
+      <ul>
+        <li>✅ 关注每个 AI 功能的"单位经济模型"——用户用了多少 AI、产生了多少成本、带来了多少价值</li>
+        <li✅ 学会在多个模型之间切换——简单问题用小模型，复杂问题用大模型</li>
+        <li>✅ 建立"成本预警"机制——当单次交互成本超过阈值时自动告警</li>
+      </ul>
+
+      <p><strong>新基本功三：多模态思维</strong></p>
+      <p>随着多模态成本下降，运营需要重新思考"什么场景可以用 AI"：</p>
+      <ul>
+        <li>✅ 客服场景：用户发来一张截图，AI 自动理解问题并给出答案</li>
+        <li>✅ 内容审核场景：用户上传一张图片，AI 自动判定是否违规</li>
+        <li>✅ 数据分析场景：用户上传一个 Excel/CSV，AI 自动生成洞察</li>
+      </ul>
+
+      <div class="highlight">
+        <strong>一句话总结：</strong>AI 时代运营人的核心竞争力 = 对技术的理解 + 对业务的敏感 + 对合规的敬畏。三者缺一不可。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 35 思考题</h3>
+      <p><strong>场景：</strong>你的团队正在计划面向欧洲市场的 AI 客服产品，需要满足 GDPR 和 AI Act 的合规要求。</p>
+      <p><strong>问题：</strong></p>
+      <ol>
+        <li>你会如何设计这个产品的"合规架构"？需要考虑哪些关键环节？</li>
+        <li>在满足合规要求的前提下，你如何控制 AI 客服的成本？</li>
+        <li>如果你的 AI 客服偶尔给出错误答案，导致用户损失，你会如何处理这个风险？</li>
+      </ol>
+      <p style="color:#718096;font-size:13px">提示：参考今天的"合规检查清单"和"成本优化三步法"来构建你的答案。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 35 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 欧盟 AI 安全法案的核心要求是什么？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 禁止所有 AI 技术在欧洲使用</li>
+          <li onclick="checkQuiz(this)">B. 所有 AI 公司需进行风险评估认证，违规最高罚全球营收6%</li>
+          <li onclick="checkQuiz(this)">C. 只有美国公司需要遵守</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。欧盟 AI Act 要求在欧运营的 AI 公司进行"风险评估认证"，违规罚款最高可达全球营收6%。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 为什么开源模型在 AI 时代变得更重要？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 因为它们完全免费</li>
+          <li onclick="checkQuiz(this)">B. 因为它们能力已经远超闭源模型</li>
+          <li onclick="checkQuiz(this)">C. 因为可以避免单一供应商锁定，且能力已接近闭源旗舰</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。开源模型的核心价值是"不被锁死"——可以自由切换、自己部署、修改权重。能力上已接近闭源，但灵活性更高。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. AI 成本优化的"三步法"是什么？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. prompt 精简 → 模型分级 → 缓存复用</li>
+          <li onclick="checkQuiz(this)">B. 减少提问次数 → 使用更小的模型 → 完全不用 AI</li>
+          <li onclick="checkQuiz(this)">C. 增加 token 数量 → 使用最大的模型 → 实时调用</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。AI 成本优化的三步法是：① Prompt 精简（省 15-20% Token）② 模型分级（简单场景用小模型）③ 缓存复用（避免重复计算）。</div>
+      </div>
+
+      <button class="mark-read-btn" onclick="markDayComplete(35)">✅ 已阅读完毕</button>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 35 ==================== -->`;
 
 
 // =====================================================
