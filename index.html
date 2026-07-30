@@ -909,6 +909,18 @@ const COURSE_DATA = [
       "理论"
     ],
     "status": "done"
+  },
+  {
+    "day": 36,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "AI 军备竞赛的财报真相：Google Q2 揭示的行业拐点",
+    "tags": [
+      "行业",
+      "理论",
+      "工具"
+    ],
+    "status": "done"
   }
 ];
 
@@ -5720,21 +5732,23 @@ DAY_CONTENT[20] = `<div class="day-section" id="day20">
 
 DAY_CONTENT[21] = `<div class="day-section" id="day21">
     <div class="day-header">
-      <h2>Day 21 | AI 智能体上岗——从"聊天"到"干活"的新范式</h2>
+      <h2>Day 21 | 中国开源大模型里程碑——Kimi K3 与金融 AI 监管新时代</h2>
       <span class="date">2026-07-02</span>
     </div>
 
     <!-- ========== 理论卡 ========== -->
     <div class="card">
       <span class="card-tag tag-theory">理论</span>
-      <h3>什么是 AI 智能体（Agent）？</h3>
-      <p>过去一年我们用的大模型，本质是<strong>"对话式工具"</strong>——你问它答，一步一指令。而 <strong>AI Agent</strong> 是在对话模型基础上，增加了<strong>自主规划、工具调用、试错反馈、长期记忆</strong>四种能力的"能干活的 AI"。</p>
+      <h3>2026年7月：中国 AI 的" Sputnik 时刻"</h3>
+      <p>2026年7月，中国 AI 连续放出重磅炸弹：<strong>Kimi K3</strong>（2.8万亿参数开源）和<strong>金融AI监管</strong>（首份全流程监管文件）。这不仅是技术突破，更是行业格局重塑的信号弹。</p>
       <div class="beginner-hint">
-        <button class="hint-toggle" onclick="toggleHint(this)">💡 新手补课：Agent 和 ChatGPT 有什么区别？</button>
+        <button class="hint-toggle" onclick="toggleHint(this)">💡 新手补课：什么是"开源"？为什么 Kimi K3 引起轰动？</button>
         <div class="hint-content">
-          <p>想象你请了两个人帮忙办年会：</p>
-          <p>• <strong>Chat 模式</strong>：你告诉它"帮我写一封邀请邮件"，它写了。你再告诉它"帮我设计一个签到表"，它设计了。每一步都要你亲自指挥。</p>
-          <p>• <strong>Agent 模式</strong>：你只说"帮我办一场 50 人的年会，预算 2 万"，它自己规划任务清单：写邀请邮件→设计签到表→预订场地→安排节目→采购物资，中间哪步出错自己调整，完成后给你一份总结报告。</p>
+          <p><strong>开源</strong> = 把模型的"大脑"（权重）公开给所有人免费使用、下载、修改。</p>
+          <p>之前美国公司（OpenAI、Google、Anthropic）闭源赚API钱，中国公司只能"用人家的大脑"。Kimi K3 的 2.8 万亿参数权重<strong>免费开放</strong>，意味着任何企业都可以在自己的服务器上部署 Kimi K3，不用付 API 费用。</p>
+          <p>Nature 评价这是"自 DeepSeek 以来的又一个 Sputnik 时刻"——意味着中国 AI 在大模型领域正式与美国并驾齐驱。</p>
+        </div>
+      </div>
           <p>核心差异：<strong>Chat 是"你指挥它干"，Agent 是"你提需求它自己干"</strong>。</p>
         </div>
       </div>
@@ -5763,9 +5777,9 @@ DAY_CONTENT[21] = `<div class="day-section" id="day21">
     <div class="card">
       <span class="card-tag tag-industry">行业资讯</span>
       <h3>本周 AI 精选（3 条）</h3>
-      <p><strong>🦞 OpenClaw"龙虾"40 天潮起潮落</strong> — 千人排队安装→国家互联网应急中心发布安全提示→舆论急转。Agent 走向大众的第一次"安全教育"。<a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/trad" target="_blank" style="color:#667eea;font-size:12px">原文→</a></p>
-      <p><strong>💰 Anthropic 估值 9650 亿美元</strong> — 首次超过 OpenAI，AI 基础设施成为华尔街核心资产。<a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-1-2026" target="_blank" style="color:#667eea;font-size:12px">原文→</a></p>
-      <p><strong>🇨🇳 中国 AI 从"聊天"走向"做事"</strong> — 日均 Token 消耗量一年增长 300 倍，Agent 范式取代 Chat 范式。<a href="https://www.news.cn/20260128/3b2f11906fd74ca397fef9996c805a60/c.html" target="_blank" style="color:#667eea;font-size:12px">原文→</a></p>
+      <p><strong>🔥 Kimi K3 发布：2.8万亿参数开源，1M token 上下文</strong> — 月之暗面7月16日发布，7月27日开放权重，成为史上最大开源模型。性能与 Claude Fable 5 相当，成本仅 1/3。<a href="https://finance.sina.com.cn/jjxw/2026-07-28/doc-inikizzz2507543.shtml" target="_blank" style="color:#667eea;font-size:12px">原文→</a></p>
+      <p><strong>📊 金融 AI 监管文件发布：首份全流程监管框架</strong> — 国家金融监督管理总局发布《关于银行业保险业人工智能安全开发应用的指导意见》（金发〔2026〕8号），首次正式定义金融智能体（Agent）。<a href="https://finance.sina.com.cn/tech/roll/2026-07-28/doc-inikizzw8068609.shtml" target="_blank" style="color:#667eea;font-size:12px">原文→</a></p>
+      <p><strong>📈 中国 AI 竞争进入"双轨并行"新阶段</strong> — 闭源三巨头 vs 开源军团格局形成。Nature 报道：开源模型仅落后闭源前沿 4 个月，但成本低 10 倍。<a href="https://agent.csdn.net/6a66d75910ee7a33f292c79e.html" target="_blank" style="color:#667eea;font-size:12px">原文→</a></p>
     </div>
 
     <!-- ========== 产品运营视角卡 ========== -->
@@ -7523,10 +7537,209 @@ DAY_CONTENT[34] = `<div class="day-section" id="day34">
   </div>
   <!-- ==================== END DAY 35 ==================== -->`;
 
+  DAY_CONTENT[36] = `
+<div class="day-section" id="day36">
+      <div class="day-header">
+        <h2>Day 36 | AI 军备竞赛的财报真相：Google Q2 揭示的行业拐点</h2>
+        <span class="date">2026-07-30</span>
+      </div>
 
-// =====================================================
-//  STATE MANAGEMENT
-// =====================================================
+      <div class="beginner-hint">
+        <button class="hint-toggle" onclick="this.nextElementSibling.classList.toggle('open')">💡 初阶提示：今天我们从一份财报看懂 AI 行业的大趋势</button>
+        <div class="hint-content">
+          <p>今天的内容围绕 Google 母公司 Alphabet 的 Q2 2026 财报展开。别被"财报"吓到——我们不是要分析数字，而是通过这份财报看懂三个关键问题：</p>
+          <p><strong>① AI 到底有多赚钱？</strong>Google Cloud 增长 82%，说明企业正在疯狂购买 AI 服务。</p>
+          <p><strong>② AI 到底有多烧钱？</strong>Google 全年资本开支上调到 $2050 亿，相当于每天烧掉 5.6 亿美元。</p>
+          <p><strong>③ 这对我们意味着什么？</strong>AI 正在从"要不要用"变成"怎么用更划算"，成本管理成为核心能力。</p>
+          <p>如果你对"资本开支""供应约束"等概念不熟悉，先记住一句话：<strong>AI 行业现在最大的瓶颈不是技术，而是电力和芯片不够用。</strong></p>
+        </div>
+      </div>
+
+      <!-- 行业动态卡片 -->
+      <div class="card">
+        <span class="card-tag tag-industry">行业动态</span>
+        <h3>Google Q2 财报：AI 军备竞赛的"体检报告"</h3>
+
+        <p>7月22日，Google 母公司 Alphabet 发布 Q2 2026 财报。这份财报被业界视为 AI 行业健康状况的"晴雨表"，几个关键数字揭示了当前 AI 竞争的底层逻辑：</p>
+
+        <div class="highlight">
+          <strong>核心数据一览：</strong><br>
+          • 总营收 $1198 亿（+24% YoY），超出华尔街预期<br>
+          • Google Cloud 营收 $248 亿（+82% YoY），是增长最快的板块<br>
+          • Gemini App 月活用户达 <strong>9.5 亿</strong>，DAU 同比增长 3 倍<br>
+          • AI Mode 月活用户突破 <strong>10 亿</strong><br>
+          • 全年资本开支上调至 <strong>$1950-2050 亿</strong>（上一季度指引为 $1800-1900 亿）<br>
+          • 模型 API 每分钟处理 <strong>220 亿 Token</strong>（上季度为 160 亿）
+        </div>
+
+        <p><strong>最值得关注的三个信号：</strong></p>
+
+        <p><strong>信号一：AI 需求远超供给。</strong>CFO Anat Ashkenazi 连续多个季度强调"我们仍处于供应受限的环境"。Google 甚至开始租用第三方云容量作为"过渡策略"——连 Google 自己的数据中心都建不过来。这意味着 AI 算力在可预见的未来仍然是稀缺资源。</p>
+
+        <p><strong>信号二：模型迭代速度惊人。</strong>Pichai 宣布已启动 Gemini 4 的"最雄心勃勃的预训练"，同时计划"几乎每月"发布新模型。就在财报前一天，Google 发布了 Gemini 3.6 Flash、3.5 Flash-Lite 和 3.5 Flash Cyber 三款模型。模型更新从"年度事件"变成了"月度常态"。</p>
+
+        <p><strong>信号三：Agent 时代已全面到来。</strong>Antigravity（Google 的 Agent 开发平台）周活用户达 240 万，Agent Development Kit 下载量近 7000 万。Pichai 举了一个震撼的例子：Chrome 团队通过模型驱动的重构，将原本需要两年的项目压缩到<strong>三个月</strong>——交付速度提升 8 倍。</p>
+
+        <a class="source-link" href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/" target="_blank">📎 Google Blog: Q2 2026 Earnings Call</a>
+        <a class="source-link" href="https://www.cnbc.com/2026/07/22/google-earnings-q2-goog-live-updates.html" target="_blank">📎 CNBC: Google Q2 2026 Earnings Live Updates</a>
+      </div>
+
+      <!-- 行业动态卡片 2：UN 报告 + Pacing the Frontier -->
+      <div class="card">
+        <span class="card-tag tag-industry">行业动态</span>
+        <h3>同一天的两面：军备竞赛加速 vs. 全球呼吁"慢下来"</h3>
+
+        <p>有趣的是，在 Google 财报揭示 AI 投入狂飙的同时，两个事件在同一天形成了鲜明对比：</p>
+
+        <p><strong>事件一：联合国发布首份全球 AI 评估报告。</strong>7月29-30日，联合国发布史上第一份全球独立科学 AI 评估报告。核心结论：<strong>AI 能力的发展速度超过了科学理解和政府适应的速度。</strong>报告指出，没有科学依据能保证 AI Agent 系统不会违反人类指令；"谄媚型"AI 行为已与多起心理健康事件（含死亡案例）相关联；全球南北 AI 鸿沟正在加剧。</p>
+
+        <p><strong>事件二：1100+ 科技员工联署"Pacing the Frontier"倡议。</strong>包括 Anthropic CEO Dario Amodei、OpenAI 首席科学家 Jakub Pachocki、Meta AI 研究 VP 在内的 1100 多名科技从业者，呼吁美国政府支持一项国际努力，开发工具来<strong>有节奏地推进前沿 AI 发展</strong>——不是停止，而是"有控制地前进"。</p>
+
+        <div class="highlight">
+          <strong>矛盾的核心：</strong><br>
+          科技公司（以 Google 财报为代表）："我们必须跑得更快，需求太大了！"<br>
+          科学家和从业者（以 UN 报告和倡议为代表）："跑太快了，我们还没准备好。"<br>
+          这不是谁对谁错的问题，而是 AI 发展速度与治理能力之间的<strong>结构性张力</strong>。
+        </div>
+
+        <a class="source-link" href="https://news.un.org/" target="_blank">📎 UN News: First Global AI Assessment Report</a>
+      </div>
+
+      <!-- 理论卡片 -->
+      <div class="card">
+        <span class="card-tag tag-theory">理论</span>
+        <h3>理解 AI 军备竞赛的三个底层逻辑</h3>
+
+        <p>Google 财报中反复出现的一个词是"supply-constrained"（供应受限）。这背后是 AI 行业当前最核心的三个约束条件：</p>
+
+        <div class="layer-diagram">
+          <div class="layer" style="background:#eef0ff;border-left:4px solid #667eea;">
+            <strong>第一层：算力约束（短期瓶颈）</strong><br>
+            芯片产能有限 → 数据中心建设周期长（2-3年）→ 电力供应不足。<br>
+            结果：即使有钱也买不到足够的算力。Google Capex $2050 亿仍不够用。
+          </div>
+          <div class="layer" style="background:#fff5e6;border-left:4px solid #e68a00;margin-top:8px;">
+            <strong>第二层：人才约束（中期瓶颈）</strong><br>
+            AI 研究员、ML 工程师、Agent 开发者极度稀缺。<br>
+            结果：Google 的 Antigravity 平台让非技术人员也能构建 Agent，本质是在"降低人才门槛"。
+          </div>
+          <div class="layer" style="background:#e6fbf0;border-left:4px solid #22a868;margin-top:8px;">
+            <strong>第三层：治理约束（长期瓶颈）</strong><br>
+            安全评估标准缺失 → 监管框架不统一 → 公众信任不足。<br>
+            结果：UN 报告和 Pacing the Frontier 倡议反映的正是这一层。
+          </div>
+        </div>
+
+        <p><strong>关键洞察：</strong>这三个约束不是独立的，而是相互影响的。算力越稀缺，企业越倾向于"先跑再说"；治理越滞后，公众越焦虑。理解这个三角关系，才能真正看懂 AI 行业的每一个新闻。</p>
+      </div>
+
+      <!-- 运营视角卡片 -->
+      <div class="card">
+        <span class="card-tag tag-ops">运营视角</span>
+        <h3>从 Google 财报中提炼的 3 个产品运营启示</h3>
+
+        <p><strong>启示一：AI 产品的"使用深度"比"用户规模"更重要。</strong></p>
+        <p>Google 在财报中特别强调了一个指标：近 500 家 Cloud 客户在过去一年中各自处理了超过 <strong>1 万亿 Token</strong>，2000+ 企业消费超 1000 亿 Token。这说明真正的商业价值不在"多少人用了 AI"，而在"用得多深"。对产品运营的启示：<strong>关注 DAU 的同时，更要关注单用户的 Token 消耗量和使用频次。</strong></p>
+
+        <p><strong>启示二：模型降价不是终点，而是新起点。</strong></p>
+        <p>Google 发布了三款更便宜的 Flash 模型，同时面临来自中国开源模型的成本压力。但 Pichai 的逻辑是：降价 → 更多场景可用 → 总用量暴增 → 总收入增长。对产品运营的启示：<strong>不要只盯着单次调用成本，要看"降价能否撬动 10 倍的使用量增长"。</strong></p>
+
+        <p><strong>启示三：Agent 不是"替代人"，而是"压缩时间"。</strong></p>
+        <p>Chrome 团队 2 年变 3 个月的案例说明，Agent 最大的价值不是减少人力，而是<strong>压缩交付周期</strong>。对产品运营的启示：<strong>衡量 AI 投入的 ROI 时，不要只看"省了多少人力成本"，要看"快了多少倍"。</strong></p>
+      </div>
+
+      <!-- 工具实践卡片 -->
+      <div class="card">
+        <span class="card-tag tag-tool">工具实践</span>
+        <h3>动手：用 AI 分析一份真实财报</h3>
+
+        <p>今天不介绍新工具，而是教你一个实用的工作流：<strong>用 AI 快速读懂一份财报。</strong></p>
+
+        <p><strong>场景：</strong>你是一家公司的产品经理，老板让你"看看 Google 最新财报，分析对我们有什么影响"。你不需要成为财务专家。</p>
+
+        <div class="highlight">
+          <strong>Prompt 模板（复制即用）：</strong><br><br>
+          <code>你是一位科技行业分析师。请帮我分析 Alphabet (Google) 2026 Q2 财报中的以下内容，用产品经理能理解的语言回答：<br><br>
+          1. 这份财报中，哪三个数据对 AI 产品方向最有参考价值？<br>
+          2. Google Cloud 增长 82% 的核心驱动力是什么？<br>
+          3. 从这份财报看，未来 6-12 个月 AI 行业最大的变化会是什么？<br>
+          4. 如果我是做 [你的产品类型] 的产品经理，这份财报给我最重要的一个启示是什么？<br><br>
+          请用简洁的要点回答，每个要点不超过 3 行。</code>
+        </div>
+
+        <p><strong>进阶技巧：</strong>你可以把财报原文（或 CNBC 的摘要文章）的链接发给 AI，让它直接阅读后分析。大多数 AI 工具现在都支持 URL 读取。</p>
+      </div>
+
+      <!-- 作业卡片 -->
+      <div class="card">
+        <span class="card-tag tag-homework">今日作业</span>
+        <h3>Day 36 行动清单</h3>
+
+        <p><strong>必做（5分钟）：</strong></p>
+        <p>打开你常用的 AI 工具，用上面的 Prompt 模板分析 Google Q2 财报。把 AI 给出的"对你最重要的一个启示"记录下来。</p>
+
+        <p><strong>选做（15分钟）：</strong></p>
+        <p>思考你当前负责的产品或项目：如果 AI 模型调用成本下降 50%，你会新增哪些之前"用不起"的场景？列出 3 个。</p>
+
+        <p><strong>挑战（30分钟）：</strong></p>
+        <p>阅读 Google Q2 财报 CEO 致辞原文（链接见行业动态卡片），找出 3 个你认为对所在行业影响最大的趋势，写一段 200 字的分析。</p>
+      </div>
+
+      <!-- 选择题卡片 -->
+      <div class="card">
+        <span class="card-tag tag-quiz">选择题</span>
+        <h3>Day 36 检验</h3>
+
+        <div class="quiz-item">
+          <p class="q">1. Google Q2 2026 财报中，全年资本开支（Capex）上调到了什么范围？</p>
+          <ul class="quiz-options" data-answer="2">
+            <li onclick="checkQuiz(this)">A. $800-900 亿</li>
+            <li onclick="checkQuiz(this)">B. $1200-1300 亿</li>
+            <li onclick="checkQuiz(this)">C. $1950-2050 亿</li>
+          </ul>
+          <div class="quiz-explain">正确答案是 C。Google 将全年 Capex 指引从 $1800-1900 亿上调至 $1950-2050 亿，主要用于 AI 基础设施（服务器和数据中心）。CFO 强调"仍处于供应受限环境"。</div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="q">2. 以下哪项不是 Google 财报中提到的 AI 产品数据？</p>
+          <ul class="quiz-options" data-answer="0">
+            <li onclick="checkQuiz(this)">A. Gemini App 月活用户突破 20 亿</li>
+            <li onclick="checkQuiz(this)">B. AI Mode 月活用户突破 10 亿</li>
+            <li onclick="checkQuiz(this)">C. 模型 API 每分钟处理 220 亿 Token</li>
+          </ul>
+          <div class="quiz-explain">正确答案是 A。Gemini App 月活用户是 9.5 亿，不是 20 亿。AI Mode 月活突破 10 亿，API 每分钟处理 220 亿 Token 都是财报中的真实数据。</div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="q">3. "Pacing the Frontier" 倡议的核心主张是什么？</p>
+          <ul class="quiz-options" data-answer="1">
+            <li onclick="checkQuiz(this)">A. 立即停止所有前沿 AI 研发</li>
+            <li onclick="checkQuiz(this)">B. 开发工具来有节奏地推进前沿 AI，而非无限制加速</li>
+            <li onclick="checkQuiz(this)">C. 让 AI 公司自行决定发展速度</li>
+          </ul>
+          <div class="quiz-explain">正确答案是 B。"Pacing the Frontier"不是要停止 AI 发展，而是呼吁开发工具和方法来"有控制地前进"——在保持创新的同时确保安全和治理跟得上。</div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="q">4. Google 财报中 Chrome 团队通过 AI 实现的效率提升是多少？</p>
+          <ul class="quiz-options" data-answer="2">
+            <li onclick="checkQuiz(this)">A. 效率提升 2 倍</li>
+            <li onclick="checkQuiz(this)">B. 效率提升 4 倍</li>
+            <li onclick="checkQuiz(this)">C. 2 年项目压缩到 3 个月，交付速度提升 8 倍</li>
+          </ul>
+          <div class="quiz-explain">正确答案是 C。Pichai 在财报电话会中举例：Chrome 团队通过模型驱动的重构（使用 Antigravity 平台），将原本需要两年的项目压缩到三个月完成。</div>
+        </div>
+
+        <button class="mark-read-btn" onclick="markDayComplete(36)">✅ 已阅读完毕</button>
+      </div>
+
+</div>
+<!-- ==================== END DAY 36 ==================== -->`;
+
+
+  // =====================================================
+  //  STATE MANAGEMENT
+  // =====================================================
 function getUserData() {
   const name = localStorage.getItem('ai_daily_user') || '访客';
   try {
