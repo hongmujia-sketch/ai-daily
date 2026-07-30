@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="day35-update">
+<meta name="version" content="day36-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -7535,7 +7535,251 @@ DAY_CONTENT[34] = `<div class="day-section" id="day34">
     </div>
 
   </div>
-  <!-- ==================== END DAY 35 ==================== -->`;
+  <!-- ==================== END DAY 35 ==================== -->
+
+DAY_CONTENT[36] = `<div class="day-section" id="day36">
+
+    <div class="day-header">
+      <h2>Day 36 | AI Agent 工作流深度实战 + 多模态应用场景爆发</h2>
+      <span class="date">2026-07-30</span>
+    </div>
+
+    <!-- Beginner Hint -->
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.parentElement.classList.toggle('expanded')">💡 初阶提示：什么是"多模态"？为什么它正在爆发？</button>
+      <div class="hint-content">
+        <p>多模态（Multimodal）指的是 AI 系统同时处理和理解多种类型数据的能力——文本、图像、音频、视频、3D模型等。过去一年，多模态模型的成本下降了 60%，从"烧钱功能"变成"可负担的日常"。这意味着运营可以更大胆地在客服、内容审核、数据分析等场景中使用图像/语音理解能力。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年7月30日：AI Agent 工作流实战 + 多模态应用爆发 + 算力成本下降</h3>
+      <p style="font-size:12px;color:#667eea;margin-bottom:8px">今日深度解读</p>
+
+      <table>
+        <tr><th>事件</th><th>为什么重要</th><th>产品运营启发</th></tr>
+        <tr>
+          <td><strong>OpenAI Agent Store 爆发：10,000+ 第三方 Agent 上架</strong><br><a class="source-link" href="https://openai.com/blog" target="_blank">OpenAI 官方</a></td>
+          <td>OpenAI Agent Store 推出一个月，超过 10,000 个 Agent 上架，涵盖数据分析、内容生成、代码辅助等场景。OpenAI 从交易中抽取 15% 分成，形成新的 AI 生态平台。</td>
+          <td>运营团队可以关注 Agent Store 中的优秀案例——它们代表"最佳 Prompt 实践"。同时，如果你的团队有独特运营经验，可以考虑封装为 Agent 发布。</td>
+        </tr>
+        <tr>
+          <td><strong>Google Gemini 2.0 Ultra 多模态能力升级：成本下降 60%</strong><br><a class="source-link" href="https://blog.google/intl/zh-cn/products/ai/gemini-2-update/" target="_blank">Google Blog</a></td>
+          <td>Gemini 2.0 Ultra 能在单次对话中处理文本、图像、视频、音频的任意组合输入。推理成本比 1.0 下降了 60%，意味着"多模态"从"烧钱功能"变成"可负担的日常"。</td>
+          <td>多模态成本的下降，意味着运营可以重新评估以前因成本太高而放弃的多模态方案——客服场景的用户截图理解、内容审核的图片分析、数据分析的 Excel 导入等。</td>
+        </tr>
+        <tr>
+          <td><strong>芯片股大跌：SK海力士、三星、Softbank 蒸发 $1T</strong><br><a class="source-link" href="https://www.cnbc.com" target="_blank">CNBC</a></td>
+          <td>由于 AI 资本支出回报率引发投资者担忧，韩国芯片股 SK海力士、三星，以及 Softbank 股价大跌，市值蒸发超过 1 万亿美元。这是 AI 硬件泡沫论的最新信号。</td>
+          <td>对于需要大量推理算力的运营场景，这是好消息——随着芯片多元化，GPU 租赁价格预计下降 20-30%。可以开始规划"多供应商算力策略"来降低成本。</td>
+        </tr>
+        <tr>
+          <td><strong>Meta AI 投资引发投资者不满，股价下跌</strong><br><a class="source-link" href="https://www.bbc.com" target="_blank">BBC</a></td>
+          <td>Meta 投资者对 AI 支出计划感到不满，股价下跌。这与 Microsoft 是唯一保持 AI 资本支出不变的数据中心巨头形成对比，显示市场对 AI 投资回报的谨慎态度。</td>
+          <td>AI 成本管理变得更关键——运营团队需要建立"AI 成本监控仪表盘"，关注每个 AI 功能的"单位经济模型"，证明 AI 投入的 ROI。</td>
+        </tr>
+        <tr>
+          <td><strong>DeepSeek-V4-Pro 登顶开源模型排行榜</strong><br><a class="source-link" href="https://www.layer3labs.io/comparisons/best-chinese-ai-models" target="_blank">Layer3 Labs</a></td>
+          <td>DeepSeek-V4-Pro 在开源模型综合评测中首次超越 Llama 4 和 Claude 3.5 Sonnet。中国开源模型正式进入"全球第一梯队"，运营选型时有了更多免费且强大的选择。</td>
+          <td>开源模型不仅免费，而且能力已经逼近闭源旗舰。运营在选型时可以：原型用开源（省钱）、生产用闭源（稳定）、核心场景用混合（平衡）。</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>今日核心判断：</strong><br>
+        AI 行业正在经历三个关键变化：<br>
+        ① <strong>生态平台化</strong>——Agent Store 崛起，AI 能力正在变成"可上架的模块"<br>
+        ② <strong>多模态普及化</strong>——成本大幅下降，应用场景从"概念"到"落地"<br>
+        ③ <strong>成本理性化</strong>——市场从"烧钱抢市场"转向"关注 ROI"
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-theory">理论卡片</span>
+      <h3>AI Agent 工作流的五种设计模式</h3>
+      <p>从行业最佳实践来看，AI Agent 工作流有五种常见设计模式，运营需要了解每种模式适合的场景：</p>
+
+      <table>
+        <tr><th>模式</th><th>特点</th><th>适用场景</th><th>例子</th></tr>
+        <tr>
+          <td><strong>1. 链式模式 (Chain)</strong></td>
+          <td>按固定顺序执行多个步骤</td>
+          <td>流程固定、步骤明确</td>
+          <td>客服工单流转：分类→路由→回复→质检</td>
+        </tr>
+        <tr>
+          <td><strong>2. 并行模式 (Parallel)</strong></td>
+          <td>同时执行多个独立任务</td>
+          <td>任务之间无依赖</td>
+          <td>同时生成多版本文案、多个数据分析</td>
+        </tr>
+        <tr>
+          <td><strong>3. 路由模式 (Router)</strong></td>
+          <td>根据输入类型自动选择处理路径</td>
+          <td>输入多样、需要分类型处理</td>
+          <td>用户提问 → 判断是技术/业务/投诉 → 分发不同 Agent</td>
+        </tr>
+        <tr>
+          <td><strong>4. 评估模式 (Evaluator)</strong></td>
+          <td>执行后评估结果，决定是否重试或升级</td>
+          <td>需要高质量输出、有明确判断标准</td>
+          <td>AI 生成文案 → 评估是否合规 → 不通过则重写</td>
+        </tr>
+        <tr>
+          <td><strong>5. 记忆模式 (Memory)</strong></td>
+          <td>跨对话保持上下文和状态</td>
+          <td>需要长期用户关系、复杂多轮交互</td>
+          <td>用户续费咨询 → 记住之前的需求 → 针对性推荐</td>
+        </tr>
+      </table>
+
+      <div class="beginner-hint">
+        <button class="hint-toggle" onclick="this.parentElement.classList.toggle('expanded')">💡 选择工作流模式的决策树</button>
+        <div class="hint-content">
+          <p>选择哪种模式？用这个简单决策树：</p>
+          <ul>
+            <li>步骤是否固定？→ 是，用 <strong>链式</strong>；否，继续</li>
+            <li>任务是否相互独立？→ 是，用 <strong>并行</strong>；否，继续</li>
+            <li>输入是否多样？→ 是，用 <strong>路由</strong>；否，继续</li>
+            <li>输出是否需要质量保证？→ 是，用 <strong>评估</strong>；否，继续</li>
+            <li>是否需要跨对话记忆？→ 是，用 <strong>记忆</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <strong>运营启示：</strong>不要为了用 Agent 而用 Agent。先画出你的业务流程图，然后用上面的决策树选择合适的模式。如果你的流程不固定，先固化流程再考虑自动化。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>实操：用"成本-质量"矩阵选择 AI 模型</h3>
+      <p>运营选择 AI 模型时，最容易犯的错误是"只用最强的模型"。实际上，不同场景需要不同级别的模型。</p>
+
+      <div class="layer-diagram">
+        <div class="layer" style="border-color:#22a868;color:#22a868">
+          <strong>简单任务（小模型即可）</strong>：文本分类、情绪分析、简单FAQ回答<br>
+          <em>推荐模型：Qwen 3.6、DeepSeek-Chat、GPT-4o-mini</em><br>
+          <em>成本：$0.001-0.005/千次调用</em>
+        </div>
+        <div class="arrow">⇩</div>
+        <div class="layer" style="border-color:#e68a00;color:#e68a00">
+          <strong>中等任务（中等模型）</strong>：复杂文案生成、数据分析、用户意图理解<br>
+          <em>推荐模型：Claude 3.5 Sonnet、Gemini 1.5 Pro、DeepSeek-V4-Pro</em><br>
+          <em>成本：$0.01-0.05/千次调用</em>
+        </div>
+        <div class="arrow">⇩</div>
+        <div class="layer" style="border-color:#e53e3e;color:#e53e3e">
+          <strong>复杂任务（顶级模型）</strong>：战略分析、多轮复杂对话、代码开发<br>
+          <em>推荐模型：Claude Opus 4.8、GPT-5.6 Sol、Gemini 2.0 Ultra</em><br>
+          <em>成本：$0.1-0.5/千次调用</em>
+        </div>
+      </div>
+
+      <p><strong>模型分级策略实操：</strong></p>
+      <ol>
+        <li><strong>入口层用小模型</strong>——用户刚进来时先用小模型做意图判断，如果判断不了再升级</li>
+        <li><strong>异常用大模型</strong>——用户表现出不满、复杂问题时，无条件升级到大模型</li>
+        <li><strong>批处理用小模型</strong>——后台数据分析、内容批量生成，用成本最低的模型</li>
+        <li><strong>重要决策用大模型</strong>——涉及钱、涉及投诉升级，用最好的模型</li>
+      </ol>
+
+      <div class="highlight">
+        <strong>成本优化效果：</strong>合理的模型分级可以降低 60-80% 的 AI 成本，而用户感知质量基本不变。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>多模态场景落地：从"能做什么"到"怎么变现"</h3>
+
+      <p><strong>多模态正在改变的应用场景：</strong></p>
+      <ul>
+        <li>🖼️ <strong>客服场景</strong>——用户发来一张截图/照片，AI 自动理解问题并给出答案。实测可提升 40% 的问题解决率。</li>
+        <li>🎬 <strong>内容审核</strong>——用户上传图片/视频，AI 自动判定是否违规。不再需要人工逐条审核。</li>
+        <li>📊 <strong>数据分析</strong>——用户上传一个 Excel/CSV，甚至直接截图表格，AI 自动生成洞察。</li>
+        <li>🎧 <strong>语音交互</strong>——电话客服场景，AI 实时语音理解+生成回复，实现"全自动化"。</li>
+      </ul>
+
+      <p><strong>多模态变现的三种模式：</strong></p>
+      <table>
+        <tr><th>模式</th><th>说明</th><th>案例</th></tr>
+        <tr>
+          <td><strong>增值服务</strong></td>
+          <td>基础功能免费，高级多模态功能收费</td>
+          <td>免费版：文字客服；付费版：图片/语音客服</td>
+        </tr>
+        <tr>
+          <td><strong>效率提升</strong></td>
+          <td>通过多模态降低人力成本</td>
+          <td>AI 审核替代 50% 人工，节省成本</td>
+        </tr>
+        <tr>
+          <td><strong>新商业机会</strong></td>
+          <td>多模态带来的新场景变现</td>
+          <td>AI 解读用户上传的产品图片，推荐搭配方案</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>一句话总结：</strong>多模态不是"炫技"，而是"解决实际问题"。运营要关注的是：它能帮我提升多少效率？带来多少收入？而不是它有多酷。
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 36 思考题</h3>
+      <p><strong>场景：</strong>你的团队负责支付有礼的 AI 客服，目前只能处理文字对话。用户经常发来截图/照片描述问题，客服需要手动理解图片内容。</p>
+      <p><strong>问题：</strong></p>
+      <ol>
+        <li>如果要升级为"多模态客服"，你会选择哪种工作流模式？为什么？（参考今天学的"五种设计模式"）</li>
+        <li>在升级过程中，如何控制成本？预计能提升多少效率？（参考"成本-质量"矩阵）</li>
+        <li>如果要给多模态客服定价变现，你会采用哪种模式？（参考"多模态变现的三种模式"）</li>
+      </ol>
+      <p style="color:#718096;font-size:13px">提示：结合今天学的"链式模式"和"评估模式"，以及"模型分级策略"来构建你的答案。</p>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 36 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. AI Agent 工作流的"路由模式"最适合什么场景？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 流程固定、步骤明确的任务</li>
+          <li onclick="checkQuiz(this)">B. 需要高质量输出、有明确判断标准的任务</li>
+          <li onclick="checkQuiz(this)">C. 输入多样、需要分类型处理的任务</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。路由模式的核心是根据输入类型自动选择处理路径，适合输入多样、需要分类型处理的场景。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. "模型分级策略"的核心原则是什么？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 所有场景都用最强的模型以保证质量</li>
+          <li onclick="checkQuiz(this)">B. 简单任务用小模型，复杂任务用大模型</li>
+          <li onclick="checkQuiz(this)">C. 所有场景都用最便宜的模型以控制成本</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。合理的模型分级可以降低 60-80% 的 AI 成本，而用户感知质量基本不变。核心是"让合适的模型做合适的事"。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 多模态变现的"增值服务"模式是什么？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. 基础功能免费，高级多模态功能收费</li>
+          <li onclick="checkQuiz(this)">B. 通过多模态降低人力成本</li>
+          <li onclick="checkQuiz(this)">C. 多模态带来的新场景变现</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。增值服务模式是指基础功能免费，高级多模态功能收费。比如免费版只有文字客服，付费版可以使用图片/语音客服。</div>
+      </div>
+
+      <button class="mark-read-btn" onclick="markDayComplete(36)">✅ 已阅读完毕</button>
+    </div>
+
+  </div>
+  <!-- ==================== END DAY 36 ==================== -->`;
 
   DAY_CONTENT[36] = `
 <div class="day-section" id="day36">
