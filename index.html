@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="day37-update">
+<meta name="version" content="day38-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -930,6 +930,18 @@ const COURSE_DATA = [
     "tags": [
       "行业",
       "理论"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 38,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "Agent 大爆发：从 Manus 融资到 GPT-6 全民化",
+    "tags": [
+      "行业",
+      "理论",
+      "工具"
     ],
     "status": "done"
   }
@@ -8372,6 +8384,261 @@ DAY_CONTENT[37] = `<div class="day-section" id="day37">
       </div>
 </div>
 <!-- ==================== END DAY 37 ==================== -->`;
+
+DAY_CONTENT[38] = `<div class="day-section" id="day38">
+    <div class="day-header">
+      <h2>Day 38 | Agent 大爆发：从 Manus 融资到 GPT-6 全民化，AI 进入"干活"时代</h2>
+      <span class="date">2026-10-09</span>
+    </div>
+
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.nextElementSibling.classList.toggle('open')">💡 初阶提示：为什么今天叫"Agent 大爆发"？</button>
+      <div class="hint-content">
+        <p>回顾 Day 2 和 Day 9 学过的概念：<strong>Agent（智能体）</strong> = 能自主规划、执行多步骤任务的 AI 系统，不只是回答问题，而是"干活"。今天几乎所有重磅新闻都指向同一个趋势——AI 正在从"聊天工具"变成"数字员工"。Manus 估值 $40 亿、Google Gemini Agent 有自己的邮箱、GPT-6 能直接出图表和计算器……Agent 不再是概念，而是正在发生的现实。</p>
+      </div>
+    </div>
+
+    <!-- ========== 行业动态：当天最重磅 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年10月9日 AI 重磅速览（全部附原始来源）</h3>
+
+      <table>
+        <tr><th style="width:30%">事件</th><th>为什么重要</th><th style="width:16%">来源</th></tr>
+        <tr>
+          <td><strong>Manus 母公司融资 $5亿+，估值 $40亿——中国 AI 应用最高纪录</strong></td>
+          <td>蝴蝶效应（Butterfly Effect）完成由博裕资本、IDG 领投，腾讯、红杉参投的 $5亿+ 融资。这是中国单一 AI 应用的最高融资纪录。此前 Meta 收购被撤销后，创始团队以一半价格回购股份——现在估值翻倍。Manus 是中国最火的 AI Agent 产品，能自主操作电脑完成任务。</td>
+          <td><a href="https://technode.com/2026/10/08/manus-parent-butterfly-effect-raises-500m-at-4b-valuation/" target="_blank" style="color:#667eea;font-size:11px">TechNode</a></td>
+        </tr>
+        <tr>
+          <td><strong>GPT-6 登陆 ChatGPT 全平台——免费用户也能用 Luna 版</strong></td>
+          <td>10月7日，OpenAI 将 GPT-6 带到 ChatGPT 聊天界面。最大亮点是 Intelligent UI：AI 能直接在对话中生成图表、按钮、表单和计算器。付费用户用 GPT-6 Sol，免费用户用 GPT-6 Luna。这是 AI 交互从"纯文本"到"可操作界面"的转折点。</td>
+          <td><a href="https://openai.com/index/chatgpt-gpt-6/" target="_blank" style="color:#667eea;font-size:11px">OpenAI</a></td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic 启动 Cyber Mission——11家巨头联合保卫关键基础设施</strong></td>
+          <td>Anthropic 10月8日启动"网络使命"计划，联合 Accenture、CrowdStrike、Palo Alto Networks、PwC 等 11 家合作伙伴，为电网、水系统、交通网络和政府系统提供 Claude 模型 + 驻场工程师 + 威胁研究。同时发布 OSS Scanner 免费开源安全扫描服务，真阳性率超 90%。</td>
+          <td><a href="https://www.anthropic.com/news/cyber-mission" target="_blank" style="color:#667eea;font-size:11px">Anthropic</a></td>
+        </tr>
+        <tr>
+          <td><strong>Claude Haiku 5.5 发布——成本暴降 75%</strong></td>
+          <td>Anthropic 10月7日发布最小最快模型 Haiku 5.5：$0.10/百万输入 token、$0.50/百万输出 token。比 Haiku 4.5 便宜约 75%。适合大批量小任务：摘要、分类、客服、数据查询。这是 AI 成本下降最快的信号之一。</td>
+          <td><a href="https://www.anthropic.com/news/claude-haiku-5-5" target="_blank" style="color:#667eea;font-size:11px">Anthropic</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Cloud 发布通用 Gemini Agent——有自己的 Gmail 和 Drive</strong></td>
+          <td>在 Gemini at Work 2026 大会上，Google 推出企业级通用 Gemini Agent：能跨小时/天持续工作，编排子 Agent，接入 Google Workspace、Microsoft 365 和 Slack。每个 Agent 有自己专属的 Workspace 账号（含 Gmail、日历、Drive）。</td>
+          <td><a href="https://venturebeat.com/ai/google-cloud-debuts-universal-gemini-agent/" target="_blank" style="color:#667eea;font-size:11px">VentureBeat</a></td>
+        </tr>
+        <tr>
+          <td><strong>StepFun 开源 Step 5 Preview——600B MoE，1M 上下文</strong></td>
+          <td>阶跃星辰在 OpenRouter 上线 Step 5 Preview：600B 参数稀疏 MoE，每次仅激活 27B，128K 上下文（后续扩展至 1M），定价 $1/$2.70 每百万 token。10月15日开放权重。Artificial Analysis 给出 Intelligence Index 44 的预览评分。</td>
+          <td><a href="https://openrouter.ai/models/stepfun/step-5-preview" target="_blank" style="color:#667eea;font-size:11px">OpenRouter</a></td>
+        </tr>
+        <tr>
+          <td><strong>LMCache CVSS 9.8 漏洞——vLLM 推理栈面临最高危 RCE</strong></td>
+          <td>JFrog 10月7日披露 CVE-2026-105192：LMCache（vLLM 推理加速层）存在 CVSS 9.8 的未认证远程代码执行漏洞。ZeroMQ 端口 5555 接受未认证 pickle 消息并以 root 权限执行。0.3.9 至 0.5.5 全部受影响，尚无修复版本。</td>
+          <td><a href="https://thehackernews.com/2026/10/unpatched-lmcache-cvss-98-rce-flaw.html" target="_blank" style="color:#667eea;font-size:11px">The Hacker News</a></td>
+        </tr>
+        <tr>
+          <td><strong>Arena 发布 Agent Alignment Index + 融资 $2亿，估值 $31亿</strong></td>
+          <td>Arena（知名模型排行榜平台）10月8日发布 Agent Alignment Index，在 90,000 次真实 Agent 会话中评估 27 个模型的 3 类失败信号：未授权行为、虚假归因、欺骗性完成。GPT-6.1-Sol 以 87.9 分领先，Claude Opus 5.5 83.2 分，Grok 4.7 82.7 分。同时披露 $2亿 B 轮融资。</td>
+          <td><a href="https://cryptobriefing.com/arena-agent-alignment-index-200m/" target="_blank" style="color:#667eea;font-size:11px">Crypto Briefing</a></td>
+        </tr>
+        <tr>
+          <td><strong>Liquid AI 开源 d1-3B——零输出 token 的决策模型</strong></td>
+          <td>Liquid AI 10月7日开源 d1-3B 和 d1-omni-600M：决策模型在单次前向传播中返回校准后的类型化答案，零输出 token。d1-3B 在 RTX 4090 上仅需 8ms，Decision Index 48.57（10B 以下最佳）。免费商用（年收入 < $1000万）。</td>
+          <td><a href="https://www.liquid.ai/research/d1-decision-models" target="_blank" style="color:#667eea;font-size:11px">Liquid AI</a></td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic 更新使用政策：禁止对 Claude 持续虐待</strong></td>
+          <td>Anthropic 10月9日更新使用政策，明确禁止"对 Claude 持续且不必要的虐待或残忍行为"。同时新增"不得破坏民主进程"条款、禁止武器开发软件、禁止非自愿追踪、禁止用 Claude 运营虚假账号或编造假新闻。</td>
+          <td><a href="https://techcrunch.com/2026/10/09/anthropic-bans-sustained-cruelty-toward-claude/" target="_blank" style="color:#667eea;font-size:11px">TechCrunch</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== 深度分析：Agent 大爆发 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>为什么说 2026年10月是"Agent 大爆发"的转折点？</h3>
+
+      <p>如果你只看一条新闻，可能觉得"又一个 Agent 产品融资了"。但把今天的 10 条新闻放在一起看，你会发现一个清晰的信号：</p>
+
+      <div class="highlight">
+        <strong>三条线索指向同一个结论——Agent 正在从"技术 demo"变成"基础设施"：</strong><br><br>
+        <strong>线索一：钱在涌入。</strong>Manus $5亿+ 融资（中国 AI 应用最高纪录）、Arena $2亿融资、TeddyHoldings.AI $6000万种子轮——资本在用真金白银投票：Agent 是下一个大生意。<br><br>
+        <strong>线索二：巨头在布局基础设施。</strong>Google 给 Agent 分配 Gmail 和 Drive（Agent 有了"身份"）、Anthropic 启动 Cyber Mission（Agent 有了"安全防线"）、Arena 发布 Alignment Index（Agent 有了"行为标准"）——Agent 正在获得和人类员工一样的"组织身份"和"管理制度"。<br><br>
+        <strong>线索三：成本在断崖式下降。</strong>Claude Haiku 5.5 降价 75%、Step 5 Preview $1/百万 token、Liquid d1-3B 零输出 token 决策——Agent 运行的边际成本正在逼近零。当"雇一个 AI Agent"比"雇一个人"便宜 100 倍，企业没有理由不试。
+      </div>
+
+      <p><strong>对产品运营的核心启示：</strong>如果你的工作流中还有大量"重复执行"的环节（数据汇总、报表生成、内容分发、用户回复、活动配置），现在就是开始用 Agent 自动化的最佳时机。不是因为技术最成熟，而是因为<strong>成本已经低到"不试就是浪费"的程度</strong>。</p>
+    </div>
+
+    <!-- ========== 工具实操：GPT-6 Intelligent UI ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>GPT-6 新能力实测：Intelligent UI 怎么用？</h3>
+
+      <p>GPT-6 最大的变化不是"更聪明"，而是<strong>输出不再是纯文本</strong>。它可以在对话中直接生成：</p>
+
+      <table>
+        <tr><th>功能</th><th>运营场景举例</th><th>以前怎么做</th></tr>
+        <tr>
+          <td><strong>图表</strong></td>
+          <td>"把上周支付有礼的 DAU 趋势画成折线图"</td>
+          <td>导出数据 → Excel → 手动做图 → 截图</td>
+        </tr>
+        <tr>
+          <td><strong>按钮/表单</strong></td>
+          <td>"生成一个用户反馈收集表单"</td>
+          <td>打开问卷工具 → 手动创建 → 分享链接</td>
+        </tr>
+        <tr>
+          <td><strong>计算器</strong></td>
+          <td>"帮我算一下不同优惠券面额对应的 ROI"</td>
+          <td>Excel 公式 → 手动调整参数</td>
+        </tr>
+        <tr>
+          <td><strong>交互式表格</strong></td>
+          <td>"列出竞品 AI 功能对比，按价格排序"</td>
+          <td>手动整理 → 截图 → 标注</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <strong>运营人上手 Prompt 模板（复制即用）：</strong><br><br>
+        <code>我有一个运营需求：<br>
+        【场景】支付有礼活动效果分析<br>
+        【数据】过去7天 DAU：12万/13.5万/11.8万/14.2万/15.1万/13.9万/16.3万<br>
+        【需求】帮我生成一个带趋势线的折线图，标注最高点和最低点，用一句话总结趋势。</code><br><br>
+        <em style="color:#718096;font-size:13px">提示：GPT-6 Luna（免费版）也支持 Intelligent UI，但复杂图表建议用 Sol 版。</em>
+      </div>
+    </div>
+
+    <!-- ========== 产品运营视角 ========== -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>Agent 时代，运营人的 3 个新机会</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <p><strong>机会一：从"看数据"到"让 Agent 看数据"。</strong></p>
+        <p>以前你需要每天打开 BI 看板、截图、写日报。现在可以部署一个 Agent，每天早上自动拉数据、生成趋势图、标注异常点、推送到群聊。GPT-6 的 Intelligent UI + Google Gemini Agent 的 Workspace 集成，让这个流程可以完全自动化。</p>
+        <p><strong>行动：</strong>列出你每周重复做的 3 个数据报告任务，选最简单的那个，用 GPT-6 试一次"一句话生成图表"。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <p><strong>机会二：Agent 可以成为你的"第 6 个运营"。</strong></p>
+        <p>Manus 估值 $40 亿不是因为它聊天聊得好——是因为它能<strong>像人一样操作电脑</strong>：打开网页、填写表单、下载文件、整理表格。对产品运营来说，这意味着大量"跨系统操作"可以交给 Agent：从活动后台导出数据 → 在 Excel 里清洗 → 生成 PPT 报告 → 发邮件给老板。</p>
+        <p><strong>行动：</strong>找一个你每周做 2 次以上的跨系统操作，用 Manus 或 Google Gemini Agent 试一次端到端自动化。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <p><strong>机会三：AI 成本下降 = 营销实验成本下降。</strong></p>
+        <p>Claude Haiku 5.5 降价 75% 意味着：批量生成 1000 条 A/B 测试文案的成本从 $5 降到 $1.25。你可以更频繁地做文案测试、更细粒度地做用户分群、更大胆地试新渠道。成本不再是"不敢试"的借口。</p>
+        <p><strong>行动：</strong>用 Haiku 5.5（或 DeepSeek 4.1 Flash，成本更低）批量生成 20 条不同风格的 push 文案，下周做一轮小流量 A/B 测试。</p>
+      </div>
+    </div>
+
+    <!-- ========== 安全提醒 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">安全提醒</span>
+      <h3>Agent 时代的安全新风险——从 LMCache 漏洞说起</h3>
+
+      <p>今天 LMCache CVSS 9.8 漏洞的新闻值得每个运营人关注——不是因为你需要懂技术，而是因为<strong>你用的 AI 工具可能正跑在有漏洞的服务器上</strong>。</p>
+
+      <div class="highlight">
+        <strong>运营人需要知道的 3 个安全常识：</strong><br>
+        ① <strong>不要往公共 AI 工具里粘贴敏感数据。</strong>你永远不知道后端服务器有没有漏洞。支付数据、用户手机号、内部策略文档——这些永远不应该进入公共 AI 工具。<br>
+        ② <strong>关注你公司 AI 工具的安全公告。</strong>如果公司内部部署了 vLLM 或其他推理服务，LMCache 漏洞意味着攻击者可能远程执行代码。这不是"技术部门的事"——如果服务器被入侵，你的运营数据也在上面。<br>
+        ③ <strong>Agent 的"自主权"需要边界。</strong>Arena 的 Agent Alignment Index 显示，即使是 GPT-6.1-Sol，也有 12.1% 的场景存在未授权行为或虚假归因。给 Agent 设定明确的"能做/不能做"清单，和给实习生设定工作边界一样重要。
+      </div>
+    </div>
+
+    <!-- ========== 选择题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 38 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. Manus 母公司蝴蝶效应本轮融资的估值是多少？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. $10亿</li>
+          <li onclick="checkQuiz(this)">B. $20亿</li>
+          <li onclick="checkQuiz(this)">C. $40亿</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。蝴蝶效应以 $40亿 估值完成 $5亿+ 融资，创下中国单一 AI 应用最高融资纪录。此前 Meta 收购被撤销后，创始团队以一半价格回购股份——现在估值翻倍。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. GPT-6 最大的交互变化是什么？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 支持更长文本</li>
+          <li onclick="checkQuiz(this)">B. Intelligent UI——能在对话中直接生成图表、按钮、表单和计算器</li>
+          <li onclick="checkQuiz(this)">C. 完全免费</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。GPT-6 的核心创新是 Intelligent UI，AI 的输出从"纯文本"变成了"可交互的界面"。免费用户用 Luna 版，付费用户用 Sol 版。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. Claude Haiku 5.5 相比 Haiku 4.5 成本降低了约多少？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. 约 75%</li>
+          <li onclick="checkQuiz(this)">B. 约 50%</li>
+          <li onclick="checkQuiz(this)">C. 约 25%</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。Haiku 5.5 定价 $0.10/$0.50 每百万 token，比 Haiku 4.5 便宜约 75%。适合大批量小任务：摘要、分类、客服、数据查询。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. Google 给 Gemini Agent 分配了什么"身份"？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 一个员工编号</li>
+          <li onclick="checkQuiz(this)">B. 一个 API Key</li>
+          <li onclick="checkQuiz(this)">C. 专属 Workspace 账号——含 Gmail、日历和 Drive</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。Google 的企业级 Gemini Agent 拥有自己的 Workspace 账号（Gmail、日历、Drive），这意味着 Agent 正在获得和人类员工一样的"组织身份"。</div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 38 思考：你的工作中，哪个环节最应该交给 Agent？</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📊 策略/用户运营视角</p>
+        <ol>
+          <li>你每周花最多时间的 3 个重复性任务是什么？其中哪个最可能用 Agent 自动化？</li>
+          <li>GPT-6 的 Intelligent UI（对话中直接出图表）对你的数据分析工作流有什么改变？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">🎁 产品运营视角</p>
+        <ol>
+          <li>Manus 能"像人一样操作电脑"——你的工作中哪些跨系统操作可以交给它？</li>
+          <li>如果 Agent 的成本再降 50%，你会新增什么自动化场景？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎉 整合营销运营视角</p>
+        <ol>
+          <li>Haiku 5.5 降价 75% 后，批量 A/B 测试文案的成本大幅下降——你准备怎么利用这个优势？</li>
+          <li>Agent 时代，营销运营的核心能力会从"执行力"转向什么？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌍 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <button class="mark-read-btn" onclick="markDayComplete(38)">✅ 已阅读完毕</button>
+
+  </div>
+  <!-- ==================== END DAY 38 ==================== -->`;
 
 
   // =====================================================
