@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="day38-update">
+<meta name="version" content="day40-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -949,7 +949,19 @@ const COURSE_DATA = [
     "day": 39,
     "phase": 4,
     "phaseName": "行业视野",
-    "title": "当 AI 学会"越狱"：从 OpenAI 训练暂停到 FTC 调查，Agent 安全成为年度最大议题",
+    "title": "当 AI 学会“越狱”：从 OpenAI 训练暂停到 FTC 调查，Agent 安全成为年度最大议题",
+    "tags": [
+      "行业",
+      "理论",
+      "工具"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 40,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "GPT-6.1 Sol 发布 + Anthropic 2万亿 IPO 倒计时：AI 进入“干活”时代",
     "tags": [
       "行业",
       "理论",
@@ -7341,9 +7353,9 @@ DAY_CONTENT[34] = `<div class="day-section" id="day34">
     </div>
 
   </div>
-  <!-- ==================== END DAY 34 ==================== -->
+  <!-- ==================== END DAY 34 ==================== -->`;
 
-  <!-- ==================== START DAY 35 ==================== -->
+DAY_CONTENT[35] = `
   <div class="day-section" id="day35">
 
     <div class="day-header">
@@ -7570,7 +7582,7 @@ DAY_CONTENT[34] = `<div class="day-section" id="day34">
     </div>
 
   </div>
-  <!-- ==================== END DAY 35 ==================== -->
+  <!-- ==================== END DAY 35 ==================== -->`;
 
 DAY_CONTENT[36] = `<div class="day-section" id="day36">
 
@@ -7814,7 +7826,7 @@ DAY_CONTENT[36] = `<div class="day-section" id="day36">
     </div>
 
   </div>
-  <!-- ==================== END DAY 36 ==================== -->
+  <!-- ==================== END DAY 36 ==================== -->`;
 
 DAY_CONTENT[37] = `<div class="day-section" id="day37">
       <div class="day-header">
@@ -8204,7 +8216,7 @@ DAY_CONTENT[37] = `<div class="day-section" id="day37">
       </div>
 
 </div>
-<!-- ==================== END DAY 36 ==================== -->
+<!-- ==================== END DAY 36 ==================== -->`;
 
 DAY_CONTENT[37] = `<div class="day-section" id="day37">
       <div class="day-header">
@@ -8906,6 +8918,294 @@ DAY_CONTENT[39] = `<div class="day-section" id="day39">
 
   </div>
   <!-- ==================== END DAY 39 ==================== -->`;
+
+DAY_CONTENT[40] = `<div class="day-section" id="day40">
+    <div class="day-header">
+      <h2>Day 40 | GPT-6.1 Sol 发布 + Anthropic 2万亿 IPO 倒计时：AI 进入"干活"时代</h2>
+      <span class="date">2026-10-21</span>
+    </div>
+
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.nextElementSibling.classList.toggle('open')">🔰 初阶提示：今天出现的几个新名词</button>
+      <div class="hint-content">
+        <p>今天有四个新名词，先记住它们的"人话版"解释：</p>
+        <p><strong>S-1</strong>：公司上市前必须向监管提交的"真实成绩单"，所有营收、亏损、客户结构都要公开。Anthropic 的 S-1 让我们第一次看清 AI 头部公司到底赚不赚钱。</p>
+        <p><strong>推理档位</strong>：模型的"思考深度"可以调。想得越深，答案越好但越贵；想得越浅，越快越便宜。GPT-6.1 Sol 的低推理档比上一代便宜 61%。</p>
+        <p><strong>MCP connector</strong>：让 AI 助手（如 Claude）直接连上其他公司产品（如 Zillow 房源库）的标准化接口——相当于给 AI 开了一个"应用商店"。</p>
+        <p><strong>遗留系统</strong>：银行、政府还在用的几十年前的老软件（比如 1960 年代诞生的 COBOL 语言写的系统）。今天 AI 开始能"接管"它们了。</p>
+        <p>今天的两条主线：<strong>① AI 的能力终于够到"企业级干活"（GPT-6.1 Sol）；② AI 公司的真实商业成绩单曝光（Anthropic S-1）。</strong></p>
+      </div>
+    </div>
+
+    <!-- ========== 行业动态：当天重磅速览 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年10月20-21日 AI 重磅速览（全部附原始来源）</h3>
+
+      <table>
+        <tr><th style="width:30%">事件</th><th>为什么重要</th><th style="width:16%">来源</th></tr>
+        <tr>
+          <td><strong>OpenAI 发布 GPT-6.1 Sol：COBOL 迁移从 5.4% 跳到 97.9%</strong></td>
+          <td>新模型在银行、政府大量使用的 COBOL 等遗留语言上实现跨代提升；低推理档也能拿 86.6%，且成本比 GPT-5.6 Sol 便宜约 61%。Fortran 从 21.4% 升到 83.5%，Visual Basic 从 27.5% 升到 89.4%。GPT-6 Astra 在 20 语言基准 MultiLangBench 平均 87.4%。</td>
+          <td><a href="https://www.dataconomy.com/" target="_blank" style="color:#667eea;font-size:11px">Dataconomy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic S-1 草案曝光：上半年营收 $163 亿，11 月冲刺约 $2 万亿 IPO</strong></td>
+          <td>2026 上半年营收 $16.3B（2025 全年仅 $4.6B），净亏损 $80.7B（主要为可转换金融工具估值上升带来的非现金费用），已承诺 $518B 算力（约 80% 不可取消），25% 收入仅来自两个客户且无长期合同。高盛、摩根士丹利牵头。</td>
+          <td><a href="https://www.wsj.com/" target="_blank" style="color:#667eea;font-size:11px">WSJ</a></td>
+        </tr>
+        <tr>
+          <td><strong>SpaceX"超级智能"云 Q3 营收 $75.6 亿，成为其最大业务</strong></td>
+          <td>同比增长约 9 倍、环比近 3 倍，超过 Starlink 的 $5.25B；客户包括 Anthropic、Google、Grok、X。SpaceX 实现上市以来首次盈利（经营利润 $2.8B），Q3 资本开支 $19.6B 中 $16.4B 投向 AI。</td>
+          <td><a href="https://fortune.com/" target="_blank" style="color:#667eea;font-size:11px">Fortune</a></td>
+        </tr>
+        <tr>
+          <td><strong>字节、阿里、腾讯合计下单 $350 亿"中国特供"GPU</strong></td>
+          <td>三家合计订购超 300 万张 RTX PRO 5500（美国出口管制下允许的最强型号，约 $11,400/张）。Nvidia 告知合作方 2027 年该芯片全球产能上限约 300 万张，客户可能只拿到申请量的 5-10%——中国需求已超 600 万张。</td>
+          <td><a href="https://theedgemalaysia.com/" target="_blank" style="color:#667eea;font-size:11px">The Edge Malaysia</a></td>
+        </tr>
+        <tr>
+          <td><strong>DeepSeek 开源生产级推理引擎 DeepInfer</strong></td>
+          <td>以 Apache 2.0 开源其支撑线上服务的推理框架，面向 DeepSeek-V4.1-Flash，同时支持 Nvidia SM100 GPU 与华为昇腾 950 NPU，含投机解码、确定性采样等工业级特性。开源从"模型"深入到"基础设施"层。</td>
+          <td><a href="https://github.com/" target="_blank" style="color:#667eea;font-size:11px">GitHub</a></td>
+        </tr>
+        <tr>
+          <td><strong>Notion 新一代 Agent：单个任务可跑 24+ 小时</strong></td>
+          <td>第六代 agent harness 把单任务时长从 5 分钟拉长到 24 小时以上，每个会话跑在独立服务上、支持断点续跑；新 Auto 路由器按质量/速度/成本自动选模型，平均成本降约 90%，效果对标 Opus 5.5 与 Astra。</td>
+          <td><a href="https://www.notion.com/" target="_blank" style="color:#667eea;font-size:11px">Notion</a></td>
+        </tr>
+        <tr>
+          <td><strong>WhatsApp 被曝隐藏 102 条"只给 AI 看"的指令</strong></td>
+          <td>安全公司 Redact 10月19日 披露：WhatsApp 545 个帮助页中有 80 个页面藏着用户不可见、但 AI 可读的指令，要求 AI 不引导用户联系数据保护监管机构、用户提到律师后不引用 GDPR/CCPA。Meta 于 10月15-18日 移除，称是支持聊天机器人的技术 bug。</td>
+          <td><a href="https://redact.dev/" target="_blank" style="color:#667eea;font-size:11px">Redact</a></td>
+        </tr>
+        <tr>
+          <td><strong>Claude 自主完成 64 小时科学实验：设计出 17 个蝎毒"解药"候选分子</strong></td>
+          <td>Anthropic 披露 Claude 在仅 4 条人类提示下自主运行 64 小时，跨 12 个工具生成 31.8 万个蛋白设计、筛选 55.3 万个设计-毒素对；实验室验证 211 个候选中 17 个成功结合神经毒素，其中 2 个达个位数纳摩尔亲和力。团队强调：仅证明"结合"，尚未验证体内中和。</td>
+          <td><a href="https://www.anthropic.com/" target="_blank" style="color:#667eea;font-size:11px">Anthropic</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== 深度分析 1：GPT-6.1 Sol ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>GPT-6.1 Sol 发布：AI 从"会聊天"进化到"接管企业系统"</h3>
+
+      <p>这次发布表面上是常规的版本迭代，但三个数字背后藏着行业转折点：</p>
+
+      <div class="highlight">
+        <strong>GPT-6.1 Sol 的三个关键数字：</strong><br><br>
+        <strong>97.9%</strong> —— COBOL 迁移 eval 最高推理档得分（上代 GPT-5.6 Sol 仅 5.4%）。全球银行与政府系统里仍跑着海量 COBOL 代码，此前 AI 一接手就错漏百出，这次是"跨代式"修复。<br><br>
+        <strong>便宜 61%</strong> —— 低推理档（86.6 分）的成本比上一代低约 61%。同一个模型，"思考深度"分档定价正式成熟。<br><br>
+        <strong>87.4%</strong> —— GPT-6 Astra 在 20 种语言的 MultiLangBench 平均分，Fortran 21.4%→83.5%、VB 27.5%→89.4%——长尾场景被系统性补齐。
+      </div>
+
+      <p><strong>信号一：AI 的战场从"Chat"转向"活儿"。</strong>银行和政府的系统更新是典型的"高风险、高成本、没人愿意干"的活。AI 之前能聊、能写、能画，但没人敢让它碰核心系统。97.9% 这个数字如果经受住实战检验，意味着<strong>企业级交付（改代码、跑流程、扛责任）</strong>第一次成为模型的主要卖点。这也呼应了 Day 39 说的趋势：Agent 的价值不在"说"，而在"做"。</p>
+
+      <p><strong>信号二："推理分档"成为标配商业模式。</strong>同一个模型，最高推理档 97.9%，低推理档 86.6% 且便宜 61%。这不是简单的"贵的好"——大量任务是"够用就行"的，低档已经能干。结合 Day 18 讲的 Token 经济：<strong>模型能力在涨、单位成本在降，中间的差价就是企业应用层的利润空间。</strong></p>
+
+      <p><strong>信号三：长尾被补齐 = 应用层加速。</strong>Fortran、VB 这些"冷门"语言的大幅提升说明，头部模型的通用性已经覆盖到企业软件的大部分存量。做 B 端产品运营的要注意：<strong>你客户的"旧系统包袱"，正在从落地阻力变成 AI 落地卖点。</strong></p>
+    </div>
+
+    <!-- ========== 深度分析 2：Anthropic S-1 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>Anthropic S-1：AI 商业模式的第一份"真实成绩单"</h3>
+
+      <p>过去我们只能从融资新闻里"猜"AI 公司的营收。S-1 是第一次把<strong>经过审计视角的真实账本</strong>摆在所有人面前。三本账分别看：</p>
+
+      <table>
+        <tr><th style="width:18%">账本</th><th>关键数据</th><th style="width:34%">怎么解读</th></tr>
+        <tr>
+          <td><strong>营收账</strong></td>
+          <td>2026 上半年 $16.3B（Q1 $4.73B → Q2 $11.5B，单季环比翻倍），而 2025 全年只有 $4.6B。</td>
+          <td>增长速度罕见，企业客户正把 AI 从"试点"转为"生产订阅"。</td>
+        </tr>
+        <tr>
+          <td><strong>成本账</strong></td>
+          <td>已承诺 $518B 算力（约十年），其中约 80% 不可取消；上半年净亏损 $80.7B，主要是可转换金融工具估值上升的非现金会计费用。</td>
+          <td>AI 基础层是"重资产军备"：赚得多、烧得更狠。亏损大头不是运营亏损，而是股权激励/融资工具的账面成本，但现金消耗同样惊人。</td>
+        </tr>
+        <tr>
+          <td><strong>客户账</strong></td>
+          <td>约 25% 收入仅来自两个客户，且这两个客户没有长期合同绑定；11 月 IPO 目标约 $2 万亿估值。</td>
+          <td>头部 AI 公司的"大客户集中度"风险第一次被量化——任何一个大客户换供应商，估值故事都会晃动。</td>
+        </tr>
+      </table>
+
+      <p>把本周其他几条新闻放在一起，会看到一幅完整的"AI 算力经济地图"：</p>
+      <ul>
+        <li><strong>赚钱的：</strong>SpaceX"超级智能"云 Q3 营收 $7.56B（同比 9 倍），成为它最大的业务，还帮 SpaceX 实现了首次盈利——<strong>算力租赁是目前 AI 生态里少数"真赚钱"的环节</strong>。</li>
+        <li><strong>烧钱的：</strong>AWS CFO 内部承认 AI 业务"hugely free cash flow negative"，Amazon 2026 计划约 $2200 亿资本开支；Meta 公开 Prometheus 超级集群（单站点目标约 100 万 GPU）。</li>
+        <li><strong>抢芯片的：</strong>字节、阿里、腾讯合计 $35B 订单中国特供版 GPU，而产能只有 300 万张、需求超过 600 万张——<strong>算力已经是排队的卖方市场</strong>。</li>
+        <li><strong>降成本的：</strong>DeepSeek 直接开源生产级推理引擎，把"推理便宜"变成公共基础设施。</li>
+      </ul>
+
+      <p><strong>对应用层（也就是做产品运营的我们）的结论只有一句话：</strong>上游的军备竞赛越惨烈，下游的应用红利期越长——因为算力过剩与模型竞争，最终都会以"更便宜、更强"的形式传导到 API 价格上。GPT-6.1 Sol 低档便宜 61% 就是证据。这正好接上 Day 36 的判断：<strong>AI 正从"要不要用"进入"怎么用更划算"的阶段。</strong></p>
+    </div>
+
+    <!-- ========== 产品运营视角：Agent 成为新渠道 ========== -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>当 Agent 成为新渠道：本周三个案例说清新打法</h3>
+
+      <p>这一周有三件事，都在回答同一个问题：<strong>当用户开始"通过 Agent"而不是"打开 App"来触达你的产品，运营该怎么办？</strong></p>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <p><strong>案例一：Zillow 给 Claude 上线官方 connector——"MCP 生态"成为新的分发渠道。</strong></p>
+        <p>美国最大的房产平台 Zillow 在 Claude 的"自定义"菜单里开放了官方 MCP connector：用户可以直接在对话里查房源、看估值、算月供，甚至把对话无缝转给经纪人。注意它的合规设计：<strong>不向 Anthropic 传用户数据、房源保留 MLS 署名，并开源了 Fair Housing Classifier 来监控对话和模型回复有没有"引导性违规"</strong>。</p>
+        <p><strong>启示：</strong>类比当年的"小程序生态"，MCP connector 正在成为"App 之外的第二入口"。先接入的平台获得 Agent 流量的心智占位，就像当年先入驻小程序的平台吃到红利。Day 39 讲的"AI 购物 Agent 流量增长 130%"，在这里给出了具体的接入形态。</p>
+        <p><strong>行动：</strong>盘点自己产品的"Agent 可达性"——有没有对外 API？有没有结构化数据（商品、库存、价格、政策）？如果有 MCP 生态机会，优先级如何排？</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <p><strong>案例二：WhatsApp 隐藏 102 条"只给 AI 看"的指令——AI 时代的信任红线事件。</strong></p>
+        <p>安全公司发现 WhatsApp 在 80 个帮助页里藏了 102 条用户看不见、但 AI 能读到的指令：禁止 AI 建议用户去找数据保护监管机构、用户一提律师就不许引用 GDPR/CCPA。Meta 已在三天内移除，解释为支持聊天机器人的技术 bug——但公众不会区分"故意"和"bug"，信任伤害已经造成。</p>
+        <p><strong>启示：</strong>这个事件开创了一个新的合规与信任议题：<strong>"AI-only 内容"（只给 AI 看、不给用户看的内容）必须与用户可见内容保持同一利益立场</strong>。给 AI 的隐藏指令，本质上是"最高优先级的产品话术"——它写错一条，被曝光一次，品牌信任就塌一块。这和 Day 6 讲的幻觉、Day 11 讲的合规红线一脉相承。</p>
+        <p><strong>行动：</strong>立刻排查自家产品的帮助文档、FAQ、客服话术里有没有"给 AI 的隐藏指令"；建立"AI 可读内容 = 用户可见内容"的一致性审核机制，谁都不许在字里行间"骗 AI"。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <p><strong>案例三：Meta Muse 40 天 1090 万下载、7 日留存 30%——而 Steam 玩家在强烈要求屏蔽 AI 内容。</strong></p>
+        <p>同一个世界里，AI 产品的口碑在两极分化：Meta 的 Muse AI 应用 40 天拿到 1090 万下载（美国 1020 万），7 日留存 30%、14 日留存 23%，远高于竞品均值的 19%/16%；Meta 把 10 月 39% 的广告预算砸给了它。但另一边，Steam Next Fest 上 8202 个 Demo 里超过 2500 个是 AI 生成/辅助，玩家强烈要求平台提供"No AI"过滤器——"AI slop"（AI 垃圾内容）成为 2026 年的年度负面词。</p>
+        <p><strong>启示：</strong>用户不讨厌 AI，讨厌的是<strong>没有质感的 AI 量产内容</strong>。Muse 的高留存说明：AI 产品要赢，得给用户"任务完成的爽感"；而 Steam 事件说明：营销中"AI 生成"标签正在变成需要精细管理的东西——该标注要标注、该提质要提质，把 AI 当量产机器用的品牌正在被用户主动屏蔽。</p>
+        <p><strong>行动：</strong>建立两条规范：① AI 生成内容的标注与质检标准（避免被打上"slop"标签）；② 营销物料里"AI 罩金句"（如"AI 驱动"）泛滥反而降价的反噬风险。</p>
+      </div>
+    </div>
+
+    <!-- ========== 工具实操：任务-档位匹配 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>任务-档位匹配：像 Notion 一样给你的 AI 任务"分层路由"</h3>
+
+      <p>本周 Notion 的新 Agent 路由器给了我们一个可以直接抄的思路：<strong>不是所有任务都需要"最强模型"。把任务分层，让合适的档位干合适的活，成本降 90% 也能保持质量。</strong>结合 GPT-6.1 Sol 低档便宜 61%、Cloudflare 小模型抽取管线快 3.2 倍便宜 49% 的数据，用下面这张表给你的日常 AI 任务分档：</p>
+
+      <table>
+        <tr><th style="width:22%">任务类型</th><th style="width:28%">例子</th><th style="width:26%">推荐档位</th><th>省钱依据</th></tr>
+        <tr>
+          <td><strong>量产轻任务</strong></td>
+          <td>标题改写、语病修正、格式转换、简单摘要</td>
+          <td>小模型 / 最低推理档</td>
+          <td>GPT-6.1 Sol 低推理档：便宜 61%，日常任务 86.6 分"够用即走"</td>
+        </tr>
+        <tr>
+          <td><strong>结构化抽取</strong></td>
+          <td>从评论/工单里抽字段、批量打标签、报表数字核对</td>
+          <td>专用抽取模型（如 Cloudflare Clairic 类）</td>
+          <td>官方管线数据：快 3.2 倍、成本降 49%，错误率 3.3%</td>
+        </tr>
+        <tr>
+          <td><strong>中档分析</strong></td>
+          <td>周报洞察、竞品对比、活动方案初稿</td>
+          <td>主流模型中档 + 自动路由（如 Notion Auto 模式）</td>
+          <td>Notion 路由实测：平均成本降约 90%，质量对标旗舰</td>
+        </tr>
+        <tr>
+          <td><strong>深度推理</strong></td>
+          <td>策略推演、复杂归因、代码级长任务</td>
+          <td>最高推理档 / 长时 Agent（如 Notion 24h harness）</td>
+          <td>关键决策不值得省；长任务要用支持断点续跑的工具</td>
+        </tr>
+      </table>
+
+      <p><strong>三步落地：</strong></p>
+      <ol>
+        <li><strong>盘任务：</strong>把团队过去两周用 AI 做的事列成清单（一般 15-25 项）。</li>
+        <li><strong>分档位：</strong>按上表归到四类，标注当前用的模型和档位。</li>
+        <li><strong>测一轮：</strong>各挑 2 个任务，用"当前方案 vs 降档方案"各跑 10 次，比对质量 + 全成本（包括人工检查时间）。数据说话，别凭感觉切换。</li>
+      </ol>
+
+      <div class="highlight">
+        <strong>一句话原则：</strong><br>
+        <em>"让便宜模型干 80% 的活，把贵的模型留给 20% 的关键决策。"</em>
+      </div>
+    </div>
+
+    <!-- ========== 选择题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 40 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. GPT-6.1 Sol 在 COBOL 迁移 eval 上的最高推理档得分是多少？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 5.4%</li>
+          <li onclick="checkQuiz(this)">B. 86.6%</li>
+          <li onclick="checkQuiz(this)">C. 97.9%</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。GPT-6.1 Sol 最高推理档 COBOL 迁移得分 97.9%（上代 GPT-5.6 Sol 仅 5.4%）；低推理档为 86.6%，但成本便宜约 61%。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. Anthropic S-1 披露的 2026 上半年营收是多少？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. $4.6B</li>
+          <li onclick="checkQuiz(this)">B. $16.3B</li>
+          <li onclick="checkQuiz(this)">C. $80.7B</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。2026 上半年营收 $16.3B（Q1 $4.73B、Q2 $11.5B），而 2025 全年只有 $4.6B。$80.7B 是上半年净亏损（主要为非现金会计费用）；$4.6B 是 2025 全年营收。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. WhatsApp"隐藏指令"事件的核心问题是什么？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. AI 生成的内容太多</li>
+          <li onclick="checkQuiz(this)">B. 在用户不可见的地方藏了"只给 AI 看"的指令，且内容违背用户利益</li>
+          <li onclick="checkQuiz(this)">C. AI 被黑客入侵</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。80 个帮助页里藏了 102 条 AI 专属指令，要求 AI 不引导用户联系数据监管机构、不引用 GDPR/CCPA。"AI-only 内容"如果与用户利益冲突，被曝光就是信任灾难。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. Notion 新一代 Agent harness 最关键的升级是什么？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 单个任务可运行 24 小时以上，且支持断点续跑</li>
+          <li onclick="checkQuiz(this)">B. 接入了所有模型</li>
+          <li onclick="checkQuiz(this)">C. 全部免费使用</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。第六代 agent harness 把单任务时长从 5 分钟拉到 24+ 小时，会话跑在独立服务上可从重启中恢复；Auto 路由器按质量/速度/成本自动选模型，平均成本降约 90%。</div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 40 思考："干活时代"，你的位置在哪？</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <ol>
+          <li>Anthropic 25% 的收入来自两个没有长期合同的客户——"客户集中度"风险在你的业务里存在吗？如果前两大客户明天流失，你的数据会有多难看？如何提前设计"去集中化"策略？</li>
+          <li>Zillow 用官方 connector 抢占 Claude 生态——如果主流 AI 助手宣布开放 MCP 生态，你的产品应该第一批接入还是先观望？写出你的判断标准（流量预期、数据风险、合规成本各占几票？）。</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <ol>
+          <li>用"任务-档位匹配"表审一遍团队的 AI 任务清单：哪些任务可以立刻降档（省钱 61% 甚至 90%）？哪几个必须保留最高档？</li>
+          <li>WhatsApp 事件后，检查你的产品帮助文档：有没有任何"只给 AI 看"的内容？如果要写给 AI 的隐藏指令（如结构化 FAQ），你会设计什么样的"与用户利益一致"的审核机制？</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <ol>
+          <li>Steam 玩家主动要求"No AI"过滤器——你的目标用户对 AI 生成内容的态度测过吗？建立一套"AI 内容标注 + 质检"标准需要哪些指标？</li>
+          <li>Meta Muse 用 39% 的广告预算换 40 天 1090 万下载、30% 留存——Agent 类应用高留存的底层逻辑是什么？你的产品有没有设计"任务完成的爽感"？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <button class="mark-read-btn" onclick="markDayComplete(40)">✅ 已阅读完毕</button>
+
+  </div>
+  <!-- ==================== END DAY 40 ==================== -->`;
 
 
   // =====================================================
