@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="day41-update">
+<meta name="version" content="day42-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -974,6 +974,18 @@ const COURSE_DATA = [
     "phase": 4,
     "phaseName": "行业视野",
     "title": "Anthropic × Google TPU 大单 + GPT-4 退役倒计时：算力即供应链",
+    "tags": [
+      "行业",
+      "理论",
+      "工具"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 42,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "财报会上的“超级智能” + 乌镇峰会前瞻：全球 AI 叙事之战",
     "tags": [
       "行业",
       "理论",
@@ -9587,6 +9599,418 @@ DAY_CONTENT[41] = `<div class="day-section" id="day41">
 
   </div>
   <!-- ==================== END DAY 41 ==================== -->`;
+
+
+DAY_CONTENT[42] = `<div class="day-section" id="day42">
+    <div class="day-header">
+      <h2>Day 42 | 财报电话会上的"超级智能" + 乌镇峰会前瞻：全球 AI 叙事之战</h2>
+      <span class="date">2026-10-31</span>
+    </div>
+
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.nextElementSibling.classList.toggle('open')">🔰 初阶提示：这一讲出现的几个新名词</button>
+      <div class="hint-content">
+        <p>这一讲有五个新名词，先记住它们的"人话版"解释：</p>
+        <p><strong>超级智能（Superintelligence）</strong>：比全人类都聪明的 AI。本讲语境里先把它当"一个词"看——特朗普 9月29日 签署指令，要求美国行政分支各部门用"超级智能"替代"人工智能"；扎克伯格、马斯克在财报会上跟进改口。一个词的更换，背后是政治与资本的双重叙事。</p>
+        <p><strong>自由现金流（FCF）</strong>：经营赚到的现金，减去买服务器、数据中心等"大件"（资本开支）后剩下的钱。Meta 2026 Q3 的 FCF 是 <strong>负的 21.2 亿美元</strong>——收入还在涨，但买算力的手速更快。</p>
+        <p><strong>资本开支（Capex）</strong>：买"未来产能"的钱。Meta 2026 全年 Capex 指引 $1350-1450 亿美元，单季就花了 $349 亿——这是"AI 军备竞赛"落到财报上的样子。</p>
+        <p><strong>Class C 无投票权股票</strong>：Meta 宣布 2027年1月 新发的一类股票——可以融资、可以发股息（相当于 2:1 拆股），但没有投票权。翻译成人话："我要大家的钱，但不要大家管"。为 AI 长期投入预留弹药的资本设计。</p>
+        <p><strong>叙事（Narrative）</strong>：不是贬义词，是"让投资人、用户、监管都相信的那个故事"。本讲核心：AI 巨头已经进入"买叙事"阶段——连"AI"这个词本身，都在被重新定价。</p>
+        <p>今天的两条主线：<strong>① 美国财报季——"AI"这个词正在被政治与资本重新命名；② 乌镇峰会后天开幕——"开源开放"成为中国递给世界的叙事。</strong></p>
+      </div>
+    </div>
+
+    <!-- ========== 行业动态：当天重磅速览 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年10月30-31日 AI 重磅速览（全部附原始来源）</h3>
+
+      <table>
+        <tr><th style="width:30%">事件</th><th>为什么重要</th><th style="width:16%">来源</th></tr>
+        <tr>
+          <td><strong>扎克伯格、马斯克财报会跟进"超级智能"改名（10月30日报道）</strong></td>
+          <td>特朗普上月签署指令，要求美国行政分支用"超级智能"替代"人工智能"；本季度财报电话会上，Meta 扎克伯格、特斯拉/SpaceX 马斯克均已改口，而微软、亚马逊、Alphabet 的 CEO 依旧沿用"AI"。巨头们用"说什么词"公开站队。</td>
+          <td><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-30/doc-iniwzprn2166471.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪财经</a></td>
+        </tr>
+        <tr>
+          <td><strong>Meta Q3 财报三大反常：利润率腰斩、自由现金流首现负值、宣布发"无投票权"新股</strong></td>
+          <td>Q3 营收 $646 亿（+26%）、DAP 36.4 亿（+3%）、广告均价 +14%——广告引擎仍在提速；但成本 +68%（含 $98.9 亿青少年心理健康和解费用），营业利润率从 40% 掉到 20%，自由现金流 -$21.2 亿；全年 Capex 指引 $1350-1450 亿，2027年1月 设 Class C 无投票权新股为 AI 融资。扎克伯格同时官宣首个前沿模型 Muse 与 Muse Wonder。</td>
+          <td><a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx" target="_blank" style="color:#667eea;font-size:11px">Meta IR</a></td>
+        </tr>
+        <tr>
+          <td><strong>BBC 深挖 Anthropic 招股书"五大惊人信息"（10月30日）</strong></td>
+          <td>上半年亏损 $807 亿（2025 全年的两倍）、营收 $162 亿；手握现金 $1316 亿（比 Meta+谷歌加起来还多）；今年迄今数据中心租用支出 $3214 亿；250 个年付 ≥$1000 万的企业客户撑起大头，仅 5 个客户占当前业务的四分之一——"史上最大 IPO"（Day 40）的另一面是极高的客户集中度。</td>
+          <td><a href="https://www.bbc.com/zhongwen/articles/c623dz784403o/simp" target="_blank" style="color:#667eea;font-size:11px">BBC 中文</a></td>
+        </tr>
+        <tr>
+          <td><strong>乌镇峰会 11月2-5日 开幕在即：27 个分论坛创新高，主论坛首设"人工智能乌镇对话"</strong></td>
+          <td>主题"开源开放 共建共享"；新增"智能体互信互联互操作全球合作创新""机器人与具身智能""时空智能"等分论坛；领先科技奖收到 34 国 400 余项成果、国际申报增长 21%；"互联网之光"博览会 400+ 企业参展。后天的乌镇，是观察中国 AI 叙事的第一窗口。</td>
+          <td><a href="https://cn.wicinternet.org/2026-10/01/content_39030651.htm" target="_blank" style="color:#667eea;font-size:11px">世界互联网大会</a></td>
+        </tr>
+        <tr>
+          <td><strong>AMD：Agentic PC 出货已超 50 万台；微软披露 Copilot+ PC 每月本地推理超 2 万亿次</strong></td>
+          <td>锐龙 AI MAX PRO 400 系列以 192GB 统一内存成为全球首款可在本地 4-bit 量化跑 3000 亿+ 参数模型的 x86 客户端处理器；Perplexity、微软 Project Zenith、思科相继上车。AI 主战场正从"云端算力"（Day 41）向"桌面智能体"分岔——不足整体 PC 市场 1% 的出货，标注的是一个新品类的起点。</td>
+          <td><a href="https://www.smarthey.com/detail/296221603472.html" target="_blank" style="color:#667eea;font-size:11px">SmartHey</a> / <a href="https://www.amd.com/en/products/processors/commercial/agent-computers.html" target="_blank" style="color:#667eea;font-size:11px">AMD</a></td>
+        </tr>
+        <tr>
+          <td><strong>毕马威："智能经济"成培育新质生产力的核心引擎（10月30日）</strong></td>
+          <td>毕马威"长三角智能经济新质领袖榜单"活动上，华东及华西区首席合伙人陈轶表示：从"人工智能+"行动到智能经济新形态，我国经济正迈向智能化发展新阶段；长三角兼具产业链之"全"与基础研究之"深"，成为智能经济核心策源地——国内 AI 叙事的关键词是"新质生产力"。</td>
+          <td><a href="http://k.sina.com.cn/article_1644114654_61ff32de02002cq40.html" target="_blank" style="color:#667eea;font-size:11px">新浪</a></td>
+        </tr>
+        <tr>
+          <td><strong>四川影视文创城 AIGC 产业生态基地发布（10月30日）</strong></td>
+          <td>成都大邑发布，工信部新闻宣传中心出席并解读"人工智能+"行动下的 AIGC 产业变革——AIGC 从"工具试用"进入"基地化、生态化"落地阶段，区域产业政策开始给内容行业发"入场券"。</td>
+          <td><a href="http://finance.sina.com.cn/roll/2026-10-30/doc-iniwzprr4497937.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪/每经</a></td>
+        </tr>
+      </table>
+
+      <p style="margin-top:14px"><strong>【乌镇何以"开源"】</strong>光明网评论点题：当数智技术发展来到十字路口，"开放还是封闭？开源还是闭源？合作还是'脱钩'？"——2026 乌镇峰会以"开源开放 共建共享"作答，既是顺应技术趋势的主动作为，也是对国际关切的直接回应。<a href="http://finance.sina.com.cn/jjxw/2026-10-30/doc-iniwzprp8050635.shtml" target="_blank" style="color:#667eea;font-size:12px">原文链接</a></p>
+    </div>
+
+    <!-- ========== 深度分析 1：财报会上的"超级智能" ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>一次财报会，两种"超级智能"：当"改名"成为一种资本战略</h3>
+
+      <p>10月30日，一份媒体报道把本季度财报季最有趣的细节挖了出来：<strong>扎克伯格和马斯克在财报电话会上，把"人工智能"说成了"超级智能"。</strong>把时间线摆在一起，你会发现这不是口误，而是一次精心编排的"术语迁移"：</p>
+
+      <div class="highlight">
+        <strong>三周时间线：</strong><br><br>
+        <strong>9月29日</strong> —— 特朗普签署指令：美国行政分支各部门、机构用"超级智能"替代"人工智能"。（Day 41 讲过同一天签署的白宫《超级智能协议》，被 CFR 评"没有牙齿"——但现在你会发现：<strong>没有牙齿的是监管条款，有牙齿的是语言。</strong>）<br><br>
+        <strong>10月21日</strong> —— Meta 发布 Q3 财报，扎克伯格开场第一句："我们在'把个人超级智能带给每个人'的路上迎来重大里程碑——发布了我们的首个前沿模型 Muse 与 Muse Wonder。"<br><br>
+        <strong>10月30日</strong> —— 媒体确认：扎克伯格（Meta）与马斯克（特斯拉/SpaceX）在三季度财报电话会上均采用"超级智能"；微软纳德拉、亚马逊贾西、Alphabet 皮查伊在财报会上依旧说"AI"。
+      </div>
+
+      <p><strong>先看 Meta Q3 财报的五个数字——改名背后的账本：</strong></p>
+
+      <table>
+        <tr><th style="width:24%">数字</th><th>数值</th><th style="width:34%">怎么读</th></tr>
+        <tr>
+          <td><strong>营收</strong></td>
+          <td>$646 亿（+26%）；DAP 36.4 亿（+3%）、广告展示 +10%、均价 +14%</td>
+          <td>广告引擎仍在提速——增长的底盘很稳。</td>
+        </tr>
+        <tr>
+          <td><strong>成本费用</strong></td>
+          <td>$516 亿（+68%），含 $98.9 亿青少年心理健康和解费用（8月与 52 州总检察长达成的最高 $185.9 亿和解）</td>
+          <td>营业利润率从 40% 掉到 20%——一半利润被"买未来 + 付历史账"吃掉。</td>
+        </tr>
+        <tr>
+          <td><strong>自由现金流</strong></td>
+          <td>-$21.2 亿（首现负值）；单季 Capex $349 亿</td>
+          <td>收入增长赶不上买算力的手速。Day 41 讲的"算力期货化"，Meta 用财报亲自盖章。</td>
+        </tr>
+        <tr>
+          <td><strong>全年 Capex 指引</strong></td>
+          <td>$1350-1450 亿</td>
+          <td>再上台阶；Day 36 讲过 Google Q2 的 capex 拐点，如今 Meta 把"军备竞赛"又拉高一档。</td>
+        </tr>
+        <tr>
+          <td><strong>人员</strong></td>
+          <td>66,775 人（同比 -15%）；Reality Labs 亏损主动收窄（2026 约 $180-190 亿 → 2027 约 $150 亿）</td>
+          <td>一边裁人、一边买卡——"人力换算力"的预算再平衡已是明牌。</td>
+        </tr>
+      </table>
+
+      <p><strong>改名为什么发生？三重作用：</strong></p>
+
+      <ol>
+        <li><strong>政治合规：</strong>跟着监管语言走。在美国市场，术语先行的合规成本远低于事后补救（参考 Day 39 FTC 对 Agent 安全的调查节奏）。"改口"本身就是站队——这也是为什么微软、亚马逊、Alphabet 坚持不改：它们的企业客户（CIO 们）需要的是"可靠性"，不是政治站队。</li>
+        <li><strong>资本叙事：</strong>给 $1400 亿 Capex 找一个配得上的冠冕。"AI"是工具叙事（省钱提效），ROI 讲不清 $1400 亿的账；"超级智能"是未来叙事（改变世界），只有"未来"才配得上这个价签。配套动作是资本设计：<strong>发 Class C 无投票权股票（2027年1月19日生效、1:1 股息相当于 2:1 拆股、不稀释扎克伯格投票权）+ 与扎克伯格签《创始人一致协议》——"既要大家的钱，又不要大家管"，为长期 AI 投入预留弹药。</strong></li>
+        <li><strong>产品定位：</strong>首个前沿模型 Muse / Muse Wonder 发布，公司叙事从"社交平台"切换为"个人超级智能提供商"。组织资源的流向比口号诚实：Reality Labs 省下的钱，明牌转向 AI。</li>
+      </ol>
+
+      <p><strong>不跟风者的逻辑：行业第一次在"用词"上分成两个阵营。</strong>微软/亚马逊/Alphabet 的客户是 CIO——CIO 要"可靠、合规、可预算"，"超级智能"对他们反而是风险信号（不确定、不可承诺）。而 Meta/xAI 面向 C 端用户——"未来感"和"超能力"才是魅力词：</p>
+
+      <table>
+        <tr><th style="width:18%">阵营</th><th style="width:22%">代表</th><th style="width:20%">词汇</th><th>给用户讲什么</th></tr>
+        <tr>
+          <td><strong>C 端未来派</strong></td>
+          <td>Meta、xAI</td>
+          <td>超级智能</td>
+          <td>"把超级智能装进每个人口袋"——卖的是未来与个人赋能（Meta 原话：personal superintelligence for everyone）。</td>
+        </tr>
+        <tr>
+          <td><strong>B 端可靠派</strong></td>
+          <td>微软、谷歌、亚马逊</td>
+          <td>AI / Copilot / Agent</td>
+          <td>"今天就能用、可审计、可预算"——卖的是确定性。Day 41 讲过"确定性"是 B 端最强营销素材，用词同样如此。</td>
+        </tr>
+      </table>
+
+      <p><strong>运营人怎么用？装一个"术语雷达"。</strong>改名不是文字游戏，是定位调整的最早期信号——行业分析师读财报数字，运营人应该读"财报会用语"。三个必盯的位置：</p>
+      <ul>
+        <li><strong>监管文件：</strong>政策用哪个词，意味着资源与红线往哪边倾斜（参考 Day 11 合规红线、Day 29 安全合规实践）。</li>
+        <li><strong>头部财报会：</strong>CEO 们集体换词，通常领先于组织动作（裁员、重组、产品线调整）3-6 个月。Meta 的"超级智能"之后是 -15% 的员工数与 $1400 亿 Capex——词先变，钱跟上。</li>
+        <li><strong>大会主题词：</strong>乌镇峰会主题、WAIC 主题——国内政策的"预告片"（见深度分析 2）。</li>
+      </ul>
+      <p>把这三处各设一条"术语监控"，每月扫一次，比读十篇行业解读更有信号量。</p>
+    </div>
+
+    <!-- ========== 深度分析 2：乌镇峰会前瞻 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>乌镇峰会前瞻（11月2-5日）：当"开源开放"成为中国递给世界的叙事</h3>
+
+      <p>就在美系巨头为"超级智能"这个词排队站队时，另一个方向的叙事正在准备登场：<strong>后天（11月2日），2026 世界互联网大会乌镇峰会开幕，主题八个字——"开源开放 共建共享"。</strong>这是与"超级智能"完全不同的一套全球叙事。</p>
+
+      <p><strong>大会基本盘：</strong></p>
+
+      <table>
+        <tr><th style="width:26%">指标</th><th style="width:28%">数字</th><th>说明</th></tr>
+        <tr>
+          <td><strong>举办时间</strong></td>
+          <td>11月2-5日</td>
+          <td>本周一开幕——本周的国内 AI 焦点都会被它吸走。</td>
+        </tr>
+        <tr>
+          <td><strong>分论坛</strong></td>
+          <td>27 个，创近年新高</td>
+          <td>新增：智能体互信互联互操作全球合作创新、机器人与具身智能、时空智能、全球治理倡议网络空间合作、数智技术促进绿色低碳发展。</td>
+        </tr>
+        <tr>
+          <td><strong>"互联网之光"博览会</strong></td>
+          <td>400+ 企业</td>
+          <td>主题"智能互联、智见未来"，首次开展互联网科普。</td>
+        </tr>
+        <tr>
+          <td><strong>领先科技奖</strong></td>
+          <td>34 国 400+ 项申报</td>
+          <td>国际申报数量较去年 +21%，18 国首次参与，覆盖具身智能等前沿领域。</td>
+        </tr>
+        <tr>
+          <td><strong>全球青年领军者计划</strong></td>
+          <td>140+ 国 2600+ 人报名</td>
+          <td>较往年显著提升——"朋友圈"仍在扩容（47 国 230+ 会员）。</td>
+        </tr>
+      </table>
+
+      <p><strong>主论坛新看点："人工智能乌镇对话"</strong>——全球领军科技企业、知名开源大模型企业负责人、AI 科学家同台，议题直指全球人工智能开源生态构建。2025 年"六小龙乌镇对话"上 DeepSeek 代表的发言被秘书长任贤良反复引用；今年，开源大模型矩阵（DeepSeek 开源推理框架、蚂蚁百灵 Ling-3.1-flash-1019、Kimi K3——Day 21、Day 41 都讲过）已经从"几家之光"扩成了一条"生态带"。</p>
+
+      <p><strong>把两套叙事摆在一起看，才知道各自在赌什么：</strong></p>
+
+      <table>
+        <tr><th style="width:22%">维度</th><th>美系叙事："超级智能"</th><th style="width:34%">中系叙事："开源开放"</th></tr>
+        <tr>
+          <td><strong>关键词</strong></td>
+          <td>未来、个人赋能、赢家通吃</td>
+          <td>普惠、共建、命运共同体</td>
+        </tr>
+        <tr>
+          <td><strong>载体</strong></td>
+          <td>财报电话会、新品发布会</td>
+          <td>国际峰会、开源社区、白皮书</td>
+        </tr>
+        <tr>
+          <td><strong>钱从哪来</strong></td>
+          <td>私募、发债、发新股（Meta Class C、Anthropic IPO——Day 40/41）</td>
+          <td>补贴 + 市场换生态（低成本普惠降低应用门槛）</td>
+        </tr>
+        <tr>
+          <td><strong>给开发者的默认选择</strong></td>
+          <td>闭源旗舰 API（按 token 付费）</td>
+          <td>开源权重本地部署（按机器付费）</td>
+        </tr>
+        <tr>
+          <td><strong>各自的软肋</strong></td>
+          <td>BIS 警告的"循环融资"系统性风险（Day 41）；Meta FCF 转负是第一个实证</td>
+          <td>商业闭环与持续投入的不确定性</td>
+        </tr>
+      </table>
+
+      <p><strong>为什么"开源"叙事在此时此刻特别有效？三个原因：</strong></p>
+      <ol>
+        <li><strong>经济逻辑自洽：</strong>当美系头部公司把"算力期货化"推到极端——Anthropic 上半年数据中心租用 $3214 亿、Meta 全年 Capex $1350-1450 亿——开源模型"下载即用"的成本叙事就有了最强对照组。IBM 研究员 Peter Staar 的那句话可以作为注脚："领先者想保持封闭，追赶者想要开放。"</li>
+        <li><strong>追赶者的最优策略：</strong>开源不只是技术路线，是竞争位势的表达。AMD 本地跑 3000 亿参数开源模型（GLM-5.3-Flash、Qwen 3.8-Flash-Next 本地实测 20/42 tokens/s）——开源生态与端侧硬件正在互相成就。</li>
+        <li><strong>标准话语权：</strong>新增的"智能体互信互联互操作"分论坛说明：Agent 互操作标准（MCP/A2A 这类协议——Day 36 工作流、Day 38 Agent 大爆发的下一站）已经进入国家级议程。<strong>谁定标准，谁收"过路费"。</strong></li>
+      </ol>
+
+      <p><strong>运营人的三个判断：</strong></p>
+      <ul>
+        <li><strong>政策窗口：</strong>乌镇主题词历来是国内来年资源倾斜的"预告片"。主题押"开源"——预计未来 2-4 个季度，开源社区运营、国产模型适配、AI 开放平台将迎来政策与流量的双重红利。</li>
+        <li><strong>出海叙事：</strong>面向东南亚/新兴市场做产品的团队，"开源开放、普惠"标签的接受度远高于"超级智能"科幻叙事——两种叙事不只是政治立场，是不同市场的用户语言。</li>
+        <li><strong>接入层设计：</strong>如果你的产品正在接 Agent 能力，按开放标准（MCP 类协议）设计接入层，别押注私有协议——"互操作"一旦成为国家级议程，私有协议的迁移成本会变成负债。</li>
+      </ul>
+    </div>
+
+    <!-- ========== 产品运营视角 ========== -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>叙事之战落到你身上：三个明天就能用的动作</h3>
+
+      <p>巨头的"叙事之战"看起来很远，但拆开看，每一层都有你可以直接抄的动作：</p>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <p><strong>案例一：叙事日历——你的 Q4/Q1 借势窗口已经排好了。</strong></p>
+        <p>乌镇（11月2-5日）是本季度最大的国内叙事窗口：400+ 企业参展、27 个分论坛，大会主题词历来是政策与流量的双风向标；美系财报季（Meta 已发、英伟达等 11 月接力）是另一条叙事生产线。头部公司用"财报会"发叙事，中小团队用"大会日历"蹭叙事——借势不是追热点，是<strong>把有限的营销预算投在"全场都在讲同一个词"的窗口期</strong>。</p>
+        <p><strong>行动：</strong>今天就写一份"叙事日历"：未来 6 个月的国内政策会议（乌镇、WAIC、两会）、美系财报季（NVDA/MSFT/GOOG/META）、你所在行业的年度大会，各标注 1 个借势动作（内容、活动或预算）。乌镇窗口的具体建议：把产品的"开源/普惠/国产适配"标签在这两周做一次集中露出。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <p><strong>案例二：Meta 的"砍人加钱"——资源再平衡的教科书。</strong></p>
+        <p>Meta Q3：员工 66,775 人（同比 -15%），单季 Capex $349 亿、全年 $1350-1450 亿；Reality Labs 亏损主动收窄，省下的钱"重新分配到 AI 优先领域"。另一边，把最高 $185.9 亿的青少年心理健康和解一次性计入成本——<strong>安全合规的钱在巨头那里已是大额预算科目，而不是"出事再算"。</strong></p>
+        <p><strong>启示：</strong>AI 时代的产品预算公式正在变成"人力做存量维护，算力/工具做增量突破"；AI 安全合规（Day 39 Agent 安全、Day 11 合规红线）需要提前入预算。</p>
+        <p><strong>行动：</strong>给你的产品做一次"资源再平衡"演练：如果要把 20-30% 的人力预算转投 AI 工具/算力，你先砍哪些环节（重复性内容生产、人工审核初筛、报表拼接）？同时把"AI 安全合规"列为正式预算科目——现在是预算季，正是时候。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <p><strong>案例三：两套叙事，两套话术——你的品牌会说"世界语"吗？</strong></p>
+        <p>同样在讲 AI：Meta/xAI 用"超级智能"讲未来（C 端魅力词），微软/谷歌用"AI/Copilot/Agent"讲可靠（B 端信任词），中国阵营用"开源开放/普惠"讲共建（B 端+政务侧信任词，乌镇窗口）。<strong>叙事不是选边站，是分渠道说话。</strong></p>
+        <p><strong>启示：</strong>同一款产品，面向 C 端用户讲"解放双手"（未来感），面向 B 端客户讲"可审计、可预算、可退路"（确定性——Day 41 讲过确定性本身就是最贵的营销素材），面向政务/大客户讲"开源、共建、本地化"（普惠）。混用词汇的代价是：B 端客户看到"超级智能"会觉得不可承诺，政务客户看到"赢家通吃"会觉得不安全。</p>
+        <p><strong>行动：</strong>做一次"术语一致性审计"：检查你最近的官网、白皮书、投放素材——AI/智能体/大模型/超级智能是否混用？为乌镇窗口写一段 30 秒"普惠版"品牌叙事备用；对 B 端物料明确"禁用词清单"（承诺过重的词都是合规风险）。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <!-- ========== 工具实操：AI 财报信号抽取 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>AI 财报信号抽取：10 分钟读懂一份几百页的财报</h3>
+
+      <p>Meta Q3 财报、Anthropic 335 页招股书（Day 40-41 讲过）……财报季最大的问题是：<strong>几百页 PDF，运营人需要的只是 5 类信号。</strong>这一讲把"读财报"变成一个可复用的 AI 工作流——本周英伟达财报出来前，正好用得上。</p>
+
+      <table>
+        <tr><th style="width:18%">信号类型</th><th style="width:38%">看什么</th><th>Meta Q3 实例</th></tr>
+        <tr>
+          <td><strong>增长信号</strong></td>
+          <td>营收、用户数、均价/客单价</td>
+          <td>$646 亿（+26%）、DAP 36.4 亿、广告均价 +14%</td>
+        </tr>
+        <tr>
+          <td><strong>成本信号</strong></td>
+          <td>成本增速、Capex、利润率</td>
+          <td>成本 +68%、单季 Capex $349 亿、利润率 40%→20%</td>
+        </tr>
+        <tr>
+          <td><strong>风险信号</strong></td>
+          <td>诉讼、客户集中度、监管</td>
+          <td>$98.9 亿和解费用（52 州青少年心理健康，总额最高 $185.9 亿）；对照 BBC 披露 Anthropic"仅 5 客户占业务 1/4"的客户集中度风险</td>
+        </tr>
+        <tr>
+          <td><strong>动作信号</strong></td>
+          <td>裁员、发股、重组、新品</td>
+          <td>裁员 15%、发 Class C 无投票权新股、首个前沿模型 Muse 上线</td>
+        </tr>
+        <tr>
+          <td><strong>叙事信号</strong></td>
+          <td>CEO 原话关键词、官方口径变化</td>
+          <td>"personal superintelligence for everyone"——从"AI"到"超级智能"的定位切换</td>
+        </tr>
+      </table>
+
+      <p><strong>四步工作流（Claude / ChatGPT / 千问皆可）：</strong></p>
+      <ol>
+        <li><strong>投喂 + 限定角色：</strong>把财报 PDF/链接投给 AI，第一句先定角色：<em>"你是 CFO 助理，只从原文抽取事实与数字，禁止任何推断和预测；每个数字标注出处（页码或章节）。"</em>——先锁"不许编"，再谈分析。</li>
+        <li><strong>五信号逐项抽取：</strong>用固定模板问五轮（每轮一个信号），比一次问全部更能压住幻觉。模板（照抄可用）：<em>"请从这份财报中抽取【增长信号】：营收及同比、核心用户/客户数及同比、单价/均价变化。每个数字后附原文出处。只列事实，不做解读。"</em>——然后把【增长信号】依次替换为【成本信号】【风险信号】【动作信号】【叙事信号】，共五轮。</li>
+        <li><strong>防幻觉交叉验证：</strong>财报里最容易错的是"单位"（百万 vs 亿）和"口径"（guidance vs actual、同比 vs 环比）。抽 2-3 个最关键的数字回原文核对；对不上，整份 memo 作废重跑。</li>
+        <li><strong>落成"信号卡"：</strong>把五信号压缩成一页纸。超过一页，说明还没抽干净。</li>
+      </ol>
+
+      <p><strong>成品示例：Meta Q3 信号卡（用本工作流跑出的真实结果）</strong></p>
+
+      <table>
+        <tr><th style="width:14%">信号</th><th style="width:46%">Meta Q3 2026</th><th>一句话解读</th></tr>
+        <tr><td>增长</td><td>营收 $646 亿 +26%；DAP 36.4 亿</td><td>广告引擎仍在加速</td></tr>
+        <tr><td>成本</td><td>成本 +68%；Capex 全年 $1350-1450 亿</td><td>AI 投入吃掉全部增量利润</td></tr>
+        <tr><td>风险</td><td>$98.9 亿和解费用；FCF -$21.2 亿</td><td>青少年安全=巨额合规成本；现金流转负</td></tr>
+        <tr><td>动作</td><td>裁员 15%；发 Class C 新股；Muse 上线</td><td>人力换算力 + 不放权融资</td></tr>
+        <tr><td>叙事</td><td>"personal superintelligence"</td><td>定位切换：社交平台 → 个人超级智能</td></tr>
+      </table>
+
+      <div class="highlight">
+        <strong>一句话原则：</strong><br>
+        <em>"财报是公司唯一不敢说谎的地方（有 SEC 盯着），但 AI 转述财报时会说谎——你的抽查，就是你的 SEC。"</em>
+      </div>
+    </div>
+
+    <!-- ========== 选择题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 42 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 特朗普 9月29日 的指令，要求美国行政分支各部门用哪个词替代"人工智能"？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 通用智能</li>
+          <li onclick="checkQuiz(this)">B. 超级智能</li>
+          <li onclick="checkQuiz(this)">C. 前沿智能</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。10月30日 媒体报道确认：扎克伯格（Meta）、马斯克（特斯拉/SpaceX）在三季度财报电话会上已跟进使用"超级智能"，而微软、亚马逊、Alphabet 的 CEO 仍沿用"AI"——巨头用词即站队。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. Meta 2026 Q3 的自由现金流是多少？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. -$21.2 亿（首次转负）</li>
+          <li onclick="checkQuiz(this)">B. +$21.2 亿</li>
+          <li onclick="checkQuiz(this)">C. -$212 亿</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。Q3 单季 Capex 高达 $349 亿，自由现金流 -$21.2 亿，为首次转负；Meta 同步宣布 2027年1月 发行 Class C 无投票权新股为 AI 融资。$349 亿是单季 Capex，勿与 FCF 混淆。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 2026 年世界互联网大会乌镇峰会（11月2-5日）的主题是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 智能互联、智见未来</li>
+          <li onclick="checkQuiz(this)">B. 开源开放 共建共享</li>
+          <li onclick="checkQuiz(this)">C. AI 向善</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。乌镇峰会主题为"开源开放 共建共享——携手构建网络空间命运共同体"，共设 27 个分论坛（创新高）；"智能互联、智见未来"是"互联网之光"博览会的主题；主论坛首设"人工智能乌镇对话"。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. 据 BBC 披露的 Anthropic 招股书：占当前业务约四分之一的企业客户有几个？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. 5 个</li>
+          <li onclick="checkQuiz(this)">B. 25 个</li>
+          <li onclick="checkQuiz(this)">C. 250 个</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。仅 5 个企业客户占当前业务的 1/4；250 个年付 ≥$1000 万的客户撑起大头；企业客户总数从去年约 1500 个增至近 1.2 万个——"史上最大 IPO"的另一面是极高的客户集中度。</div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 42 思考：你站在哪套叙事里？</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <ol>
+          <li>写一份你所在行业的"叙事日历"：未来 6 个月，列出 3 个政策/大会窗口（乌镇、WAIC、行业年会）+ 2 个财报窗口，各写一个借势动作。距离乌镇开幕还有 2 天——你本周能蹭的第一个动作是什么？</li>
+          <li>Meta 用"超级智能"讲 C 端，微软用"AI"讲 B 端。你的产品今年最重要的目标客户是谁？把你的核心卖点改写成对应阵营的"词汇体系"，各写一句话。</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <ol>
+          <li>做 Meta 式"资源再平衡"演练：如果你的团队明天起要把 25% 人力预算转投 AI 工具，列出先砍的 3 项和先投的 3 项，写清楚理由（参考 Meta"裁 15% 的人 + $1400 亿 Capex"的组合逻辑）。</li>
+          <li>Meta 把最高 $185.9 亿的青少年安全和解一次计入成本。给你的产品写一份"AI 安全合规预算清单"：内容安全、数据合规、Agent 行为审计（Day 39）各需要什么投入？现在正是预算季——把它变成正式科目。</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <ol>
+          <li>做一次"术语一致性审计"：检查你最近 3 个月对外物料（官网、白皮书、投放素材）中 AI/智能体/大模型/超级智能的混用情况；为 B 端物料列一份"禁用词清单"（承诺过重的词都是合规风险）。</li>
+          <li>乌镇 11月2-5日，400+ 企业参展。为你的产品写一段 30 秒"普惠版"品牌叙事（强调共建、开源、本地化），对比你现有的"发布会版"叙事——哪一套更适合你今年的目标客户？为什么？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <button class="mark-read-btn" onclick="markDayComplete(42)">✅ 已阅读完毕</button>
+
+  </div>
+  <!-- ==================== END DAY 42 ==================== -->`;
 
 
   // =====================================================
