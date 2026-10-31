@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="day40-update">
+<meta name="version" content="day41-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -962,6 +962,18 @@ const COURSE_DATA = [
     "phase": 4,
     "phaseName": "行业视野",
     "title": "GPT-6.1 Sol 发布 + Anthropic 2万亿 IPO 倒计时：AI 进入“干活”时代",
+    "tags": [
+      "行业",
+      "理论",
+      "工具"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 41,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "Anthropic × Google TPU 大单 + GPT-4 退役倒计时：算力即供应链",
     "tags": [
       "行业",
       "理论",
@@ -9206,6 +9218,375 @@ DAY_CONTENT[40] = `<div class="day-section" id="day40">
 
   </div>
   <!-- ==================== END DAY 40 ==================== -->`;
+
+DAY_CONTENT[41] = `<div class="day-section" id="day41">
+    <div class="day-header">
+      <h2>Day 41 | Anthropic × Google TPU 大单 + GPT-4 退役倒计时：算力即供应链</h2>
+      <span class="date">2026-10-29</span>
+    </div>
+
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.nextElementSibling.classList.toggle('open')">🔰 初阶提示：这一讲出现的几个新名词</button>
+      <div class="hint-content">
+        <p>这一讲有五个新名词，先记住它们的"人话版"解释：</p>
+        <p><strong>Run-rate（年化营收）</strong>：把最近的收入速度"乘以 12"得到的年度读数。不是实际已收到的钱，而是"照这个速度跑一年会赚多少"。Anthropic 的 run-rate 突破 $300 亿，而 2025 年底只有约 $90 亿。</p>
+        <p><strong>TPU</strong>：谷歌自研的 AI 专用芯片。英伟达 GPU 是"通用显卡"，TPU 是"定制专用卡"——干 AI 活更省电省钱，但只服务谷歌系生态。Anthropic 同时用 AWS Trainium、谷歌 TPU、英伟达 GPU 三家芯片。</p>
+        <p><strong>吉瓦（GW）</strong>：数据中心的"耗电功率"单位，1GW 约等于一座大型核电站一个机组的功率。"多吉瓦级算力"= 超大型 AI 集群。</p>
+        <p><strong>Backlog（在手订单）</strong>：签了合同但还没交付的收入。谷歌云 backlog 约 $2400 亿——"未来确定要花的钱"已经排到天文数字，想插队都难。</p>
+        <p><strong>HBM</strong>：焊在 AI 芯片旁边的高速内存。2026 年全球三大厂商（SK 海力士、三星、美光）的 HBM 产能已被全部订完。</p>
+        <p>本周的两条主线：<strong>① AI 算力进入"供应链时代"——买算力像买飞机，要提前一两年下单；② 模型退役潮开始——GPT-4 系列正式进入关停倒计时。</strong></p>
+      </div>
+    </div>
+
+    <!-- ========== 行业动态：当天重磅速览 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年10月22-29日 AI 重磅速览（全部附原始来源）</h3>
+
+      <table>
+        <tr><th style="width:30%">事件</th><th>为什么重要</th><th style="width:16%">来源</th></tr>
+        <tr>
+          <td><strong>Anthropic × 谷歌/Broadcom 扩大 TPU 合作（10月22日官宣）</strong></td>
+          <td>签署"多吉瓦级"下一代 TPU 算力协议，2027 年起上线，大部分落在美国本土（扩展 2025 年 11 月承诺的 $500 亿美国算力投资）。同时披露：run-rate 营收突破 $300 亿（2025 年底约 $90 亿）；年消费超 $100 万的企业客户从 2 月的 500+ 家增至 1000+ 家、两个月内翻倍。</td>
+          <td><a href="https://www.anthropic.com/" target="_blank" style="color:#667eea;font-size:11px">Anthropic</a></td>
+        </tr>
+        <tr>
+          <td><strong>谷歌自曝"算力不够用"：云业务在手订单约 $2400 亿</strong></td>
+          <td>Pichai 向分析师承认"supply constrained"——自家服务、DeepMind、谷歌云三方需求同时超过产能。而正是这份稀缺资产（TPU），被谷歌云卖给了自己最大的竞争对手 Anthropic，"左手卖军火、右手打仗"引发行业热议。</td>
+          <td><a href="https://www.reuters.com/" target="_blank" style="color:#667eea;font-size:11px">Reuters</a></td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI 宣布 GPT-4 系列全面退役（10月14日通知）</strong></td>
+          <td>GPT-4o（两个版本）、GPT-4o mini、GPT-4.1、GPT-4.1 mini 将于 2027年1月14日 从 API 移除，官方推荐迁移 gpt-6-luna。此前 10月1日 已预告 GPT-5.1、GPT-5.3-Codex、GPT-5.4-Nano 于 2027年4月1日 退役。GPT-4 时代正式进入关停倒计时。</td>
+          <td><a href="https://developers.openai.com/" target="_blank" style="color:#667eea;font-size:11px">OpenAI</a></td>
+        </tr>
+        <tr>
+          <td><strong>谷歌 Gemini API 同步大清理</strong></td>
+          <td>veo-3.1 系列视频模型 10月22日 关停（迁移至 gemini-omni-1.1-flash），deep-research-pro-preview（10月23日）关停。另一条硬期限：Workspace 的 Gems 自定义指令 2027年3月1日 起停用，全面转向 Skills（可复用技能）。模型与服务"退役"成为平台常态。</td>
+          <td><a href="https://ai.google.dev/" target="_blank" style="color:#667eea;font-size:11px">Google</a></td>
+        </tr>
+        <tr>
+          <td><strong>白宫《超级智能协议》满月：被评"没有牙齿"</strong></td>
+          <td>9月29日 六家公司（Anthropic/OpenAI/谷歌/Nvidia/Meta/xAI）签署的协议满月。CFR（美国外交关系委员会）点评：全文用"believe/should"而非"will/shall"，无强制条款，商业激励未被改变——除非"安全违规的成本"高过"抢跑的收益"。</td>
+          <td><a href="https://www.cfr.org/" target="_blank" style="color:#667eea;font-size:11px">CFR</a></td>
+        </tr>
+        <tr>
+          <td><strong>BIS 警告 AI 行业"循环融资"</strong></td>
+          <td>国际清算银行（BIS）周四发布简报：AI 行业年内发行债务已超 $5000 亿，且出现"客户注资供应商、供应商再反哺客户"的循环融资结构，"可能放大传染效应"。算力金融化被列为系统性风险观察点。</td>
+          <td><a href="https://www.bis.org/" target="_blank" style="color:#667eea;font-size:11px">BIS</a></td>
+        </tr>
+        <tr>
+          <td><strong>微软 CEO：想把 AI Agent 装上你的 PC，同时承认是安全风险</strong></td>
+          <td>Nadella 本周专访表态：AI Agent 会驻留在每一台 Windows PC 上——"但我同样认为它们是安全风险"。操作系统层 Agent 化与安全治理的矛盾，首次被 CEO 级公开承认。</td>
+          <td><a href="https://www.nbcnews.com/" target="_blank" style="color:#667eea;font-size:11px">NBC</a></td>
+        </tr>
+        <tr>
+          <td><strong>数据中心成为战争前线</strong></td>
+          <td>NBC 最新分析：全球冲突中至少 27 起袭击波及数据中心。算力设施从"商业资产"变成"战略目标"，芯片、电力、机房正在像石油一样被地缘政治定价。</td>
+          <td><a href="https://www.nbcnews.com/" target="_blank" style="color:#667eea;font-size:11px">NBC</a></td>
+        </tr>
+      </table>
+
+      <p style="margin-top:14px"><strong>【本周跟进】10月24-29日滚动更新：</strong>本讲的两大主线（算力供应链、模型退役）在这一周持续发酵，以下是最新进展：</p>
+      <table>
+        <tr><th style="width:30%">事件</th><th>为什么重要</th><th style="width:16%">来源</th></tr>
+        <tr>
+          <td><strong>Anthropic 公开 335 页招股书："史上最大 IPO、史上最亏 AI 公司"（10月27日）</strong></td>
+          <td>招股书全本公开，资本市场开始用"真实账本"而非"叙事"给 AI 定价——本讲"算力即供应链"的财务面第一次被逐页审阅，Day 40 的 IPO 倒计时进入实操阶段。</td>
+          <td><a href="https://www.qbitai.com/" target="_blank" style="color:#667eea;font-size:11px">量子位</a></td>
+        </tr>
+        <tr>
+          <td><strong>2026 年全球 AI 投资预计达 1 万亿美元；英伟达旗舰芯片交期一度排到 52 周（10月28日）</strong></td>
+          <td>多家跨国科技巨头的共同预测。英伟达最先进芯片交货周期一度排到 52 周以后，美国用电量因数据中心激增出现十几年来的首次明显反弹——"排队等算力"从企业体感变成宏观经济现象。</td>
+          <td><a href="http://finance.sina.com.cn/jjxw/2026-10-28/doc-iniwtpki9806779.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪财经</a></td>
+        </tr>
+        <tr>
+          <td><strong>软银孙正义敲定马来西亚 $500 亿投资，并据 FT 报道寻求海湾主权基金最高 $1000 亿（10月29日）</strong></td>
+          <td>孙正义已向 OpenAI 投入 $650 亿，如今一边在马来西亚押注 AI 与数据中心，一边与 UAE 等洽谈新融资——"国家级抢产能"正在取代"企业级采购"，本讲的"资源期货化"仍在加速。</td>
+          <td><a href="https://next.ithome.com/" target="_blank" style="color:#667eea;font-size:11px">IT之家</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google DeepMind 发布 Genie 4 世界模型（10月28日）</strong></td>
+          <td>研究预览版：实时生成音频（音乐/环境音/互动对话）、用户可用提示词实时改变场景，Gemini 负责"规划"、Genie 4 负责"生成"；此前 Runway 刚发布 GWM Worlds 2。AI 从"生成内容"走向"生成可交互世界"，赛道开始整合。</td>
+          <td><a href="http://finance.sina.com.cn/world/2026-10-28/doc-iniwtiam9929133.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪财经</a></td>
+        </tr>
+        <tr>
+          <td><strong>英国设立 AI 生物安全实验室（10月24日）</strong></td>
+          <td>1 亿英镑政府资金 + OpenAI、Anthropic 合计最高 2 亿英镑算力技术资源——头部模型公司开始以"算力换安全研究"进入公共治理；呼应 Day 39 的 Agent 安全议题，也说明风险对冲同样在"期货化"。</td>
+          <td><a href="http://finance.sina.com.cn/tech/roll/2026-10-28/doc-iniwtpiz3943363.shtml" target="_blank" style="color:#667eea;font-size:11px">新华社</a></td>
+        </tr>
+        <tr>
+          <td><strong>国内 Personal Agent 密集上新：蚂蚁百灵开源 Ling-3.1-flash-1019、阿里"千问 Go"上线"我的应用"（10月28-29日）</strong></td>
+          <td>蚂蚁百灵正式开源主打个人 Agent 场景的模型；千问 Go"我的应用"接入阿里云 Meoo 平台自动搭建部署，可授权调用淘宝/高德等个人数据（如把大麦订单变成电子票根册）。国内个人 Agent 正从"聊天"走向"长期持有的专属应用"。</td>
+          <td><a href="https://www.qbitai.com/" target="_blank" style="color:#667eea;font-size:11px">量子位</a> / <a href="https://next.ithome.com/" target="_blank" style="color:#667eea;font-size:11px">IT之家</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== 深度分析 1：Anthropic TPU 大单 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>Anthropic TPU 大单：$300亿增速背后，是一份"采购教科书"</h3>
+
+      <p>10月22日，Anthropic 官宣与谷歌/Broadcom 的算力扩张协议。表面上是"又一家 AI 公司买算力"，但把三个数字摆在一起，你会发现这是一份<strong>供应链管理的教科书案例</strong>：</p>
+
+      <div class="highlight">
+        <strong>三个关键数字：</strong><br><br>
+        <strong>$300亿</strong> —— Anthropic run-rate 营收（年化），2025 年底约 $90 亿 → 6 个月翻 3 倍多。Day 40 刚讲的 S-1（上半年累计 $163 亿）还在加速。<br><br>
+        <strong>1000+ 家</strong> —— 年消费超 $100 万的企业客户，2 月 Series G 时为 500+ 家，两个月内翻倍。<br><br>
+        <strong>多吉瓦</strong> —— 新一代 TPU 算力 2027 年起上线，大部分落在美国本土（呼应 2025 年 11 月的 $500 亿美国算力承诺）。
+      </div>
+
+      <p><strong>Anthropic 的"三芯片战略"：</strong></p>
+
+      <table>
+        <tr><th style="width:26%">芯片来源</th><th>规模与承诺</th><th style="width:32%">战略意义</th></tr>
+        <tr>
+          <td><strong>AWS Trainium</strong></td>
+          <td>Project Rainier 集群约 50 万颗 Trainium2；十年 $1000 亿+ 承诺，至多 5 吉瓦。AWS 仍是主力云与训练伙伴。</td>
+          <td>与亚马逊深度绑定，换取最大体量的专属训练算力。</td>
+        </tr>
+        <tr>
+          <td><strong>谷歌 TPU</strong></td>
+          <td>本次新增多吉瓦级（2027 起上线），协议价值数百亿美元；与 Broadcom 深度协作。</td>
+          <td>拿到"性价比最高"的推理算力——TPU 在部分推理负载上的性能价格比约为 H100 的 4 倍。</td>
+        </tr>
+        <tr>
+          <td><strong>英伟达 GPU</strong></td>
+          <td>经多个云渠道采购（含 Azure Foundry）；英伟达去年 9 月还投资了 Anthropic 的竞争对手 OpenAI。</td>
+          <td>保住"最强训练芯片"的随时可得性。</td>
+        </tr>
+      </table>
+
+      <p><strong>结果：Claude 成为唯一同时上架 AWS Bedrock、谷歌 Vertex AI、Azure Foundry 三大云平台的前沿模型。</strong>Anthropic 的 CFO Krishna Rao 把这次合作称为"迄今最大的算力承诺"。</p>
+
+      <p><strong>为什么说"算力即供应链"？</strong>因为买算力已经完全不像买云资源（随时下单随时用），而更像航空公司提前十年订购飞机。瓶颈链条从下往上看：</p>
+
+      <ul>
+        <li><strong>EUV 光刻机</strong>：全球唯一供应商 ASML 一年只能造约 70 台（明年约 80 台），单台价格从 $1.5 亿涨向 2028 年的 $4 亿。</li>
+        <li><strong>先进晶圆</strong>：1 吉瓦算力约需 5.5 万片 3nm 顶级晶圆。</li>
+        <li><strong>HBM 内存</strong>：2026 年初三大厂商产能已被订完（美光 1 月就清零），缺口可能延续到 2027 年之后。</li>
+        <li><strong>时间差</strong>：晶圆厂建约 2 年，数据中心只要 8 个月——<strong>芯片才是真正的长板</strong>。</li>
+      </ul>
+
+      <p>于是我们看到 Anthropic 三个可以直接抄的采购动作：</p>
+      <ol>
+        <li><strong>多源认证</strong>：三家芯片/云同时用，避免被任何一家锁死——"Claude 是唯一三大云全上架的前沿模型"本身就是竞争力。</li>
+        <li><strong>提前锁定</strong>：Project Rainier 在需求爆发前一年上线；这份 TPU 协议直接买到 2027 年的产能。</li>
+        <li><strong>敢签不可取消合同</strong>：Day 40 讲过 S-1 披露的 $518B 已承诺算力（约 80% 不可取消）——用"不可取消"换产能优先级，已是行业共识打法。</li>
+      </ol>
+
+      <div class="highlight">
+        <strong>10月29日跟进：算力"期货化"仍在加速。</strong>本讲核心事件（10月22日）之后的一周，这条主线被持续印证：<br><br>
+        <strong>52 周</strong> —— 英伟达旗舰芯片交货周期一度排到 52 周以后；2026 年全球 AI 投资预计达 1 万亿美元，美国用电量因数据中心出现十几年首次明显反弹（10月28日）。<br><br>
+        <strong>$500 亿 + 至多 $1000 亿</strong> —— 孙正义敲定马来西亚 500 亿美元投资 AI 与数据中心，并据 FT 报道向海湾主权基金寻求最高 1000 亿美元新融资（10月29日）——"国家级抢产能"取代"企业级采购"。<br><br>
+        <strong>335 页</strong> —— Anthropic 公开招股书全本（10月27日），资本市场第一次能逐页审阅"买算力"的账本。<br><br>
+        <em>一句话：算力供应链的上半场比拼"谁锁得到产能"，下半场比拼"谁用得有效率"——而"用得省、用得对"，恰恰是运营人的主场。</em>
+      </div>
+    </div>
+
+    <!-- ========== 深度分析 2：Google 左右手互搏 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>谷歌的"左右手互搏"：稀缺资源为什么必须有唯一 Owner</h3>
+
+      <p>同一周的第二件值得深思的事，藏在 Anthropic 大单的"卖方"一侧：<strong>谷歌把自己最稀缺的战略资产（TPU），卖给了自己最大的竞争对手。</strong></p>
+
+      <div class="highlight">
+        <strong>一场教科书级的组织案例：</strong><br><br>
+        Claude（Anthropic）与 Gemini（谷歌 DeepMind）是同赛道最强的两个竞争者。<br>
+        但谷歌云的业务目标（营收、增长、验证 TPU 能打英伟达）与 DeepMind 的目标（Gemini 保持前沿）并不一致。<br>
+        分析机构 SemiAnalysis 的 Dylan Patel 评价很直接："Google screwed up"——Anthropic 在谷歌意识到自己需要多少算力之前就锁定了产能，DeepMind 内部看到分配额度的反应据称是"this is insane"。
+      </div>
+
+      <p>把两边的账各算一遍，你会发现<strong>两个决策各自都"对"，加起来却是全局的怪异</strong>：</p>
+
+      <table>
+        <tr><th style="width:22%">部门</th><th>局部账本</th><th style="width:32%">结果</th></tr>
+        <tr>
+          <td><strong>谷歌云</strong></td>
+          <td>签下 Anthropic = TPU 对抗英伟达的最佳广告；有客户把月推理账单从 $210 万降到 $70 万；backlog 涨到约 $2400 亿。</td>
+          <td>营收大胜，部门证明了自家芯片。</td>
+        </tr>
+        <tr>
+          <td><strong>DeepMind</strong></td>
+          <td>卖出去的每一度算力，都是 Gemini 训练不了的时间；只能排队等产能，再去 TSMC 加单。</td>
+          <td>模型节奏被动，Hassabis 公开谈"少数关键供应商"的约束。</td>
+        </tr>
+      </table>
+
+      <p>这不是"信息不通"，而是<strong>没有人对"谷歌整体算力"这个战略资源负全责</strong>。每个部门都在优化自己的 KPI，叠加起来却可能输掉最关键的战役。Pichai 现在公开承认"supply constrained"，本质上就是这个欠账的清算。</p>
+
+      <p><strong>映射到我们的工作：</strong>你的公司里，"推广预算""技术资源""达人档期"这些稀缺资源，是不是也存在"按部门 KPI 各自抢、没人从全局管"的现象？两个经典解法：</p>
+      <ul>
+        <li><strong>设唯一资源 Owner</strong>：预算池、核心资源都要有名有姓的负责人，跨部门的资源必须有全局视角的人做最终裁决。</li>
+        <li><strong>把内部竞争显性化</strong>：用透明的"内部市场价"分配资源（谁用谁付账、付账有依据），而不是靠谁的嗓门大、谁的汇报好看。</li>
+      </ul>
+    </div>
+
+    <!-- ========== 产品运营视角：本周三个案例 ========== -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>当"算力焦虑"落到你身上：本周三个案例</h3>
+
+      <p>这周的新闻看起来都很"重资产"，离产品运营很远。但仔细拆开，每个都有一层直接可用的打法：</p>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <p><strong>案例一：谷歌 backlog $2400 亿——"排队"成为新常态，你的资源也要提前排期。</strong></p>
+        <p>Anthropic 提前一年锁定 Project Rainier；字节阿里腾讯在排队抢 300 万张特供 GPU（Day 40）；谷歌云的在手订单排到 $2400 亿。<strong>AI 时代的关键资源正在全面"期货化"——先锁先得，临时插队几乎不可能。</strong></p>
+        <p><strong>启示：</strong>增长资源同样如此。双 11 的头部达人档期、春节档的媒体资源、供应商的旺季产能，都是"提前 6-12 个月锁定、晚一步就没有"的稀缺品。</p>
+        <p><strong>行动：</strong>把"资源锁定"从临时谈判变成年度制度：Q4 就锁定 Q1-Q2 的关键资源，写进 OKR；每个关键资源明确"备选名单"，主供应商断供时 48 小时内能切换。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <p><strong>案例二：GPT-4 退役倒计时——你的产品里有多少功能"活在别人家模型的寿命上"？</strong></p>
+        <p>OpenAI 10月14日 通知：GPT-4o、GPT-4.1 全系将于 2027年1月14日 从 API 移除；GPT-5.1、GPT-5.3-Codex 将于 2027年4月1日 移除。谷歌同步在关停旧模型与服务（veo-3.1 昨天关停、Gems 2027年3月1日 停用）。依赖 API 模型的功能，"模型退役"已经从偶发事件变成季度常态。</p>
+        <p><strong>启示：</strong>每一个接了大模型 API 的功能，都自带一个"倒计时炸弹"。不管理的后果是：某天凌晨某个功能静默失效——用户先发现，而不是你。</p>
+        <p><strong>行动：</strong>① 为每个模型依赖登记"依赖对象、上线日期、官方退役公告链接"；② 建立"模型退役日历"，对每条公告倒排 90/30/7 天检查点（90 天评估替代模型、30 天完成迁移测试、7 天灰度收尾）；③ 任何集成默认写明 fallback（降级到哪家模型、降级后的体验底线）。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <p><strong>案例三：TSMC 靠"中立"吃到七成市占，谷歌"既卖军火又参战"——竞合叙事是新战场。</strong></p>
+        <p>同样是卖关键资源：TSMC 靠"绝不设计自有芯片、永不与客户竞争"的中立承诺，拿到 70%+ 的代工市占——<strong>中立性本身就是它卖的最贵产品</strong>。而谷歌一边把 TPU 卖给 Claude、一边力推 Gemini，"军火商兼战士"的身份被行业公开讨论。再看英伟达：$1000 亿投资 OpenAI、联合 BlackRock $400 亿买数据中心——把供应链动作直接做成了品牌叙事。</p>
+        <p><strong>启示：</strong>① 如果你的平台/供应商身份与某个客户竞争，提前把"隔离承诺"讲清楚（类 TSMC 承诺），否则合作方会自己脑补最坏情况；② "供应链级承诺"（确定性产能、SLA、三年不涨价）正在成为 B 端最强的营销素材——Anthropic 官网直接晒"三大云全上架"就是示范。</p>
+        <p><strong>行动：</strong>审视你的品牌与合作伙伴/竞品的竞合关系：哪里需要一份"书面中立承诺"？你的"确定性承诺"（产能/交付/SLA）能否包装成一场 B 端营销战役？</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <!-- ========== 工具实操：AI 供应商依赖度审计 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>AI 供应商依赖度审计：学 Anthropic 管自己的"算力风险"</h3>
+
+      <p>Anthropic 的多芯片战略，本质是一套完整的<strong>供应商风险管理（Supplier Risk Management）</strong>：多源认证、提前锁定、不可取消合同。你的团队用 AI，也已经"依赖"了好几家供应商——但很少有人盘过这笔账。用四步做一次审计：</p>
+
+      <table>
+        <tr><th style="width:20%">依赖类型</th><th style="width:34%">例子（含 10 月官宣的期限）</th><th>主要风险</th></tr>
+        <tr>
+          <td><strong>模型 API</strong></td>
+          <td>GPT-4o/GPT-4.1（2027-01-14 关停）、GPT-5.1（2027-04-01 关停）、某个 Gemini 旧模型</td>
+          <td>官方退役公告已发——最高优先级，立即排迁移</td>
+        </tr>
+        <tr>
+          <td><strong>Agent / 应用平台</strong></td>
+          <td>Copilot、Gemini Enterprise、各类 Agent 工具</td>
+          <td>功能调整（如 Gems→Skills 迁移）、按量计费带来的成本失控</td>
+        </tr>
+        <tr>
+          <td><strong>云与数据服务</strong></td>
+          <td>托管数据库、向量库、API 网关</td>
+          <td>绑定成本、数据出域、服务降级</td>
+        </tr>
+        <tr>
+          <td><strong>数据源 / Connector</strong></td>
+          <td>外部数据接口、内容源、插件生态</td>
+          <td>接口变更、配额限制、权限回收</td>
+        </tr>
+      </table>
+
+      <p><strong>四步落地：</strong></p>
+      <ol>
+        <li><strong>盘依赖：</strong>把团队所有 AI 依赖列成清单（模型、平台、云、数据源，一般 8-15 项），标明"谁在用、干什么活"。</li>
+        <li><strong>评分：</strong>每项按 4 个维度打 1-5 分：关停风险（是否已有退役公告）、价格风险（议价权）、数据风险（数据是否出域）、替换成本（换一家要几人日）。</li>
+        <li><strong>定双源：</strong>总分 ≥ 12 的"关键依赖"必须有 Plan B——哪怕只是"确认过另一家模型也能干这活、切换方案已写好"。</li>
+        <li><strong>写预案：</strong>关键依赖写"退役预案"：谁负责迁移、切换窗口多长、验收标准是什么、降级方案的体验底线。</li>
+      </ol>
+
+      <div class="highlight">
+        <strong>一句话原则：</strong><br>
+        <em>"对所有关键依赖，永远保持'随时能换'的能力——谈判桌上最有力的筹码，是你不需要这场谈判。"</em>
+      </div>
+    </div>
+
+    <!-- ========== 选择题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 41 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. Anthropic 10月22日官宣的 run-rate（年化）营收是多少？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. $90 亿</li>
+          <li onclick="checkQuiz(this)">B. $163 亿</li>
+          <li onclick="checkQuiz(this)">C. $300 亿</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。10月22日官宣 run-rate 营收突破 $300 亿（2025 年底约 $90 亿，6 个月翻 3 倍多）；$163 亿是 Day 40 讲过的 S-1 披露的 2026 上半年累计营收；$90 亿是 2025 年底的 run-rate。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. Anthropic 的"多芯片战略"同时使用哪三家？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. AWS Trainium + 谷歌 TPU + 英伟达 GPU</li>
+          <li onclick="checkQuiz(this)">B. 只用英伟达 GPU</li>
+          <li onclick="checkQuiz(this)">C. 谷歌 TPU + Intel 芯片</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。AWS Trainium（Project Rainier 约 50 万颗）、谷歌 TPU（本次新增多吉瓦级）、英伟达 GPU（经云渠道），Claude 因此成为唯一同时上架 AWS/GCP/Azure 三大云平台的前沿模型。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. OpenAI GPT-4o 与 GPT-4.1 系列的 API 关停日期是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 2026年12月11日</li>
+          <li onclick="checkQuiz(this)">B. 2027年1月14日</li>
+          <li onclick="checkQuiz(this)">C. 2027年4月1日</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。10月14日 通知，2027年1月14日 从 API 移除，推荐迁移 gpt-6-luna；2026-12-11 是更老的 GPT-5/o3 快照关停日；2027-04-01 是 GPT-5.1 / GPT-5.3-Codex 的关停日。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. 谷歌云公开的在手订单（backlog）规模约是多少？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. $240 亿</li>
+          <li onclick="checkQuiz(this)">B. $2400 亿</li>
+          <li onclick="checkQuiz(this)">C. $5180 亿</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Pichai 向分析师披露谷歌云 backlog 约 $2400 亿，并承认"supply constrained"；$5180 亿是 Day 40 讲过的 Anthropic 已承诺算力金额。</div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 41 思考：你的"供应链"准备好了吗？</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <ol>
+          <li>谷歌 backlog $2400 亿说明"排队"已常态化。你 2027 年上半年的关键资源（预算、资源位、供应商产能、达人档期）现在锁定了吗？写一份"Q1 资源锁定清单"，每项标明：锁定时间、备选名单、断供预案。</li>
+          <li>Anthropic 敢签"约 80% 不可取消"的算力合同换产能优先级。你的增长预算里，有多少比例敢于"不可取消"地投给确定的高回报动作？全部可取消的预算，是不是意味着"全都不够坚决"？</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <ol>
+          <li>给你的产品写一份"模型退役日历"：GPT-4o/GPT-4.1（2027-01-14）、GPT-5.1（2027-04-01）、Gemini Gems（2027-03-01）——逐项列出受影响的功能、迁移工作量（人日）、负责人。</li>
+          <li>谷歌云与 DeepMind 的"互搏"源于没人对整体算力负责。你的团队里，"增长预算、技术资源、人力"这些稀缺资源有唯一 Owner 吗？写下一个你观察到"两部门局部都合理、全局结果却奇怪"的案例，以及你建议的解法。</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <ol>
+          <li>TSMC 用"中立性"做出 70%+ 市占，谷歌的"军火商兼战士"身份被公开讨论。你的品牌有没有与竞品或合作伙伴的竞合关系需要一份"书面承诺"？写出来。</li>
+          <li>"确定性"正在成为 B 端最强营销素材（产能、SLA、价格承诺）。你的产品最能让客户"放心"的一项确定性是什么？如何把它做成一场营销战役（参考 Anthropic 直接在官网晒"三大云全上架"）？</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <button class="mark-read-btn" onclick="markDayComplete(41)">✅ 已阅读完毕</button>
+
+  </div>
+  <!-- ==================== END DAY 41 ==================== -->`;
 
 
   // =====================================================
