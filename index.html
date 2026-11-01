@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="day42-update">
+<meta name="version" content="day43-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -986,6 +986,18 @@ const COURSE_DATA = [
     "phase": 4,
     "phaseName": "行业视野",
     "title": "财报会上的“超级智能” + 乌镇峰会前瞻：全球 AI 叙事之战",
+    "tags": [
+      "行业",
+      "理论",
+      "工具"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 43,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "信用市场的“隐性投票” + 乌镇前夜：AI 叙事的两本账",
     "tags": [
       "行业",
       "理论",
@@ -10011,6 +10023,394 @@ DAY_CONTENT[42] = `<div class="day-section" id="day42">
 
   </div>
   <!-- ==================== END DAY 42 ==================== -->`;
+
+
+DAY_CONTENT[43] = `<div class="day-section" id="day43">
+    <div class="day-header">
+      <h2>Day 43 | 信用市场的"隐性投票" + 乌镇前夜：AI 叙事的两本账</h2>
+      <span class="date">2026-11-01</span>
+    </div>
+
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.nextElementSibling.classList.toggle('open')">🔰 初阶提示：这一讲出现的几个新名词</button>
+      <div class="hint-content">
+        <p>这一讲有六个新名词，先记住它们的"人话版"解释：</p>
+        <p><strong>CDS（信用违约互换）</strong>：给一家公司买的"违约保险"——如果它还不上钱，卖保险的一方赔你。买保险的人越多、保费越贵，说明市场越担心这家公司出事。巴克莱 10月29日 发布的报告讲的就是：市场给 AI 巨头们的"保费"正在飙升。</p>
+        <p><strong>基差（Basis）</strong>：CDS 保费与这家公司债券利差之间的差值。"基差转正" = 给它买违约保险，比直接买它的债券还贵——保险倒挂。这不一定等于"要出事"，但一定说明买保险的人多到反常：大量机构并不持有这些债券，纯粹是来对冲 AI 敞口、下注风险的。</p>
+        <p><strong>供应商融资</strong>：芯片商借钱（或担保）给客户买自己的芯片。芯片商从"卖铲子的"变成"放贷的"——一旦贷款账本集中，它自己的信用就要被重新定价。银行对 Anthropic 的 $630 亿芯片交易产生疑虑后，博通出面提供担保，就是这个逻辑。</p>
+        <p><strong>中试基地</strong>：从实验室到量产之间的"试验田"——技术先在这里完成工程化验证，再规模化落地。乌镇这次把"国家人工智能应用中试基地"六大领域成果第一次集中展出。</p>
+        <p><strong>FDE（前线部署工程师）</strong>：把 AI"钉进"业务现场的新职业。Datawhale 给的十五字标准："懂业务、会用模型、守安全、对结果负责。"</p>
+        <p><strong>OPC（一人公司）</strong>：一个人 + 一排 Agent + 开源底座 = 一家能交付的公司。本届"直通乌镇"大赛首次新增 OPC 特色赛道。</p>
+        <p>今天的两条主线：<strong>① 信用市场开始给 AI"重新定价"——股票市场还在讲"超级智能"（Day 42），债券市场的"保费"已经飙升；② 乌镇明天开幕——"开源开放"从口号变成实体：体验馆今天开馆，流量榜与推理框架开源给出实证。</strong></p>
+      </div>
+    </div>
+
+    <!-- ========== 行业动态：当天重磅速览 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年10月31日-11月1日 AI 重磅速览（全部附原始来源）</h3>
+
+      <table>
+        <tr><th style="width:30%">事件</th><th>为什么重要</th><th style="width:16%">来源</th></tr>
+        <tr>
+          <td><strong>乌镇峰会明天开幕；"开源主题生态体验馆"今天（11月1日）开馆</strong></td>
+          <td>11月2-5日，主题"开源开放 共建共享"。体验馆设在乌镇世界互联网科技馆一至三层：一楼"AI 开源开放重大科技成果展"（填补国内空白的 021 科学基础模型、国内规模最大的魔搭开源社区、吉利全域安全技术体系）+"国家 AI 应用中试基地展"；三楼"开源会客厅"承接"乌镇Talk·开源青年说"（首次面向社会公众）。"互联网之光"博览会已邀 54 国 670 余家企业参展（比 Day 42 报道的 400+ 再创新高）。</td>
+          <td><a href="https://finance.sina.com.cn/jjxw/2026-10-23/doc-iniweqhw2045663.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪财经</a> / <a href="https://tidenews.com.cn/news.html?id=3598319" target="_blank" style="color:#667eea;font-size:11px">潮新闻</a></td>
+        </tr>
+        <tr>
+          <td><strong>巴克莱重磅报告：AI 巨头 CDS 异动——"2008 年历史级警报再现"（10月29日报告，10月31日全网发酵）</strong></td>
+          <td>10 家核心 AI 企业（谷歌/亚马逊/Meta/微软/甲骨文 + AMD/博通/英伟达等）仅占 CDX 投资级指数成分 8%，却占隐含信贷风险 16%；芯片商 5 年期 CDS 利差六个月内博通 +258%、AMD +177%、英伟达 +172%；AI 群体 CDS-现金债券基差转正——信用市场开始给"AI 能否还钱"重新定价（深度分析 1 全解读）。</td>
+          <td><a href="http://finance.sina.com.cn/stock/bxjj/2026-10-31/doc-inixcnht3830457.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪财经</a> / <a href="https://www.sohu.com/a/1095371810_130887" target="_blank" style="color:#667eea;font-size:11px">华尔街见闻</a></td>
+        </tr>
+        <tr>
+          <td><strong>五份顶级报告拼出 AI"体检报告"：前三季度全美 VC $5158 亿创纪录，82.7% 流向 AI（10月31日）</strong></td>
+          <td>a16z×2、AirStreet、PitchBook、Coatue 五份报告交叉印证：这是资本市场史上单一赛道拿过的最高占比。与信用市场的 CDS 对冲潮摆在一起读——股票在加注"增长"，信用在加价"风险"。</td>
+          <td><a href="http://finance.sina.com.cn/jjxw/2026-10-31/doc-inixcnhn4780007.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪/AIX财经</a></td>
+        </tr>
+        <tr>
+          <td><strong>OpenRouter 周榜：DeepSeek V4.1-Flash-1017 登顶，单周调用 33.6 万亿 Token（环比 +801%）</strong></td>
+          <td>榜单前三 = DeepSeek 新版 + DeepSeek 旧版 + MiniMax M3.1 Flash，前十过半为国产（智谱 GLM 5.3 Flash、腾讯 Hy4 preview 等）；Hugging Face 2026 春季报告确认：中国自研开源模型下载占比 41%，首次超过美国——明天开幕的乌镇峰会把"开源开放"定为主题，流量数据先给出了实证（深度分析 2）。</td>
+          <td><a href="https://tidenews.com.cn/news.html?id=3598319" target="_blank" style="color:#667eea;font-size:11px">潮新闻</a> / <a href="https://cn.wicinternet.org/2026-10/21/content_39058655.htm" target="_blank" style="color:#667eea;font-size:11px">世界互联网大会</a></td>
+        </tr>
+        <tr>
+          <td><strong>腾讯全球数字生态大会：智能体 WorkBuddy 累计完成 90 亿次任务请求（10月29日，深圳）</strong></td>
+          <td>WorkBuddy 自 3 月上线以来累计 90 亿次任务；企业版落地 50 多个行业，覆盖 50% 中国企业 500 强、60% 中国企业 100 强；混元 Hy4 正式版即将发布（强化长程任务与真实生产力任务、首次引入视觉理解——即周榜前十的 Hy4 preview 转正）。B 端 Agent 从"演示"进入"规模交付"（呼应 Day 38）。</td>
+          <td><a href="http://k.sina.com.cn/article_5953189932_162d6782c067052msw.html" target="_blank" style="color:#667eea;font-size:11px">新浪/经济日报</a></td>
+        </tr>
+        <tr>
+          <td><strong>西湖世界模型研究中心成立（10月31日，杭州）</strong></td>
+          <td>西湖大学校级交叉科研平台，聚焦"世界模型与物理智能"。成立逻辑一句话：大语言模型"能驾驭语言，不等同于理解世界"——AI 的下一个前沿正从"语言符号"走向"物理世界"。</td>
+          <td><a href="http://finance.sina.com.cn/roll/2026-10-31/doc-inixcnhq1566753.shtml" target="_blank" style="color:#667eea;font-size:11px">新浪/中新网</a></td>
+        </tr>
+        <tr>
+          <td><strong>郑纬民院士（2026"人工智能+"大会，10月31日，北京）：国产算力瓶颈不在芯片，在软件生态与使用成本</strong></td>
+          <td>"国产算力面临的挑战不仅在于芯片硬件性能，更在于软件生态及实际使用成本"——与 DeepSeek 开源 DeepInfer（同时兼容英伟达与昇腾）形成呼应：算力竞争的下半场在软件层。</td>
+          <td><a href="http://k.sina.com.cn/article_5952915705_162d248f906703s63a.html" target="_blank" style="color:#667eea;font-size:11px">新浪/财闻</a></td>
+        </tr>
+        <tr>
+          <td><strong>算力网"十五五"提速：上海临港海底数据中心全面商业运行</strong></td>
+          <td>央视报道：八大国家算力枢纽+"东数西算"全国一体化算力网加速织就；临港风电直连海底数据中心已接入国内运营商与头部大模型企业，开展国产大模型推理和科学计算等商业应用——算力基础设施从"纸面规划"进入"商业运行"。</td>
+          <td><a href="http://k.sina.com.cn/article_5953189932_162d6782c067052mtm.html" target="_blank" style="color:#667eea;font-size:11px">新浪/央视新闻</a></td>
+        </tr>
+      </table>
+
+      <p style="margin-top:14px"><strong>【本周看点】</strong>乌镇峰会（11月2-5日）与英伟达财报季接力。读英伟达财报时，把 Day 42 的"五信号工作流"与今天的"信用信号"叠着用：增长信号看 Capex 指引与在手订单，风险信号看 CDS 利差与 FCF。</p>
+    </div>
+
+    <!-- ========== 深度分析 1：信用市场的"隐性投票" ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>当股票还在讲"超级智能"，信用市场开始给"现金流"定价——巴克莱 CDS 报告全解读</h3>
+
+      <p>Day 42 我们读的是"词的战场"——财报电话会上的"超级智能"与乌镇的"开源开放"。今天补上另一本账：10月29日，巴克莱发布了一份针对 AI 相关企业 <strong>CDS（信用违约互换）市场</strong>的综合报告，10月31日全网发酵，标题耸动——"2008 年历史级警报再现"。剥掉标题党，这份报告真正告诉你的是：<strong>当资本市场还在为"超级智能"欢呼时，给"AI 能否还钱"定价的信用市场，已经悄悄换了表情。</strong></p>
+
+      <p><strong>先看巴克莱报告的四组关键数据：</strong></p>
+
+      <table>
+        <tr><th style="width:22%">指标</th><th style="width:44%">数字</th><th>怎么读</th></tr>
+        <tr>
+          <td><strong>成分 vs 风险</strong></td>
+          <td>10 家核心 AI 企业占 CDX 投资级指数成分 <strong>8%</strong>，却占该指数隐含信贷风险的 <strong>16%</strong></td>
+          <td>指数投资者被动承担了"双倍浓度"的 AI 信用风险。</td>
+        </tr>
+        <tr>
+          <td><strong>芯片商保费飙升</strong></td>
+          <td>5 年期 CDS 六个月涨幅：博通 <strong>+258%</strong>、AMD <strong>+177%</strong>、英伟达 <strong>+172%</strong>——六个月前，这三家的利差还在同组的最低位（40 基点左右徘徊）。对照：AAA 评级的微软仅 +20%</td>
+          <td>涨最凶的不是最烧钱的云商，而是开始"放贷"的芯片商——信用市场盯的是"贷款账本"。</td>
+        </tr>
+        <tr>
+          <td><strong>交易量与未平仓</strong></td>
+          <td>云商 CDS 周均交易量约 $60 亿（同比 +740%）、芯片商约 $30 亿（同比 +1900%）；AI 群体未平仓合约从一年前约 $70 亿增至 $280 亿+，占美洲企业单一名称 CDS 未平仓的近 <strong>14%</strong>（一年前仅 4%）</td>
+          <td>不是零星对冲，是资金的结构性迁入。</td>
+        </tr>
+        <tr>
+          <td><strong>大摩口径交叉验证</strong></td>
+          <td>9 月，甲骨文/SpaceX/Alphabet/亚马逊/Meta/博通/英伟达 7 家债券挂钩的 CDS 周均交易额超 <strong>$90 亿</strong>（7 月不足 $20 亿）；2026 年迄今 AI 相关发债约 <strong>$4660 亿</strong>（2025 年同期约 $1010 亿）；美国企业 CDS 指数今年交易量已超去年全年</td>
+        <td>两家投行、两套数据，指向同一件事：信用市场在为"AI 债务海啸"定价。</td>
+        </tr>
+      </table>
+
+      <p><strong>个股点位速读（5 年期 CDS）：</strong></p>
+
+      <table>
+        <tr><th style="width:22%">公司</th><th style="width:40%">现状</th><th>一句话</th></tr>
+        <tr><td>Meta / 英伟达</td><td>108 / 101 基点，历史高位附近</td><td>投资级巨头的"保费"也在爬坡。</td></tr>
+        <tr><td>甲骨文</td><td>322 基点（年初 144）</td><td>给 OpenAI 大单垫资的"影子债权人"被重点定价——标普称之为"复杂性溢价"。</td></tr>
+        <tr><td>SpaceX</td><td>226 基点（6 月首发时 110）</td><td>马斯克系的信用与 AI 叙事深度绑定。</td></tr>
+        <tr><td>CoreWeave</td><td>约 1090 基点，采用"预付点数"15.5 点定价——通常是受困债务才用的报价方式</td><td>新型云商成为高收益债市场的"压力表"。</td></tr>
+        <tr><td>英特尔</td><td>样本中唯一基差为负（-14 基点）——没深度参与同行们的供应商融资</td><td>反例：不玩"循环融资"，信用反而干净；但疲软指引公布后，股价创 1982 年以来最大单日跌幅——股票与信用两个市场在各自找出口。</td></tr>
+      </table>
+
+      <p><strong>为什么芯片商涨得最凶？答案藏在"供应商融资"四个字里。</strong>芯片商开始向客户提供贷款来买自己的芯片。最具代表性的一幕：银行对 Anthropic 的 $630 亿芯片交易产生疑虑后，博通出面提供了担保（Day 41 讲过的 Anthropic × Google TPU 大单——TPU 的联合设计制造方正是博通，同一张关系网）。当芯片商变成"担保人 + 贷款人"，信贷市场就开始把它当"贷款账本高度集中的金融机构"来定价——巴克莱干脆建议把"买入博通 5 年期 CDS"作为对冲整个 AI 融资压力的宏观策略。</p>
+
+      <p><strong>财报随后"印证了对冲的必要性"。</strong>亚马逊 Q3：资本支出 $773 亿、自由现金流消耗 $335 亿、单季新增长期债务超 $480 亿；微软近期启动逾 $250 亿发债；博通计划明年初筹资最高 $210 亿。Day 42 讲 Meta FCF -$21.2 亿"首现负值"，今天你会发现那不是个案——<strong>"FCF 转负"正在变成这个财报季的普遍现象（Day 41 的"算力期货化"，如今有了债券市场的版本）。</strong></p>
+
+      <div class="highlight">
+        <strong>2008 类比：哪里像，哪里不像？</strong><br><br>
+        <strong>像的部分：</strong>2008 年，大量未持有次级债的机构买入 CDS"裸对冲"，把保费推得比债券本身还高，基差转正。今天，大量未持有 AI 巨头债券的机构（股票基金、银行）买入 CDS 对冲 AI 敞口，基差再次转正。<br><br>
+        <strong>不像的部分：</strong>① 标的资产是现金流强劲的科技巨头，不是次级房贷；② 今天的风险传染路径更复杂——AI 产业链的融资环环相扣（模型公司 ↔ 云商 ↔ 芯片商 ↔ 数据中心），一个环节出疑虑，整条链的保费一起涨。标普把这种结构叫"复杂性溢价"。
+      </div>
+
+      <p><strong>同一个 AI，两个市场给出了相反的读法：</strong></p>
+
+      <table>
+        <tr><th style="width:18%">市场</th><th style="width:48%">最近 30 天的动作</th><th>在读什么故事</th></tr>
+        <tr>
+          <td><strong>股票市场</strong></td>
+          <td>前三季度全美 VC 融资 $5158 亿创历史纪录，<strong>82.7%</strong> 流向 AI（a16z、AirStreet、PitchBook、Coatue 五份报告交叉印证）——资本市场史上单一赛道最高占比</td>
+          <td>"增长"叙事：加注。</td>
+        </tr>
+        <tr>
+          <td><strong>信用市场</strong></td>
+          <td>CDS 交易量 +740% / +1900%、基差转正、保费历史高位——巴克莱称"2008 年历史级警报再现"</td>
+          <td>"还钱"叙事：对冲。</td>
+        </tr>
+      </table>
+
+      <p>大摩投资组合首席投资官 Jim Caron 的那句话值得贴在工位上：<em>"当你身处一个风险高度集中的市场，最想买入的护身符就是 CDS。"</em></p>
+
+      <p><strong>运营人为什么要在乎一份衍生品报告？三个理由：</strong></p>
+      <ul>
+        <li><strong>你的 AI 供应商风险。</strong>你在用的模型 API、云服务、Agent 平台，背后都是这些"高保费"公司。选型时把"信用韧性"加进评估清单：有没有第二供应方案（二供）、数据与 Prompt 能不能随时迁移、SLA 怎么写。CDS 利差是免费公开的"供应商健康度仪表盘"——比等官网发"服务降级公告"早知道半年。</li>
+        <li><strong>B 端市场情绪正在转向。</strong>当融资环境收紧，"确定性"素材（可审计、可预算、可退路——Day 41 讲过确定性是最贵的营销素材）会进一步升值；"烧钱换增长"的平台补贴与免费额度，随时可能退坡。</li>
+        <li><strong>给自己的增长策略装"退坡预案"。</strong>如果你的增长模型建立在"AI 工具越来越便宜、补贴越来越多"的假设上，现在是给这个假设写"证伪条件"的时候：哪些信号出现，说明补贴周期结束了？提前想好 Plan B。</li>
+      </ul>
+
+      <div class="highlight">
+        <strong>一句话原则：</strong><br>
+        <em>"股票市场给'叙事'定价，信用市场给'还钱'定价——当两本账方向相反时，先相信更保守的那本。"</em>
+      </div>
+
+      <p style="color:#718096;font-size:12px">注：本讲所有 CDS/财务数据均转引自公开报道，仅作行业信号解读，不构成任何投资建议。</p>
+    </div>
+
+    <!-- ========== 深度分析 2：乌镇前夜 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>乌镇前夜（11月2日开幕）："开源开放"从口号变成实体——体验馆今天开馆，流量榜早已开赛</h3>
+
+      <p><strong>明天（11月2日），乌镇峰会开幕。</strong>Day 42 我们读的是大会议程与主题词，今天补充三样更"实"的东西：<strong>今天开馆的体验馆、已经开赛的流量榜、乌镇今年新增的两条"职业赛道"。</strong></p>
+
+      <p><strong>先看今天（11月1日）正式开馆的"开源主题生态体验馆"——把"开源开放"从 PPT 变成了可以摸的实体：</strong></p>
+
+      <table>
+        <tr><th style="width:24%">板块</th><th>看点</th></tr>
+        <tr>
+          <td><strong>一楼·成果展</strong></td>
+          <td>"AI 开源开放重大科技成果展"四大板块（基础设施/创新生态/产业应用/协同治理）：填补国内空白的 021 科学基础模型、国内规模最大的魔搭模型开源社区（全球超 3300 万开发者、27 万+ 模型——发起人周靖人的定位是"让模型成为千行百业的水电煤"）、吉利全域安全技术体系；旁边的"国家 AI 应用中试基地展"集中展出六大领域国家级中试基地成果。</td>
+        </tr>
+        <tr>
+          <td><strong>三楼·开源会客厅</strong></td>
+          <td>"乌镇Talk·开源青年说"（峰会首次面向社会公众推出，聚焦 40 岁以下科创青年）+"科创之夜"产业对接——峰会后仍持续运营。</td>
+        </tr>
+        <tr>
+          <td><strong>运营机制</strong></td>
+          <td>"365 天永不落幕"：展陈成果转化为可流动、可复制、可持续的公共数字资源——大会不散场，资产留下。这条机制本身就是"共建共享"的产品化表达。</td>
+        </tr>
+        <tr>
+          <td><strong>怎么参与</strong></td>
+          <td>"乌镇峰会观众预约平台"（微信/支付宝小程序）开放乌镇、濮院两大会场预约；"互联网之光"博览会 54 国 670 余家企业参展，本届首次集中展示 6G、卫星互联网等成果。</td>
+        </tr>
+      </table>
+
+      <p><strong>再看"开源"叙事的流量实证——大会还没开幕，榜已经打完了上半场：</strong></p>
+
+      <table>
+        <tr><th style="width:28%">指标</th><th>数字</th></tr>
+        <tr>
+          <td><strong>OpenRouter 周榜（10.19-25）</strong></td>
+          <td>DeepSeek V4.1-Flash-1017（10月17日更新）登顶：<strong>单周调用 33.6 万亿 Token，环比 +801%</strong>；榜单前三 = DeepSeek 新版 + DeepSeek 旧版 + MiniMax M3.1 Flash；前十过半为国产模型（智谱 GLM 5.3 Flash、腾讯 Hy4 preview 等）——一个月前，前排还以海外闭源模型为主。</td>
+        </tr>
+        <tr>
+          <td><strong>Hugging Face 下载占比</strong></td>
+          <td>2026 春季报告：中国自研开源模型下载占比 <strong>41%</strong>，首次超过美国，成为该平台规模第一的开源模型供给方；阿里 Qwen 累计开源 460+ 模型、衍生模型超 30 万个、累计下载突破 30 亿次。</td>
+        </tr>
+        <tr>
+          <td><strong>许可证结构</strong></td>
+          <td>178 个参数量超 200 亿的中国开源模型中，59% 采用 Apache 2.0、22% 采用 MIT，无一限制商业使用——"可商用"是中国开源的默认配置。</td>
+        </tr>
+        <tr>
+          <td><strong>推理成本底牌</strong></td>
+          <td>DeepSeek 10月20日全面开源内部推理框架 DeepInfer（兼容英伟达 SM100 与华为昇腾 950，Apache-2.0）：基于它，V4.1-Flash 单集群日处理 155 万亿 Token；官方披露非高峰期每 GPU 小时创收约 $38，社媒据此测算推理毛利率 84%-96%（理想工况推算，非官方口径）。</td>
+        </tr>
+      </table>
+
+      <p><strong>DeepInfer 为什么值得单独讲？</strong>DeepSeek 官方的理由很清楚：<em>"大模型的能力边界由模型本身划定，但如何以合理成本提供超大规模的模型服务，还取决于一个长期未被公众了解的中间层——推理框架。"</em>开源模型是"食材"，推理框架是"后厨的整套流程与灶具"——后厨效率直接决定 AI 服务的算力成本与电力消耗。这是全球头部大模型企业中，第一次有公司把<strong>正在生产环境中真实运行的推理框架</strong>完整开放：云厂商可以用它部署出接近官方性能与成本的 DeepSeek 服务。同一个呼应来自 10月31日：郑纬民院士在"人工智能+"大会上说，国产算力的挑战"不仅在于芯片硬件性能，更在于软件生态及实际使用成本"——DeepInfer 同时兼容英伟达与昇腾，正是从软件层给两套硬件生态同时补课。另据媒体报道，DeepSeek 10月22日 传出拟筹集约 1000 亿元融资的消息——"开源叙事"与"资本账本"，正在同一个主体身上交汇。</p>
+
+      <p><strong>乌镇今年还把两条"职业赛道"首次系统性推向台前。</strong>一是 <strong>OPC（一人公司）</strong>："人工智能 OPC 嘉年华"打造"五个一"体系，"直通乌镇"大赛新增开源竞技挑战赛与 OPC 两大特色赛——"你有场景，OPC 有方案"。二是 <strong>FDE（前线部署工程师）</strong>：工业智能 FDE 体系建设在浙江正式启动。三个真实样本：</p>
+      <ul>
+        <li><strong>正例：</strong>Datawhale FDE100 成员谢尧，给制造业老板做经营驾驶舱，2 人 3 周交付；同样的活不用开源生态要 4 人 2 个月起步——人月 1.5 对 8，效率差 5 倍以上。但他也坦诚：写代码只占 30-40% 的时间，沟通需求、梳理旧系统占 50% 以上——"门槛在行业理解、客户资源、沟通和项目管理"。</li>
+        <li><strong>反例：</strong>某中型注塑厂花 200 多万元上 AI 排产系统，上线即彻底失效——ERP 里一个零件有 3 个编码、设备产能数据是 3 年前的。根子不在模型不够聪明，在"做 AI 的不懂工厂，做工厂的不懂 AI"。</li>
+        <li><strong>极端产能：</strong>极客张晨曦自研 Agent 系统，"每工作 1 小时，背后有 100 个 Agent 小时"。</li>
+      </ul>
+      <p>配上人社部 9 月发布的 11 个新职业（"数字孪生工程技术人员"等），<strong>AI 就业市场正在给出"新工种"的实证——被替代的焦虑之外，出现了一批把 AI 钉进业务现场的人。</strong></p>
+
+      <div class="highlight">
+        <strong>乌镇这句金句值得收藏：</strong><br>
+        <em>"代码可以 fork，信任不能 fork。"——开源不等于无主，更不等于无治理，它是共治。工业场景的四大瓶颈（供应链安全、许可证"传染性"、可靠性短板、"无人维护"）提醒我们：上半场比谁能开放，下半场比谁能在开放的同时把边界管住。</em>
+      </div>
+
+      <p><strong>运营人的三个判断：</strong></p>
+      <ul>
+        <li><strong>政策窗口确认：</strong>Day 42 判断"开源"是未来 2-4 个季度的政策与流量双红利——今天开馆的体验馆、新增的 OPC/开源赛道，就是这个判断的实体兑现。</li>
+        <li><strong>选型标准升级：</strong>"开源权重 + 可私有化部署 + 双芯适配"正在成为企业级选型的默认逻辑——DeepInfer 一次开源同时补英伟达与昇腾两套生态，"国产适配"标签第一次有了具体的技术锚点。</li>
+        <li><strong>职业叙事参考：</strong>FDE 十五字诀"懂业务、会用模型、守安全、对结果负责"，就是运营人的 AI 版岗位说明书——建议把它写进你今年的个人 OKR。</li>
+      </ul>
+    </div>
+
+    <!-- ========== 产品运营视角 ========== -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>两本账落到你身上：三个明天就能用的动作</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <p><strong>案例一：装一个"AI 行业天气表"——15 分钟看懂资本在往哪边下注。</strong></p>
+        <p>股票与信用两个市场，是 AI 行业的"天气预报"：VC 流向 = 中期资金温度（今年 82.7% 进了 AI）；CDS 利差 = 信用温度（保费越高，越"变天"）；巨头 Capex 与裁员动作 = 需求温度；开源榜 = 技术流向（谁在被真实调用）。这四个仪表盘全部免费公开、每周可查。</p>
+        <p><strong>行动：</strong>建一张每周五更新 15 分钟的"AI 行业天气表"（指标 / 去哪里查 / 本周读数 / 环比方向），连续跟 4 周。你会比大多数同行更早感知"融资环境变冷还是变热"——这直接决定你下季度增长策略的激进度：烧钱换规模，还是效率换存活。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <p><strong>案例二：AI 陪伴赛道把"情绪价值"拆成付费点——精细与红线同框。</strong></p>
+        <p>新浪 10月31日 的调查报道把这条赛道拆得很透："月卡十几元，记忆包几十元，一次充值上百元，通用大模型会员一档几百元"——情绪价值被拆成一个个具体付费点；同时"行业正在走向规范，平台审核趋严"（诱导未成年人、内容擦边是监管焦点，五位付费用户的访谈印证了真实需求与争议并存）。</p>
+        <p><strong>启示：</strong>把"体验型功能"拆成可计价单元是成熟的产品能力（记忆、陪伴时长、专属人格都是 SKU），但每个付费点必须配"合规熔断"：未成年人识别、内容分级、防沉迷——Day 11 的红线在这条赛道是生存问题，不是优化项。</p>
+        <p><strong>行动：</strong>画你产品的"付费点地图"，逐个标注：目标情绪 / 对应合规风险等级 / 审核机制。任何"用户情感数据"的存储与使用，单独过一遍合规评审——情感数据是最敏感的个人数据。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <p><strong>案例三：乌镇 72 小时借势作战表——窗口就在明天。</strong></p>
+        <p>今天开馆、明天开幕、11月2-5日议程：670 余家企业参展、27 个分论坛。头部公司用"大会"发叙事，中小团队用"借势"蹭叙事——重点不是到场，是让你的品牌出现在"全场都在讲同一个词"的语境里（Day 42 的叙事日历，本周正是第一个兑现窗口）。</p>
+        <p><strong>行动：</strong>① 给产品页与投放物料做一次"开源 / 普惠 / 国产适配"标签的集中露出（乌镇窗口期专属）；② 蹲守 11月2日 主论坛"人工智能乌镇对话"，摘录金句做 24 小时内的二次创作（对照 Day 42 的术语雷达）；③ 从"互联网之光"670 家参展名单里圈出竞品与合作方，做一份 3 页观察清单。</p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <!-- ========== 工具实操：AI 云参会工作流 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>AI 云参会工作流：把 4 天大会变成你的选题库与素材库</h3>
+
+      <p>乌镇明天开幕：4 天、27 个分论坛、670 余家展商、上百场演讲——物理上不可能全看。这一讲把"云参会"变成一条可复用的 AI 流水线：<strong>行业大会是运营人密度最高的免费素材来源，值得一套标准工作流。</strong></p>
+
+      <table>
+        <tr><th style="width:16%">阶段</th><th style="width:38%">动作</th><th>Prompt 模板（照抄可用）</th></tr>
+        <tr>
+          <td><strong>会前·筛选</strong></td>
+          <td>把大会官网议程 + 分论坛介绍投给 AI，做个性化议程匹配</td>
+          <td><em>"你是我的 AI 情报助理。我们产品的一句话定位：【填写】；本季 OKR：【填写】。请从这份 27 个分论坛的议程中选出 3 个必看 + 2 个备选，每个给出：与 OKR 的关联点、值得记录的 3 个问题、可能出现的竞品或合作方。只基于我提供的议程信息，禁止编造议程之外的环节。"</em></td>
+        </tr>
+        <tr>
+          <td><strong>会中·采集</strong></td>
+          <td>直播 / 图文直播 → 语音转写或截图笔记 → 投喂 AI 做要点卡</td>
+          <td><em>"只做三件事：①提取'数字事实'（数字 + 发言人 + 场合）；②提取'金句'（发言人 + 原话）；③提取与【我的业务】相关的三个启发。每条标注【事实/观点】，观点必须注明发言人。"</em></td>
+        </tr>
+        <tr>
+          <td><strong>会后·归档</strong></td>
+          <td>三天要点卡合并 → 四类素材库</td>
+          <td><em>"把以下三天的要点卡归档为四类：【数据卡】【金句库】【借势选题】【风险信号】。数据卡必须保留原始出处（哪场论坛 / 哪家媒体）；借势选题标注建议发布时间与渠道。"</em></td>
+        </tr>
+        <tr>
+          <td><strong>全程·防幻觉</strong></td>
+          <td>双源核对</td>
+          <td>同一场活动的关键数字，至少用 2 个独立信息源核对（官方通稿 / 媒体报道 / 现场实录）；对不上就丢弃——见下方原则。</td>
+        </tr>
+      </table>
+
+      <p><strong>为什么会议场景比财报场景更需要防幻觉？</strong>Day 42 讲过："财报是公司唯一不敢说谎的地方（有 SEC 盯着）。"而会议通稿背后只有 PR 在盯着——口头金句没有原文存档、媒体转述层层加码、AI 转写还会漏字错字。<strong>财报数字抽 2-3 个核对即可，会议数字必须全量双源核对。</strong></p>
+
+      <div class="highlight">
+        <strong>一句话原则：</strong><br>
+        <em>"会议内容的幻觉风险 = 传播链条每多一层 × AI 每多转述一次。你的双源核对，就是你的事实安全网。"</em>
+      </div>
+    </div>
+
+    <!-- ========== 选择题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 43 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 巴克莱报告：10 家核心 AI 企业在 CDX 投资级指数中，"成分权重"与"隐含信贷风险"分别占比多少？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. 成分 8%，风险 16%</li>
+          <li onclick="checkQuiz(this)">B. 成分 16%，风险 8%</li>
+          <li onclick="checkQuiz(this)">C. 成分 50%，风险 50%</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。仅占投资级指数成分 8% 的 10 家 AI 企业，承载了该指数 16% 的隐含信贷风险——持有该指数的投资者已被动承担了"双倍浓度"的 AI 信用风险。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 六个月内 5 年期 CDS 利差涨幅最大的芯片厂商是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 英伟达（+172%）</li>
+          <li onclick="checkQuiz(this)">B. 博通（+258%）</li>
+          <li onclick="checkQuiz(this)">C. AMD（+177%）</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。银行对 Anthropic 的 $630 亿芯片交易产生疑虑后，博通出面提供了担保——信贷市场把它视为"贷款账本高度集中的机构"，巴克莱建议买入博通 CDS 作为对冲 AI 融资压力的宏观策略。对照：AAA 评级的微软半年仅 +20%。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 今天（11月1日）在乌镇正式开馆的是？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. "互联网之光"博览会</li>
+          <li onclick="checkQuiz(this)">B. 开源主题生态体验馆</li>
+          <li onclick="checkQuiz(this)">C. "直通乌镇"全球互联网大赛</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。开源主题生态体验馆 11月1日 在乌镇世界互联网科技馆开馆（展至 11月5日），一楼为"AI 开源开放重大科技成果展"+"国家 AI 应用中试基地展"；"互联网之光"博览会与峰会同期（11月2-5日，54 国 670 余家企业参展）；"直通乌镇"大赛在峰会期间举行。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. DeepSeek 10月20日 全面开源的 DeepInfer 属于哪一层？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. 训练数据集</li>
+          <li onclick="checkQuiz(this)">B. 模型权重</li>
+          <li onclick="checkQuiz(this)">C. 推理框架——模型之下的"中间层"</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。DeepSeek 官方：大模型的能力边界由模型划定，但超大规模服务的成本取决于推理框架——它统筹调度算力集群，效率直接决定算力成本与电力消耗。基于 DeepInfer，V4.1-Flash 单集群日处理 155 万亿 Token；框架兼容英伟达与华为昇腾；DeepSeek 是全球头部大模型企业中首个开放"原生实际运行推理框架"的公司。</div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 43 思考：两本账，你的读法是？</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <ol>
+          <li>建一张"AI 行业天气表"：选定四个指标——AI 巨头 CDS 利差方向（涨 = 变冷）、AI 相关发债规模、OpenRouter 周榜前十构成、巨头 Capex/裁员动作。写下你每周在哪里查、查什么、怎么判断"变冷/变热"。连续跟踪 4 周后，写出你的第一份"融资环境温度"判断。</li>
+          <li>乌镇明天开幕。为你负责的业务写一个"开源 / 普惠叙事"借势点子：投放给谁、用哪套词（对照 Day 42 的两套叙事）、用什么数据背书（提示：OpenRouter 周榜、HF 41% 下载占比都是现成的"实证弹药"）。</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <ol>
+          <li>做一次"供应商信用韧性检查"：假设你主用的模型 API 下周一突然涨价 50% 或限流，你的切换路径是什么？列出：备选模型（开源可私有化部署是加分项）、数据与 Prompt 的可迁移性、切换成本估算。把这份清单变成采购评估的固定栏目。</li>
+          <li>参考 AI 陪伴赛道"月卡 + 记忆包 + 充值"的付费点拆解：把你产品的一个"体验型功能"拆成 2-3 个可计价单元，每个单元标注合规风险等级与对应的审核 / 熔断机制（Day 11）。</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <ol>
+          <li>写一份"乌镇 72 小时"内容作战表：开幕前预热、开幕当天、峰会闭幕各一条内容的标题 + 投放渠道，并注明每条用"普惠 / 共建"词库还是"效率 / 降本"词库，引用哪个实证数据。</li>
+          <li>"确定性话术"改写练习：把你们最近一条"愿景式"AI 文案，改写成 B 端"可审计、可预算、可退路"版本（Day 41），并预判两版分别投放给不同客户群时的反应差异。</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <button class="mark-read-btn" onclick="markDayComplete(43)">✅ 已阅读完毕</button>
+
+  </div>
+  <!-- ==================== END DAY 43 ==================== -->`;
 
 
   // =====================================================
