@@ -25,7 +25,7 @@ if (window.caches) {
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="version" content="day43-update">
+<meta name="version" content="day44-update">
 <style>
   /* ===== Base ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -998,6 +998,18 @@ const COURSE_DATA = [
     "phase": 4,
     "phaseName": "行业视野",
     "title": "信用市场的“隐性投票” + 乌镇前夜：AI 叙事的两本账",
+    "tags": [
+      "行业",
+      "理论",
+      "工具"
+    ],
+    "status": "done"
+  },
+  {
+    "day": 44,
+    "phase": 4,
+    "phaseName": "行业视野",
+    "title": "乌镇开幕：开源叙事的一年答卷 + 英伟达财报倒计时：验证之月",
     "tags": [
       "行业",
       "理论",
@@ -10411,6 +10423,336 @@ DAY_CONTENT[43] = `<div class="day-section" id="day43">
 
   </div>
   <!-- ==================== END DAY 43 ==================== -->`;
+
+DAY_CONTENT[44] = `<div class="day-section" id="day44">
+    <div class="day-header">
+      <h2>Day 44 | 乌镇开幕：开源叙事的一年答卷 + 英伟达财报倒计时：验证之月</h2>
+      <span class="date">2026-11-02</span>
+    </div>
+
+    <div class="beginner-hint">
+      <button class="hint-toggle" onclick="this.nextElementSibling.classList.toggle('open')">🔰 初阶提示：这一讲出现的几个新名词</button>
+      <div class="hint-content">
+        <p>这一讲有六个新名词，先记住它们的"人话版"解释：</p>
+        <p><strong>AI 乌镇对话</strong>：乌镇峰会主论坛的"压轴环节"。2025 年请的是"杭州六小龙"（宇树、强脑、群核、云深处、游戏科学、DeepSeek）讲各自的创业故事；2026 年升级为"人工智能乌镇对话"——全球领军科技企业、知名开源大模型企业负责人与 AI 科学家同台，议题直指"全球人工智能开源生态构建"。</p>
+        <p><strong>财报指引（Guidance）</strong>：公司提前公布"下个季度大概能做到什么数字"。英伟达 Q3 指引 = 营收 1080 亿美元、上下浮动 2%（即 1058-1102 亿美元区间）。指引是公司自己画的线——达标只是"及格"，明显超预期才是股价的燃料。</p>
+        <p><strong>Vera Rubin</strong>：英伟达下一代 AI 计算平台，接棒 Blackwell。8 月宣布进入全面量产，已跑在 CoreWeave、谷歌云、微软 Azure、甲骨文云、Nebius 等平台上；管理层预计 Q3 贡献数据中心收入约 20%——"新平台能不能顺利接棒"是这场财报最大的悬念。</p>
+        <p><strong>数据中心收入</strong>：英伟达收入的主力板块（上季 890 亿美元、占总收入 92% 以上）。全球云巨头"买卡建 AI 工厂"的支出，最终都体现在这个数字里——它是全球 AI 需求的温度计。</p>
+        <p><strong>风险隔离</strong>：把最不确定的部分从预期里主动剔掉。英伟达 Q3 指引明确"不假设任何中国数据中心计算收入"——先按最坏情况画线，让好消息自己走出来。</p>
+        <p><strong>验证之月</strong>：我们给 2026 年 11 月起的绰号。乌镇（11月2-5日）负责"叙事兑现"——开源从口号变成四天议程；英伟达财报（11月18日）负责"数字验证"——1080 亿指引与 Vera Rubin 接棒能不能兑现。叙事与数字，在同一个月先后"交卷"。</p>
+        <p>今天的两条主线：<strong>① 乌镇今天开幕——上届"六小龙对话"升级为"AI 乌镇对话"，我们用数据复核这份"开源答卷"；② 英伟达财报倒计时 16 天——把 Day 42 的五信号、Day 43 的信用信号，对齐到 11月18日 这张考卷上。</strong></p>
+      </div>
+    </div>
+
+    <!-- ========== 行业动态：当天重磅速览 ========== -->
+    <div class="card">
+      <span class="card-tag tag-industry">行业动态</span>
+      <h3>2026年11月1日-2日 AI 重磅速览（全部附原始来源）</h3>
+
+      <table>
+        <tr><th style="width:30%">事件</th><th>为什么重要</th><th style="width:16%">来源</th></tr>
+        <tr>
+          <td><strong>乌镇峰会今天开幕（11月2-5日）：主题"开源开放 共建共享"</strong></td>
+          <td>27 场分论坛创近年新高（智能体互信互联互操作、机器人与具身智能、时空智能等）；主论坛设"人工智能乌镇对话"；峰会期间还将发布前沿 AI 安全与治理研究成果、揭晓领先科技奖（43 个国家和地区 430 余项申报，国际申报同比 +21%，将评选约 15-20 项）。</td>
+          <td><a href="https://www.cac.gov.cn/2026-09/29/c_1792432586683117.htm" target="_blank" style="color:#667eea;font-size:11px">网信办</a> / <a href="http://finance.people.com.cn/n1/2026/0930/c1004-40808164.html" target="_blank" style="color:#667eea;font-size:11px">人民网</a></td>
+        </tr>
+        <tr>
+          <td><strong>"互联网之光"博览会同期开展：54 国 670 余家企业、1000 余项成果</strong></td>
+          <td>六大主题展区，本届首次集中展示 6G、卫星互联网等成果；展区从 AI 智能体手机到机器人药房、未来工厂、数字文旅——前沿科技走进街巷与民生（呼应 Day 42"叙事之战"：这里是"开源开放"的实体展陈场）。</td>
+          <td><a href="https://www.cnr.cn/newscenter/native/gd/20261030/t20261030_527857724.shtml" target="_blank" style="color:#667eea;font-size:11px">央广网</a></td>
+        </tr>
+        <tr>
+          <td><strong>乌镇首次面向公众开放预约，多个活动已被约满</strong></td>
+          <td>"乌镇峰会观众预约平台"（微信/支付宝小程序）上线后，"AI乌镇·科创桐乡"主题体验展等已约满——从"行业会议"变"城市事件"：稀缺性设计与全民参与，是本届大会运营层最大的新变量。</td>
+          <td><a href="https://www.sohu.com/a/1094710039_122014422" target="_blank" style="color:#667eea;font-size:11px">澎湃/搜狐</a></td>
+        </tr>
+        <tr>
+          <td><strong>之江实验室将在浙江分论坛首发"自主开放创新平台"（集算力、数据、模型于一体）</strong></td>
+          <td>浙江分论坛首次增设"领先发布"板块；叠加昨天开馆的开源主题生态体验馆（魔搭 3300 万开发者、DeepInfer、021 科学基础模型）——"开源三剑客"（阿里云、DeepSeek、之江实验室）在主场完成从"被介绍"到"自己发布"的角色升级。</td>
+          <td><a href="http://www.wzs.org.cn/sjzs/news?id=25973" target="_blank" style="color:#667eea;font-size:11px">大会发布会</a> / <a href="http://www.zj.xinhuanet.com/20261022/b0849b88d42f471b838161bc3d7f5f4c/c.html" target="_blank" style="color:#667eea;font-size:11px">新华网浙江</a></td>
+        </tr>
+        <tr>
+          <td><strong>英伟达定档 11月18日 发布 FY2027 Q3 财报（10月29日官宣）</strong></td>
+          <td>北京时间当日上午 6 时电话会；自给指引：营收 1080 亿美元 ±2%、毛利率 74.0% ±50bp；管理层预计 Vera Rubin 贡献数据中心收入约 20%；指引不含任何中国数据中心计算收入——"验证之月"的压轴考卷定了开考时间（深度分析 2 全解读）。</td>
+          <td><a href="https://www.tmtpost.com/agent/ai-article?id=21760" target="_blank" style="color:#667eea;font-size:11px">钛媒体</a></td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI 模型将上线 Google Cloud Model Garden（近日官宣）</strong></td>
+          <td>OpenAI 前沿模型与 Codex 智能体工作流进入谷歌云模型花园，可经 Google Cloud Marketplace 采购、可用 GCP 既有承诺额度抵扣，并将进入 Google Antigravity 与 Gemini Agent；官方同时强调"微软仍是 OpenAI 的主要云合作伙伴"——头部竞合进入"你中有我"阶段：模型层与云层的联盟不再排他。</td>
+          <td><a href="https://openai.com/index/openai-models-google-cloud/" target="_blank" style="color:#667eea;font-size:11px">OpenAI 官方</a></td>
+        </tr>
+      </table>
+
+      <p style="margin-top:14px"><strong>【本周看点】</strong>乌镇四天（11月2-5日）：今天开幕 + 主论坛对话，Day 45 回收金句与成果清单；11月18日 英伟达财报——用 Day 42"五信号工作流"预习、Day 43"信用信号"对读，三个读数（营收区间 / 毛利率 / Vera Rubin 占比）提前写好评判标准。</p>
+    </div>
+
+    <!-- ========== 深度分析 1：乌镇开幕日 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>乌镇开幕日（11月2日）：从"六小龙"到"AI 乌镇对话"——开源叙事的一年答卷</h3>
+
+      <p><strong>今天，乌镇峰会第 14 年开幕。</strong>Day 42 读过大会议程、Day 43 看过开幕前夜，今天补上最有意思的一层：<strong>"对话环节"这个产品，一年之间被怎样重新设计？</strong>2025 年 11月7日，主论坛的压轴是"六小龙乌镇对话"——中国工程院院士王坚主持，宇树王兴兴、强脑韩璧丞、群核黄晓煌、云深处朱秋国、游戏科学冯骥、DeepSeek 陈德里首次同台，讲的本质上是"六个创业故事"。2026 年，同一个环节升级为"人工智能乌镇对话"：嘉宾从"几家之光"扩成"全球领军科技企业 + 知名开源大模型企业 + AI 科学家"，议题从"企业故事"升级为"全球人工智能开源生态构建"。</p>
+
+      <p><strong>大会秘书长任贤良在发布会上给这个环节定了三个特点</strong>（9月29日发布会口径）：一是<strong>汇聚创新力量</strong>——不同领域创新力量同台互鉴；二是<strong>聚焦关键议题</strong>——推动创新资源转向"共享式增值"的开源生态范式；三是<strong>凝聚开放共识</strong>——增进国际社会对开源趋势的共识，助力缩小全球"数智鸿沟"。把三个特点连起来读，就是一句话：<strong>去年的对话在讲"谁跑出来了"，今年的对话在讲"跑出来的经验能不能变成公共资产"。</strong></p>
+
+      <p><strong>一年之间，叙事确实换了底座。先看去年的"伏笔"：</strong>2025 年开幕式上，吴泳铭给出的魔搭社区数据——开发者中 20.74% 来自 50 人以下的小组织、独立开发者占 13.7%；"创空间"近 2.3 万个应用里约 95% 由个人开发者完成。DeepSeek 陈德里在对话中给出"三段论"：短期（3-5 年）科技公司应做"科技布道者"（把最前沿 AI 以低门槛普惠出去）、中期（5-10 年）做"吹哨人"（提示哪些工作会被取代）、长期（10-20 年）做"人类守护者"。冯骥则说：<em>"正是因为看到了 DeepSeek，我才变得更乐观——一个开源的、API 费用便宜一个数量级、甚至不追求自身利益最大化的公司，反而让全世界更多人都用上了先进 AI。"</em></p>
+
+      <p><strong>再看今天的"答卷数据"——去年讲的故事，今年有了实证：</strong></p>
+
+      <table>
+        <tr><th style="width:26%">答卷维度</th><th>2026 年的读数</th></tr>
+        <tr>
+          <td><strong>流量实证</strong></td>
+          <td>Hugging Face 春季报告：中国自研开源模型下载占比 41%，首次超过美国；OpenRouter 周榜：DeepSeek V4.1-Flash-1017 单周调用 33.6 万亿 Token（环比 +801%），前十过半为国产（Day 43 已详述）。</td>
+        </tr>
+        <tr>
+          <td><strong>基础设施实证</strong></td>
+          <td>DeepSeek 10月20日 开源推理框架 DeepInfer（兼容英伟达与昇腾）；魔搭社区全球超 3300 万开发者、27 万+ 模型；之江实验室今天将在浙江分论坛发布集算力、数据、模型于一体的"自主开放创新平台"。</td>
+        </tr>
+        <tr>
+          <td><strong>大会数据矩阵</strong></td>
+          <td>领先科技奖 43 个国家和地区 430 余项申报（国际申报 +21%）；精品案例 80 国 360 项（22 国首次参与）；"直通乌镇"大赛 1347 个项目；"互联网之光"54 国 670 余家企业、1000 余项成果；大会汇聚 6 大洲 47 国 230 余家会员。</td>
+        </tr>
+        <tr>
+          <td><strong>大众参与实证</strong></td>
+          <td>首次面向公众开放预约：乌镇、濮院两大会场 + 开源主题生态体验馆 + 人工智能"嘉"年华（近 70 种智能产品、每日 15 场演出）；"AI乌镇·科创桐乡"等热门活动已被约满——"开源"第一次变成普通人排队的对象。</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr><th style="width:22%">维度</th><th style="width:39%">2025 峰会（11月7日开幕）</th><th>2026 峰会（今天开幕）</th></tr>
+        <tr><td><strong>主题词</strong></td><td>"共筑开放合作、安全普惠的数智未来"</td><td>"开源开放 共建共享"——第一次把"开源"写进主题</td></tr>
+        <tr><td><strong>主论坛对话</strong></td><td>"六小龙乌镇对话"：6 家企业讲创业故事</td><td>"人工智能乌镇对话"：全球领军企业 + 开源大模型企业 + 科学家，议题 = 开源生态构建</td></tr>
+        <tr><td><strong>分论坛</strong></td><td>24 场</td><td>27 场（近年最多）</td></tr>
+        <tr><td><strong>成果发布</strong></td><td>常规奖项 + 成果发布</td><td>新增前沿 AI 安全与治理研究成果发布 + 浙江分论坛"领先发布"（之江平台首发）</td></tr>
+        <tr><td><strong>公众参与</strong></td><td>常规专业会议</td><td>首次公众预约 + 体验馆 + 嘉年华：从"行业会议"变"城市事件"</td></tr>
+        <tr><td><strong>金句沉淀</strong></td><td>陈德里"布道者→吹哨人→守护者"；冯骥"因为看到 DeepSeek 才更乐观"</td><td>待今天下午现场产生——Day 45 回收</td></tr>
+      </table>
+
+      <p><strong>这场"议程设计"给运营人的启发，比金句本身更值钱：</strong>乌镇把一个"对话环节"做成了一条叙事产品线——2025 年用"人"的故事唤起共情，2026 年用"生态"的框架输出范式；再配上"365 天永不落幕"的体验馆（展陈成果转化为可流动、可复制的公共数字资源）、首次开放的公众预约平台（把行业会议做成城市事件）、"领先发布"板块（让大会自己成为首发阵地）。<strong>大会即产品，展陈即资产，议程即叙事——这是能直接搬进你下季度 Campaign 规划的方法论。</strong></p>
+
+      <div class="highlight">
+        <strong>金句收藏（Day 43 已引，今天正式挂帅）：</strong><br>
+        <em>"开放还是封闭？开源还是闭源？合作还是'脱钩'？"——任贤良。乌镇用一个主题词回答了这三个问句：开源、共建、共享。而流量榜与下载榜，已经先替这场对话"剧透"了答案。</em>
+      </div>
+    </div>
+
+    <!-- ========== 深度分析 2：英伟达财报倒计时 ========== -->
+    <div class="card">
+      <span class="card-tag tag-theory">深度分析</span>
+      <h3>英伟达财报倒计时 16 天：1080 亿指引、Vera Rubin 接棒与"风险隔离"——怎么读这场"验证考"</h3>
+
+      <p>Day 42 教你抽财报信号，Day 43 给你配了信用市场的"第二本账"。今天，两条线有了共同的交卷时间：<strong>英伟达 10月29日 官宣，将于北京时间 11月18日 上午 6 时召开电话会议，发布截至 10月25日 的 2027 财年 Q3 财报</strong>（CFO 书面评论凌晨 4:20 先行挂出）。作为"全球 AI 资本开支的温度计"，这场财报直接回答一个问题：<strong>云巨头的钱，还值不值得继续花。</strong></p>
+
+      <p><strong>先摆出"考卷与上季成绩"：</strong></p>
+
+      <table>
+        <tr><th style="width:24%">指标</th><th style="width:38%">Q2 实际（8月26日发布）</th><th>Q3 指引（11月18日揭晓）</th></tr>
+        <tr>
+          <td><strong>营收</strong></td>
+          <td>962.2 亿美元（同比 +106%、环比 +18%）</td>
+          <td>1080 亿美元 ±2%（1058-1102 亿区间）——环比再涨约 12%</td>
+        </tr>
+        <tr>
+          <td><strong>数据中心收入</strong></td>
+          <td>890 亿美元（同比 +117%）</td>
+          <td>未单列指引；最大变量 = Vera Rubin</td>
+        </tr>
+        <tr>
+          <td><strong>毛利率</strong></td>
+          <td>75.0%</td>
+          <td>74.0% ±50bp——主动下调约 1 个百分点</td>
+        </tr>
+        <tr>
+          <td><strong>现金流</strong></td>
+          <td>经营现金流 240.8 亿、自由现金流 213.4 亿美元；单季回报股东约 260 亿、回购授权剩余约 990 亿</td>
+          <td>—</td>
+        </tr>
+      </table>
+
+      <p><strong>三个看点，提前写好你的"评判标准"：</strong></p>
+
+      <table>
+        <tr><th style="width:24%">看点</th><th>怎么读</th></tr>
+        <tr>
+          <td><strong>① 1080 亿：公司自己画的线</strong></td>
+          <td>英伟达的指引历来留有余量，"达标"只是及格线，市场要看"指引之上"的超额。需求侧的底牌：亚马逊、Alphabet、Meta、微软、甲骨文五家 2026 年计划资本开支合计 <strong>6600-6900 亿美元</strong>，接近 2025 年的两倍——云巨头的买卡预算，就是英伟达的营收底牌。考题其实是：供给端（Blackwell Ultra 爬坡 + Vera Rudin 量产）能不能跟上这张订单池。</td>
+        </tr>
+        <tr>
+          <td><strong>② Vera Rubin 接棒：Q3 贡献数据中心收入约 20%</strong></td>
+          <td>Blackwell 已证明需求，但资本市场永远在问"下一棒"。占比达标 = 产品迭代节奏仍在英伟达自己手里；不及预期 = 市场会立刻追问：是客户还在消化 Blackwell，还是新平台爬坡卡在良率、先进封装或 HBM 供应？<strong>这个问题比营收数字本身更致命</strong>——它决定的是"下一个三年"。</td>
+        </tr>
+        <tr>
+          <td><strong>③ 毛利率 74%：一次"诚实的下调"</strong></td>
+          <td>从 75.0% 下调到 74.0% 不是悲观信号，而是把"新产品爬坡期良率、封装、HBM 供应吃掉毛利"提前打进预期——媒体报道 AI 服务器整机已涨价 15% 以上。真正要盯的读数：<strong>实际毛利率会不会再站回 75%</strong>（英伟达惯用"先压低、再超越"的预期管理节奏）。</td>
+        </tr>
+      </table>
+
+      <p><strong>第四个看点藏在指引的脚注里：中国收入被主动剔除。</strong>英伟达明确写明：本次指引"不假设任何中国数据中心计算收入"。两种解读：要么出口管制已把这部分实质归零，要么英伟达选择用最保守的方式处理不确定性。<strong>这是教科书级的"风险隔离"：把最坏情况计入基线，让任何松动都变成额外利好。</strong>对照 Day 36-41 的"算力即供应链"叙事、Day 43 巴克莱报告里芯片商 CDS 保费的历史级飙升——英伟达在用指引语言管理预期，信用市场在用保费语言给同一件事定价。</p>
+
+      <div class="highlight">
+        <strong>11月18日 = "两本账对答案"的日子：</strong><br>
+        <em>Day 42 的股票叙事（增长信号：Capex、在手订单、Vera Rubin 爬坡）与 Day 43 的信用叙事（风险信号：CDS 利差、供应商融资、FCF 消耗），将在同一天拿到最新读数。财报数字若强，"AI 泡沫"争论后撤；数字若弱、且 CDS 保费仍在高位——信用市场的"隐性投票"，就成了先知。两个信号叠着看，别只看一头。</em>
+      </div>
+
+      <p><strong>运营人为什么要盯着一张芯片财报？因为成本会沿链条传到你手上：</strong>算力价格 → 推理成本 → 你的 AI 功能毛利 → 补贴与定价预算。Day 40 讲过 Claude Haiku 5.5 降价 75%、Day 43 测算过 DeepInfer 的推理毛利 84-96%——模型 API 降价潮的前提，是算力供给充足且价格平稳。11月18日的三个数字（营收区间、毛利率、Vera Rubin 占比），本质上是你明年"AI 功能定价与补贴预算"的上游预报。</p>
+
+      <p style="color:#718096;font-size:12px">注：本讲所有财务数据均转引自公开报道与公司披露，仅作行业信号解读，不构成任何投资建议。</p>
+    </div>
+
+    <!-- ========== 产品运营视角 ========== -->
+    <div class="card">
+      <span class="card-tag tag-ops">产品运营视角</span>
+      <h3>"验证之月"开工指南：三个今天就能用的动作</h3>
+
+      <div data-role="strategy">
+        <p style="color:#e74c3c;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <p><strong>案例一：把 11月18日 写进你的"AI 行业天气表"——预先写好评判标准。</strong></p>
+        <p>Day 43 让你建了四指标天气表（CDS 利差、发债规模、OpenRouter 周榜、巨头 Capex/裁员）。今天补上第五个日历锚点：英伟达财报。读数只有三个：实际营收落在 1058-1102 亿区间的哪个位置、实际毛利率是否 ≥74%、Vera Rubin 占比是否 ≈20%。<strong>关键动作是"预注册"：现在就把每个读数的'证伪条件'和'策略转向动作'写下来</strong>（Day 19 的实验思维：先写假设再验证，防止事后找解释）。例：若毛利率跌破 73.5% 且 Vera Rubin 不及预期 → 供给爬坡受阻 → Q4 的 AI 功能补贴预算重新评估、增长模型里"推理成本持续下降"的假设标记为待验证。</p>
+        <p><strong>行动：</strong>15 分钟，在天气表里加一行"11月18日 英伟达三读数"，并写出你的两条证伪条件。这可能是今年性价比最高的一次 15 分钟。</p>
+      </div>
+
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <p><strong>案例二：云逛"互联网之光"——用"体验模式提取法"把 1000 项成果变成你的体验 backlog。</strong></p>
+        <p>670 余家参展商、1000 余项成果，物理上不可能全逛。但媒体报道已经给出"排队信号"：AI 智能体手机、机器人药房、未来工厂、数字文旅——凡是让人排队驻留的展项，背后都有一个被验证过的"体验模式"（自然语言交互入口、所见即所得的成果演示、可参与的互动装置）。</p>
+        <p><strong>行动：</strong>让 AI 帮你云逛展——把本周乌镇相关通稿与直播截图批量投喂，Prompt：<em>"从以下材料中提取'展项体验模式卡片'：每个展项输出三行——①交互入口是什么（语音/视觉/实体装置）；②用户得到什么即时反馈（成果演示/任务完成/情绪体验）；③可迁移到我产品的哪个环节。禁止编造材料之外的展项。"</em>输出直接进你的体验 backlog 评审会。</p>
+      </div>
+
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <p><strong>案例三：金句雷达 D-Day——"人工智能乌镇对话"是全年金句密度最高的 90 分钟。</strong></p>
+        <p>去年这一环节产出被任贤良反复引用的金句（陈德里三段论）、被全网转发的判断（冯骥"拥抱最新最强的 AI"）。今年议题升级为"全球开源生态构建"，可预判三个金句高发位：生态协同（开源与商业化的边界）、普惠发展（数智鸿沟与低门槛）、企业责任（安全与治理）。2025 年对话实录链接在下方——今晚对照打分，训练你的"叙事嗅觉"。</p>
+        <p><strong>行动：</strong>① 建三栏金句雷达（原话 / 发言人 / 适用词库——优先挂"开源/共建/普惠"词库，Day 42 的术语雷达）；② 48 小时内完成二次创作，发布前对每条金句做双源核对（Day 43 会议防幻觉原则：金句必须找到第二个独立信息源才可引用）；③ 从"互联网之光"670 家参展名单里圈 10 家竞品/合作方，补进 Day 43 的 3 页观察清单。</p>
+        <p><a href="https://zhuanlan.zhihu.com/p/1970760230934668818" target="_blank" style="color:#667eea;font-size:12px">2025 年"六小龙乌镇对话"全实录（甲子光年整理）</a> / <a href="https://news.qq.com/rain/a/20251107A06I4K00" target="_blank" style="color:#667eea;font-size:12px">2025 开幕日报道（腾讯新闻）</a></p>
+      </div>
+
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <!-- ========== 工具实操：开源选型评估工作流 ========== -->
+    <div class="card">
+      <span class="card-tag tag-tool">工具实操</span>
+      <h3>开源选型评估工作流：一张四维矩阵，把"拥抱开源"变成可执行的采购动作</h3>
+
+      <p>乌镇把"开源开放"写进主题词，Day 43 判断"开源权重 + 可私有化部署 + 双芯适配"正在成为企业级选型的默认逻辑——今天把这句话落成工具。<strong>当你想用一个开源模型替换（或对冲）手上的闭源 API 时，用这张四维评估矩阵，让 AI 帮你做事实核查，你做商业判断。</strong></p>
+
+      <table>
+        <tr><th style="width:16%">维度</th><th style="width:44%">查什么（让 AI 去查）</th><th>红线与坑（人工判断）</th></tr>
+        <tr>
+          <td><strong>许可证与合规</strong></td>
+          <td>官方 repo 的 LICENSE 文件类型（Apache 2.0 / MIT / 自定义商业条款）；商用限制、专利条款、品牌使用约束</td>
+          <td>许可证是法律文件，AI 转述不可信——<strong>必须打开原始 repo 亲自核对</strong>（Day 6 幻觉课的工程化应用）；注意"传染性"条款与"无人维护"风险（Day 43 乌镇金句：代码可以 fork，信任不能 fork）。</td>
+        </tr>
+        <tr>
+          <td><strong>社区与生态</strong></td>
+          <td>Hugging Face 下载量与衍生模型数、issue 响应速度、版本迭代频率、周边工具链成熟度（参考系：Qwen 累计开源 460+ 模型、衍生超 30 万个）</td>
+          <td>看活跃度不看 star 数；警惕"一次性开源"——发一版就没下文的模型，等于把你的产品绑在一辆停产的列车上。</td>
+        </tr>
+        <tr>
+          <td><strong>部署与适配</strong></td>
+          <td>双芯适配（英伟达/昇腾）、私有化部署文档完整度、量化后显存占用、配套推理框架（如 DeepInfer 类）与官方性能数据</td>
+          <td>"能跑 demo"和"能扛生产流量"是两回事——用中试基地的逻辑：先 1% 小流量验证，再放量（Day 43 FDE 反例：上线即失效的 AI 排产系统）。</td>
+        </tr>
+        <tr>
+          <td><strong>成本与性能</strong></td>
+          <td>API 牌价 vs 自建成本（token 单价 + GPU 折旧 + 人力）；推理毛利参考（DeepInfer 84-96% 为理想工况测算，非承诺值）；你的真实量级下的单价曲线</td>
+          <td>把 Day 18 的 Token 经济学搬进来算 TCO——别只看单价，看"你的量级下"的单价；性能必须用你自己的业务样本实测，禁止只看厂商 benchmark。</td>
+        </tr>
+      </table>
+
+      <p><strong>Prompt 模板（照抄可用）：</strong><em>"你是开源选型评估助手。我方场景：【业务场景与日均调用量】；合规要求：【数据不出域/等保要求/行业监管】；候选模型：【A / B】。请输出一张四维评估矩阵（许可证/社区生态/部署适配/成本性能），每格分两栏：【事实】【出处】。事实栏只允许引用官方 repo、Hugging Face 页面与官方文档，禁止编造 benchmark 数字；出处栏给出可核对的链接或文件名。最后附'切换风险清单'三行：数据迁移、Prompt 效果差异、回滚方案。"</em></p>
+
+      <div class="highlight">
+        <strong>一句话原则：</strong><br>
+        <em>"乌镇说'开源开放'，你的选型表说'开放到什么程度、边界在哪里'——拥抱开源，但不裸奔：许可证亲自读、性能自己测、回滚先想好。"</em>
+      </div>
+    </div>
+
+    <!-- ========== 选择题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-quiz">选择题</span>
+      <h3>Day 44 检验</h3>
+
+      <div class="quiz-item">
+        <p class="q">1. 2026 年乌镇峰会的主题是？</p>
+        <ul class="quiz-options" data-answer="2">
+          <li onclick="checkQuiz(this)">A. "智能互联、智见未来"</li>
+          <li onclick="checkQuiz(this)">B. "共筑开放合作、安全普惠的数智未来"</li>
+          <li onclick="checkQuiz(this)">C. "开源开放 共建共享——携手构建网络空间命运共同体"</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 C。本届峰会第一次把"开源"写进主题词（11月2-5日，27 场分论坛创近年新高）。A 是"互联网之光"博览会的主题，B 是 2025 年乌镇峰会的主题。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">2. 英伟达 FY2027 Q3 财报定档何时？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 11月2日（乌镇开幕当天）</li>
+          <li onclick="checkQuiz(this)">B. 11月18日（北京时间当日上午 6 时电话会）</li>
+          <li onclick="checkQuiz(this)">C. 11月30日</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。英伟达 10月29日 官宣：北京时间 11月18日 上午 6 时召开电话会议，发布截至 10月25日 的 2027 财年 Q3 业绩，CFO 书面评论凌晨 4:20 先行挂出。乌镇开幕（11月2日）与英伟达财报（11月18日），构成"验证之月"的一头一尾。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">3. 英伟达 Q3 指引（1080 亿美元 ±2%）对中国数据中心收入的处理方式是？</p>
+        <ul class="quiz-options" data-answer="0">
+          <li onclick="checkQuiz(this)">A. 完全不计入——"不假设任何中国数据中心计算收入"</li>
+          <li onclick="checkQuiz(this)">B. 计入并作为增长亮点</li>
+          <li onclick="checkQuiz(this)">C. 部分计入并单独披露</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 A。这是教科书级的"风险隔离"：把最坏情况计入基线，让任何后续松动都变成额外利好。对照 Day 43 巴克莱报告——英伟达用指引语言管理预期，信用市场用 CDS 保费给同一件事定价。</div>
+      </div>
+
+      <div class="quiz-item">
+        <p class="q">4. 管理层预计 Vera Rubin 在 Q3 数据中心收入中的占比约为？</p>
+        <ul class="quiz-options" data-answer="1">
+          <li onclick="checkQuiz(this)">A. 约 5%</li>
+          <li onclick="checkQuiz(this)">B. 约 20%</li>
+          <li onclick="checkQuiz(this)">C. 约 50%</li>
+        </ul>
+        <div class="quiz-explain">正确答案是 B。Vera Rubin（接棒 Blackwell 的新一代平台，8 月宣布全面量产）预计 Q3 贡献数据中心收入约 20%——这是本场财报最大的悬念：占比达标 = 产品迭代节奏仍在英伟达手里；不及预期 = 市场会追问爬坡是否卡在良率/封装/HBM 供应。</div>
+      </div>
+    </div>
+
+    <!-- ========== 思考题 ========== -->
+    <div class="card">
+      <span class="card-tag tag-homework">思考题</span>
+      <h3>Day 44 思考：验证之月，你的考卷是什么？</h3>
+      <div data-role="strategy">
+        <p style="color:#667eea;font-size:13px;margin-bottom:8px">📳 策略/用户运营视角</p>
+        <ol>
+          <li>为 11月18日 做一次"读数预注册"：写出英伟达三个读数（营收区间位置、毛利率是否 ≥74%、Vera Rubin 占比是否 ≈20%）分别验证你业务里的哪个假设，并为每个读数写下"证伪条件 + 策略转向动作"（提示：补贴预算、供应商二供、叙事词库切换）。财报后回来对答案——预注册命中率就是你决策质量的体检报告。</li>
+          <li>乌镇"对话环节"从"六小龙"到"AI 乌镇对话"的升级，本质是把"人物故事"换成"生态框架"。为你负责的业务设计一个"生态叙事"版本：如果明年你的产品要开一场"用户生态对话"，议程怎么设、请谁、讲什么议题（对照任贤良的三个特点：汇聚创新力量/聚焦关键议题/凝聚开放共识）。</li>
+        </ol>
+      </div>
+      <div data-role="product">
+        <p style="color:#d63384;font-size:13px;margin-bottom:8px">📱 产品运营视角</p>
+        <ol>
+          <li>用今天的四维评估矩阵，为你产品正在用的一个闭源 API 找 2 个开源候选，跑一遍完整评估；结论必须写两条——"切换成本估算"与"不切换的理由"（强迫自己同时为两个方向找证据，防锚定）。许可证一栏请打开官方 repo 亲自核对。</li>
+          <li>跑一遍"云逛展"体验模式提取：收集本周乌镇报道 5-10 篇 + "互联网之光"展项清单，用 Day 44 的 Prompt 提取"体验模式卡片"，挑出 1 个可迁移到你自己产品的交互模式，写进下个迭代的 backlog 评审材料。</li>
+        </ol>
+      </div>
+      <div data-role="marketing">
+        <p style="color:#e68a00;font-size:13px;margin-bottom:8px">🎀 整合营销运营视角</p>
+        <ol>
+          <li>为今天下午的"人工智能乌镇对话"预填金句雷达：按 2025 年对话沉淀的三个议题方向（生态协同、普惠发展、企业责任）预测 3 个"金句位"；晚上对照实录打分——预测准确率，就是你"叙事嗅觉"的训练量。引用前完成双源核对。</li>
+          <li>做一个"2025 → 2026 金句复用实验"：把冯骥"因为看到 DeepSeek 才更乐观"式的"被开源治愈"句式，改写成你产品所在行业的版本（例：为什么看到 XX 开源后，你对行业成本曲线更乐观了）——检验金句结构的可迁移性，并发一条试试水温。</li>
+        </ol>
+      </div>
+      <div data-role="all">
+        <p style="color:#22a868;font-size:13px;margin-bottom:8px">🌎 全视角</p>
+        <details><summary style="cursor:pointer;color:#667eea;font-size:14px;margin-bottom:8px">点击展开</summary>详见各角色专属内容</details>
+      </div>
+    </div>
+
+    <button class="mark-read-btn" onclick="markDayComplete(44)">✅ 已阅读完毕</button>
+
+  </div>
+  <!-- ==================== END DAY 44 ==================== -->`;
 
 
   // =====================================================
